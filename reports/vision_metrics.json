@@ -1,0 +1,53 @@
+{
+  "test_scenes": 30,
+  "test_manifest_sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "imgsz": 832,
+  "iou_match": 0.5,
+  "detection_conf_020": {
+    "tp": 607,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "detection_conf_050": {
+    "tp": 607,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "group_detection_conf_020": {
+    "normal": {
+      "tp": 191,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "occluded": {
+      "tp": 213,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "boundary": {
+      "tp": 203,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "occupancy_confusion": {
+    "free->free": 895,
+    "occupied->occupied": 606,
+    "occupied->unknown": 59
+  },
+  "false_free_spaces": 0,
+  "unknown_spaces": 59,
+  "scope": "Independent scene seeds from the same procedural renderer and fixed map, not real-image generalization",
+  "three_state_claim": "Unknown catches retained ambiguous evidence; completely missed cars may still be observed free"
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>智慧停车实验台 · 胡轩铭模块</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23182d40'/%3E%3Ctext x='32' y='48' text-anchor='middle' fill='white' font-family='Arial' font-size='46' font-weight='700'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="智慧停车实验台首页"><span class="brand-icon">P<span></span></span><span><strong>智慧停车实验台</strong><small>视觉感知 · 停车交互</small></span></a>
+    <nav class="top-actions" aria-label="项目资料"><a href="/api/report" target="_blank" rel="noopener">实验与交接报告 <span>↗</span></a><a href="/api/export" download="parking_snapshot.json">导出当前快照 <span>↓</span></a><span class="local-badge"><i></i>二维仿真 · 本地运行</span></nav>
+  </header>
+
+  <main class="workspace">
+    <div class="page-heading"><div><div class="eyebrow">SMART PARKING / DEMO52</div><h1>停车场运行概览</h1><p>52 个车位 · 三态占用感知 · 单会话停车与寻车</p></div><div class="session-chip" id="session-chip"><span class="status-dot"></span><span id="session-label">连接中</span></div></div>
+
+    <section class="overview" aria-label="感知统计">
+      <article class="metric"><div class="metric-label"><span class="dot free"></span>观测空闲</div><div class="metric-value"><strong id="free-count">—</strong><span>个</span></div><p>可进入选位候选</p></article>
+      <article class="metric"><div class="metric-label"><span class="dot occupied"></span>检测占用</div><div class="metric-value"><strong id="occupied-count">—</strong><span>个</span></div><p>车辆中心明确在位</p></article>
+      <article class="metric"><div class="metric-label"><span class="dot unknown"></span>占用不确定</div><div class="metric-value"><strong id="unknown-count">—</strong><span>个</span></div><p>弱证据或感知不可用</p></article>
+      <article class="metric snapshot-metric"><div class="metric-label"><span class="dot neutral"></span>当前感知帧</div><div class="metric-value"><strong id="scene-version">—</strong><span>版本</span><span class="frame-valid" id="frame-valid">连接中</span></div><p id="frame-summary">正在连接本地服务…</p></article>
+    </section>
+
+    <div class="work-grid">
+      <section class="map-panel panel" aria-labelledby="map-title">
+        <div class="panel-heading"><div><h2 id="map-title">停车场感知视图</h2><p>左上角为原点 · 52 × 32 米</p></div><button class="icon-button" id="refresh-button" data-action="refresh" title="重新运行当前图像的车辆检测" aria-label="重新检测">↻ <span>重新检测</span></button></div>
+        <div class="map-toolbar"><div class="layer-controls" aria-label="地图图层"><label><input type="checkbox" id="layer-image" checked><span>场景原图</span></label><label><input type="checkbox" id="layer-occupancy" checked><span>占用状态</span></label><label><input type="checkbox" id="layer-detections"><span>检测框</span></label></div><span class="map-coordinate" id="map-coordinate">X — / Y — m</span></div>
+        <div class="canvas-wrap" id="canvas-wrap"><canvas id="parking-map" width="1664" height="1024" tabindex="0" aria-label="停车场地图。可点击查看车位；寻车模式可点击设置行人起点。"></canvas><div class="map-tooltip" id="map-tooltip" hidden></div><div class="map-loading" id="map-loading"><span class="spinner"></span><strong id="loading-label">正在连接本地服务</strong><span>模型推理期间请稍候</span></div><div class="pick-banner" id="pick-banner" hidden><span>在图中人行通道上点击起点</span><button id="stop-picking" type="button">结束点选 ×</button></div></div>
+        <div class="map-legend"><div><span><i class="dot free"></i>空闲</span><span><i class="dot occupied"></i>占用</span><span><i class="dot unknown"></i>不确定</span><span><i class="outline recommended"></i>推荐位</span><span><i class="outline actual"></i>实际位</span></div><div><span><i class="line drive"></i>车行路线</span><span><i class="line walk"></i>人行路线</span></div></div>
+        <div class="scene-controls"><label><span>场景</span><select id="scenario-select"><option value="normal">常规停车</option><option value="empty">空场</option><option value="full">普通位全满</option><option value="occluded">局部遮挡</option><option value="boundary">边界与跨位</option><option value="blocked">通路阻挡</option></select></label><label class="seed-field"><span>种子</span><input id="seed-input" type="number" min="0" max="2147483647" step="1" value="42" aria-label="场景随机种子"></label><button class="button secondary" data-action="change_scene">更新场景</button><span class="scene-note">更新后重新检测，旧路线失效</span></div>
+      </section>
+
+      <aside class="control-panel panel" aria-labelledby="control-title">
+        <div class="panel-heading"><div><h2 id="control-title">停车与寻车</h2><p>按当前会话完成操作</p></div><span class="step-number" id="step-number">01</span></div>
+        <div class="steps" aria-label="会话流程"><div id="step-idle" class="active"><span>1</span>申请</div><i></i><div id="step-planned"><span>2</span>确认停车</div><i></i><div id="step-parked"><span>3</span>寻车离场</div></div>
+
+        <section class="control-section">
+          <label class="field-label" for="vehicle-select">申请车辆 <span>模拟登记</span></label><select id="vehicle-select"><option value="">正在读取登记…</option></select>
+          <div class="vehicle-details"><span id="vehicle-power">动力类型 —</span><span id="vehicle-permission">无障碍资格 —</span></div>
+          <div class="field-label section-label">本次需求 <span>专用车位不自动放宽</span></div>
+          <div class="need-options"><label><input type="checkbox" id="needs-accessible"><span class="custom-check"></span>无障碍车位</label><label><input type="checkbox" id="needs-charging"><span class="custom-check"></span>必须充电</label></div>
+          <div class="field-label section-label">停车偏好</div><div class="mode-select" role="group" aria-label="停车偏好"><label><input type="radio" name="prefer-mode" value="near_destination" checked><span><b>少走路</b><small>优先接近电梯</small></span></label><label><input type="radio" name="prefer-mode" value="near_exit"><span><b>近出口</b><small>优先出场距离</small></span></label></div>
+          <div class="allocation-actions"><button class="button primary" data-action="allocate" id="allocate-button">申请推荐车位 <span>→</span></button><button class="button primary" data-action="replan" id="replan-button" hidden>按当前需求重新规划</button><button class="button text-button" data-action="cancel" id="cancel-button" hidden>取消本次推荐</button></div>
+        </section>
+
+        <section class="control-section actual-section" id="actual-section" hidden>
+          <div class="section-heading"><h3>确认实际停车</h3><span class="recommendation" id="recommended-label">推荐 —</span></div>
+          <label class="field-label" for="actual-spot-select">实际停入车位</label><select id="actual-spot-select"><option value="">选择实际车位</option></select><p class="field-note">允许与推荐不同；也可直接点击地图车位。</p><button class="button primary" data-action="confirm_park">确认已停入此车位</button>
+        </section>
+
+        <section class="control-section find-section" id="find-section" hidden>
+          <div class="section-heading"><h3>反向寻车</h3><span class="actual-label" id="actual-label">实际 —</span></div><p class="field-note">手动选择你当前所在的人行通道。终点为实际车位外的接近点。</p><button class="button secondary" id="pick-start-button">⌖ 在地图上点选起点</button><div class="point-fields"><label>X / m<input id="start-x" type="number" min="0" max="52" step="0.01" placeholder="42.60"></label><label>Y / m<input id="start-y" type="number" min="0" max="32" step="0.01" placeholder="4.00"></label><button class="text-link" id="start-elevator" title="设为电梯位置">从电梯出发</button></div><button class="button primary" data-action="find_vehicle">生成寻车路线</button><button class="button secondary depart-button" data-action="depart">确认车辆已离场</button>
+        </section>
+        <div class="control-footer"><span id="planner-label" title="可替换为梁可的规划模块">参考规划适配器</span><button class="text-link" data-action="reset">重置会话与场景</button></div>
+      </aside>
+
+      <section class="result-panel panel" aria-labelledby="result-title"><div class="result-header"><div><span class="result-icon" id="result-icon">i</span><h2 id="result-title">操作提示</h2></div><span class="result-code" id="result-code">等待连接</span></div><p id="result-message" role="status" aria-live="polite">正在读取当前场景和停车会话。</p><div class="distances" id="distances" hidden></div><div class="result-extra" id="result-extra" hidden></div><div class="result-meta"><span id="route-validity">尚无规划路线</span><span id="frame-id">帧 —</span></div></section>
+    </div>
+    <footer class="page-footer"><span>胡轩铭模块 · 场景与视觉感知 / 会话与交互</span><span>三态中的“空闲”为观测结果；实际停车以人工确认为准。</span></footer>
+  </main>
+  <div class="toast" id="toast" role="alert" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

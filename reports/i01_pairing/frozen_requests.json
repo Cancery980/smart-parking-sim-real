@@ -1,0 +1,1398 @@
+{
+  "protocol_version": "I01-v1",
+  "test_manifest_sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+  "independent_scenes": 30,
+  "paired_requests": 60,
+  "request_assignment": "scene index modulo 3: normal / charging / accessible; both preferences",
+  "thresholds": {
+    "high": 0.5,
+    "low": 0.2,
+    "overlap_fraction": 0.05
+  },
+  "policies": {
+    "B": "binary",
+    "S": "three_state"
+  },
+  "requests": [
+    {
+      "request_id": "I01_01_walk",
+      "scene_id": "normal_30000",
+      "group": "normal",
+      "image_sha256": "892804752dc8624a85b3d0d40dc52905b35ba95eb303de8f5a625b2454636b45",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_00",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_00",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_01_exit",
+      "scene_id": "normal_30000",
+      "group": "normal",
+      "image_sha256": "892804752dc8624a85b3d0d40dc52905b35ba95eb303de8f5a625b2454636b45",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_00",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_00",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_02_walk",
+      "scene_id": "normal_30001",
+      "group": "normal",
+      "image_sha256": "31188aeeb8bb9b45bf6f35e0d79d7beb47ded43f058fbb0873d3a8bc1db00980",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_01",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_01",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_02_exit",
+      "scene_id": "normal_30001",
+      "group": "normal",
+      "image_sha256": "31188aeeb8bb9b45bf6f35e0d79d7beb47ded43f058fbb0873d3a8bc1db00980",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_01",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_01",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_03_walk",
+      "scene_id": "normal_30002",
+      "group": "normal",
+      "image_sha256": "f38c45c14aef480b77c69dda7e6ea78d6b400d3c870dadb3a81e1eb1843be006",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_02",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_02",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_03_exit",
+      "scene_id": "normal_30002",
+      "group": "normal",
+      "image_sha256": "f38c45c14aef480b77c69dda7e6ea78d6b400d3c870dadb3a81e1eb1843be006",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_02",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_02",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_04_walk",
+      "scene_id": "normal_30003",
+      "group": "normal",
+      "image_sha256": "97bf0b87bb29b381f1c329ffe8cdecf2d43804c49a2965b0e4482eb6ba93f2ba",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_03",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_03",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_04_exit",
+      "scene_id": "normal_30003",
+      "group": "normal",
+      "image_sha256": "97bf0b87bb29b381f1c329ffe8cdecf2d43804c49a2965b0e4482eb6ba93f2ba",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_03",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_03",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_05_walk",
+      "scene_id": "normal_30004",
+      "group": "normal",
+      "image_sha256": "95d75a128be521c2d0429153f71448aee8408dc03280dda7cbe037521d494f7d",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_04",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_04",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_05_exit",
+      "scene_id": "normal_30004",
+      "group": "normal",
+      "image_sha256": "95d75a128be521c2d0429153f71448aee8408dc03280dda7cbe037521d494f7d",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_04",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_04",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_06_walk",
+      "scene_id": "normal_30005",
+      "group": "normal",
+      "image_sha256": "29c756a88dad6b79c399b6f140dc65606cc7f7a732a055ec812bb2cbd9240749",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_05",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_05",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_06_exit",
+      "scene_id": "normal_30005",
+      "group": "normal",
+      "image_sha256": "29c756a88dad6b79c399b6f140dc65606cc7f7a732a055ec812bb2cbd9240749",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_05",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_05",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_07_walk",
+      "scene_id": "normal_30006",
+      "group": "normal",
+      "image_sha256": "63764fd941fcc711bd0c34deebb3742c48e136c057a31c997873433f8365e9e7",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_06",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_06",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_07_exit",
+      "scene_id": "normal_30006",
+      "group": "normal",
+      "image_sha256": "63764fd941fcc711bd0c34deebb3742c48e136c057a31c997873433f8365e9e7",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_06",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_06",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_08_walk",
+      "scene_id": "normal_30007",
+      "group": "normal",
+      "image_sha256": "0a483f1fba162148e29cefbaf0dd5659c418002b1d235443d08563ff226fa54d",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_07",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_07",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_08_exit",
+      "scene_id": "normal_30007",
+      "group": "normal",
+      "image_sha256": "0a483f1fba162148e29cefbaf0dd5659c418002b1d235443d08563ff226fa54d",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_07",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_07",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_09_walk",
+      "scene_id": "normal_30008",
+      "group": "normal",
+      "image_sha256": "02f1cb5e5fc38cc19ad9c3b88c3fcbaf610d0b82a7bce625b3ce84d891194354",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_08",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_08",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_09_exit",
+      "scene_id": "normal_30008",
+      "group": "normal",
+      "image_sha256": "02f1cb5e5fc38cc19ad9c3b88c3fcbaf610d0b82a7bce625b3ce84d891194354",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_08",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_08",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_10_walk",
+      "scene_id": "normal_30009",
+      "group": "normal",
+      "image_sha256": "bd7f1e6c6002124c6192c9fb101c617b0646b9c6f1289b10a581220df00d2bb6",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_09",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_09",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_10_exit",
+      "scene_id": "normal_30009",
+      "group": "normal",
+      "image_sha256": "bd7f1e6c6002124c6192c9fb101c617b0646b9c6f1289b10a581220df00d2bb6",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_09",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_09",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_11_walk",
+      "scene_id": "occluded_40000",
+      "group": "occluded",
+      "image_sha256": "af371297e53521dd3ebe2cb01f3e4c72740cfc9c8f21e4b1d009b27279c51329",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_10",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_10",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_11_exit",
+      "scene_id": "occluded_40000",
+      "group": "occluded",
+      "image_sha256": "af371297e53521dd3ebe2cb01f3e4c72740cfc9c8f21e4b1d009b27279c51329",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_10",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_10",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_12_walk",
+      "scene_id": "occluded_40001",
+      "group": "occluded",
+      "image_sha256": "52308345f01b88114d4abc76f2c67d133b27c197f65b2d05dc8712d192d173b1",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_11",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_11",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_12_exit",
+      "scene_id": "occluded_40001",
+      "group": "occluded",
+      "image_sha256": "52308345f01b88114d4abc76f2c67d133b27c197f65b2d05dc8712d192d173b1",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_11",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_11",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_13_walk",
+      "scene_id": "occluded_40002",
+      "group": "occluded",
+      "image_sha256": "23fda2d655f826196533fc5cf4129e3cf839318ade5351b64b2a2e783c0e0faa",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_12",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_12",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_13_exit",
+      "scene_id": "occluded_40002",
+      "group": "occluded",
+      "image_sha256": "23fda2d655f826196533fc5cf4129e3cf839318ade5351b64b2a2e783c0e0faa",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_12",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_12",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_14_walk",
+      "scene_id": "occluded_40003",
+      "group": "occluded",
+      "image_sha256": "e0c8ee17f3cd39d82309f7656bbd6256927fdc333310408546d5344f560f075c",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_13",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_13",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_14_exit",
+      "scene_id": "occluded_40003",
+      "group": "occluded",
+      "image_sha256": "e0c8ee17f3cd39d82309f7656bbd6256927fdc333310408546d5344f560f075c",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_13",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_13",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_15_walk",
+      "scene_id": "occluded_40004",
+      "group": "occluded",
+      "image_sha256": "d45ed3de1fd30e59dd8bd46e59d6573ab254d841948c1e10390efead50a26b57",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_14",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_14",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_15_exit",
+      "scene_id": "occluded_40004",
+      "group": "occluded",
+      "image_sha256": "d45ed3de1fd30e59dd8bd46e59d6573ab254d841948c1e10390efead50a26b57",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_14",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_14",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_16_walk",
+      "scene_id": "occluded_40005",
+      "group": "occluded",
+      "image_sha256": "ee7afb99fc1c6f8d7c30be81b4534736f20c950785fcccdddb41ef479ffa8723",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_15",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_15",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_16_exit",
+      "scene_id": "occluded_40005",
+      "group": "occluded",
+      "image_sha256": "ee7afb99fc1c6f8d7c30be81b4534736f20c950785fcccdddb41ef479ffa8723",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_15",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_15",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_17_walk",
+      "scene_id": "occluded_40006",
+      "group": "occluded",
+      "image_sha256": "a8db85b4181eb4f969a4513642e0ae1d61a50b1b9a224968ff65fc542aedb72c",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_16",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_16",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_17_exit",
+      "scene_id": "occluded_40006",
+      "group": "occluded",
+      "image_sha256": "a8db85b4181eb4f969a4513642e0ae1d61a50b1b9a224968ff65fc542aedb72c",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_16",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_16",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_18_walk",
+      "scene_id": "occluded_40007",
+      "group": "occluded",
+      "image_sha256": "67b9fceac16af74f0cce64bb2c7b1bb4adea05a1387192c98b6d6e4b8334545d",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_17",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_17",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_18_exit",
+      "scene_id": "occluded_40007",
+      "group": "occluded",
+      "image_sha256": "67b9fceac16af74f0cce64bb2c7b1bb4adea05a1387192c98b6d6e4b8334545d",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_17",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_17",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_19_walk",
+      "scene_id": "occluded_40008",
+      "group": "occluded",
+      "image_sha256": "fd1d1e93c85c8be95ebf5aced1754e5760a9c911e7fa4c54b34595f28d6ff3fb",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_18",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_18",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_19_exit",
+      "scene_id": "occluded_40008",
+      "group": "occluded",
+      "image_sha256": "fd1d1e93c85c8be95ebf5aced1754e5760a9c911e7fa4c54b34595f28d6ff3fb",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_18",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_18",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_20_walk",
+      "scene_id": "occluded_40009",
+      "group": "occluded",
+      "image_sha256": "71ad49a956eacc696ab1052fd24d3dca8f32c44f1b6c28e0fc683cfa23ff68f2",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_19",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_19",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_20_exit",
+      "scene_id": "occluded_40009",
+      "group": "occluded",
+      "image_sha256": "71ad49a956eacc696ab1052fd24d3dca8f32c44f1b6c28e0fc683cfa23ff68f2",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_19",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_19",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_21_walk",
+      "scene_id": "boundary_50000",
+      "group": "boundary",
+      "image_sha256": "26ab4e9629e49c4d3274f00c9e8e48e5866efebdb30d3ba9fc752e319d7860d9",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_20",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_20",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_21_exit",
+      "scene_id": "boundary_50000",
+      "group": "boundary",
+      "image_sha256": "26ab4e9629e49c4d3274f00c9e8e48e5866efebdb30d3ba9fc752e319d7860d9",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_20",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_20",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_22_walk",
+      "scene_id": "boundary_50001",
+      "group": "boundary",
+      "image_sha256": "4d54e47961b8e8de70e29549e6db219d62eeb1929174b513d1effc12df519023",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_21",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_21",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_22_exit",
+      "scene_id": "boundary_50001",
+      "group": "boundary",
+      "image_sha256": "4d54e47961b8e8de70e29549e6db219d62eeb1929174b513d1effc12df519023",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_21",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_21",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_23_walk",
+      "scene_id": "boundary_50002",
+      "group": "boundary",
+      "image_sha256": "ec543691efeff9292cfa11fda88c0c88245160169ac0c9af91cd29e875e0a0af",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_22",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_22",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_23_exit",
+      "scene_id": "boundary_50002",
+      "group": "boundary",
+      "image_sha256": "ec543691efeff9292cfa11fda88c0c88245160169ac0c9af91cd29e875e0a0af",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_22",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_22",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_24_walk",
+      "scene_id": "boundary_50003",
+      "group": "boundary",
+      "image_sha256": "c71a3b30f720e0077f4fc98b27618f1d91985748b5d47bc826a81549b9230d08",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_23",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_23",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_24_exit",
+      "scene_id": "boundary_50003",
+      "group": "boundary",
+      "image_sha256": "c71a3b30f720e0077f4fc98b27618f1d91985748b5d47bc826a81549b9230d08",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_23",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_23",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_25_walk",
+      "scene_id": "boundary_50004",
+      "group": "boundary",
+      "image_sha256": "8212bb78b0e54246f63298ab8e2646dc00e7aaa83f359b027b1e7ed1c97abc3f",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_24",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_24",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_25_exit",
+      "scene_id": "boundary_50004",
+      "group": "boundary",
+      "image_sha256": "8212bb78b0e54246f63298ab8e2646dc00e7aaa83f359b027b1e7ed1c97abc3f",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_24",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_24",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_26_walk",
+      "scene_id": "boundary_50005",
+      "group": "boundary",
+      "image_sha256": "a127c84ecebccb64c0710f90ddbde9aceb0b45309a10e8d78cedc8b9586b4a2a",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_25",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_25",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_26_exit",
+      "scene_id": "boundary_50005",
+      "group": "boundary",
+      "image_sha256": "a127c84ecebccb64c0710f90ddbde9aceb0b45309a10e8d78cedc8b9586b4a2a",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_25",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_25",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_27_walk",
+      "scene_id": "boundary_50006",
+      "group": "boundary",
+      "image_sha256": "81275ea25804569fdf5c4d951675d1d15e8ed6c63eb3ae36ef3f2413bab8bf7a",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_26",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_26",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_27_exit",
+      "scene_id": "boundary_50006",
+      "group": "boundary",
+      "image_sha256": "81275ea25804569fdf5c4d951675d1d15e8ed6c63eb3ae36ef3f2413bab8bf7a",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_26",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_26",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_28_walk",
+      "scene_id": "boundary_50007",
+      "group": "boundary",
+      "image_sha256": "87f3ed8da43d3158eaea959f58967be2478b913725ee66ec95b049b5181d57ff",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_27",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_27",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_28_exit",
+      "scene_id": "boundary_50007",
+      "group": "boundary",
+      "image_sha256": "87f3ed8da43d3158eaea959f58967be2478b913725ee66ec95b049b5181d57ff",
+      "eligible_type": "normal",
+      "vehicle": {
+        "vehicle_id": "I01_APP_27",
+        "power_type": "fuel",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_27",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_29_walk",
+      "scene_id": "boundary_50008",
+      "group": "boundary",
+      "image_sha256": "e1e484a8824ecdb87ab9af243e6e44d86a23b25173c318dd691d59dc5066733a",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_28",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_28",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_29_exit",
+      "scene_id": "boundary_50008",
+      "group": "boundary",
+      "image_sha256": "e1e484a8824ecdb87ab9af243e6e44d86a23b25173c318dd691d59dc5066733a",
+      "eligible_type": "charging",
+      "vehicle": {
+        "vehicle_id": "I01_APP_28",
+        "power_type": "new_energy",
+        "accessible_permission": false,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_28",
+        "session_id": null,
+        "needs_accessible": false,
+        "needs_charging": true,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_30_walk",
+      "scene_id": "boundary_50009",
+      "group": "boundary",
+      "image_sha256": "491b2b789ac1b6fa42c9f45d13f61b29fca590d58c0827e64ca6171e5ae94ed0",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_29",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_29",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_destination",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    },
+    {
+      "request_id": "I01_30_exit",
+      "scene_id": "boundary_50009",
+      "group": "boundary",
+      "image_sha256": "491b2b789ac1b6fa42c9f45d13f61b29fca590d58c0827e64ca6171e5ae94ed0",
+      "eligible_type": "accessible",
+      "vehicle": {
+        "vehicle_id": "I01_APP_29",
+        "power_type": "new_energy",
+        "accessible_permission": true,
+        "role": "applicant"
+      },
+      "request": {
+        "operation": "allocate",
+        "vehicle_id": "I01_APP_29",
+        "session_id": null,
+        "needs_accessible": true,
+        "needs_charging": false,
+        "prefer_mode": "near_exit",
+        "destination_id": "elevator_1",
+        "pedestrian_start_m": null
+      }
+    }
+  ]
+}

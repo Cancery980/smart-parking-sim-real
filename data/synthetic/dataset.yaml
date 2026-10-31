@@ -1,0 +1,6 @@
+# Run scripts/vision_train.py to resolve the project directory before training.
+path: data/synthetic
+train: images/train
+val: images/val
+names:
+  0: car

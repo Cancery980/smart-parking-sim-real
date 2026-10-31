@@ -1,0 +1,22 @@
+{
+  "architecture": "YOLOv8n",
+  "pretrained": "Ultralytics official yolov8n.pt",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "ultralytics": "8.3.235",
+  "torch": "2.5.1+cu124",
+  "training_seed": 20261031,
+  "selection": "best validation checkpoint from single declared run",
+  "training_images": 180,
+  "training_unique_images": 169,
+  "validation_scenes": 30,
+  "test_scenes": 30,
+  "exploration_images": 24,
+  "exploration_unique_images": 21,
+  "duplicate_note": "Repeated empty map images only within development data; train/val/test image hash intersections are empty",
+  "scope": "Synthetic procedural top-down vehicle assets only; no real-camera generalization claim",
+  "license": "AGPL-3.0 for Ultralytics/model integration; assets original procedural graphics",
+  "pretrained_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt",
+  "pretrained_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "actual_epochs": 35,
+  "completed_utc": "2026-10-31T03:52:29.301369+00:00"
+}

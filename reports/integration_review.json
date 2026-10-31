@@ -1,0 +1,28 @@
+{
+  "scope": "独立只读审阅 contracts/service/api/reference_planner/geometry 与验收脚本",
+  "confirmed_findings": [
+    {
+      "issue": "operation/scenario 数组或对象使 HTTP 返回500",
+      "resolution": "已增加字符串类型校验",
+      "evidence": "session_tests.xml 中4个 HTTP 回归用例通过，错误请求保留会话和场景"
+    },
+    {
+      "issue": "真实模型验收脚本不能指定外部规划模块",
+      "resolution": "新增 --planner 并记录实际插件",
+      "evidence": "reports/e2e_external/results.json：examples.liang_adapter:Planner 8/8 通过"
+    }
+  ],
+  "non_blocking_observation": {
+    "issue": "/api/export 的不同字段可能来自不同时间点",
+    "resolution": "CONTRACT_V1.md 明确其为当前状态诊断；一致调用样例由 check_plugin.py 提供"
+  },
+  "reviewed_boundaries": [
+    "规划上下文无真值且深拷贝",
+    "确认事务先校验后写入",
+    "检测失败保留停车事实",
+    "旧路线失效",
+    "独立路线校验",
+    "I01评分与决策分离"
+  ],
+  "status": "confirmed_findings_resolved"
+}

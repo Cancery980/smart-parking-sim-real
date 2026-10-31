@@ -1,0 +1,1334 @@
+{
+  "created_utc": "2026-10-31T03:33:09.797925+00:00",
+  "schema_version": "1.0",
+  "map_id": "demo52_v12",
+  "splits": [
+    {
+      "split": "exploration",
+      "seed": 1000,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1001,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1002,
+      "scenario": "occluded"
+    },
+    {
+      "split": "exploration",
+      "seed": 1003,
+      "scenario": "boundary"
+    },
+    {
+      "split": "exploration",
+      "seed": 1004,
+      "scenario": "empty"
+    },
+    {
+      "split": "exploration",
+      "seed": 1005,
+      "scenario": "full"
+    },
+    {
+      "split": "exploration",
+      "seed": 1006,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1007,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1008,
+      "scenario": "occluded"
+    },
+    {
+      "split": "exploration",
+      "seed": 1009,
+      "scenario": "boundary"
+    },
+    {
+      "split": "exploration",
+      "seed": 1010,
+      "scenario": "empty"
+    },
+    {
+      "split": "exploration",
+      "seed": 1011,
+      "scenario": "full"
+    },
+    {
+      "split": "exploration",
+      "seed": 1012,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1013,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1014,
+      "scenario": "occluded"
+    },
+    {
+      "split": "exploration",
+      "seed": 1015,
+      "scenario": "boundary"
+    },
+    {
+      "split": "exploration",
+      "seed": 1016,
+      "scenario": "empty"
+    },
+    {
+      "split": "exploration",
+      "seed": 1017,
+      "scenario": "full"
+    },
+    {
+      "split": "exploration",
+      "seed": 1018,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1019,
+      "scenario": "normal"
+    },
+    {
+      "split": "exploration",
+      "seed": 1020,
+      "scenario": "occluded"
+    },
+    {
+      "split": "exploration",
+      "seed": 1021,
+      "scenario": "boundary"
+    },
+    {
+      "split": "exploration",
+      "seed": 1022,
+      "scenario": "empty"
+    },
+    {
+      "split": "exploration",
+      "seed": 1023,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10000,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10001,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10002,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10003,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10004,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10005,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10006,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10007,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10008,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10009,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10010,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10011,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10012,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10013,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10014,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10015,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10016,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10017,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10018,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10019,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10020,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10021,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10022,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10023,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10024,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10025,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10026,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10027,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10028,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10029,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10030,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10031,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10032,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10033,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10034,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10035,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10036,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10037,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10038,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10039,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10040,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10041,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10042,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10043,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10044,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10045,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10046,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10047,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10048,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10049,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10050,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10051,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10052,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10053,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10054,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10055,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10056,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10057,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10058,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10059,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10060,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10061,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10062,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10063,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10064,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10065,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10066,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10067,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10068,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10069,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10070,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10071,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10072,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10073,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10074,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10075,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10076,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10077,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10078,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10079,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10080,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10081,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10082,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10083,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10084,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10085,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10086,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10087,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10088,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10089,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10090,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10091,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10092,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10093,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10094,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10095,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10096,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10097,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10098,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10099,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10100,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10101,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10102,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10103,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10104,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10105,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10106,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10107,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10108,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10109,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10110,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10111,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10112,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10113,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10114,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10115,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10116,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10117,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10118,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10119,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10120,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10121,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10122,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10123,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10124,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10125,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10126,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10127,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10128,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10129,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10130,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10131,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10132,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10133,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10134,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10135,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10136,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10137,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10138,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10139,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10140,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10141,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10142,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10143,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10144,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10145,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10146,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10147,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10148,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10149,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10150,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10151,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10152,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10153,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10154,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10155,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10156,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10157,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10158,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10159,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10160,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10161,
+      "scenario": "boundary"
+    },
+    {
+      "split": "train",
+      "seed": 10162,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10163,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10164,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10165,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10166,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10167,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10168,
+      "scenario": "full"
+    },
+    {
+      "split": "train",
+      "seed": 10169,
+      "scenario": "empty"
+    },
+    {
+      "split": "train",
+      "seed": 10170,
+      "scenario": "blocked"
+    },
+    {
+      "split": "train",
+      "seed": 10171,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10172,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10173,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10174,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10175,
+      "scenario": "occluded"
+    },
+    {
+      "split": "train",
+      "seed": 10176,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10177,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10178,
+      "scenario": "normal"
+    },
+    {
+      "split": "train",
+      "seed": 10179,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20000,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20001,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20002,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20003,
+      "scenario": "occluded"
+    },
+    {
+      "split": "val",
+      "seed": 20004,
+      "scenario": "boundary"
+    },
+    {
+      "split": "val",
+      "seed": 20005,
+      "scenario": "blocked"
+    },
+    {
+      "split": "val",
+      "seed": 20006,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20007,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20008,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20009,
+      "scenario": "occluded"
+    },
+    {
+      "split": "val",
+      "seed": 20010,
+      "scenario": "boundary"
+    },
+    {
+      "split": "val",
+      "seed": 20011,
+      "scenario": "blocked"
+    },
+    {
+      "split": "val",
+      "seed": 20012,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20013,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20014,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20015,
+      "scenario": "occluded"
+    },
+    {
+      "split": "val",
+      "seed": 20016,
+      "scenario": "boundary"
+    },
+    {
+      "split": "val",
+      "seed": 20017,
+      "scenario": "blocked"
+    },
+    {
+      "split": "val",
+      "seed": 20018,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20019,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20020,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20021,
+      "scenario": "occluded"
+    },
+    {
+      "split": "val",
+      "seed": 20022,
+      "scenario": "boundary"
+    },
+    {
+      "split": "val",
+      "seed": 20023,
+      "scenario": "blocked"
+    },
+    {
+      "split": "val",
+      "seed": 20024,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20025,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20026,
+      "scenario": "normal"
+    },
+    {
+      "split": "val",
+      "seed": 20027,
+      "scenario": "occluded"
+    },
+    {
+      "split": "val",
+      "seed": 20028,
+      "scenario": "boundary"
+    },
+    {
+      "split": "val",
+      "seed": 20029,
+      "scenario": "blocked"
+    },
+    {
+      "split": "test",
+      "seed": 30000,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30001,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30002,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30003,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30004,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30005,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30006,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30007,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30008,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 30009,
+      "scenario": "normal"
+    },
+    {
+      "split": "test",
+      "seed": 40000,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40001,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40002,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40003,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40004,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40005,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40006,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40007,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40008,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 40009,
+      "scenario": "occluded"
+    },
+    {
+      "split": "test",
+      "seed": 50000,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50001,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50002,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50003,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50004,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50005,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50006,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50007,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50008,
+      "scenario": "boundary"
+    },
+    {
+      "split": "test",
+      "seed": 50009,
+      "scenario": "boundary"
+    }
+  ],
+  "frozen_thresholds": {
+    "low": 0.2,
+    "high": 0.5,
+    "overlap_fraction": 0.05
+  },
+  "test_policy": "30 independent seeds, 10 per predefined generation condition; no tuning on test",
+  "assets": "Original procedural vehicle graphics in parking_hu/scenes.py; synthetic domain only"
+}

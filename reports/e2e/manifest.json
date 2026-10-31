@@ -1,0 +1,50 @@
+[
+  {
+    "id": "E01",
+    "seed": 91001,
+    "scenario": "empty",
+    "expectation": "双模式均推荐合法真实空闲可达普通位"
+  },
+  {
+    "id": "E02",
+    "seed": 91002,
+    "scenario": "normal",
+    "expectation": "背景占用下正常推荐"
+  },
+  {
+    "id": "E03",
+    "seed": 91003,
+    "scenario": "normal",
+    "expectation": "新能源充电需求仅推荐充电位"
+  },
+  {
+    "id": "E04",
+    "seed": 91004,
+    "scenario": "normal",
+    "expectation": "有资格无障碍需求仅推荐无障碍位"
+  },
+  {
+    "id": "E05",
+    "seed": 91005,
+    "scenario": "full",
+    "expectation": "普通位全满不得错荐占用位"
+  },
+  {
+    "id": "E06",
+    "seed": 91006,
+    "scenario": "normal",
+    "expectation": "实际P002不同于推荐，寻车终点为其外接近点"
+  },
+  {
+    "id": "E07",
+    "seed": 91007,
+    "scenario": "normal",
+    "expectation": "实际P036的必经人行通道被水平车阻断时no_route"
+  },
+  {
+    "id": "E08",
+    "seed": 91008,
+    "scenario": "normal",
+    "expectation": "更新场景立即撤销旧路线且拒绝过期确认"
+  }
+]

@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "real_model": true,
+  "validation_kind": "actual browser actions and live API; no mocked responses",
+  "base_url": "http://127.0.0.1:8765",
+  "started_at": "2026-10-31T03:55:28.391Z",
+  "checks": [
+    {
+      "name": "model_file_matches_running_real_service",
+      "passed": true
+    },
+    {
+      "name": "real_yolo_initial_frame_and_52_spots",
+      "passed": true,
+      "frame_id": "v00001_f00001",
+      "detections": 30
+    },
+    {
+      "name": "live_occupancy_counts_sum_to_52",
+      "passed": true,
+      "sum": 52
+    },
+    {
+      "name": "layers_do_not_modify_snapshot",
+      "passed": true
+    },
+    {
+      "name": "fuel_charging_failure_in_chinese",
+      "passed": true,
+      "reason": "fuel_cannot_charge"
+    },
+    {
+      "name": "empty_scene_runs_real_inference",
+      "passed": true,
+      "frame_id": "v00002_f00002"
+    },
+    {
+      "name": "free_tooltip_uses_chinese_reason",
+      "passed": true
+    },
+    {
+      "name": "allocate_creates_planned_session_with_live_frame",
+      "passed": true,
+      "target": "P035"
+    },
+    {
+      "name": "dual_mode_replan",
+      "passed": true,
+      "near_destination": "P035",
+      "near_exit": "P035"
+    },
+    {
+      "name": "scene_change_invalidates_old_route",
+      "passed": true
+    },
+    {
+      "name": "stale_confirmation_preserves_planned_state",
+      "passed": true,
+      "message": "场景版本已变化，请重新规划后再确认。"
+    },
+    {
+      "name": "replan_recovers_current_route",
+      "passed": true
+    },
+    {
+      "name": "map_click_selects_actual_spot",
+      "passed": true,
+      "actual_spot_id": "P001"
+    },
+    {
+      "name": "actual_deviation_confirmation_and_real_reinference",
+      "passed": true,
+      "recommended": "P035",
+      "actual": "P001",
+      "detections": 1
+    },
+    {
+      "name": "background_update_preserves_actual_parked_vehicle",
+      "passed": true,
+      "frame_id": "v00005_f00005",
+      "detections": 23
+    },
+    {
+      "name": "invalid_start_chinese_failure_preserves_parking",
+      "passed": true,
+      "message": "起点须在人行通道内，并避开墙柱及检测到的车辆。"
+    },
+    {
+      "name": "continued_same_parked_real_session",
+      "passed": true,
+      "frame_id": "v00005_f00005"
+    },
+    {
+      "name": "canvas_event_to_metre_transform_error_below_one_micrometre",
+      "passed": true,
+      "picked_m": [
+        42.594783,
+        3.956549
+      ],
+      "event_expected_m": [
+        42.59478260869565,
+        3.9565486178574583
+      ],
+      "max_error_m": 3.913043471470701e-7,
+      "event_client_px": [
+        981,
+        480
+      ]
+    },
+    {
+      "name": "reverse_find_reaches_actual_external_access",
+      "passed": true,
+      "target": "P001",
+      "end_m": [
+        6.25,
+        0.7
+      ],
+      "distances_m": {
+        "walk_to_vehicle": 39.61
+      }
+    },
+    {
+      "name": "live_report_image_wide_enough",
+      "passed": true,
+      "width": 1524,
+      "height": 1197.671875,
+      "ratio": 0.7858739337270341
+    },
+    {
+      "name": "zero_distance_single_node_route_displayed_valid",
+      "passed": true,
+      "path_m": [
+        [
+          6.25,
+          0.7
+        ]
+      ]
+    },
+    {
+      "name": "depart_clears_session_and_reinfers",
+      "passed": true
+    },
+    {
+      "name": "composite_need_explicit_chinese_failure",
+      "passed": true,
+      "message": "本地图没有同时满足无障碍和充电需求的复合车位。"
+    },
+    {
+      "name": "final_reset_demo_ready",
+      "passed": true,
+      "frame_id": "v00007_f00007",
+      "seed": 42,
+      "detections": 30
+    },
+    {
+      "name": "real_state_mobile_no_horizontal_overflow",
+      "passed": true,
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "name": "no_browser_or_console_errors",
+      "passed": true
+    },
+    {
+      "name": "final_visual_copy_has_single_deviation_notice",
+      "passed": true,
+      "text": "人工确认记录与感知核对：实际停在 P001，与推荐的 P035 不同。寻车以实际记录为准。"
+    },
+    {
+      "name": "final_visual_capture_and_reset_after_copy_cleanup",
+      "passed": true
+    }
+  ],
+  "browser_errors": [],
+  "console_errors": [],
+  "harness_note": "An initial selector attempt targeted the visually hidden native checkbox; the final run clicks its visible label, as a user does.",
+  "model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "completed_at": "2026-10-31T03:57:53.346Z",
+  "error_count": 0,
+  "superseded_harness_checks": [
+    {
+      "name": "canvas_coordinate_error_below_one_micrometre",
+      "passed": false,
+      "picked_m": [
+        42.594783,
+        3.956549
+      ],
+      "superseded_reason": "The initial assertion compared to requested subpixel mouse coordinates. The corrected assertion compares the real MouseEvent coordinates with the canvas transform; browser pointer quantization is retained rather than treated as numeric conversion error."
+    }
+  ],
+  "continued_at": "2026-10-31T03:56:32.368Z",
+  "screenshot": {
+    "file": "reports/ui_live.png",
+    "real_model": true,
+    "frame_id": "v00010_f00010",
+    "actual_spot_id": "P001",
+    "width": 1524,
+    "height": 1197.671875,
+    "ratio": 0.7858739337270341
+  },
+  "final_state": {
+    "state": "idle",
+    "scenario": "normal",
+    "seed": 42,
+    "frame_id": "v00011_f00011",
+    "detections": 30
+  }
+}

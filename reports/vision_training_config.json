@@ -1,0 +1,43 @@
+{
+  "train_args": {
+    "data": "data/synthetic/dataset.yaml",
+    "epochs": 35,
+    "imgsz": 832,
+    "batch": 8,
+    "device": 0,
+    "workers": 0,
+    "seed": 20261031,
+    "deterministic": true,
+    "patience": 12,
+    "optimizer": "AdamW",
+    "lr0": 0.003,
+    "lrf": 0.05,
+    "amp": false,
+    "mosaic": 0.5,
+    "close_mosaic": 8,
+    "scale": 0.25,
+    "translate": 0.05,
+    "degrees": 0.0,
+    "fliplr": 0.5,
+    "flipud": 0.5,
+    "hsv_h": 0.015,
+    "hsv_s": 0.25,
+    "hsv_v": 0.25,
+    "cache": false,
+    "plots": true,
+    "project": "data/training_runs",
+    "name": "synthetic_v1",
+    "exist_ok": false,
+    "save": true,
+    "verbose": false
+  },
+  "pretrained_exploration_metrics": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 514,
+    "precision": null,
+    "recall": 0.0
+  },
+  "purpose": "Adapt COCO pretrained detector to the declared procedural simulation domain; test split not used",
+  "path_note": "Local absolute paths were made repository-relative for distribution; numeric training parameters are unchanged. vision_train.py resolves the actual project directory."
+}

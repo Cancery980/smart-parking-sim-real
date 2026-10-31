@@ -1,0 +1,44 @@
+{
+  "tested_at_utc": "2026-10-31T04:18:29.634872+00:00",
+  "application": "ParkingDemo.exe",
+  "url": "http://127.0.0.1:8766",
+  "inference_device": "cpu",
+  "real_model_inference": true,
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "report_present": true,
+  "checks": [
+    {
+      "case": "frozen_start_real_yolo",
+      "passed": true,
+      "detections": 30,
+      "frame_id": "v00001_f00001"
+    },
+    {
+      "case": "malformed_fields_rejected_by_frozen_code",
+      "passed": true,
+      "inputs": 4
+    },
+    {
+      "case": "allocate_empty",
+      "passed": true,
+      "target": "P035"
+    },
+    {
+      "case": "actual_deviation_and_real_yolo_recheck",
+      "passed": true,
+      "actual": "P002",
+      "detections": 1
+    },
+    {
+      "case": "find_actual_vehicle",
+      "passed": true,
+      "distance_m": 37.15
+    },
+    {
+      "case": "depart_and_real_yolo_recheck",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Executed the packaged EXE on this Windows 11 x64 host; other PCs are not individually tested."
+}

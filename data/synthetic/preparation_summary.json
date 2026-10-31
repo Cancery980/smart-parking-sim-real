@@ -1,0 +1,92 @@
+{
+  "split_counts": {
+    "exploration": 24,
+    "train": 180,
+    "val": 30,
+    "test": 30
+  },
+  "vehicle_counts": {
+    "exploration": 514,
+    "train": 3744,
+    "val": 526,
+    "test": 607
+  },
+  "duplicate_images": [
+    {
+      "split": "exploration",
+      "scene_id": "empty_1010",
+      "empty": true
+    },
+    {
+      "split": "exploration",
+      "scene_id": "empty_1016",
+      "empty": true
+    },
+    {
+      "split": "exploration",
+      "scene_id": "empty_1022",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10013",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10026",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10039",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10052",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10065",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10078",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10091",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10104",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10117",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10130",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10143",
+      "empty": true
+    },
+    {
+      "split": "train",
+      "scene_id": "empty_10169",
+      "empty": true
+    }
+  ],
+  "frozen_design_sha256": "850192c7a6af1bb12abbf12a0147eac3fecf08a1870f74ce12564de4aa1b6ee8"
+}

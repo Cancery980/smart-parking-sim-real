@@ -1,0 +1,9 @@
+.venv/
+runtime/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.local-python.txt
+data/training_runs/
+Ultralytics/

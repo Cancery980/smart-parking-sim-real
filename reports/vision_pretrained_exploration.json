@@ -1,0 +1,350 @@
+{
+  "weights": "models/yolov8n.pt",
+  "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "ultralytics": "8.3.235",
+  "torch": "2.5.1+cu124",
+  "imgsz": 832,
+  "confidence": 0.2,
+  "iou_match": 0.5,
+  "metrics": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 514,
+    "precision": null,
+    "recall": 0.0
+  },
+  "scenes": [
+    {
+      "scene_id": "normal_1000",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 23
+      },
+      "occupancy_confusion": {
+        "free->free": 29,
+        "occupied->free": 23
+      }
+    },
+    {
+      "scene_id": "normal_1001",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "occupancy_confusion": {
+        "free->free": 41,
+        "occupied->free": 11
+      }
+    },
+    {
+      "scene_id": "occluded_1002",
+      "scenario": "occluded",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 26
+      },
+      "occupancy_confusion": {
+        "free->free": 26,
+        "occupied->free": 26
+      }
+    },
+    {
+      "scene_id": "boundary_1003",
+      "scenario": "boundary",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 20
+      },
+      "occupancy_confusion": {
+        "free->free": 26,
+        "occupied->free": 26
+      }
+    },
+    {
+      "scene_id": "empty_1004",
+      "scenario": "empty",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "occupancy_confusion": {
+        "free->free": 52
+      }
+    },
+    {
+      "scene_id": "full_1005",
+      "scenario": "full",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 52
+      },
+      "occupancy_confusion": {
+        "occupied->free": 52
+      }
+    },
+    {
+      "scene_id": "normal_1006",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
+      },
+      "occupancy_confusion": {
+        "occupied->free": 21,
+        "free->free": 31
+      }
+    },
+    {
+      "scene_id": "normal_1007",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "occupancy_confusion": {
+        "free->free": 41,
+        "occupied->free": 11
+      }
+    },
+    {
+      "scene_id": "occluded_1008",
+      "scenario": "occluded",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 26
+      },
+      "occupancy_confusion": {
+        "occupied->free": 26,
+        "free->free": 26
+      }
+    },
+    {
+      "scene_id": "boundary_1009",
+      "scenario": "boundary",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 14
+      },
+      "occupancy_confusion": {
+        "occupied->free": 19,
+        "free->free": 33
+      }
+    },
+    {
+      "scene_id": "empty_1010",
+      "scenario": "empty",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "occupancy_confusion": {
+        "free->free": 52
+      }
+    },
+    {
+      "scene_id": "full_1011",
+      "scenario": "full",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 52
+      },
+      "occupancy_confusion": {
+        "occupied->free": 52
+      }
+    },
+    {
+      "scene_id": "normal_1012",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 20
+      },
+      "occupancy_confusion": {
+        "occupied->free": 20,
+        "free->free": 32
+      }
+    },
+    {
+      "scene_id": "normal_1013",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 25
+      },
+      "occupancy_confusion": {
+        "occupied->free": 25,
+        "free->free": 27
+      }
+    },
+    {
+      "scene_id": "occluded_1014",
+      "scenario": "occluded",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 26
+      },
+      "occupancy_confusion": {
+        "occupied->free": 26,
+        "free->free": 26
+      }
+    },
+    {
+      "scene_id": "boundary_1015",
+      "scenario": "boundary",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 13
+      },
+      "occupancy_confusion": {
+        "free->free": 35,
+        "occupied->free": 17
+      }
+    },
+    {
+      "scene_id": "empty_1016",
+      "scenario": "empty",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "occupancy_confusion": {
+        "free->free": 52
+      }
+    },
+    {
+      "scene_id": "full_1017",
+      "scenario": "full",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 52
+      },
+      "occupancy_confusion": {
+        "occupied->free": 52
+      }
+    },
+    {
+      "scene_id": "normal_1018",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 22
+      },
+      "occupancy_confusion": {
+        "free->free": 30,
+        "occupied->free": 22
+      }
+    },
+    {
+      "scene_id": "normal_1019",
+      "scenario": "normal",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "occupancy_confusion": {
+        "free->free": 41,
+        "occupied->free": 11
+      }
+    },
+    {
+      "scene_id": "occluded_1020",
+      "scenario": "occluded",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 13
+      },
+      "occupancy_confusion": {
+        "free->free": 39,
+        "occupied->free": 13
+      }
+    },
+    {
+      "scene_id": "boundary_1021",
+      "scenario": "boundary",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 24
+      },
+      "occupancy_confusion": {
+        "occupied->free": 33,
+        "free->free": 19
+      }
+    },
+    {
+      "scene_id": "empty_1022",
+      "scenario": "empty",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "occupancy_confusion": {
+        "free->free": 52
+      }
+    },
+    {
+      "scene_id": "full_1023",
+      "scenario": "full",
+      "detections": [],
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 52
+      },
+      "occupancy_confusion": {
+        "occupied->free": 52
+      }
+    }
+  ],
+  "occupancy_confusion": {
+    "free->free": 710,
+    "occupied->free": 538
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "completed_at_utc": "2026-10-31T03:52:58.540466+00:00",
+  "planner": "parking_hu.reference_planner:Planner",
+  "planner_source_sha256": "9791d679e12c8b13c7fe415c7900d5e1827564f34e2ad14ed65369cb35e3f7bc",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "package_versions": {
+    "networkx": "3.4.2",
+    "shapely": "2.1.1",
+    "ultralytics": "8.3.235",
+    "torch": "2.5.1+cu124"
+  },
+  "scope": "Reference adapter integration comparison; rerun after replacing Liang Ke's planner. Synthetic renderer only.",
+  "independent_scenes": 30,
+  "paired_requests": 60,
+  "strategy_rows": 120,
+  "test_manifest_sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+  "frozen_requests_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "cache_sha256": {
+    "normal_30000": "cb6d84ae2760ecc51f87b4fa81bd89b15bafb37e6a17dc54a6d6889fb457bdd0",
+    "normal_30001": "40f2534ac5b8737627bf5711ec7446e4547316485d2ff9d04d7b6957d78fc571",
+    "normal_30002": "5dc54e7dc39ba3168aa2f6dcb968b749950431f08a039e0cf12a89417d09be55",
+    "normal_30003": "ba9f3d1faece28ebc14e57c3452d686413a57545ebc09a84880ccd7554cd2089",
+    "normal_30004": "eed2a26bef5e6f8320b6f8f3915568b4bfd4a4a27f9cc1fa71718fbf9689aba5",
+    "normal_30005": "3b06ce14ff64e04bfe41590f796be463e07c19e7f834f180edeeda48b10608cf",
+    "normal_30006": "7d7ba0f86c5b3ff529b3b0168700f56af34aae6460dde1fcba9341591a087fe5",
+    "normal_30007": "b7bfdd4e4ba7366caf17c36610167a4857a8c82fe479492df3a05f83561a135f",
+    "normal_30008": "8fbb4f383c0020b2a8e70fc18252f0dfa94a796395020eb98bb542a3ce04c8aa",
+    "normal_30009": "c6b5e825b7611ab8b00240ef795b2dcd3ea551d774f3b00e46085a67def13d4b",
+    "occluded_40000": "345db12f8b04fc1d37d19798d9d702c510854df1e2e15015956ecce3d55db89d",
+    "occluded_40001": "363e877ef22f548aeb0ca27f37ac26c7f23a8bc0f7ff3b8623a6c63d46a6a58f",
+    "occluded_40002": "592095f360cd9b5f6275a0f9adbdb286a488f69dd683dbf4f6db0f9ce25f0a17",
+    "occluded_40003": "0b443cfa63bd804451b47a4e5461733af43fe833b6e2b99e59050d2bcd8e8b82",
+    "occluded_40004": "80d818a713f4c679996ccec16e67a95c0c304c265c404137d6be1a8de3ef4eca",
+    "occluded_40005": "7babbc23a395f490de16d0e337df5599cf3e9aec0209d4989a51996f60c3ddb4",
+    "occluded_40006": "4fef5b65c94afa5d86fe58e749493c5eacd95a47b0cc102d69615bdefe157553",
+    "occluded_40007": "b07b1960b31c8c6dc096cc1351707488713407cd3a48f56eeec67e6b72a5e1df",
+    "occluded_40008": "706e8dabb0ff661d191b5c0d62ea49b384ce29d1624b70003010ac707e008c42",
+    "occluded_40009": "403ed95ac76624452e6e0045a3c44e9f2e657885430b5c0e30ef83a1b29cb29e",
+    "boundary_50000": "bd0d91c51402e3a15bd726181e3e52fa87e620e6b36f2e5d24be862f67c56602",
+    "boundary_50001": "b1b46f6bbab356c5bba05e28b7616a6dca6d2eaddebb9393e72ff3c600577080",
+    "boundary_50002": "977c95a06a9b103af070a219bb2129bb50a7ab92f7b3231b347b88d9df4c2d15",
+    "boundary_50003": "8f9a312309bb452abb71b39f5af4ab0eef82070deed8b129efe18822dd0e02ee",
+    "boundary_50004": "64947373bce6ad0afaef39a39c20c53502ff410c0166ea69a537cb085ead548c",
+    "boundary_50005": "4a235f2cf2400c57a3c8e211b015053ac7b4dd6ecdf073a1ca394cf425e03206",
+    "boundary_50006": "4b906a9f5622239f9420e9682114863fef901e4fede609ba06513162a66425a7",
+    "boundary_50007": "df25aa73b6ea44938e7daaa7cfd526d360cfd65729e3d09fa301fe144dc61828",
+    "boundary_50008": "83cf6722e5787814bdc33f499ce0b3e72eee8c3a0987c87b07648a4463c3fb3d",
+    "boundary_50009": "1975c3fb95dfbad76a7c6ce547303cecd1b38ea2400c55eb395d29bdc4b90129"
+  },
+  "thresholds": {
+    "high": 0.5,
+    "low": 0.2,
+    "overlap_fraction": 0.05
+  },
+  "overall": {
+    "B": {
+      "N": 60,
+      "R": 60,
+      "F": 9,
+      "V": 51,
+      "false_recommendation_rate": 0.15,
+      "effective_recommendation_rate": 0.85,
+      "unrecommended_rate": 0.0,
+      "failure_reasons": {},
+      "requests_with_unknown": 0,
+      "requests_with_unknown_eligible": 0
+    },
+    "S": {
+      "N": 60,
+      "R": 58,
+      "F": 0,
+      "V": 58,
+      "false_recommendation_rate": 0.0,
+      "effective_recommendation_rate": 0.9666666666666667,
+      "unrecommended_rate": 0.03333333333333333,
+      "failure_reasons": {
+        "no_observed_free_spot": 2
+      },
+      "requests_with_unknown": 20,
+      "requests_with_unknown_eligible": 14
+    }
+  },
+  "subgroups": {
+    "group": {
+      "boundary": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 9,
+          "V": 11,
+          "false_recommendation_rate": 0.45,
+          "effective_recommendation_rate": 0.55,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 18,
+          "F": 0,
+          "V": 18,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 0.9,
+          "unrecommended_rate": 0.1,
+          "failure_reasons": {
+            "no_observed_free_spot": 2
+          },
+          "requests_with_unknown": 20,
+          "requests_with_unknown_eligible": 14
+        }
+      },
+      "normal": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        }
+      },
+      "occluded": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        }
+      }
+    },
+    "mode": {
+      "near_destination": {
+        "B": {
+          "N": 30,
+          "R": 30,
+          "F": 4,
+          "V": 26,
+          "false_recommendation_rate": 0.13333333333333333,
+          "effective_recommendation_rate": 0.8666666666666667,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 30,
+          "R": 29,
+          "F": 0,
+          "V": 29,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 0.9666666666666667,
+          "unrecommended_rate": 0.03333333333333333,
+          "failure_reasons": {
+            "no_observed_free_spot": 1
+          },
+          "requests_with_unknown": 10,
+          "requests_with_unknown_eligible": 7
+        }
+      },
+      "near_exit": {
+        "B": {
+          "N": 30,
+          "R": 30,
+          "F": 5,
+          "V": 25,
+          "false_recommendation_rate": 0.16666666666666666,
+          "effective_recommendation_rate": 0.8333333333333334,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 30,
+          "R": 29,
+          "F": 0,
+          "V": 29,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 0.9666666666666667,
+          "unrecommended_rate": 0.03333333333333333,
+          "failure_reasons": {
+            "no_observed_free_spot": 1
+          },
+          "requests_with_unknown": 10,
+          "requests_with_unknown_eligible": 7
+        }
+      }
+    },
+    "eligible_type": {
+      "accessible": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 3,
+          "V": 17,
+          "false_recommendation_rate": 0.15,
+          "effective_recommendation_rate": 0.85,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 18,
+          "F": 0,
+          "V": 18,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 0.9,
+          "unrecommended_rate": 0.1,
+          "failure_reasons": {
+            "no_observed_free_spot": 2
+          },
+          "requests_with_unknown": 8,
+          "requests_with_unknown_eligible": 4
+        }
+      },
+      "charging": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 2,
+          "V": 18,
+          "false_recommendation_rate": 0.1,
+          "effective_recommendation_rate": 0.9,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 6,
+          "requests_with_unknown_eligible": 4
+        }
+      },
+      "normal": {
+        "B": {
+          "N": 20,
+          "R": 20,
+          "F": 4,
+          "V": 16,
+          "false_recommendation_rate": 0.2,
+          "effective_recommendation_rate": 0.8,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 0,
+          "requests_with_unknown_eligible": 0
+        },
+        "S": {
+          "N": 20,
+          "R": 20,
+          "F": 0,
+          "V": 20,
+          "false_recommendation_rate": 0.0,
+          "effective_recommendation_rate": 1.0,
+          "unrecommended_rate": 0.0,
+          "failure_reasons": {},
+          "requests_with_unknown": 6,
+          "requests_with_unknown_eligible": 6
+        }
+      }
+    }
+  },
+  "trigger_analysis": {
+    "S_requests_with_eligible_unknown": 14,
+    "invalid_frame_requests_per_strategy": 0,
+    "same_status_and_target_pairs": 51,
+    "changed_status_or_target_pairs": 9,
+    "eligible_unknown_candidates_already_blocked_by_common_obstacles": 0,
+    "eligible_unknown_candidates_with_three_routes": 44
+  },
+  "conclusion": "本组数据中三态策略降低假空位推荐率；结论仅限于此次合成场景，不证明现实泛化。"
+}

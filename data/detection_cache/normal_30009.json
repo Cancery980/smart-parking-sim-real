@@ -1,0 +1,1514 @@
+{
+  "scene_id": "normal_30009",
+  "group": "normal",
+  "image": "data/synthetic/images/test/normal_30009.png",
+  "image_sha256": "bd7f1e6c6002124c6192c9fb101c617b0646b9c6f1289b10a581220df00d2bb6",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "snapshot": {
+    "map_id": "demo52_v12",
+    "scene_version": 1,
+    "frame_id": "holdout_09_bd7f1e6c",
+    "valid": true,
+    "error": null,
+    "occupancy": {
+      "P001": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P002": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d016"
+        ]
+      },
+      "P003": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P004": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d009"
+        ]
+      },
+      "P005": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d006"
+        ]
+      },
+      "P006": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d000"
+        ]
+      },
+      "P007": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P008": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P009": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d004"
+        ]
+      },
+      "P010": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d013"
+        ]
+      },
+      "P011": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P012": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d027"
+        ]
+      },
+      "P013": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d021"
+        ]
+      },
+      "P014": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d024"
+        ]
+      },
+      "P015": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P016": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d019"
+        ]
+      },
+      "P017": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d018"
+        ]
+      },
+      "P018": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P019": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P020": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d007"
+        ]
+      },
+      "P021": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d001"
+        ]
+      },
+      "P022": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d025"
+        ]
+      },
+      "P023": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d029"
+        ]
+      },
+      "P024": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P025": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d026"
+        ]
+      },
+      "P026": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P027": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d015"
+        ]
+      },
+      "P028": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d002"
+        ]
+      },
+      "P029": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d023"
+        ]
+      },
+      "P030": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P031": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P032": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P033": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d028"
+        ]
+      },
+      "P034": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d017"
+        ]
+      },
+      "P035": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d012"
+        ]
+      },
+      "P036": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d011"
+        ]
+      },
+      "P037": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d020"
+        ]
+      },
+      "P038": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P039": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P040": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P041": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P042": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d014"
+        ]
+      },
+      "P043": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d008"
+        ]
+      },
+      "P044": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d005"
+        ]
+      },
+      "P045": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P046": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P047": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d022"
+        ]
+      },
+      "P048": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d010"
+        ]
+      },
+      "P049": {
+        "state": "occupied",
+        "reason": "high_confidence_center",
+        "detection_ids": [
+          "holdout_09_bd7f1e6c:d003"
+        ]
+      },
+      "P050": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P051": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      },
+      "P052": {
+        "state": "free",
+        "reason": "observed_free",
+        "detection_ids": []
+      }
+    },
+    "detections": [
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d000",
+        "bbox_xyxy_px": [
+          570.1443481445312,
+          61.416786193847656,
+          626.2138061523438,
+          198.11605834960938
+        ],
+        "class_name": "car",
+        "confidence": 0.9937561750411987,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          17.8170108795166,
+          1.9192745685577393,
+          19.569181442260742,
+          6.191126823425293
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d001",
+        "bbox_xyxy_px": [
+          1052.781982421875,
+          336.22540283203125,
+          1107.531005859375,
+          480.45648193359375
+        ],
+        "class_name": "car",
+        "confidence": 0.9925028085708618,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          32.899436950683594,
+          10.507043838500977,
+          34.61034393310547,
+          15.014265060424805
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d002",
+        "bbox_xyxy_px": [
+          571.9140625,
+          545.2261352539062,
+          630.134521484375,
+          689.4033813476562
+        ],
+        "class_name": "car",
+        "confidence": 0.9922316074371338,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          17.872314453125,
+          17.03831672668457,
+          19.69170379638672,
+          21.543855667114258
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d003",
+        "bbox_xyxy_px": [
+          891.891845703125,
+          835.069091796875,
+          949.90771484375,
+          966.6015625
+        ],
+        "class_name": "car",
+        "confidence": 0.9920365214347839,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          27.871620178222656,
+          26.095909118652344,
+          29.684616088867188,
+          30.206298828125
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d004",
+        "bbox_xyxy_px": [
+          815.0404663085938,
+          63.5108642578125,
+          869.0861206054688,
+          192.8441162109375
+        ],
+        "class_name": "car",
+        "confidence": 0.99104905128479,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          25.470014572143555,
+          1.9847145080566406,
+          27.1589412689209,
+          6.026378631591797
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d005",
+        "bbox_xyxy_px": [
+          1247.3822021484375,
+          57.22613525390625,
+          1302.1324462890625,
+          189.02749633789062
+        ],
+        "class_name": "car",
+        "confidence": 0.9900021553039551,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          38.98069381713867,
+          1.7883167266845703,
+          40.6916389465332,
+          5.907109260559082
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d006",
+        "bbox_xyxy_px": [
+          493.255859375,
+          59.384002685546875,
+          546.9383544921875,
+          187.8257598876953
+        ],
+        "class_name": "car",
+        "confidence": 0.989621639251709,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          15.41424560546875,
+          1.8557500839233398,
+          17.09182357788086,
+          5.8695549964904785
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d007",
+        "bbox_xyxy_px": [
+          971.8408203125,
+          340.9222412109375,
+          1031.8123779296875,
+          475.1307373046875
+        ],
+        "class_name": "car",
+        "confidence": 0.9896007180213928,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          30.370025634765625,
+          10.653820037841797,
+          32.244136810302734,
+          14.847835540771484
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d008",
+        "bbox_xyxy_px": [
+          1131.41357421875,
+          53.54986572265625,
+          1185.01904296875,
+          194.9346923828125
+        ],
+        "class_name": "car",
+        "confidence": 0.9892919659614563,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          35.35667419433594,
+          1.6734333038330078,
+          37.03184509277344,
+          6.091709136962891
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d009",
+        "bbox_xyxy_px": [
+          412.8270263671875,
+          57.72499084472656,
+          471.0262451171875,
+          192.17172241210938
+        ],
+        "class_name": "car",
+        "confidence": 0.9891869425773621,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          12.90084457397461,
+          1.803905963897705,
+          14.71957015991211,
+          6.005366325378418
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d010",
+        "bbox_xyxy_px": [
+          811.8551025390625,
+          831.4825439453125,
+          868.1656494140625,
+          963.2237548828125
+        ],
+        "class_name": "car",
+        "confidence": 0.9889060258865356,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          25.370471954345703,
+          25.983829498291016,
+          27.130176544189453,
+          30.10074234008789
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d011",
+        "bbox_xyxy_px": [
+          168.16122436523438,
+          824.729736328125,
+          227.95376586914062,
+          964.3280029296875
+        ],
+        "class_name": "car",
+        "confidence": 0.9881728291511536,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          5.255038261413574,
+          25.772804260253906,
+          7.1235551834106445,
+          30.135250091552734
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d012",
+        "bbox_xyxy_px": [
+          1130.659423828125,
+          543.828857421875,
+          1188.907958984375,
+          688.789306640625
+        ],
+        "class_name": "car",
+        "confidence": 0.9880040884017944,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          35.333106994628906,
+          16.994651794433594,
+          37.15337371826172,
+          21.52466583251953
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d013",
+        "bbox_xyxy_px": [
+          173.84603881835938,
+          337.82781982421875,
+          231.18502807617188,
+          481.5255126953125
+        ],
+        "class_name": "car",
+        "confidence": 0.9871429800987244,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          5.4326887130737305,
+          10.557119369506836,
+          7.224532127380371,
+          15.047672271728516
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d014",
+        "bbox_xyxy_px": [
+          1023.1740112304688,
+          54.946929931640625,
+          1078.175048828125,
+          195.2003173828125
+        ],
+        "class_name": "car",
+        "confidence": 0.9865645170211792,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          31.97418785095215,
+          1.7170915603637695,
+          33.692970275878906,
+          6.100009918212891
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d015",
+        "bbox_xyxy_px": [
+          491.0942687988281,
+          552.38330078125,
+          549.580078125,
+          683.902587890625
+        ],
+        "class_name": "car",
+        "confidence": 0.9859806299209595,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          15.346695899963379,
+          17.261978149414062,
+          17.17437744140625,
+          21.37195587158203
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d016",
+        "bbox_xyxy_px": [
+          248.0267333984375,
+          56.43128967285156,
+          307.25018310546875,
+          199.12570190429688
+        ],
+        "class_name": "car",
+        "confidence": 0.9857802987098694,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          7.750835418701172,
+          1.7634778022766113,
+          9.601568222045898,
+          6.222678184509277
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d017",
+        "bbox_xyxy_px": [
+          1051.783935546875,
+          545.304443359375,
+          1108.15673828125,
+          686.92138671875
+        ],
+        "class_name": "car",
+        "confidence": 0.9857504367828369,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          32.868247985839844,
+          17.04076385498047,
+          34.62989807128906,
+          21.466293334960938
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d018",
+        "bbox_xyxy_px": [
+          734.5963134765625,
+          335.56878662109375,
+          789.0489501953125,
+          478.55322265625
+        ],
+        "class_name": "car",
+        "confidence": 0.9837162494659424,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          22.956134796142578,
+          10.48652458190918,
+          24.657779693603516,
+          14.954788208007812
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d019",
+        "bbox_xyxy_px": [
+          652.0006103515625,
+          343.9067687988281,
+          705.8668212890625,
+          479.5873718261719
+        ],
+        "class_name": "car",
+        "confidence": 0.9835807681083679,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          20.375019073486328,
+          10.747086524963379,
+          22.058338165283203,
+          14.987105369567871
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d020",
+        "bbox_xyxy_px": [
+          251.79774475097656,
+          827.890380859375,
+          312.78955078125,
+          970.95751953125
+        ],
+        "class_name": "car",
+        "confidence": 0.9833076000213623,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          7.868679523468018,
+          25.87157440185547,
+          9.774673461914062,
+          30.342422485351562
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d021",
+        "bbox_xyxy_px": [
+          410.00518798828125,
+          339.20068359375,
+          467.24700927734375,
+          473.590087890625
+        ],
+        "class_name": "car",
+        "confidence": 0.9823610782623291,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          12.812662124633789,
+          10.600021362304688,
+          14.601469039916992,
+          14.799690246582031
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d022",
+        "bbox_xyxy_px": [
+          732.1810302734375,
+          823.9547119140625,
+          788.1290283203125,
+          968.01953125
+        ],
+        "class_name": "car",
+        "confidence": 0.9822795987129211,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          22.880657196044922,
+          25.748584747314453,
+          24.629032135009766,
+          30.2506103515625
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d023",
+        "bbox_xyxy_px": [
+          648.1939697265625,
+          553.8132934570312,
+          708.2021484375,
+          681.4439086914062
+        ],
+        "class_name": "car",
+        "confidence": 0.9805476665496826,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          20.256061553955078,
+          17.306665420532227,
+          22.131317138671875,
+          21.295122146606445
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d024",
+        "bbox_xyxy_px": [
+          493.8857421875,
+          332.38885498046875,
+          551.0350341796875,
+          475.75177001953125
+        ],
+        "class_name": "car",
+        "confidence": 0.9805184602737427,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          15.433929443359375,
+          10.387151718139648,
+          17.219844818115234,
+          14.867242813110352
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d025",
+        "bbox_xyxy_px": [
+          1132.51806640625,
+          336.47589111328125,
+          1193.05810546875,
+          474.23077392578125
+        ],
+        "class_name": "car",
+        "confidence": 0.9793484210968018,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          35.39118957519531,
+          10.514871597290039,
+          37.28306579589844,
+          14.819711685180664
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d026",
+        "bbox_xyxy_px": [
+          328.5194091796875,
+          545.2280883789062,
+          387.3309326171875,
+          679.5364379882812
+        ],
+        "class_name": "car",
+        "confidence": 0.9776929020881653,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          10.266231536865234,
+          17.03837776184082,
+          12.10409164428711,
+          21.23551368713379
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d027",
+        "bbox_xyxy_px": [
+          335.93194580078125,
+          336.9613037109375,
+          388.75946044921875,
+          480.0594482421875
+        ],
+        "class_name": "car",
+        "confidence": 0.9767071008682251,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          10.497873306274414,
+          10.530040740966797,
+          12.148733139038086,
+          15.00185775756836
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d028",
+        "bbox_xyxy_px": [
+          974.880615234375,
+          541.6364135742188,
+          1031.12451171875,
+          685.1381225585938
+        ],
+        "class_name": "car",
+        "confidence": 0.9758092761039734,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          30.46501922607422,
+          16.926137924194336,
+          32.22264099121094,
+          21.410566329956055
+        ]
+      },
+      {
+        "detection_id": "holdout_09_bd7f1e6c:d029",
+        "bbox_xyxy_px": [
+          167.87759399414062,
+          541.4268798828125,
+          226.20431518554688,
+          683.7103271484375
+        ],
+        "class_name": "car",
+        "confidence": 0.9670570492744446,
+        "frame_id": "holdout_09_bd7f1e6c",
+        "scene_version": 1,
+        "bbox_m": [
+          5.2461748123168945,
+          16.91958999633789,
+          7.06888484954834,
+          21.365947723388672
+        ]
+      }
+    ],
+    "obstacles_m": [
+      [
+        17.8170108795166,
+        1.9192745685577393,
+        19.569181442260742,
+        6.191126823425293
+      ],
+      [
+        32.899436950683594,
+        10.507043838500977,
+        34.61034393310547,
+        15.014265060424805
+      ],
+      [
+        17.872314453125,
+        17.03831672668457,
+        19.69170379638672,
+        21.543855667114258
+      ],
+      [
+        27.871620178222656,
+        26.095909118652344,
+        29.684616088867188,
+        30.206298828125
+      ],
+      [
+        25.470014572143555,
+        1.9847145080566406,
+        27.1589412689209,
+        6.026378631591797
+      ],
+      [
+        38.98069381713867,
+        1.7883167266845703,
+        40.6916389465332,
+        5.907109260559082
+      ],
+      [
+        15.41424560546875,
+        1.8557500839233398,
+        17.09182357788086,
+        5.8695549964904785
+      ],
+      [
+        30.370025634765625,
+        10.653820037841797,
+        32.244136810302734,
+        14.847835540771484
+      ],
+      [
+        35.35667419433594,
+        1.6734333038330078,
+        37.03184509277344,
+        6.091709136962891
+      ],
+      [
+        12.90084457397461,
+        1.803905963897705,
+        14.71957015991211,
+        6.005366325378418
+      ],
+      [
+        25.370471954345703,
+        25.983829498291016,
+        27.130176544189453,
+        30.10074234008789
+      ],
+      [
+        5.255038261413574,
+        25.772804260253906,
+        7.1235551834106445,
+        30.135250091552734
+      ],
+      [
+        35.333106994628906,
+        16.994651794433594,
+        37.15337371826172,
+        21.52466583251953
+      ],
+      [
+        5.4326887130737305,
+        10.557119369506836,
+        7.224532127380371,
+        15.047672271728516
+      ],
+      [
+        31.97418785095215,
+        1.7170915603637695,
+        33.692970275878906,
+        6.100009918212891
+      ],
+      [
+        15.346695899963379,
+        17.261978149414062,
+        17.17437744140625,
+        21.37195587158203
+      ],
+      [
+        7.750835418701172,
+        1.7634778022766113,
+        9.601568222045898,
+        6.222678184509277
+      ],
+      [
+        32.868247985839844,
+        17.04076385498047,
+        34.62989807128906,
+        21.466293334960938
+      ],
+      [
+        22.956134796142578,
+        10.48652458190918,
+        24.657779693603516,
+        14.954788208007812
+      ],
+      [
+        20.375019073486328,
+        10.747086524963379,
+        22.058338165283203,
+        14.987105369567871
+      ],
+      [
+        7.868679523468018,
+        25.87157440185547,
+        9.774673461914062,
+        30.342422485351562
+      ],
+      [
+        12.812662124633789,
+        10.600021362304688,
+        14.601469039916992,
+        14.799690246582031
+      ],
+      [
+        22.880657196044922,
+        25.748584747314453,
+        24.629032135009766,
+        30.2506103515625
+      ],
+      [
+        20.256061553955078,
+        17.306665420532227,
+        22.131317138671875,
+        21.295122146606445
+      ],
+      [
+        15.433929443359375,
+        10.387151718139648,
+        17.219844818115234,
+        14.867242813110352
+      ],
+      [
+        35.39118957519531,
+        10.514871597290039,
+        37.28306579589844,
+        14.819711685180664
+      ],
+      [
+        10.266231536865234,
+        17.03837776184082,
+        12.10409164428711,
+        21.23551368713379
+      ],
+      [
+        10.497873306274414,
+        10.530040740966797,
+        12.148733139038086,
+        15.00185775756836
+      ],
+      [
+        30.46501922607422,
+        16.926137924194336,
+        32.22264099121094,
+        21.410566329956055
+      ],
+      [
+        5.2461748123168945,
+        16.91958999633789,
+        7.06888484954834,
+        21.365947723388672
+      ]
+    ],
+    "policy": "three_state",
+    "thresholds": {
+      "high": 0.5,
+      "low": 0.2,
+      "overlap_fraction": 0.05
+    }
+  },
+  "truth": {
+    "vehicles": [
+      {
+        "vehicle_id": "BG_30009_P002",
+        "rect_m": [
+          7.748124,
+          1.738797,
+          9.588633,
+          6.224792
+        ],
+        "color": "#e8ebed",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P014",
+        "rect_m": [
+          15.447029,
+          10.401052,
+          17.21255,
+          14.862274
+        ],
+        "color": "#2e759c",
+        "heading": 180,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P047",
+        "rect_m": [
+          22.878083,
+          25.740096,
+          24.62337,
+          30.272635
+        ],
+        "color": "#a1b2ae",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P036",
+        "rect_m": [
+          5.264604,
+          25.786384,
+          7.132325,
+          30.113129
+        ],
+        "color": "#2e759c",
+        "heading": 180,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P021",
+        "rect_m": [
+          32.909718,
+          10.496171,
+          34.600425,
+          14.997967
+        ],
+        "color": "#2e759c",
+        "heading": 0,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P043",
+        "rect_m": [
+          35.346129,
+          1.677686,
+          37.016358,
+          6.1046
+        ],
+        "color": "#4c5968",
+        "heading": 180,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P048",
+        "rect_m": [
+          25.36429,
+          25.96348,
+          27.124711,
+          30.09649
+        ],
+        "color": "#d1ae43",
+        "heading": 0,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P029",
+        "rect_m": [
+          20.236758,
+          17.315747,
+          22.128622,
+          21.322172
+        ],
+        "color": "#cc443f",
+        "heading": 0,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P028",
+        "rect_m": [
+          17.872516,
+          17.019132,
+          19.686139,
+          21.540384
+        ],
+        "color": "#d1ae43",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P020",
+        "rect_m": [
+          30.384655,
+          10.662133,
+          32.260522,
+          14.855529
+        ],
+        "color": "#a1b2ae",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P049",
+        "rect_m": [
+          27.875561,
+          26.085062,
+          29.696149,
+          30.223245
+        ],
+        "color": "#e8ebed",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P012",
+        "rect_m": [
+          10.495316,
+          10.532235,
+          12.152963,
+          14.98836
+        ],
+        "color": "#cc443f",
+        "heading": 180,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P004",
+        "rect_m": [
+          12.906505,
+          1.804829,
+          14.72124,
+          6.039823
+        ],
+        "color": "#2e759c",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P034",
+        "rect_m": [
+          32.889584,
+          17.017966,
+          34.624021,
+          21.422576
+        ],
+        "color": "#d1ae43",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P016",
+        "rect_m": [
+          20.370199,
+          10.760236,
+          22.056193,
+          14.955289
+        ],
+        "color": "#4c5968",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P009",
+        "rect_m": [
+          25.466825,
+          1.990381,
+          27.144131,
+          5.987646
+        ],
+        "color": "#cc443f",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P035",
+        "rect_m": [
+          35.344988,
+          16.991823,
+          37.155166,
+          21.500517
+        ],
+        "color": "#d1ae43",
+        "heading": 180,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P027",
+        "rect_m": [
+          15.35235,
+          17.267319,
+          17.202179,
+          21.362185
+        ],
+        "color": "#2e759c",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P005",
+        "rect_m": [
+          15.396156,
+          1.840556,
+          17.104872,
+          5.886757
+        ],
+        "color": "#7b8894",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P013",
+        "rect_m": [
+          12.79947,
+          10.578935,
+          14.58844,
+          14.780677
+        ],
+        "color": "#4c5968",
+        "heading": 180,
+        "style": 1
+      },
+      {
+        "vehicle_id": "BG_30009_P025",
+        "rect_m": [
+          10.27547,
+          17.052521,
+          12.085123,
+          21.2216
+        ],
+        "color": "#764e70",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P033",
+        "rect_m": [
+          30.461883,
+          16.937985,
+          32.232184,
+          21.404446
+        ],
+        "color": "#764e70",
+        "heading": 0,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P022",
+        "rect_m": [
+          35.396296,
+          10.538584,
+          37.289494,
+          14.806574
+        ],
+        "color": "#2e759c",
+        "heading": 180,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P017",
+        "rect_m": [
+          22.956613,
+          10.501788,
+          24.660171,
+          14.934801
+        ],
+        "color": "#cc443f",
+        "heading": 180,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P037",
+        "rect_m": [
+          7.888918,
+          25.864606,
+          9.780303,
+          30.358668
+        ],
+        "color": "#2e759c",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P042",
+        "rect_m": [
+          31.973566,
+          1.732032,
+          33.677108,
+          6.090135
+        ],
+        "color": "#a1b2ae",
+        "heading": 0,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P010",
+        "rect_m": [
+          5.424185,
+          10.569784,
+          7.206038,
+          15.054287
+        ],
+        "color": "#7b8894",
+        "heading": 0,
+        "style": 2
+      },
+      {
+        "vehicle_id": "BG_30009_P023",
+        "rect_m": [
+          5.24046,
+          16.942189,
+          7.067095,
+          21.372062
+        ],
+        "color": "#4c5968",
+        "heading": 180,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P044",
+        "rect_m": [
+          38.954004,
+          1.794193,
+          40.693892,
+          5.907963
+        ],
+        "color": "#d1ae43",
+        "heading": 0,
+        "style": 0
+      },
+      {
+        "vehicle_id": "BG_30009_P006",
+        "rect_m": [
+          17.798285,
+          1.93525,
+          19.572627,
+          6.181551
+        ],
+        "color": "#cc443f",
+        "heading": 0,
+        "style": 1
+      }
+    ],
+    "occupancy": {
+      "P001": "free",
+      "P002": "occupied",
+      "P003": "free",
+      "P004": "occupied",
+      "P005": "occupied",
+      "P006": "occupied",
+      "P007": "free",
+      "P008": "free",
+      "P009": "occupied",
+      "P010": "occupied",
+      "P011": "free",
+      "P012": "occupied",
+      "P013": "occupied",
+      "P014": "occupied",
+      "P015": "free",
+      "P016": "occupied",
+      "P017": "occupied",
+      "P018": "free",
+      "P019": "free",
+      "P020": "occupied",
+      "P021": "occupied",
+      "P022": "occupied",
+      "P023": "occupied",
+      "P024": "free",
+      "P025": "occupied",
+      "P026": "free",
+      "P027": "occupied",
+      "P028": "occupied",
+      "P029": "occupied",
+      "P030": "free",
+      "P031": "free",
+      "P032": "free",
+      "P033": "occupied",
+      "P034": "occupied",
+      "P035": "occupied",
+      "P036": "occupied",
+      "P037": "occupied",
+      "P038": "free",
+      "P039": "free",
+      "P040": "free",
+      "P041": "free",
+      "P042": "occupied",
+      "P043": "occupied",
+      "P044": "occupied",
+      "P045": "free",
+      "P046": "free",
+      "P047": "occupied",
+      "P048": "occupied",
+      "P049": "occupied",
+      "P050": "free",
+      "P051": "free",
+      "P052": "free"
+    }
+  }
+}

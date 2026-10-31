@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-parking-hu"
+version = "1.0.0"
+description = "胡轩铭智慧停车仿真感知与交互模块及规划对接契约"
+license = {file = "LICENSE"}
+requires-python = ">=3.12,<3.13"
+dependencies = ["ultralytics", "Pillow", "numpy", "networkx", "shapely", "fastapi", "uvicorn"]
+
+[project.optional-dependencies]
+test = ["pytest", "httpx"]
+
+[project.scripts]
+parking-hu = "parking_hu.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["parking_hu*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

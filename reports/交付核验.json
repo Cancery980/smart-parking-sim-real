@@ -1,0 +1,117 @@
+{
+  "generated_utc": "2026-10-31T04:17:36.103724+00:00",
+  "version": "1.0.0",
+  "repository": "https://github.com/Cancery980/smart-parking-sim-real",
+  "scope": "胡轩铭模块；包含可替换的参考规划适配器与固定接口，未把尚未提供的梁可代码计为已集成",
+  "deterministic_tests": {
+    "passed": 115,
+    "failed": 0,
+    "evidence": [
+      "reports/deterministic_tests.xml",
+      "reports/session_tests.xml"
+    ],
+    "composition": {
+      "initial_full_run": 109,
+      "unchanged_non_session_tests": 96,
+      "latest_session_run": 19
+    }
+  },
+  "plugin_contract": {
+    "passed": 9,
+    "planner": "examples.liang_adapter:Planner",
+    "evidence": "reports/plugin_contract_check.json"
+  },
+  "real_yolo_e2e": {
+    "passed": 8,
+    "total": 8,
+    "evidence": "reports/e2e/results.json"
+  },
+  "external_planner_e2e": {
+    "passed": 8,
+    "total": 8,
+    "planner": "examples.liang_adapter:Planner",
+    "evidence": "reports/e2e_external/results.json"
+  },
+  "browser_interaction": {
+    "passed": 28,
+    "real_model": true,
+    "evidence": "reports/ui_validation.json"
+  },
+  "i01_pairing": {
+    "independent_scenes": 30,
+    "paired_requests": 60,
+    "strategy_rows": 120,
+    "evidence": "reports/i01_pairing/summary.json",
+    "overall": {
+      "B": {
+        "N": 60,
+        "R": 60,
+        "F": 9,
+        "V": 51,
+        "false_recommendation_rate": 0.15,
+        "effective_recommendation_rate": 0.85,
+        "unrecommended_rate": 0.0,
+        "failure_reasons": {},
+        "requests_with_unknown": 0,
+        "requests_with_unknown_eligible": 0
+      },
+      "S": {
+        "N": 60,
+        "R": 58,
+        "F": 0,
+        "V": 58,
+        "false_recommendation_rate": 0.0,
+        "effective_recommendation_rate": 0.9666666666666667,
+        "unrecommended_rate": 0.03333333333333333,
+        "failure_reasons": {
+          "no_observed_free_spot": 2
+        },
+        "requests_with_unknown": 20,
+        "requests_with_unknown_eligible": 14
+      }
+    }
+  },
+  "model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "limitations": [
+    "视觉结论只覆盖本固定地图和原创绘图器的独立合成场景，未测试真实摄像头照片。",
+    "梁可替换规划实现后须重新运行插件检查、E01—E08及I01。",
+    "单会话只保存在当前进程内，退出或显式重置后不保留。"
+  ],
+  "report_qa": {
+    "file": "reports/胡轩铭模块实现与验证报告.docx",
+    "pages": 6,
+    "method": "Microsoft Word PDF export and bundled document renderer; all pages visually reviewed"
+  },
+  "source_hashes": {
+    "parking_hu/__init__.py": "e4200353370485a6e592656c9272e26544d028ea23708059aa09b2b17738e5ea",
+    "parking_hu/__main__.py": "87304d61f16880ec397e70c7b74692ee0d653e651cd4bb11b66a578d8b1a078d",
+    "parking_hu/api.py": "6a5ba541527527aca552adef240d29e0be1b495db8cbc1f9b130f56fc91702de",
+    "parking_hu/contracts.py": "1140bcf881e010b0db431fdcca20fa3f2b4aebbccf249506e3e5cb13c102f47b",
+    "parking_hu/detector.py": "12720e246d24a7c2d6373aff58a2d87bc81f7a7cef65fe287f3d39f3d6563770",
+    "parking_hu/geometry.py": "6c9f43d48b89e825806bcb4e8bd572f3fa0912b6612a319cb4fe793f0ada3c8b",
+    "parking_hu/map_data.py": "2f3f6bd2fe9b0c022f8422c846632819b6fb1a0f7c8b514d14e7564a17dfc09c",
+    "parking_hu/occupancy.py": "9b261effc9aca125eaab5419793cd5757e4c6db4d5eea42b64829c7b9f0ea1ed",
+    "parking_hu/reference_planner.py": "9791d679e12c8b13c7fe415c7900d5e1827564f34e2ad14ed65369cb35e3f7bc",
+    "parking_hu/scenes.py": "ebe50d72b2ff989bb449cf02b260021fb60bf8d5e854e83ef0de1360f6d17183",
+    "parking_hu/service.py": "6e11fe6b9241006f3c942f62ad64af259952148e7373181e0692b5e795d5c05d",
+    "parking_hu/vision_metrics.py": "d9c0e0a81043951e56c043512c8b0b2a82be99e1884c58f63ec191065ad5505d",
+    "scripts/check_plugin.py": "926c91ebe83696251eeb8e9fcb2d6a8b5b00c0d14af5797c1556763126fa3e71",
+    "scripts/portable_entry.py": "a85cb1a33cade06558af443ffc3adb2dbf1f0ead2e0c798c1f59071e4f855fba",
+    "scripts/run_e2e.py": "5163796067b76365a9459af6ddda00d5dfd76bc20e5106886fbdae7100770b03",
+    "scripts/run_pairing.py": "bb618f8cc2e09b79538207098b53c60ca04b19e3ec4a12cebddf10c612f2e40a",
+    "scripts/vision_evaluate.py": "cd45c655719f3309fa2f2831f32c1e8a14354793882b9680abf1c4892c76247a",
+    "scripts/vision_prepare.py": "a931bc34ccf2dc42588c11f0ac6dc39116821c00f3731fc474e2932dd679263f",
+    "scripts/vision_report.py": "180ea9063a9b9a71111788afdf2f34c9e067dd984c1019b16ff66c9b8beba81e",
+    "scripts/vision_train.py": "5eb5fcd067d12b19de571e47223cabb0a1398df0aa94a94492b7f551527750ad",
+    "static/app.js": "29dad1aa1216d87711532aaee845276a7ddfb1b1cf3d6bf946bab138aa92f9b1",
+    "static/index.html": "e892ec613d1ba742494c4b7572032c902672f24b2aff13f0ff57a032cc5d4d14",
+    "static/style.css": "350fd3a56506cf8aedac47fc9f55437e42c1805e37b19f96814c86768dfe7bc7"
+  },
+  "windows_portable": {
+    "passed": true,
+    "checks": 6,
+    "inference_device": "cpu",
+    "evidence": "reports/portable_validation.json",
+    "scope": "Executed the packaged EXE on this Windows 11 x64 host; other PCs are not individually tested."
+  }
+}
