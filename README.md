@@ -102,4 +102,6 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1 -Planner examples.liang_ada
 
 自然语言解析、自动定位、视觉身份关联、真实资格认证和车辆控制不属于当前交付。源码、权重及许可证见 [第三方说明](THIRD_PARTY_NOTICES.md)，方法来源见 [论文核对](docs/PAPERS.md)。
 
+需要重新构建 Windows 演示程序时，参见 [Windows 打包说明](docs/WINDOWS_BUILD.md)。最终验证记录集中在 [交付核验](reports/交付核验.json)。
+
 公开仓库可以浏览和下载。需要在 GitHub 提交改动时，可先 Fork 到自己的账号，再提交 Pull Request 供整合；公开访问不代表可以直接修改本仓库主分支。
