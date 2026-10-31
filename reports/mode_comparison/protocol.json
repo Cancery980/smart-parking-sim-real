@@ -1,0 +1,29 @@
+{
+  "version": "mode-comparison-v1",
+  "frozen_requests_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+  "test_manifest_sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+  "policy": "three_state",
+  "strategies": {
+    "near_destination": [
+      "walk_to_destination",
+      "drive_in",
+      "drive_out",
+      "numeric_spot_id"
+    ],
+    "near_exit": [
+      "drive_out",
+      "walk_to_destination",
+      "drive_in",
+      "numeric_spot_id"
+    ],
+    "nearest_entry": [
+      "drive_in",
+      "walk_to_destination",
+      "drive_out",
+      "numeric_spot_id"
+    ]
+  },
+  "distance": "Directed/undirected graph path length in metres; round to integer centimetres for ranking",
+  "fairness": "Same three-state observed-free, eligible, three-route-reachable candidate set. Truth only scores decisions.",
+  "sample": "60 inherited requests evaluated under all 3 rankings; 30 independent scenes. Also report one context per scene."
+}

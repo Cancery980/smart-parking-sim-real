@@ -1,0 +1,180 @@
+{
+  "started_at_utc": "2026-10-31T04:42:34.666Z",
+  "passed": true,
+  "real_model": true,
+  "scope": "Targeted real-model UI evidence enhancement; existing 28 UI checks were not rerun.",
+  "base_url": "http://127.0.0.1:8767",
+  "model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "checks": [
+    {
+      "name": "真实边界场景已重新检测",
+      "passed": true,
+      "frame_id": "v00002_f00002",
+      "detections": 22,
+      "thresholds": {
+        "high": 0.5,
+        "low": 0.2,
+        "overlap_fraction": 0.05
+      }
+    },
+    {
+      "name": "P044悬浮数值与真实快照独立计算一致",
+      "passed": true,
+      "shown": [
+        {
+          "detection_id": "v00002_f00002:d013",
+          "confidence": 0.9831874966621399,
+          "center_spot": "P043",
+          "overlap_fraction": 0.10579950203008276,
+          "used": true,
+          "text": "框 v00002_f00002:d013\n置信度 0.9832\n框中心归属\nP043\n与本位相交 / 车位面积\n10.58%\n达到 5.00% 相交阈值 · 用于当前判定"
+        }
+      ]
+    },
+    {
+      "name": "P044跨位原因中文可见",
+      "passed": true
+    },
+    {
+      "name": "点击固定详情并支持关闭",
+      "passed": true
+    },
+    {
+      "name": "详情关闭按钮生效",
+      "passed": true
+    },
+    {
+      "name": "明确占用仍保留自身中心证据",
+      "passed": true
+    },
+    {
+      "name": "多个真实检测框逐项展示且无水平溢出",
+      "passed": true,
+      "spot_id": "P020",
+      "box_count": 2
+    },
+    {
+      "name": "无相交框的空闲车位说明明确",
+      "passed": true,
+      "spot_id": "P001",
+      "text": "P001 · 普通位\n观测空闲 · 未观测到车辆证据\n\n当前帧没有与该车位相交的保留检测框。观测空闲仍可能存在漏检。\n\n当前帧 · 保留 ≥ 0.20 · 高置信 ≥ 0.50\n点击车位可固定详情"
+    },
+    {
+      "name": "窄屏详情留在地图内且无水平溢出",
+      "passed": true,
+      "tip": {
+        "x": 23,
+        "y": 199.75,
+        "width": 310,
+        "height": 205.53125
+      },
+      "canvas": {
+        "x": 15,
+        "y": 191.75,
+        "width": 360,
+        "height": 221.53125
+      },
+      "within": true,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "场景更新关闭旧帧详情",
+      "passed": true
+    },
+    {
+      "name": "实际停车交互准备成功",
+      "passed": true,
+      "recommended": "P035"
+    },
+    {
+      "name": "点击详情仍同步选择实际车位",
+      "passed": true
+    },
+    {
+      "name": "确认后检测刷新且关闭旧详情",
+      "passed": true
+    },
+    {
+      "name": "选择寻车起点前先关闭固定详情",
+      "passed": true
+    },
+    {
+      "name": "寻车点选优先于车位详情且保留米制精度",
+      "passed": true,
+      "expected": [
+        6.24,
+        3.911330919367659
+      ],
+      "x": 6.24,
+      "y": 3.911331,
+      "hidden": true,
+      "bannerHidden": true
+    },
+    {
+      "name": "手点合法人行起点后真实寻车成功",
+      "passed": true,
+      "status": "ok",
+      "path_points": 16,
+      "distances_m": {
+        "walk_to_vehicle": 39.61
+      }
+    },
+    {
+      "name": "浏览器无脚本或资源错误",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "service_stopped": true,
+  "boundary_evidence": {
+    "scene_id": "boundary_50003",
+    "frame_id": "v00002_f00002",
+    "spot_id": "P044",
+    "occupancy": {
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "v00002_f00002:d013"
+      ]
+    },
+    "expected": [
+      {
+        "detection_id": "v00002_f00002:d013",
+        "confidence": 0.9831874966621399,
+        "center_spot": "P043",
+        "overlap_fraction": 0.10579950203008276,
+        "bbox_m": [
+          36.77489471435547,
+          1.7203726768493652,
+          38.46715545654297,
+          5.921502590179443
+        ]
+      }
+    ],
+    "shown": [
+      {
+        "detection_id": "v00002_f00002:d013",
+        "confidence": 0.9831874966621399,
+        "center_spot": "P043",
+        "overlap_fraction": 0.10579950203008276,
+        "used": true,
+        "text": "框 v00002_f00002:d013\n置信度 0.9832\n框中心归属\nP043\n与本位相交 / 车位面积\n10.58%\n达到 5.00% 相交阈值 · 用于当前判定"
+      }
+    ],
+    "tooltip_text": "P044 · 无障碍位\n占用不确定 · 车辆框与车位相交，证据不确定\n框 v00002_f00002:d013\n置信度 0.9832\n框中心归属\nP043\n与本位相交 / 车位面积\n10.58%\n达到 5.00% 相交阈值 · 用于当前判定\n当前帧 · 保留 ≥ 0.20 · 高置信 ≥ 0.50\n点击车位可固定详情"
+  },
+  "screenshot": "reports/ui_evidence.png",
+  "completed_at_utc": "2026-10-31T04:42:37.764Z",
+  "error_count": 0,
+  "screenshot_dimensions_px": [
+    1524,
+    1097
+  ],
+  "screenshot_sha256": "120f8f6e0dafb6006ad220e63d976a34dab3bdb30749c44995f90b521bdb7928",
+  "tested_static_sha256": {
+    "static/app.js": "e179d2730be45218581cdf31f0a59528f49c0247980b5a156a30cf644e73d3e5",
+    "static/style.css": "791e98e86248c1c9523b04274e6161ca33e8c0987a9b7ffead3b70641c56a3a0"
+  },
+  "cleanup_checked_at_utc": "2026-10-31T04:43:16.423Z"
+}

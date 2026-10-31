@@ -15,6 +15,8 @@
   const session = () => ui.state?.session || {state:"idle"};
   const occupancy = (id) => {const o=ui.state?.snapshot?.occupancy?.[id];return typeof o==="string"?{state:o}:o||{state:"unknown"};};
   const finitePoint = (p) => Array.isArray(p) && p.length===2 && p.every(Number.isFinite);
+  const thresholds = () => ({low:.2,high:.5,overlap_fraction:.05,...ui.state?.snapshot?.thresholds});
+  const retainedDetections = () => (ui.state?.snapshot?.detections||[]).filter(d=>Number(d.confidence)>=thresholds().low);
 
   function toast(message) {
     $("toast").textContent=message; $("toast").hidden=false;
@@ -24,7 +26,7 @@
   function setBusy(busy, label="正在处理") {
     ui.busy=busy;document.body.classList.toggle("busy",busy);
     $("map-loading").hidden=!busy;$("loading-label").textContent=label;
-    if(busy) $("map-tooltip").hidden=true;
+    if(busy) dismissSpotDetails();
     updateControls();
   }
 
@@ -91,13 +93,14 @@
     if(!next?.map) throw new Error("服务返回的状态缺少地图数据。");
     const old=ui.state, oldSession=old?.session?.session_id, oldFrame=old?.frame_id;
     ui.state=next;
+    dismissSpotDetails();
     const counts={free:0,occupied:0,unknown:0};
     for(const spot of next.map.spots||[]) counts[occupancy(spot.spot_id).state in counts?occupancy(spot.spot_id).state:"unknown"]++;
     for(const key of Object.keys(counts)) $(key+"-count").textContent=counts[key];
     $("scene-version").textContent=next.scene_version??"—";
     const valid=!!next.snapshot?.valid;
     $("frame-valid").textContent=valid?"感知可用":"感知不可用";$("frame-valid").className="frame-valid "+(valid?"valid":"invalid");
-    const detections=(next.snapshot?.detections||[]).filter(d=>Number(d.confidence)>=.2);
+    const detections=retainedDetections();
     $("frame-summary").textContent=valid?`${detections.length} 个保留车辆框 · 原图 1664 × 1024`:(next.snapshot?.error||"等待完整有效检测结果");
     const vehicles=registry().filter(v=>v.role==="applicant");
     const previousSelection=$("vehicle-select").value;
@@ -182,6 +185,7 @@
   }
 
   function setPicking(value) {
+    if(value) dismissSpotDetails();
     ui.picking=value;$("canvas-wrap").classList.toggle("picking",value);$("pick-banner").hidden=!value;
     $("pick-start-button").textContent=value?"⌖ 点选中，点击地图设置起点":"⌖ 在地图上点选起点";
     drawMap();
@@ -198,6 +202,43 @@
 
   function spotAt(point) {
     return ui.state?.map.spots?.find(s=>{const r=s.rect_m;return r&&point[0]>=r[0]&&point[0]<=r[2]&&point[1]>=r[1]&&point[1]<=r[3];});
+  }
+
+  function dismissSpotDetails() {
+    ui.selectedSpot=null;
+    const tip=$("map-tooltip");tip.hidden=true;tip.classList.remove("pinned");
+  }
+
+  function spotEvidence(spot) {
+    // Explain the current perception only. Match occupancy.py's strict center
+    // tolerance and intersection comparison; never infer a new occupancy state.
+    const r=spot.rect_m,area=(r[2]-r[0])*(r[3]-r[1]),epsilon=1e-6,t=thresholds();
+    return retainedDetections().flatMap(d=>{
+      const b=d.bbox_m;
+      if(!Array.isArray(b)||b.length!==4||!b.every(Number.isFinite))return [];
+      const overlap=Math.max(0,Math.min(r[2],b[2])-Math.max(r[0],b[0]))*Math.max(0,Math.min(r[3],b[3])-Math.max(r[1],b[1]));
+      if(overlap<=0)return [];
+      const cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2;
+      const centerSpot=ui.state.map.spots.find(s=>{const a=s.rect_m;return a[0]+epsilon<cx&&cx<a[2]-epsilon&&a[1]+epsilon<cy&&cy<a[3]-epsilon;});
+      const nearBoundary=!centerSpot&&ui.state.map.spots.some(s=>{const a=s.rect_m;return a[0]-epsilon<=cx&&cx<=a[2]+epsilon&&a[1]-epsilon<=cy&&cy<=a[3]+epsilon;});
+      return [{d,centerSpot:centerSpot?.spot_id||null,centerLabel:centerSpot?.spot_id||(nearBoundary?"车位边界附近（不计严格在位）":"车位外"),fraction:overlap/area,reachesOverlap:overlap+1e-12>=t.overlap_fraction*area,used:(occupancy(spot.spot_id).detection_ids||[]).includes(d.detection_id)}];
+    }).sort((a,b)=>Number(b.used)-Number(a.used)||b.d.confidence-a.d.confidence);
+  }
+
+  function showSpotDetails(spot,event,pinned=false) {
+    const tip=$("map-tooltip"),o=occupancy(spot.spot_id),t=thresholds();
+    const evidence=ui.state.snapshot?.valid?spotEvidence(spot):[];
+    const rows=evidence.map(e=>`<div class="evidence-box" data-detection-id="${escapeHTML(e.d.detection_id)}" data-confidence="${e.d.confidence}" data-center-spot="${escapeHTML(e.centerSpot||"")}" data-overlap-fraction="${e.fraction}" data-used="${e.used}"><div class="evidence-line"><span class="evidence-id">框 ${escapeHTML(e.d.detection_id)}</span><b>置信度 ${Number(e.d.confidence).toFixed(4)}</b></div><div class="evidence-line"><span>框中心归属</span><b>${escapeHTML(e.centerLabel)}</b></div><div class="evidence-line"><span>与本位相交 / 车位面积</span><b>${(e.fraction*100).toFixed(2)}%</b></div><small>${e.reachesOverlap?"达到":"低于"} ${(t.overlap_fraction*100).toFixed(2)}% 相交阈值 · ${e.used?"用于当前判定":"其他相交证据"}</small></div>`).join("");
+    const empty=ui.state.snapshot?.valid?"当前帧没有与该车位相交的保留检测框。"+(o.state==="free"?"观测空闲仍可能存在漏检。":""):"当前感知帧不可用，请重新检测后查看证据。";
+    tip.innerHTML=`<div class="evidence-heading"><strong>${escapeHTML(spot.spot_id)} · ${typeNames[spot.spot_type]||"车位"}</strong>${pinned?'<button type="button" class="evidence-close" aria-label="关闭车位详情">×</button>':""}</div><small class="evidence-reason">${stateNames[o.state]||"状态未知"}${o.reason?" · "+escapeHTML(reasonNames[o.reason]||o.reason):""}</small><div class="evidence-list">${rows||`<p class="evidence-empty">${empty}</p>`}</div><small class="evidence-thresholds">当前帧 · 保留 ≥ ${Number(t.low).toFixed(2)} · 高置信 ≥ ${Number(t.high).toFixed(2)}</small><small class="evidence-hint">${pinned?"已固定 · 可滚动查看，按 Esc 关闭":"点击车位可固定详情"}</small>`;
+    ui.selectedSpot=pinned?spot.spot_id:null;
+    tip.classList.toggle("pinned",pinned);tip.hidden=false;tip.scrollTop=0;
+    const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top;
+    tip.style.maxHeight=Math.max(80,r.height-16)+"px";
+    const width=tip.offsetWidth,height=tip.offsetHeight;
+    const preferredX=x+16+width<=r.width-8?x+16:x-width-16;
+    tip.style.left=Math.max(8,Math.min(preferredX,r.width-width-8))+"px";
+    tip.style.top=Math.max(8,Math.min(y+12,r.height-height-8))+"px";
   }
 
   function roundedRect(x,y,w,h,r) {
@@ -253,7 +294,7 @@
       }
     }
     if(!showImage){
-      for(const d of ui.state.snapshot?.detections||[]){if(Number(d.confidence)<.2)continue;const b=d.bbox_m||d.bbox_xyxy_px?.map(n=>n/32);if(!b)continue;ctx.fillStyle="#739096";roundedRect(b[0],b[1],b[2]-b[0],b[3]-b[1],.2);ctx.fill();}
+      for(const d of retainedDetections()){const b=d.bbox_m||d.bbox_xyxy_px?.map(n=>n/32);if(!b)continue;ctx.fillStyle="#739096";roundedRect(b[0],b[1],b[2]-b[0],b[3]-b[1],.2);ctx.fill();}
     }
     for(const x of [10,22,34]){drawArrow(x,8.35,Math.PI);drawArrow(x,23.65,0);}
     drawArrow(2.25,12,Math.PI/2);drawArrow(2.25,20,Math.PI/2);drawArrow(45.75,12,-Math.PI/2);drawArrow(45.75,20,-Math.PI/2);
@@ -266,9 +307,9 @@
       if(route.operation==="find_vehicle")drawPath(route.path_m,"#0c9c84",.17,true);
       else {drawPath(paths.drive_out,"#7d9cba",.09,true);drawPath(paths.walk_to_destination,"#0c9c84",.14,true);drawPath(route.path_m,"#2778b8",.18,false);}
     }
-    if(showDetections)for(const d of ui.state.snapshot?.detections||[]){
-      const b=d.bbox_m||d.bbox_xyxy_px?.map(n=>n/32);if(!b||Number(d.confidence)<.2)continue;
-      const c=Number(d.confidence)>=.5?"#2758ae":"#c38720";ctx.save();ctx.strokeStyle=c;ctx.lineWidth=.08;if(Number(d.confidence)<.5)ctx.setLineDash([.2,.12]);ctx.strokeRect(b[0],b[1],b[2]-b[0],b[3]-b[1]);ctx.setLineDash([]);ctx.fillStyle=c;ctx.fillRect(b[0],b[1]-.52,1.72,.52);label(`car ${Number(d.confidence).toFixed(2)}`,b[0]+.86,b[1]-.26,"white",.3);ctx.restore();
+    if(showDetections)for(const d of retainedDetections()){
+      const b=d.bbox_m||d.bbox_xyxy_px?.map(n=>n/32);if(!b)continue;
+      const high=Number(d.confidence)>=thresholds().high,c=high?"#2758ae":"#c38720";ctx.save();ctx.strokeStyle=c;ctx.lineWidth=.08;if(!high)ctx.setLineDash([.2,.12]);ctx.strokeRect(b[0],b[1],b[2]-b[0],b[3]-b[1]);ctx.setLineDash([]);ctx.fillStyle=c;ctx.fillRect(b[0],b[1]-.52,1.72,.52);label(`car ${Number(d.confidence).toFixed(2)}`,b[0]+.86,b[1]-.26,"white",.3);ctx.restore();
     }
     const s=session();
     if(s.recommended_spot_id&&s.state!=="idle")drawMarker(map.spots.find(p=>p.spot_id===s.recommended_spot_id),"#2a71ac",s.state==="parked"?"原推荐":"推荐");
@@ -292,19 +333,20 @@
     if(ui.picking){setStart(point);setPicking(false);toast(`已选择起点 (${point[0].toFixed(2)}, ${point[1].toFixed(2)}) m；生成路线时将校验人行可达性。`);return;}
     const spot=spotAt(point);
     if(spot&&session().state==="planned"){$("actual-spot-select").value=spot.spot_id;drawMap();toast(`已选择实际车位 ${spot.spot_id}，请在右侧确认停车。`);}
+    if(spot)showSpotDetails(spot,event,true);else dismissSpotDetails();
   });
   canvas.addEventListener("mousemove",event=>{
     const point=pointerPoint(event);$("map-coordinate").textContent=`X ${point[0].toFixed(2)} / Y ${point[1].toFixed(2)} m`;
-    if(ui.busy||ui.picking){$("map-tooltip").hidden=true;return;}
+    if(ui.busy||ui.picking){dismissSpotDetails();return;}
+    if(ui.selectedSpot)return;
     const spot=spotAt(point);if(!spot){$("map-tooltip").hidden=true;return;}
-    const o=occupancy(spot.spot_id),tip=$("map-tooltip"),r=canvas.getBoundingClientRect();
-    tip.innerHTML=`<strong>${escapeHTML(spot.spot_id)} · ${typeNames[spot.spot_type]||"车位"}</strong><small>${stateNames[o.state]||"状态未知"}${o.reason?" · "+escapeHTML(reasonNames[o.reason]||o.reason):""}</small>`;
-    tip.hidden=false;tip.style.left=Math.min(event.clientX-r.left+14,r.width-230)+"px";tip.style.top=Math.max(4,event.clientY-r.top-58)+"px";
+    showSpotDetails(spot,event);
   });
-  canvas.addEventListener("mouseleave",()=>{$("map-tooltip").hidden=true;$("map-coordinate").textContent="X — / Y — m";});
-  window.addEventListener("resize",drawMap);
+  canvas.addEventListener("mouseleave",()=>{if(!ui.selectedSpot)$("map-tooltip").hidden=true;$("map-coordinate").textContent="X — / Y — m";});
+  $("map-tooltip").addEventListener("click",event=>{if(event.target.closest(".evidence-close"))dismissSpotDetails();});
+  window.addEventListener("resize",()=>{dismissSpotDetails();drawMap();});
   if(window.ResizeObserver)new ResizeObserver(drawMap).observe(canvas.parentElement);
-  document.addEventListener("keydown",event=>{if(event.key==="Escape")setPicking(false);});
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"){setPicking(false);dismissSpotDetails();}});
 
   async function boot() {
     setBusy(true,"正在连接本地服务");

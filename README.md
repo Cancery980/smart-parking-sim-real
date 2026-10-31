@@ -4,6 +4,8 @@
 
 **第一次来看：** [梁可从这里开始](docs/梁可从这里开始.md) · [Windows 演示包下载入口](https://github.com/Cancery980/smart-parking-sim-real/releases/latest/download/ParkingDemo-Windows.zip) · [接口约定](docs/CONTRACT_V1.md)
 
+**课堂展示：** [五分钟演示与答辩](docs/课堂演示与答辩.md) · [评分点与证据](docs/评分点与证据.md)
+
 > Windows x64 演示包已通过实际启动与停车流程检查。下载后完整解压，双击 ParkingDemo.exe；不需要先安装 Python。
 
 下面是本项目实际运行的界面，包含真实 YOLO 检测框、实际停车位和人行寻车路线。[查看完整界面](reports/ui_full.png)。
@@ -20,6 +22,8 @@
 免安装演示包包含 Python 运行环境和模型，使用 CPU 推理，不要求先安装 Python 或配置显卡。**GitHub 网页负责展示代码和提供下载；它本身不运行这套 Python 程序。** 浏览器里的 `127.0.0.1` 指向你自己的电脑，检测也在本机执行。
 
 演示时先选择车辆、需求与偏好并申请车位，再确认实际停入的位置，最后从人行通道点选起点寻车。实际停车可以不同于推荐；更换场景会使旧路线失效，已确认的停车记录保留。离场移除当前车辆，重置恢复初始场景。
+
+悬浮或点击车位可查看当前检测框的置信度、中心归属和相交比例，现场解释三态判断。[查看证据详情实景](reports/ui_evidence.png)；数值核对及交互检查见 [新增界面验收](reports/ui_evidence_validation.json)。
 
 ## 胡轩铭和梁可怎样拼在一起
 
@@ -73,6 +77,7 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1 -Planner examples.liang_ada
 .\.venv\Scripts\python.exe scripts/check_plugin.py --planner examples.liang_adapter:Planner
 .\.venv\Scripts\python.exe scripts/run_e2e.py
 .\.venv\Scripts\python.exe scripts/run_pairing.py
+.\.venv\Scripts\python.exe scripts/compare_modes.py
 ```
 
 确定性测试使用固定检测数据检查规则；`check_plugin.py --planner ...` 检查指定插件的契约。`run_e2e.py` 调用真实 YOLO 验证 E01—E08，可通过 `--planner` 接入自己的规划模块。未指定时使用随包参考实现。若已创建 `liang_planner.py`，运行：
@@ -83,7 +88,7 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1 -Planner examples.liang_ada
 
 结果和场景证据另存到 `reports/e2e_liang`，保留原有默认验收记录。要先检验随包外部接线样例，可使用 `--planner examples.liang_adapter:Planner --out reports/e2e_external`。契约检查、真实端到端和性能评测分别记录；配对实验用 `run_pairing.py --planner examples.liang_adapter:Planner` 指定适配器。
 
-实际记录见 [UI 验收](reports/ui_validation.json)、[端到端验收](reports/e2e/results.json)、[视觉评测](reports/vision_report.md)、[二态与三态对照](reports/i01_pairing/RESULTS.md) 和 [实验报告](reports/胡轩铭模块实现与验证报告.docx)。重跑评测会写入相应结果文件，需要保留原记录时先复制备份。
+实际记录见 [UI 验收](reports/ui_validation.json)、[端到端验收](reports/e2e/results.json)、[视觉评测](reports/vision_report.md)、[二态与三态对照](reports/i01_pairing/RESULTS.md)、[双模式与入口基线](reports/mode_comparison/RESULTS.md) 和 [实验报告](reports/胡轩铭模块实现与验证报告.docx)。入口基线脚本比较随包参考适配器的共享候选排序；梁可接入后须按同一协议核对其实现。重跑评测会写入相应结果文件，需要保留原记录时先复制备份。
 
 | 目录 | 内容 |
 | --- | --- |

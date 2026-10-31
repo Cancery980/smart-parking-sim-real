@@ -1,0 +1,530 @@
+{
+  "completed_at_utc": "2026-10-31T04:36:03.841567+00:00",
+  "scope": "Reference-adapter comparison, not Liang Ke's implementation; same synthetic test scenes, no new training.",
+  "independent_scenes": 30,
+  "frozen_requests": 60,
+  "strategy_rows": 180,
+  "common_recommended_requests": 58,
+  "common_recommended_independent_scenes": 29,
+  "baseline_definition": [
+    "drive_in",
+    "walk_to_destination",
+    "drive_out",
+    "numeric_spot_id"
+  ],
+  "policy": "three_state",
+  "thresholds": {
+    "high": 0.5,
+    "low": 0.2,
+    "overlap_fraction": 0.05
+  },
+  "script_sha256": "7108a627649b6f63288261b3c372a729ef95e57f21aadead2ce013eb7feaa163",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "cache_sha256": {
+    "normal_30000": "cb6d84ae2760ecc51f87b4fa81bd89b15bafb37e6a17dc54a6d6889fb457bdd0",
+    "normal_30001": "40f2534ac5b8737627bf5711ec7446e4547316485d2ff9d04d7b6957d78fc571",
+    "normal_30002": "5dc54e7dc39ba3168aa2f6dcb968b749950431f08a039e0cf12a89417d09be55",
+    "normal_30003": "ba9f3d1faece28ebc14e57c3452d686413a57545ebc09a84880ccd7554cd2089",
+    "normal_30004": "eed2a26bef5e6f8320b6f8f3915568b4bfd4a4a27f9cc1fa71718fbf9689aba5",
+    "normal_30005": "3b06ce14ff64e04bfe41590f796be463e07c19e7f834f180edeeda48b10608cf",
+    "normal_30006": "7d7ba0f86c5b3ff529b3b0168700f56af34aae6460dde1fcba9341591a087fe5",
+    "normal_30007": "b7bfdd4e4ba7366caf17c36610167a4857a8c82fe479492df3a05f83561a135f",
+    "normal_30008": "8fbb4f383c0020b2a8e70fc18252f0dfa94a796395020eb98bb542a3ce04c8aa",
+    "normal_30009": "c6b5e825b7611ab8b00240ef795b2dcd3ea551d774f3b00e46085a67def13d4b",
+    "occluded_40000": "345db12f8b04fc1d37d19798d9d702c510854df1e2e15015956ecce3d55db89d",
+    "occluded_40001": "363e877ef22f548aeb0ca27f37ac26c7f23a8bc0f7ff3b8623a6c63d46a6a58f",
+    "occluded_40002": "592095f360cd9b5f6275a0f9adbdb286a488f69dd683dbf4f6db0f9ce25f0a17",
+    "occluded_40003": "0b443cfa63bd804451b47a4e5461733af43fe833b6e2b99e59050d2bcd8e8b82",
+    "occluded_40004": "80d818a713f4c679996ccec16e67a95c0c304c265c404137d6be1a8de3ef4eca",
+    "occluded_40005": "7babbc23a395f490de16d0e337df5599cf3e9aec0209d4989a51996f60c3ddb4",
+    "occluded_40006": "4fef5b65c94afa5d86fe58e749493c5eacd95a47b0cc102d69615bdefe157553",
+    "occluded_40007": "b07b1960b31c8c6dc096cc1351707488713407cd3a48f56eeec67e6b72a5e1df",
+    "occluded_40008": "706e8dabb0ff661d191b5c0d62ea49b384ce29d1624b70003010ac707e008c42",
+    "occluded_40009": "403ed95ac76624452e6e0045a3c44e9f2e657885430b5c0e30ef83a1b29cb29e",
+    "boundary_50000": "bd0d91c51402e3a15bd726181e3e52fa87e620e6b36f2e5d24be862f67c56602",
+    "boundary_50001": "b1b46f6bbab356c5bba05e28b7616a6dca6d2eaddebb9393e72ff3c600577080",
+    "boundary_50002": "977c95a06a9b103af070a219bb2129bb50a7ab92f7b3231b347b88d9df4c2d15",
+    "boundary_50003": "8f9a312309bb452abb71b39f5af4ab0eef82070deed8b129efe18822dd0e02ee",
+    "boundary_50004": "64947373bce6ad0afaef39a39c20c53502ff410c0166ea69a537cb085ead548c",
+    "boundary_50005": "4a235f2cf2400c57a3c8e211b015053ac7b4dd6ecdf073a1ca394cf425e03206",
+    "boundary_50006": "4b906a9f5622239f9420e9682114863fef901e4fede609ba06513162a66425a7",
+    "boundary_50007": "df25aa73b6ea44938e7daaa7cfd526d360cfd65729e3d09fa301fe144dc61828",
+    "boundary_50008": "83cf6722e5787814bdc33f499ce0b3e72eee8c3a0987c87b07648a4463c3fb3d",
+    "boundary_50009": "1975c3fb95dfbad76a7c6ce547303cecd1b38ea2400c55eb395d29bdc4b90129"
+  },
+  "protocol_sha256": "2edfd4d99af593bc8ec36c72f8a2ba833ff68830e14f0749b8d68d39d1ff7de4",
+  "frozen_requests_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+  "overall_60_requests": {
+    "near_destination": {
+      "N": 60,
+      "recommended": 58,
+      "unrecommended": 2,
+      "distance_sample_count": 58,
+      "mean_distances_m": {
+        "drive_in": 60.83103448275862,
+        "drive_out": 63.98620689655172,
+        "walk_to_destination": 20.643103448275863
+      },
+      "median_distances_m": {
+        "drive_in": 46.3,
+        "drive_out": 28.3,
+        "walk_to_destination": 18.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 2
+      }
+    },
+    "near_exit": {
+      "N": 60,
+      "recommended": 58,
+      "unrecommended": 2,
+      "distance_sample_count": 58,
+      "mean_distances_m": {
+        "drive_in": 56.686206896551724,
+        "drive_out": 51.91034482758621,
+        "walk_to_destination": 23.598275862068967
+      },
+      "median_distances_m": {
+        "drive_in": 46.3,
+        "drive_out": 28.3,
+        "walk_to_destination": 18.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 2
+      }
+    },
+    "nearest_entry": {
+      "N": 60,
+      "recommended": 58,
+      "unrecommended": 2,
+      "distance_sample_count": 58,
+      "mean_distances_m": {
+        "drive_in": 40.58275862068965,
+        "drive_out": 68.01379310344828,
+        "walk_to_destination": 37.18103448275862
+      },
+      "median_distances_m": {
+        "drive_in": 31.3,
+        "drive_out": 55.8,
+        "walk_to_destination": 48.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 2
+      }
+    }
+  },
+  "independent_30_scenes": {
+    "near_destination": {
+      "N": 30,
+      "recommended": 29,
+      "unrecommended": 1,
+      "distance_sample_count": 29,
+      "mean_distances_m": {
+        "drive_in": 60.83103448275862,
+        "drive_out": 63.98620689655172,
+        "walk_to_destination": 20.643103448275863
+      },
+      "median_distances_m": {
+        "drive_in": 46.3,
+        "drive_out": 28.3,
+        "walk_to_destination": 18.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 1
+      }
+    },
+    "near_exit": {
+      "N": 30,
+      "recommended": 29,
+      "unrecommended": 1,
+      "distance_sample_count": 29,
+      "mean_distances_m": {
+        "drive_in": 56.686206896551724,
+        "drive_out": 51.91034482758621,
+        "walk_to_destination": 23.598275862068967
+      },
+      "median_distances_m": {
+        "drive_in": 46.3,
+        "drive_out": 28.3,
+        "walk_to_destination": 18.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 1
+      }
+    },
+    "nearest_entry": {
+      "N": 30,
+      "recommended": 29,
+      "unrecommended": 1,
+      "distance_sample_count": 29,
+      "mean_distances_m": {
+        "drive_in": 40.58275862068965,
+        "drive_out": 68.01379310344828,
+        "walk_to_destination": 37.18103448275862
+      },
+      "median_distances_m": {
+        "drive_in": 31.3,
+        "drive_out": 55.8,
+        "walk_to_destination": 48.35
+      },
+      "constraint_violation_requests": 0,
+      "constraint_violations_by_type": {
+        "eligibility_violation": 0,
+        "observed_free_violation": 0,
+        "perceived_route_violation": 0
+      },
+      "truth_violation_requests": 0,
+      "truth_occupied_recommendations": 0,
+      "truth_route_violation_requests": 0,
+      "failure_reasons": {
+        "no_observed_free_spot": 1
+      }
+    }
+  },
+  "paired_vs_baseline": {
+    "near_destination": {
+      "independent_common_scenes": 29,
+      "delta_vs_nearest_entry_m": {
+        "drive_in": {
+          "mean": 20.248275862068965,
+          "better": 0,
+          "equal": 9,
+          "worse": 20
+        },
+        "drive_out": {
+          "mean": -4.02758620689655,
+          "better": 16,
+          "equal": 9,
+          "worse": 4
+        },
+        "walk_to_destination": {
+          "mean": -16.53793103448276,
+          "better": 20,
+          "equal": 9,
+          "worse": 0
+        }
+      }
+    },
+    "near_exit": {
+      "independent_common_scenes": 29,
+      "delta_vs_nearest_entry_m": {
+        "drive_in": {
+          "mean": 16.103448275862068,
+          "better": 0,
+          "equal": 2,
+          "worse": 27
+        },
+        "drive_out": {
+          "mean": -16.103448275862068,
+          "better": 27,
+          "equal": 2,
+          "worse": 0
+        },
+        "walk_to_destination": {
+          "mean": -13.582758620689654,
+          "better": 20,
+          "equal": 2,
+          "worse": 7
+        }
+      }
+    }
+  },
+  "by_group": {
+    "normal": {
+      "near_destination": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 60.22,
+          "drive_out": 58.92,
+          "walk_to_destination": 19.66
+        },
+        "median_distances_m": {
+          "drive_in": 46.3,
+          "drive_out": 25.8,
+          "walk_to_destination": 18.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      },
+      "near_exit": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 57.589999999999996,
+          "drive_out": 49.79,
+          "walk_to_destination": 22.83
+        },
+        "median_distances_m": {
+          "drive_in": 46.3,
+          "drive_out": 25.8,
+          "walk_to_destination": 18.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      },
+      "nearest_entry": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 39.29,
+          "drive_out": 68.09,
+          "walk_to_destination": 37.06
+        },
+        "median_distances_m": {
+          "drive_in": 30.05,
+          "drive_out": 55.8,
+          "walk_to_destination": 47.25
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      }
+    },
+    "occluded": {
+      "near_destination": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 58.81999999999999,
+          "drive_out": 60.32,
+          "walk_to_destination": 21.66
+        },
+        "median_distances_m": {
+          "drive_in": 46.3,
+          "drive_out": 28.3,
+          "walk_to_destination": 18.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      },
+      "near_exit": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 56.739999999999995,
+          "drive_out": 50.64,
+          "walk_to_destination": 24.509999999999998
+        },
+        "median_distances_m": {
+          "drive_in": 46.3,
+          "drive_out": 28.3,
+          "walk_to_destination": 22.1
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      },
+      "nearest_entry": {
+        "N": 10,
+        "recommended": 10,
+        "unrecommended": 0,
+        "distance_sample_count": 10,
+        "mean_distances_m": {
+          "drive_in": 40.39,
+          "drive_out": 66.99,
+          "walk_to_destination": 39.72
+        },
+        "median_distances_m": {
+          "drive_in": 30.05,
+          "drive_out": 55.8,
+          "walk_to_destination": 48.65
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {}
+      }
+    },
+    "boundary": {
+      "near_destination": {
+        "N": 10,
+        "recommended": 9,
+        "unrecommended": 1,
+        "distance_sample_count": 9,
+        "mean_distances_m": {
+          "drive_in": 63.74444444444444,
+          "drive_out": 73.68888888888888,
+          "walk_to_destination": 20.605555555555554
+        },
+        "median_distances_m": {
+          "drive_in": 77.1,
+          "drive_out": 109.1,
+          "walk_to_destination": 18.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {
+          "no_observed_free_spot": 1
+        }
+      },
+      "near_exit": {
+        "N": 10,
+        "recommended": 9,
+        "unrecommended": 1,
+        "distance_sample_count": 9,
+        "mean_distances_m": {
+          "drive_in": 55.62222222222222,
+          "drive_out": 55.67777777777778,
+          "walk_to_destination": 23.43888888888889
+        },
+        "median_distances_m": {
+          "drive_in": 46.3,
+          "drive_out": 30.8,
+          "walk_to_destination": 23.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {
+          "no_observed_free_spot": 1
+        }
+      },
+      "nearest_entry": {
+        "N": 10,
+        "recommended": 9,
+        "unrecommended": 1,
+        "distance_sample_count": 9,
+        "mean_distances_m": {
+          "drive_in": 42.233333333333334,
+          "drive_out": 69.06666666666666,
+          "walk_to_destination": 34.49444444444445
+        },
+        "median_distances_m": {
+          "drive_in": 31.3,
+          "drive_out": 55.8,
+          "walk_to_destination": 48.35
+        },
+        "constraint_violation_requests": 0,
+        "constraint_violations_by_type": {
+          "eligibility_violation": 0,
+          "observed_free_violation": 0,
+          "perceived_route_violation": 0
+        },
+        "truth_violation_requests": 0,
+        "truth_occupied_recommendations": 0,
+        "truth_route_violation_requests": 0,
+        "failure_reasons": {
+          "no_observed_free_spot": 1
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Distances exclude unrecommended requests; their counts are always reported.",
+    "Each scene's original two preferences are repeated comparisons, not independent samples.",
+    "Results do not establish real-world congestion reduction or statistical significance."
+  ]
+}
