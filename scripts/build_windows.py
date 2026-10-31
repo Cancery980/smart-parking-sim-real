@@ -14,9 +14,11 @@ EXCLUDED = {'.git', '.venv', 'venv', 'cpu-venv', 'runtime', '__pycache__', '.pyt
 
 def copy_source_and_licenses(bundle: Path) -> None:
     """Keep the complete current project, excluding local/generated environments."""
+    bundle = bundle.resolve()
     for directory, dirs, files in os.walk(ROOT):
         relative = Path(directory).relative_to(ROOT)
-        dirs[:] = [d for d in dirs if d not in EXCLUDED and not (relative == Path('data') and d == 'training_runs')]
+        dirs[:] = [d for d in dirs if d not in EXCLUDED and (Path(directory) / d).resolve() != bundle
+                   and not (relative == Path('data') and d == 'training_runs')]
         for name in files:
             if name == '.local-python.txt' or name.endswith('.pyc'):
                 continue
