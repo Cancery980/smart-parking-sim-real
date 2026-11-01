@@ -1,0 +1,100 @@
+{
+  "config": {
+    "id": "pklot_yolov8n_1280",
+    "weights": "models/parking_real_yolov8n.pt",
+    "imgsz": 1280,
+    "classes": [
+      0
+    ]
+  },
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "images": 18,
+  "date_count": 16,
+  "detection_conf_020": {
+    "tp": 943,
+    "fp": 51,
+    "fn": 9,
+    "precision": 0.9486921529175051,
+    "recall": 0.990546218487395,
+    "f1": 0.9691675231243576
+  },
+  "detection_conf_050": {
+    "tp": 939,
+    "fp": 18,
+    "fn": 13,
+    "precision": 0.9811912225705329,
+    "recall": 0.9863445378151261,
+    "f1": 0.9837611314824516
+  },
+  "groups": {
+    "PUCPR": {
+      "tp": 525,
+      "fp": 16,
+      "fn": 0,
+      "precision": 0.9704251386321626,
+      "recall": 1.0,
+      "f1": 0.9849906191369606
+    },
+    "Cloudy": {
+      "tp": 297,
+      "fp": 17,
+      "fn": 4,
+      "precision": 0.945859872611465,
+      "recall": 0.9867109634551495,
+      "f1": 0.9658536585365853
+    },
+    "Rainy": {
+      "tp": 241,
+      "fp": 7,
+      "fn": 1,
+      "precision": 0.9717741935483871,
+      "recall": 0.9958677685950413,
+      "f1": 0.9836734693877551
+    },
+    "Sunny": {
+      "tp": 405,
+      "fp": 27,
+      "fn": 4,
+      "precision": 0.9375,
+      "recall": 0.9902200488997555,
+      "f1": 0.9631391200951248
+    },
+    "UFPR04": {
+      "tp": 214,
+      "fp": 22,
+      "fn": 7,
+      "precision": 0.9067796610169492,
+      "recall": 0.9683257918552036,
+      "f1": 0.936542669584245
+    },
+    "UFPR05": {
+      "tp": 204,
+      "fp": 13,
+      "fn": 2,
+      "precision": 0.9400921658986175,
+      "recall": 0.9902912621359223,
+      "f1": 0.9645390070921985
+    }
+  },
+  "occupancy": {
+    "confusion": {
+      "occupied->occupied": 773,
+      "free->unknown": 115,
+      "free->free": 771,
+      "occupied->unknown": 2,
+      "free->occupied": 3
+    },
+    "total": 1664,
+    "unknown": 117,
+    "coverage": 0.9296875,
+    "correct_over_all": 0.9278846153846154,
+    "accuracy_when_decided": 0.9980607627666451,
+    "false_free": 0,
+    "false_free_among_observed_free": 0.0,
+    "false_free_among_true_occupied": 0.0
+  },
+  "mean_inference_ms": 80.82133333333333,
+  "device": "0",
+  "timing_scope": "model.predict including preprocess/postprocess; first call includes warm-up; occupancy time excluded",
+  "measured_at_utc": "2026-11-01T09:06:17.776809+00:00"
+}

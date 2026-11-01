@@ -1,0 +1,73 @@
+{
+  "checked_at_utc": "2026-11-01T09:14:46.190Z",
+  "application": "ParkingDemo.exe",
+  "url": "http://127.0.0.1:8766",
+  "passed": true,
+  "checks": [
+    {
+      "name": "all_54_local_photos_and_frozen_model",
+      "passed": true
+    },
+    {
+      "name": "cpu_real_inference_PUCPR",
+      "passed": true,
+      "photo_id": "pucpr_2012-10-15_07_45_45",
+      "frame_id": "real_000001",
+      "detections": 1,
+      "counts": {
+        "free": 193,
+        "occupied": 1,
+        "unknown": 1
+      },
+      "elapsed_ms": 478.91
+    },
+    {
+      "name": "cpu_real_inference_UFPR04",
+      "passed": true,
+      "photo_id": "ufpr04_2012-12-17_20_25_18",
+      "frame_id": "real_000002",
+      "detections": 58,
+      "counts": {
+        "free": 1,
+        "occupied": 34,
+        "unknown": 2
+      },
+      "elapsed_ms": 568.11
+    },
+    {
+      "name": "cpu_real_inference_UFPR05",
+      "passed": true,
+      "photo_id": "ufpr05_2013-03-18_11_30_06",
+      "frame_id": "real_000003",
+      "detections": 72,
+      "counts": {
+        "free": 0,
+        "occupied": 46,
+        "unknown": 0
+      },
+      "elapsed_ms": 497.35
+    },
+    {
+      "name": "repeat_runs_model_and_changes_frame",
+      "passed": true
+    },
+    {
+      "name": "photo_mode_preserves_parking_session",
+      "passed": true
+    },
+    {
+      "name": "current_report_and_browser_code_in_bundle",
+      "passed": true
+    },
+    {
+      "name": "final_cpu_model_in_actual_browser",
+      "passed": true,
+      "photo_id": "pucpr_2012-10-05_08_22_49",
+      "frame_id": "real_000005",
+      "script_errors": []
+    }
+  ],
+  "real_model": true,
+  "inference_device": "cpu",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2"
+}

@@ -1,0 +1,2752 @@
+{
+  "photo_id": "ufpr05_2013-02-26_15_19_36",
+  "image_sha256": "91c2af2186dbc823a32fb0a4a99e9421f23bc2027fba7efa174c118aaba60a1d",
+  "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        255.58270263671875,
+        28.829824447631836,
+        386.4581298828125,
+        71.33816528320312
+      ],
+      "confidence": 0.9329223036766052,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        217.36793518066406,
+        669.8915405273438,
+        326.08111572265625,
+        719.59326171875
+      ],
+      "confidence": 0.924877941608429,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        603.3387451171875,
+        3.430011510848999,
+        724.3153076171875,
+        51.15553283691406
+      ],
+      "confidence": 0.8922101259231567,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        660.6065063476562,
+        420.4026184082031,
+        774.7136840820312,
+        461.5867919921875
+      ],
+      "confidence": 0.891589879989624,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        615.1673583984375,
+        128.15753173828125,
+        678.0758666992188,
+        177.1498565673828
+      ],
+      "confidence": 0.8898589015007019,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d005",
+      "bbox_xyxy_px": [
+        1034.199462890625,
+        471.82281494140625,
+        1145.658203125,
+        511.1846618652344
+      ],
+      "confidence": 0.8432924151420593,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d006",
+      "bbox_xyxy_px": [
+        259.838134765625,
+        19.42450714111328,
+        421.5331115722656,
+        69.93302917480469
+      ],
+      "confidence": 0.7827222943305969,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d007",
+      "bbox_xyxy_px": [
+        246.70582580566406,
+        311.4041442871094,
+        309.1487731933594,
+        368.7299499511719
+      ],
+      "confidence": 0.7788872718811035,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d008",
+      "bbox_xyxy_px": [
+        653.033203125,
+        408.9541320800781,
+        775.5491943359375,
+        459.2104797363281
+      ],
+      "confidence": 0.7540192604064941,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d009",
+      "bbox_xyxy_px": [
+        507.1907958984375,
+        232.43690490722656,
+        603.0386962890625,
+        268.1351318359375
+      ],
+      "confidence": 0.6878427863121033,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d010",
+      "bbox_xyxy_px": [
+        546.9008178710938,
+        475.35833740234375,
+        672.043212890625,
+        522.15576171875
+      ],
+      "confidence": 0.6563225388526917,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d011",
+      "bbox_xyxy_px": [
+        939.4195556640625,
+        4.184003829956055,
+        996.534912109375,
+        38.0372428894043
+      ],
+      "confidence": 0.5969913005828857,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d012",
+      "bbox_xyxy_px": [
+        682.015380859375,
+        184.04437255859375,
+        800.2205200195312,
+        223.3062286376953
+      ],
+      "confidence": 0.596617579460144,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d013",
+      "bbox_xyxy_px": [
+        293.7839050292969,
+        23.717710494995117,
+        424.82421875,
+        61.866668701171875
+      ],
+      "confidence": 0.5911763906478882,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d014",
+      "bbox_xyxy_px": [
+        551.2122802734375,
+        474.7528076171875,
+        678.5994262695312,
+        509.3255615234375
+      ],
+      "confidence": 0.5603179931640625,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d015",
+      "bbox_xyxy_px": [
+        445.9856872558594,
+        5.1844024658203125,
+        555.9911499023438,
+        45.62225341796875
+      ],
+      "confidence": 0.5461294054985046,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d016",
+      "bbox_xyxy_px": [
+        481.746826171875,
+        404.17303466796875,
+        608.4871826171875,
+        435.651123046875
+      ],
+      "confidence": 0.5128527283668518,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d017",
+      "bbox_xyxy_px": [
+        1020.1014404296875,
+        274.8751220703125,
+        1076.2620849609375,
+        340.34808349609375
+      ],
+      "confidence": 0.4627189040184021,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d018",
+      "bbox_xyxy_px": [
+        814.1206665039062,
+        0.0,
+        931.3258056640625,
+        34.92568588256836
+      ],
+      "confidence": 0.44492581486701965,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d019",
+      "bbox_xyxy_px": [
+        276.0852966308594,
+        11.78490924835205,
+        420.3621826171875,
+        60.74842834472656
+      ],
+      "confidence": 0.43773430585861206,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d020",
+      "bbox_xyxy_px": [
+        376.2782287597656,
+        256.3533935546875,
+        516.7240600585938,
+        289.9991455078125
+      ],
+      "confidence": 0.4239533543586731,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d021",
+      "bbox_xyxy_px": [
+        188.8170623779297,
+        497.5802001953125,
+        304.46112060546875,
+        533.306396484375
+      ],
+      "confidence": 0.39739546179771423,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d022",
+      "bbox_xyxy_px": [
+        309.4432373046875,
+        120.10722351074219,
+        475.6902770996094,
+        159.38975524902344
+      ],
+      "confidence": 0.3946503698825836,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d023",
+      "bbox_xyxy_px": [
+        1130.2071533203125,
+        90.39713287353516,
+        1175.599609375,
+        137.6563720703125
+      ],
+      "confidence": 0.37919965386390686,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d024",
+      "bbox_xyxy_px": [
+        959.7269287109375,
+        5.4732279777526855,
+        996.7882690429688,
+        37.83339309692383
+      ],
+      "confidence": 0.3757471740245819,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d025",
+      "bbox_xyxy_px": [
+        426.55987548828125,
+        162.69129943847656,
+        545.5011596679688,
+        206.95925903320312
+      ],
+      "confidence": 0.3144412338733673,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d026",
+      "bbox_xyxy_px": [
+        616.7158203125,
+        19.967727661132812,
+        799.7501220703125,
+        71.22925567626953
+      ],
+      "confidence": 0.29912617802619934,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d027",
+      "bbox_xyxy_px": [
+        446.89764404296875,
+        179.28436279296875,
+        552.1259765625,
+        211.11898803710938
+      ],
+      "confidence": 0.2985265254974365,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d028",
+      "bbox_xyxy_px": [
+        519.4249877929688,
+        250.48007202148438,
+        654.2565307617188,
+        280.57904052734375
+      ],
+      "confidence": 0.2977541387081146,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d029",
+      "bbox_xyxy_px": [
+        1130.1195068359375,
+        291.7882385253906,
+        1250.48046875,
+        339.88665771484375
+      ],
+      "confidence": 0.28546881675720215,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d030",
+      "bbox_xyxy_px": [
+        926.0171508789062,
+        372.6041564941406,
+        1024.54443359375,
+        409.0259704589844
+      ],
+      "confidence": 0.284078449010849,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d031",
+      "bbox_xyxy_px": [
+        493.2018127441406,
+        400.198974609375,
+        601.8569946289062,
+        442.07080078125
+      ],
+      "confidence": 0.2720748782157898,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d032",
+      "bbox_xyxy_px": [
+        541.1561889648438,
+        282.09295654296875,
+        679.565185546875,
+        316.9119567871094
+      ],
+      "confidence": 0.26911959052085876,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d033",
+      "bbox_xyxy_px": [
+        900.5299682617188,
+        155.32057189941406,
+        1010.8176879882812,
+        181.419921875
+      ],
+      "confidence": 0.26832497119903564,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d034",
+      "bbox_xyxy_px": [
+        608.043212890625,
+        22.700435638427734,
+        765.5149536132812,
+        64.42243957519531
+      ],
+      "confidence": 0.2642548084259033,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d035",
+      "bbox_xyxy_px": [
+        848.39208984375,
+        113.0859146118164,
+        980.9187622070312,
+        136.92446899414062
+      ],
+      "confidence": 0.258654922246933,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d036",
+      "bbox_xyxy_px": [
+        834.7415771484375,
+        324.0982360839844,
+        926.9505004882812,
+        359.38360595703125
+      ],
+      "confidence": 0.24962075054645538,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d037",
+      "bbox_xyxy_px": [
+        1037.664306640625,
+        483.30474853515625,
+        1150.40478515625,
+        543.6448364257812
+      ],
+      "confidence": 0.24310550093650818,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d038",
+      "bbox_xyxy_px": [
+        873.7263793945312,
+        141.0752716064453,
+        1002.3212280273438,
+        170.01303100585938
+      ],
+      "confidence": 0.2389499694108963,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d039",
+      "bbox_xyxy_px": [
+        301.7787170410156,
+        115.7562255859375,
+        434.8133850097656,
+        153.6975555419922
+      ],
+      "confidence": 0.23000593483448029,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d040",
+      "bbox_xyxy_px": [
+        0.8438873291015625,
+        117.77700805664062,
+        93.28783416748047,
+        169.91873168945312
+      ],
+      "confidence": 0.2223798632621765,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d041",
+      "bbox_xyxy_px": [
+        1050.6636962890625,
+        250.27761840820312,
+        1149.8824462890625,
+        281.4739074707031
+      ],
+      "confidence": 0.21702371537685394,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d042",
+      "bbox_xyxy_px": [
+        748.31982421875,
+        252.820068359375,
+        831.5089721679688,
+        296.35784912109375
+      ],
+      "confidence": 0.2101653814315796,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d043",
+      "bbox_xyxy_px": [
+        612.780029296875,
+        0.18559382855892181,
+        793.6001586914062,
+        59.520240783691406
+      ],
+      "confidence": 0.2026100903749466,
+      "class_name": "car"
+    }
+  ],
+  "spots": [
+    {
+      "spot_id": "S001",
+      "polygon_px": [
+        [
+          697,
+          3
+        ],
+        [
+          679,
+          18
+        ],
+        [
+          741,
+          29
+        ],
+        [
+          759,
+          1
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d002",
+        "d026",
+        "d034",
+        "d043"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d002",
+          "confidence": 0.8922101259231567,
+          "center_inside": false,
+          "overlap_fraction": 0.505683212972628,
+          "used": true
+        },
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 0.1811425160834856,
+          "used": true
+        },
+        {
+          "detection_id": "d034",
+          "confidence": 0.2642548084259033,
+          "center_inside": false,
+          "overlap_fraction": 0.08811450035311763,
+          "used": true
+        },
+        {
+          "detection_id": "d043",
+          "confidence": 0.2026100903749466,
+          "center_inside": false,
+          "overlap_fraction": 1.0,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S002",
+      "polygon_px": [
+        [
+          993,
+          67
+        ],
+        [
+          946,
+          42
+        ],
+        [
+          958,
+          1
+        ],
+        [
+          1008,
+          5
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d011"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d011",
+          "confidence": 0.5969913005828857,
+          "center_inside": true,
+          "overlap_fraction": 0.5583044288686927,
+          "used": true
+        },
+        {
+          "detection_id": "d024",
+          "confidence": 0.3757471740245819,
+          "center_inside": true,
+          "overlap_fraction": 0.4452612187422789,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S003",
+      "polygon_px": [
+        [
+          347,
+          35
+        ],
+        [
+          370,
+          7
+        ],
+        [
+          433,
+          19
+        ],
+        [
+          418,
+          42
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d000",
+        "d006",
+        "d013",
+        "d019"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d000",
+          "confidence": 0.9329223036766052,
+          "center_inside": false,
+          "overlap_fraction": 0.16123770183698433,
+          "used": true
+        },
+        {
+          "detection_id": "d006",
+          "confidence": 0.7827222943305969,
+          "center_inside": false,
+          "overlap_fraction": 0.7013837418312415,
+          "used": true
+        },
+        {
+          "detection_id": "d013",
+          "confidence": 0.5911763906478882,
+          "center_inside": false,
+          "overlap_fraction": 0.5750775097290036,
+          "used": true
+        },
+        {
+          "detection_id": "d019",
+          "confidence": 0.43773430585861206,
+          "center_inside": false,
+          "overlap_fraction": 0.8903322461299032,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S004",
+      "polygon_px": [
+        [
+          654,
+          10
+        ],
+        [
+          629,
+          54
+        ],
+        [
+          676,
+          77
+        ],
+        [
+          703,
+          25
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d002"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d002",
+          "confidence": 0.8922101259231567,
+          "center_inside": true,
+          "overlap_fraction": 0.6978920779482495,
+          "used": true
+        },
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 0.9166626731299533,
+          "used": false
+        },
+        {
+          "detection_id": "d034",
+          "confidence": 0.2642548084259033,
+          "center_inside": true,
+          "overlap_fraction": 0.8170169820340839,
+          "used": false
+        },
+        {
+          "detection_id": "d043",
+          "confidence": 0.2026100903749466,
+          "center_inside": false,
+          "overlap_fraction": 0.8600759118990745,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S005",
+      "polygon_px": [
+        [
+          733,
+          14
+        ],
+        [
+          732,
+          51
+        ],
+        [
+          816,
+          53
+        ],
+        [
+          821,
+          12
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d026",
+        "d034",
+        "d043"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d018",
+          "confidence": 0.44492581486701965,
+          "center_inside": false,
+          "overlap_fraction": 0.03730699458803243,
+          "used": false
+        },
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 0.6392577512318565,
+          "used": true
+        },
+        {
+          "detection_id": "d034",
+          "confidence": 0.2642548084259033,
+          "center_inside": false,
+          "overlap_fraction": 0.2835444636895407,
+          "used": true
+        },
+        {
+          "detection_id": "d043",
+          "confidence": 0.2026100903749466,
+          "center_inside": false,
+          "overlap_fraction": 0.6999436552954846,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S006",
+      "polygon_px": [
+        [
+          343,
+          41
+        ],
+        [
+          261,
+          22
+        ],
+        [
+          235,
+          59
+        ],
+        [
+          285,
+          66
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d000"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d000",
+          "confidence": 0.9329223036766052,
+          "center_inside": true,
+          "overlap_fraction": 0.8271047517146467,
+          "used": true
+        },
+        {
+          "detection_id": "d006",
+          "confidence": 0.7827222943305969,
+          "center_inside": false,
+          "overlap_fraction": 0.8139827084361602,
+          "used": false
+        },
+        {
+          "detection_id": "d013",
+          "confidence": 0.5911763906478882,
+          "center_inside": false,
+          "overlap_fraction": 0.3096121683961328,
+          "used": false
+        },
+        {
+          "detection_id": "d019",
+          "confidence": 0.43773430585861206,
+          "center_inside": false,
+          "overlap_fraction": 0.5354180065413804,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S007",
+      "polygon_px": [
+        [
+          1005,
+          39
+        ],
+        [
+          1000,
+          81
+        ],
+        [
+          1058,
+          88
+        ],
+        [
+          1064,
+          33
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S008",
+      "polygon_px": [
+        [
+          349,
+          64
+        ],
+        [
+          420,
+          76
+        ],
+        [
+          438,
+          46
+        ],
+        [
+          364,
+          35
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d000",
+        "d006",
+        "d013",
+        "d019"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d000",
+          "confidence": 0.9329223036766052,
+          "center_inside": false,
+          "overlap_fraction": 0.40793291304196894,
+          "used": true
+        },
+        {
+          "detection_id": "d006",
+          "confidence": 0.7827222943305969,
+          "center_inside": false,
+          "overlap_fraction": 0.8443837686731481,
+          "used": true
+        },
+        {
+          "detection_id": "d013",
+          "confidence": 0.5911763906478882,
+          "center_inside": false,
+          "overlap_fraction": 0.6638831758344594,
+          "used": true
+        },
+        {
+          "detection_id": "d019",
+          "confidence": 0.43773430585861206,
+          "center_inside": false,
+          "overlap_fraction": 0.5954874868304738,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S009",
+      "polygon_px": [
+        [
+          778,
+          44
+        ],
+        [
+          779,
+          81
+        ],
+        [
+          856,
+          84
+        ],
+        [
+          857,
+          43
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d026",
+        "d043"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 0.19237816522907922,
+          "used": true
+        },
+        {
+          "detection_id": "d043",
+          "confidence": 0.2026100903749466,
+          "center_inside": false,
+          "overlap_fraction": 0.07902807273191396,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S010",
+      "polygon_px": [
+        [
+          693,
+          45
+        ],
+        [
+          670,
+          86
+        ],
+        [
+          710,
+          106
+        ],
+        [
+          745,
+          51
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d002",
+        "d026",
+        "d034",
+        "d043"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d002",
+          "confidence": 0.8922101259231567,
+          "center_inside": false,
+          "overlap_fraction": 0.05679472987212442,
+          "used": true
+        },
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 0.491559892169801,
+          "used": true
+        },
+        {
+          "detection_id": "d034",
+          "confidence": 0.2642548084259033,
+          "center_inside": false,
+          "overlap_fraction": 0.34911077825085096,
+          "used": true
+        },
+        {
+          "detection_id": "d043",
+          "confidence": 0.2026100903749466,
+          "center_inside": false,
+          "overlap_fraction": 0.24568339929541397,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S011",
+      "polygon_px": [
+        [
+          278,
+          90
+        ],
+        [
+          349,
+          97
+        ],
+        [
+          364,
+          65
+        ],
+        [
+          287,
+          51
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d000",
+        "d006",
+        "d013",
+        "d019"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d000",
+          "confidence": 0.9329223036766052,
+          "center_inside": false,
+          "overlap_fraction": 0.3869782559794087,
+          "used": true
+        },
+        {
+          "detection_id": "d006",
+          "confidence": 0.7827222943305969,
+          "center_inside": false,
+          "overlap_fraction": 0.34671286069456336,
+          "used": true
+        },
+        {
+          "detection_id": "d013",
+          "confidence": 0.5911763906478882,
+          "center_inside": false,
+          "overlap_fraction": 0.09269802253585242,
+          "used": true
+        },
+        {
+          "detection_id": "d019",
+          "confidence": 0.43773430585861206,
+          "center_inside": false,
+          "overlap_fraction": 0.0989113025206626,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S012",
+      "polygon_px": [
+        [
+          1059,
+          57
+        ],
+        [
+          1057,
+          105
+        ],
+        [
+          1118,
+          113
+        ],
+        [
+          1118,
+          56
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S013",
+      "polygon_px": [
+        [
+          383,
+          95
+        ],
+        [
+          447,
+          105
+        ],
+        [
+          472,
+          78
+        ],
+        [
+          394,
+          65
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": [
+        {
+          "detection_id": "d006",
+          "confidence": 0.7827222943305969,
+          "center_inside": false,
+          "overlap_fraction": 0.034570873051845,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S014",
+      "polygon_px": [
+        [
+          819,
+          68
+        ],
+        [
+          819,
+          111
+        ],
+        [
+          909,
+          116
+        ],
+        [
+          916,
+          73
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": [
+        {
+          "detection_id": "d035",
+          "confidence": 0.258654922246933,
+          "center_inside": false,
+          "overlap_fraction": 0.019098128650947465,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S015",
+      "polygon_px": [
+        [
+          734,
+          71
+        ],
+        [
+          709,
+          111
+        ],
+        [
+          756,
+          130
+        ],
+        [
+          784,
+          86
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": [
+        {
+          "detection_id": "d026",
+          "confidence": 0.29912617802619934,
+          "center_inside": false,
+          "overlap_fraction": 4.181763555000672e-05,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S016",
+      "polygon_px": [
+        [
+          301,
+          121
+        ],
+        [
+          375,
+          130
+        ],
+        [
+          393,
+          105
+        ],
+        [
+          310,
+          84
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d022",
+        "d039"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d022",
+          "confidence": 0.3946503698825836,
+          "center_inside": false,
+          "overlap_fraction": 0.16025211281727766,
+          "used": true
+        },
+        {
+          "detection_id": "d039",
+          "confidence": 0.23000593483448029,
+          "center_inside": false,
+          "overlap_fraction": 0.29948798581648345,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S017",
+      "polygon_px": [
+        [
+          1125,
+          91
+        ],
+        [
+          1123,
+          149
+        ],
+        [
+          1182,
+          153
+        ],
+        [
+          1181,
+          84
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d023"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d023",
+          "confidence": 0.37919965386390686,
+          "center_inside": true,
+          "overlap_fraction": 0.5876490722963102,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S018",
+      "polygon_px": [
+        [
+          404,
+          130
+        ],
+        [
+          490,
+          143
+        ],
+        [
+          515,
+          112
+        ],
+        [
+          430,
+          88
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d022",
+        "d039"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d022",
+          "confidence": 0.3946503698825836,
+          "center_inside": false,
+          "overlap_fraction": 0.2971117548076646,
+          "used": true
+        },
+        {
+          "detection_id": "d039",
+          "confidence": 0.23000593483448029,
+          "center_inside": false,
+          "overlap_fraction": 0.12466610982505094,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S019",
+      "polygon_px": [
+        [
+          778,
+          104
+        ],
+        [
+          760,
+          156
+        ],
+        [
+          806,
+          172
+        ],
+        [
+          832,
+          116
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S020",
+      "polygon_px": [
+        [
+          868,
+          106
+        ],
+        [
+          867,
+          142
+        ],
+        [
+          953,
+          150
+        ],
+        [
+          955,
+          105
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d035",
+        "d038"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d035",
+          "confidence": 0.258654922246933,
+          "center_inside": true,
+          "overlap_fraction": 0.5886686052873391,
+          "used": true
+        },
+        {
+          "detection_id": "d038",
+          "confidence": 0.2389499694108963,
+          "center_inside": false,
+          "overlap_fraction": 0.1188462889110046,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S021",
+      "polygon_px": [
+        [
+          316,
+          159
+        ],
+        [
+          398,
+          169
+        ],
+        [
+          413,
+          137
+        ],
+        [
+          324,
+          113
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d022",
+        "d039"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d022",
+          "confidence": 0.3946503698825836,
+          "center_inside": true,
+          "overlap_fraction": 0.8588214581338354,
+          "used": true
+        },
+        {
+          "detection_id": "d039",
+          "confidence": 0.23000593483448029,
+          "center_inside": true,
+          "overlap_fraction": 0.7416475228063747,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S022",
+      "polygon_px": [
+        [
+          1265,
+          215
+        ],
+        [
+          1185,
+          173
+        ],
+        [
+          1187,
+          114
+        ],
+        [
+          1259,
+          132
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S023",
+      "polygon_px": [
+        [
+          445,
+          172
+        ],
+        [
+          519,
+          181
+        ],
+        [
+          544,
+          154
+        ],
+        [
+          461,
+          132
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d022",
+        "d025"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d022",
+          "confidence": 0.3946503698825836,
+          "center_inside": false,
+          "overlap_fraction": 0.17771069405386897,
+          "used": true
+        },
+        {
+          "detection_id": "d025",
+          "confidence": 0.3144412338733673,
+          "center_inside": false,
+          "overlap_fraction": 0.39345295613846964,
+          "used": true
+        },
+        {
+          "detection_id": "d027",
+          "confidence": 0.2985265254974365,
+          "center_inside": false,
+          "overlap_fraction": 0.0045677286052778435,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S024",
+      "polygon_px": [
+        [
+          824,
+          137
+        ],
+        [
+          801,
+          191
+        ],
+        [
+          866,
+          205
+        ],
+        [
+          884,
+          151
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": [
+        {
+          "detection_id": "d038",
+          "confidence": 0.2389499694108963,
+          "center_inside": false,
+          "overlap_fraction": 0.040250489299885645,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S025",
+      "polygon_px": [
+        [
+          929,
+          140
+        ],
+        [
+          927,
+          180
+        ],
+        [
+          1026,
+          191
+        ],
+        [
+          1028,
+          142
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d033",
+        "d038"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d033",
+          "confidence": 0.26832497119903564,
+          "center_inside": true,
+          "overlap_fraction": 0.4895977180211277,
+          "used": true
+        },
+        {
+          "detection_id": "d038",
+          "confidence": 0.2389499694108963,
+          "center_inside": true,
+          "overlap_fraction": 0.4843643107206053,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S026",
+      "polygon_px": [
+        [
+          343,
+          199
+        ],
+        [
+          435,
+          211
+        ],
+        [
+          450,
+          181
+        ],
+        [
+          343,
+          156
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d025"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d022",
+          "confidence": 0.3946503698825836,
+          "center_inside": false,
+          "overlap_fraction": 0.006521560267159103,
+          "used": false
+        },
+        {
+          "detection_id": "d025",
+          "confidence": 0.3144412338733673,
+          "center_inside": false,
+          "overlap_fraction": 0.1337234668381959,
+          "used": true
+        },
+        {
+          "detection_id": "d027",
+          "confidence": 0.2985265254974365,
+          "center_inside": false,
+          "overlap_fraction": 0.0028508110599209367,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S027",
+      "polygon_px": [
+        [
+          473,
+          210
+        ],
+        [
+          566,
+          225
+        ],
+        [
+          589,
+          184
+        ],
+        [
+          484,
+          167
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d025",
+        "d027"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d025",
+          "confidence": 0.3144412338733673,
+          "center_inside": true,
+          "overlap_fraction": 0.5317339889055909,
+          "used": true
+        },
+        {
+          "detection_id": "d027",
+          "confidence": 0.2985265254974365,
+          "center_inside": true,
+          "overlap_fraction": 0.5404944267332327,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S028",
+      "polygon_px": [
+        [
+          881,
+          183
+        ],
+        [
+          863,
+          242
+        ],
+        [
+          930,
+          253
+        ],
+        [
+          946,
+          189
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S029",
+      "polygon_px": [
+        [
+          997,
+          185
+        ],
+        [
+          992,
+          228
+        ],
+        [
+          1101,
+          240
+        ],
+        [
+          1105,
+          192
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S030",
+      "polygon_px": [
+        [
+          384,
+          250
+        ],
+        [
+          465,
+          263
+        ],
+        [
+          497,
+          222
+        ],
+        [
+          390,
+          198
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": [
+        {
+          "detection_id": "d020",
+          "confidence": 0.4239533543586731,
+          "center_inside": false,
+          "overlap_fraction": 0.03279395944758802,
+          "used": false
+        },
+        {
+          "detection_id": "d025",
+          "confidence": 0.3144412338733673,
+          "center_inside": false,
+          "overlap_fraction": 0.0002718658802958596,
+          "used": false
+        },
+        {
+          "detection_id": "d027",
+          "confidence": 0.2985265254974365,
+          "center_inside": false,
+          "overlap_fraction": 6.0126071184905755e-05,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S031",
+      "polygon_px": [
+        [
+          508,
+          263
+        ],
+        [
+          610,
+          277
+        ],
+        [
+          630,
+          233
+        ],
+        [
+          522,
+          216
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d009"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d009",
+          "confidence": 0.6878427863121033,
+          "center_inside": true,
+          "overlap_fraction": 0.6263698962780805,
+          "used": true
+        },
+        {
+          "detection_id": "d020",
+          "confidence": 0.4239533543586731,
+          "center_inside": false,
+          "overlap_fraction": 0.011233677141738153,
+          "used": false
+        },
+        {
+          "detection_id": "d028",
+          "confidence": 0.2977541387081146,
+          "center_inside": true,
+          "overlap_fraction": 0.3965239176951124,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S032",
+      "polygon_px": [
+        [
+          945,
+          223
+        ],
+        [
+          1013,
+          236
+        ],
+        [
+          1005,
+          307
+        ],
+        [
+          935,
+          294
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S033",
+      "polygon_px": [
+        [
+          1065,
+          276
+        ],
+        [
+          1159,
+          296
+        ],
+        [
+          1169,
+          244
+        ],
+        [
+          1068,
+          231
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d041"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d017",
+          "confidence": 0.4627189040184021,
+          "center_inside": false,
+          "overlap_fraction": 0.005401019544938271,
+          "used": false
+        },
+        {
+          "detection_id": "d029",
+          "confidence": 0.28546881675720215,
+          "center_inside": false,
+          "overlap_fraction": 0.008972738500736842,
+          "used": false
+        },
+        {
+          "detection_id": "d041",
+          "confidence": 0.21702371537685394,
+          "center_inside": true,
+          "overlap_fraction": 0.528442519760625,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S034",
+      "polygon_px": [
+        [
+          408,
+          300
+        ],
+        [
+          508,
+          316
+        ],
+        [
+          524,
+          278
+        ],
+        [
+          411,
+          252
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d020"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d020",
+          "confidence": 0.4239533543586731,
+          "center_inside": true,
+          "overlap_fraction": 0.5722650150180364,
+          "used": true
+        },
+        {
+          "detection_id": "d028",
+          "confidence": 0.2977541387081146,
+          "center_inside": false,
+          "overlap_fraction": 0.002679806964166255,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S035",
+      "polygon_px": [
+        [
+          543,
+          317
+        ],
+        [
+          651,
+          334
+        ],
+        [
+          673,
+          284
+        ],
+        [
+          570,
+          264
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d028",
+        "d032"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d009",
+          "confidence": 0.6878427863121033,
+          "center_inside": false,
+          "overlap_fraction": 0.008219862884871088,
+          "used": false
+        },
+        {
+          "detection_id": "d028",
+          "confidence": 0.2977541387081146,
+          "center_inside": false,
+          "overlap_fraction": 0.13211008095992866,
+          "used": true
+        },
+        {
+          "detection_id": "d032",
+          "confidence": 0.26911959052085876,
+          "center_inside": true,
+          "overlap_fraction": 0.6741579580655499,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S036",
+      "polygon_px": [
+        [
+          1015,
+          271
+        ],
+        [
+          1005,
+          333
+        ],
+        [
+          1078,
+          351
+        ],
+        [
+          1085,
+          280
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d017"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d017",
+          "confidence": 0.4627189040184021,
+          "center_inside": true,
+          "overlap_fraction": 0.7368516061130295,
+          "used": true
+        },
+        {
+          "detection_id": "d041",
+          "confidence": 0.21702371537685394,
+          "center_inside": false,
+          "overlap_fraction": 0.025935543350837174,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S037",
+      "polygon_px": [
+        [
+          1141,
+          292
+        ],
+        [
+          1139,
+          334
+        ],
+        [
+          1246,
+          362
+        ],
+        [
+          1260,
+          297
+        ]
+      ],
+      "state": "unknown",
+      "reason": "ambiguous_overlap",
+      "detection_ids": [
+        "d029"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d029",
+          "confidence": 0.28546881675720215,
+          "center_inside": true,
+          "overlap_fraction": 0.8058938744025417,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S038",
+      "polygon_px": [
+        [
+          453,
+          369
+        ],
+        [
+          543,
+          386
+        ],
+        [
+          573,
+          334
+        ],
+        [
+          446,
+          304
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S039",
+      "polygon_px": [
+        [
+          603,
+          381
+        ],
+        [
+          703,
+          402
+        ],
+        [
+          724,
+          347
+        ],
+        [
+          619,
+          324
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S040",
+      "polygon_px": [
+        [
+          1179,
+          354
+        ],
+        [
+          1181,
+          421
+        ],
+        [
+          1083,
+          413
+        ],
+        [
+          1087,
+          341
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S041",
+      "polygon_px": [
+        [
+          491,
+          434
+        ],
+        [
+          606,
+          456
+        ],
+        [
+          626,
+          403
+        ],
+        [
+          492,
+          366
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d016"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d016",
+          "confidence": 0.5128527283668518,
+          "center_inside": true,
+          "overlap_fraction": 0.46985527605811234,
+          "used": true
+        },
+        {
+          "detection_id": "d031",
+          "confidence": 0.2720748782157898,
+          "center_inside": true,
+          "overlap_fraction": 0.5606542938127804,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S042",
+      "polygon_px": [
+        [
+          634,
+          450
+        ],
+        [
+          755,
+          485
+        ],
+        [
+          776,
+          421
+        ],
+        [
+          656,
+          397
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d003",
+        "d008"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d003",
+          "confidence": 0.891589879989624,
+          "center_inside": true,
+          "overlap_fraction": 0.579473201212011,
+          "used": true
+        },
+        {
+          "detection_id": "d008",
+          "confidence": 0.7540192604064941,
+          "center_inside": true,
+          "overlap_fraction": 0.7227837026243313,
+          "used": true
+        }
+      ]
+    },
+    {
+      "spot_id": "S043",
+      "polygon_px": [
+        [
+          542,
+          508
+        ],
+        [
+          671,
+          539
+        ],
+        [
+          695,
+          480
+        ],
+        [
+          547,
+          439
+        ]
+      ],
+      "state": "occupied",
+      "reason": "high_confidence_center",
+      "detection_ids": [
+        "d010",
+        "d014"
+      ],
+      "evidence": [
+        {
+          "detection_id": "d010",
+          "confidence": 0.6563225388526917,
+          "center_inside": true,
+          "overlap_fraction": 0.5866076471555153,
+          "used": true
+        },
+        {
+          "detection_id": "d014",
+          "confidence": 0.5603179931640625,
+          "center_inside": true,
+          "overlap_fraction": 0.4691274724036088,
+          "used": true
+        },
+        {
+          "detection_id": "d031",
+          "confidence": 0.2720748782157898,
+          "center_inside": false,
+          "overlap_fraction": 0.0018497049382256946,
+          "used": false
+        }
+      ]
+    },
+    {
+      "spot_id": "S044",
+      "polygon_px": [
+        [
+          752,
+          478
+        ],
+        [
+          730,
+          540
+        ],
+        [
+          848,
+          570
+        ],
+        [
+          865,
+          499
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S045",
+      "polygon_px": [
+        [
+          608,
+          613
+        ],
+        [
+          741,
+          654
+        ],
+        [
+          775,
+          582
+        ],
+        [
+          608,
+          526
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    },
+    {
+      "spot_id": "S046",
+      "polygon_px": [
+        [
+          733,
+          657
+        ],
+        [
+          708,
+          716
+        ],
+        [
+          562,
+          697
+        ],
+        [
+          575,
+          615
+        ]
+      ],
+      "state": "free",
+      "reason": "no_evidence",
+      "detection_ids": [],
+      "evidence": []
+    }
+  ],
+  "score": {
+    "tp": 20,
+    "fp": 24,
+    "fn": 56
+  },
+  "high_conf_score": {
+    "tp": 9,
+    "fp": 8,
+    "fn": 67
+  },
+  "occupancy_confusion": {
+    "occupied->unknown": 21,
+    "occupied->occupied": 7,
+    "occupied->free": 18
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d001",
+      "d002",
+      "d003",
+      "d004",
+      "d007",
+      "d009",
+      "d010",
+      "d011",
+      "d012",
+      "d017",
+      "d020",
+      "d022",
+      "d023",
+      "d027",
+      "d029",
+      "d031",
+      "d032",
+      "d037",
+      "d041",
+      "d042"
+    ],
+    "false_positive_ids": [
+      "d000",
+      "d005",
+      "d006",
+      "d008",
+      "d013",
+      "d014",
+      "d015",
+      "d016",
+      "d018",
+      "d019",
+      "d021",
+      "d024",
+      "d025",
+      "d026",
+      "d028",
+      "d030",
+      "d033",
+      "d034",
+      "d035",
+      "d036",
+      "d038",
+      "d039",
+      "d040",
+      "d043"
+    ],
+    "missed_boxes": [
+      [
+        1,
+        547,
+        51,
+        670
+      ],
+      [
+        1,
+        430,
+        20,
+        521
+      ],
+      [
+        0,
+        120,
+        34,
+        167
+      ],
+      [
+        0,
+        81,
+        41,
+        122
+      ],
+      [
+        210,
+        225,
+        272,
+        298
+      ],
+      [
+        194,
+        178,
+        249,
+        242
+      ],
+      [
+        177,
+        138,
+        225,
+        198
+      ],
+      [
+        150,
+        88,
+        200,
+        142
+      ],
+      [
+        132,
+        50,
+        177,
+        104
+      ],
+      [
+        99,
+        91,
+        144,
+        138
+      ],
+      [
+        566,
+        600,
+        724,
+        704
+      ],
+      [
+        253,
+        31,
+        328,
+        64
+      ],
+      [
+        272,
+        13,
+        349,
+        48
+      ],
+      [
+        340,
+        7,
+        408,
+        37
+      ],
+      [
+        923,
+        367,
+        1041,
+        452
+      ],
+      [
+        834,
+        300,
+        929,
+        373
+      ],
+      [
+        572,
+        90,
+        633,
+        135
+      ],
+      [
+        515,
+        42,
+        586,
+        96
+      ],
+      [
+        487,
+        7,
+        538,
+        51
+      ],
+      [
+        449,
+        0,
+        496,
+        23
+      ],
+      [
+        1130,
+        165,
+        1221,
+        218
+      ],
+      [
+        1050,
+        120,
+        1133,
+        169
+      ],
+      [
+        978,
+        78,
+        1053,
+        124
+      ],
+      [
+        910,
+        40,
+        983,
+        81
+      ],
+      [
+        841,
+        1,
+        901,
+        38
+      ],
+      [
+        810,
+        0,
+        849,
+        11
+      ],
+      [
+        1206,
+        128,
+        1251,
+        176
+      ],
+      [
+        911,
+        0,
+        940,
+        9
+      ],
+      [
+        613,
+        539,
+        754,
+        632
+      ],
+      [
+        448,
+        308,
+        553,
+        375
+      ],
+      [
+        369,
+        198,
+        470,
+        253
+      ],
+      [
+        719,
+        487,
+        851,
+        566
+      ],
+      [
+        589,
+        335,
+        703,
+        395
+      ],
+      [
+        407,
+        96,
+        484,
+        137
+      ],
+      [
+        361,
+        30,
+        434,
+        65
+      ],
+      [
+        648,
+        11,
+        690,
+        48
+      ],
+      [
+        682,
+        38,
+        729,
+        80
+      ],
+      [
+        776,
+        99,
+        820,
+        146
+      ],
+      [
+        821,
+        137,
+        870,
+        192
+      ],
+      [
+        878,
+        170,
+        928,
+        229
+      ],
+      [
+        940,
+        221,
+        995,
+        280
+      ],
+      [
+        1107,
+        332,
+        1169,
+        409
+      ],
+      [
+        978,
+        185,
+        1080,
+        233
+      ],
+      [
+        912,
+        141,
+        1007,
+        190
+      ],
+      [
+        854,
+        104,
+        956,
+        147
+      ],
+      [
+        811,
+        73,
+        888,
+        111
+      ],
+      [
+        765,
+        40,
+        837,
+        79
+      ],
+      [
+        722,
+        11,
+        796,
+        46
+      ],
+      [
+        389,
+        60,
+        467,
+        99
+      ],
+      [
+        349,
+        159,
+        444,
+        203
+      ],
+      [
+        445,
+        133,
+        537,
+        176
+      ],
+      [
+        729,
+        57,
+        782,
+        113
+      ],
+      [
+        288,
+        81,
+        381,
+        121
+      ],
+      [
+        1013,
+        26,
+        1051,
+        66
+      ],
+      [
+        1073,
+        58,
+        1113,
+        106
+      ],
+      [
+        262,
+        51,
+        338,
+        88
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1280,
+      720
+    ]
+  },
+  "inference_ms": 108.17119999956049
+}

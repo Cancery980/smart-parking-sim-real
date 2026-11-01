@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>真实停车场照片 · 智慧停车实验台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23182d40'/%3E%3Ctext x='32' y='48' text-anchor='middle' fill='white' font-family='Arial' font-size='46' font-weight='700'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/real.css">
+</head>
+<body class="real-page">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="返回二维仿真"><span class="brand-icon">P<span></span></span><span><strong>智慧停车实验台</strong><small>真实照片 · 视觉验证</small></span></a>
+    <nav class="real-nav" aria-label="模式与报告"><a href="/">二维仿真 <span>↗</span></a><a href="/api/real/report" target="_blank" rel="noopener">真实照片实验报告 <span>↗</span></a></nav>
+  </header>
+  <main class="workspace real-workspace">
+    <div class="page-heading real-heading"><div><div class="eyebrow">SMART PARKING / REAL PHOTOS</div><h1>真实停车场照片</h1><p>照片模式验证视觉，停车与寻车流程在二维仿真页演示。</p></div><div class="photo-status" id="photo-status" role="status"><span></span><b id="status-label">正在读取照片清单</b></div></div>
+
+    <section class="photo-picker panel" aria-label="选择真实照片">
+      <div class="picker-filters">
+        <label><span>视角</span><select id="view-filter" aria-label="筛选拍摄视角"><option value="">全部视角</option></select></label>
+        <label><span>天气</span><select id="weather-filter" aria-label="筛选天气"><option value="">全部天气</option></select></label>
+        <label><span>数据划分</span><select id="split-filter" aria-label="筛选数据划分"><option value="">全部照片</option></select></label>
+        <label class="photo-select-field"><span>真实照片 <b id="photo-total">—</b></span><select id="photo-select" aria-label="选择真实停车场照片" disabled><option value="">正在加载…</option></select></label>
+      </div>
+      <div class="picker-actions"><div class="photo-step"><button type="button" id="previous-photo" aria-label="上一张照片" disabled>←</button><span id="photo-position">— / —</span><button type="button" id="next-photo" aria-label="下一张照片" disabled>→</button></div><button type="button" class="button primary" id="analyze-photo" disabled><span id="analyze-label">运行真实 YOLO 检测</span><span aria-hidden="true">→</span></button><span class="picker-note">本机逐张推理 · 首次加载模型请稍候</span></div>
+    </section>
+
+    <div id="real-message" class="real-message" role="status" aria-live="polite">正在准备照片清单。</div>
+
+    <section class="overview real-overview" aria-label="当前照片推理统计">
+      <article class="metric"><div class="metric-label"><span class="dot free"></span>观测空闲</div><div class="metric-value"><strong id="real-free-count">—</strong><span>个车位</span></div><p>未观测到足够车辆证据</p></article>
+      <article class="metric"><div class="metric-label"><span class="dot occupied"></span>检测占用</div><div class="metric-value"><strong id="real-occupied-count">—</strong><span>个车位</span></div><p>高置信框中心在标定车位内</p></article>
+      <article class="metric"><div class="metric-label"><span class="dot unknown"></span>占用不确定</div><div class="metric-value"><strong id="real-unknown-count">—</strong><span>个车位</span></div><p>车辆框相交，证据不足以确定</p></article>
+      <article class="metric"><div class="metric-label"><span class="dot neutral"></span>本次模型推理</div><div class="metric-value"><strong id="real-detection-count">—</strong><span>个车辆框</span></div><p id="real-latency">等待运行 · 不读取占用真值</p></article>
+    </section>
+
+    <div class="real-grid">
+      <section class="panel photo-panel" aria-labelledby="photo-panel-title">
+        <div class="panel-heading"><div><h2 id="photo-panel-title">照片原图与检测结果</h2><p id="photo-subtitle">按照片原始像素显示</p></div><span class="photo-split" id="photo-split">—</span></div>
+        <div class="map-toolbar real-toolbar"><div class="layer-controls"><label><input type="checkbox" id="real-layer-image" checked><span>照片原图</span></label><label><input type="checkbox" id="real-layer-spots" checked><span>三态车位</span></label><label><input type="checkbox" id="real-layer-boxes" checked><span>车辆检测框</span></label></div><span id="photo-coordinate">X — / Y — px</span></div>
+        <div class="real-canvas-wrap" id="real-canvas-wrap"><canvas id="real-canvas" width="1280" height="720" tabindex="0" aria-label="真实停车场照片及视觉结果。点击车位查看判定依据。"></canvas><div class="real-canvas-placeholder" id="photo-placeholder"><span>真实照片将在这里显示</span></div><div class="real-loading" id="photo-loading" hidden><span class="spinner"></span><strong id="photo-loading-label">正在读取照片</strong><span>检测框与三态结果来自本次模型输出</span></div></div>
+        <div class="map-legend real-legend"><div><span><i class="dot free"></i>观测空闲</span><span><i class="dot occupied"></i>检测占用</span><span><i class="dot unknown"></i>不确定</span><span><i class="real-box-key"></i>车辆框</span></div><span id="real-view-hint">运行检测后点击车位查看依据</span></div>
+      </section>
+
+      <aside class="real-sidebar">
+        <section class="panel photo-info" aria-labelledby="photo-info-title"><div class="panel-heading"><h2 id="photo-info-title">照片来源与推理</h2><span class="info-mark">01</span></div><dl><div><dt>数据集</dt><dd id="photo-dataset">—</dd></div><div><dt>拍摄视角</dt><dd id="photo-view">—</dd></div><div><dt>天气 / 日期</dt><dd id="photo-weather-date">—</dd></div><div><dt>原图尺寸</dt><dd id="photo-size">—</dd></div><div><dt>模型</dt><dd id="photo-model">—</dd></div><div><dt>检测设置</dt><dd id="photo-model-settings">—</dd></div><div><dt>本次耗时</dt><dd id="photo-time">尚未运行</dd></div></dl><div class="photo-source-row"><a id="photo-source-link" target="_blank" rel="noopener noreferrer" hidden>查看上游原始照片 <span>↗</span></a><span id="photo-id">—</span></div><p class="real-explanation">车位轮廓是预先标定的几何区域；颜色由检测结果计算。照片像素没有换算成实际米制地图。</p></section>
+        <section class="panel spot-detail" aria-labelledby="spot-detail-title"><div class="panel-heading"><h2 id="spot-detail-title">车位判定依据</h2><button type="button" id="clear-spot" aria-label="取消固定车位详情" hidden>×</button></div><div id="spot-detail-content" aria-live="polite"><p class="spot-empty">运行检测后，悬浮或点击照片里的车位，查看当前车辆框的证据。</p></div></section>
+      </aside>
+    </div>
+    <footer class="page-footer real-footer"><span>原始照片来自 PKLot；车位与车辆标注来源见实验报告。页面展示本次推理，离线真值只用于评测。</span><a href="/api/real/report" target="_blank" rel="noopener">查看独立测试结果与失败案例 ↗</a></footer>
+  </main>
+  <script src="/static/real.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+{
+  "checked_at_utc": "2026-11-01T09:10:59.352792+00:00",
+  "passed": true,
+  "scope": "Independent recomputation from all final cached detections, source vehicle truth and runtime-only polygons. No new model inference; exact final artifact hashes recorded.",
+  "checks": [
+    {
+      "name": "exactly_all_36_test_prediction_files",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_cached_vehicle_matches_and_polygon_states_recomputed",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "aggregate_detection_counts_match",
+      "passed": true,
+      "details": {
+        "0.2": {
+          "tp": 2134,
+          "fp": 76,
+          "fn": 26
+        },
+        "0.5": {
+          "tp": 2122,
+          "fp": 33,
+          "fn": 38
+        }
+      }
+    },
+    {
+      "name": "all_view_and_weather_groups_match",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "occupancy_denominators_and_rates_match",
+      "passed": true,
+      "details": {
+        "matrix": {
+          "occupied->occupied": 1686,
+          "occupied->unknown": 10,
+          "free->unknown": 95,
+          "free->free": 1530,
+          "free->occupied": 5
+        },
+        "total": 3326,
+        "decided": 3221,
+        "correct": 3216,
+        "true_occupied": 1696,
+        "false_occupied": 5
+      }
+    },
+    {
+      "name": "rates_detection_conf_020",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rates_detection_conf_050",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "36_images_32_dates_and_2160_gt_vehicles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "weights_config_training_provenance_and_all_predictions_agree",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "training_and_dataset_manifest_hashes_agree",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "training_completed_all_40_epochs",
+      "passed": true,
+      "details": {
+        "actual_epochs": 40,
+        "final_epoch": "40"
+      }
+    },
+    {
+      "name": "exported_weights_equal_training_best_checkpoint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen_development_choice_matches_final_model",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "complete_cpu_evaluation_record",
+      "passed": true,
+      "details": {
+        "final_device": "cpu",
+        "scope": "Final complete 36-image evaluation is CPU. The earlier interrupted GPU attempt is not counted as a completed evaluation."
+      }
+    },
+    {
+      "name": "published_markdown_values_match_recount",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "failure_cases_are_actual_lowest_recall_per_view",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "test_frames": 36,
+  "test_dates": 32,
+  "test_vehicle_annotations": 2160,
+  "test_spot_observations": 3326,
+  "final_inference_device": "cpu",
+  "actual_training_epochs": 40,
+  "detection_conf020": {
+    "tp": 2134,
+    "fp": 76,
+    "fn": 26
+  },
+  "detection_conf050": {
+    "tp": 2122,
+    "fp": 33,
+    "fn": 38
+  },
+  "occupancy_confusion": {
+    "occupied->occupied": 1686,
+    "occupied->unknown": 10,
+    "free->unknown": 95,
+    "free->free": 1530,
+    "free->occupied": 5
+  },
+  "reviewed_sha256": {
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-05_08_22_49.json": "7f34acb6b0c7aaf4e4d13d2916685b64ab2a6cd09a4adc5d24a7b5b18d2afc99",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-14_18_10_08.json": "7c3d7dcf69404eb0d3ee27a1e9072f05d256871f1f1f1e40cf92a52472f6d41e",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-12_13_47_50.json": "e35a4bb529337313c211755b46dde73bacc31882b3cfd76e376695b7c0bd9e24",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-16_06_11_43.json": "b1e9ebdcd3ab0ef53ce2c934f8a01127900f1ea1cdc50bce46187c7b8db0497d",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-26_08_49_32.json": "2f29856b927b0e7c0e66cfec05187987f7142039a14469915974ecfa67194ed6",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-11-10_07_52_42.json": "0886d3160e5f262fedc4f09b2e190030c274651e53e28f2d22db7de7c0cd01a8",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-11_09_56_37.json": "f523f93ff14c112e39894339c89f2cfcf0e8428c3bab607b1ba65e698a7e4735",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-23_08_20_50.json": "33eee87afe6ff7748677bc3867fa9202eb8af7a129ca6c699a355d46b8fffbe7",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-10-15_07_45_45.json": "c571274571c0c8d03066210f382917d2cbbf6b476cc54a07185fe9543aa0b30f",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-11-10_18_18_12.json": "3ac4f335e24e7904bac01a10959b8ec827e85d51173cff4963eb841276f36104",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-09-14_09_01_10.json": "c0b8f2c9eadffed13ae3ce71d7375d2c255cf40038c2c26c9bac6ae9f957a0d6",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/pucpr_2012-09-15_10_17_09.json": "7a5a2a251f7e243a6daedb67743a06f0bcc186f2b30f4cccf500a0a91e07823a",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-27_15_10_11.json": "890ac590c07780c574b61653f3b962f46d80ffd6e103c77867d0e7d5ea71f948",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-16_11_40_07.json": "b0513b3a9797b018763356c48a5b6d22e090132fa19fcb247b08922bf761c207",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2013-01-19_12_40_08.json": "ee3918e95942c9593ff599efdc8ca6ba7a3f4896b0008b18f3870bc1379fe3fe",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-14_11_05_07.json": "691b7eaf008bc6d46285def6ed08cd3bb1d2663c2fc79914d520a49123b6bddf",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2013-01-18_17_15_13.json": "207ca4bc8c41c93115cba11b9dce814db15aed4c8588ba4ae9a5880c5b8c56b9",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-11_16_26_08.json": "0f5d703f6244b0a60f0cbb156aa43f7bc31ec96a63d28b65f70b4a7d8a44f7e0",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-19_20_05_16.json": "23e2d4f5bcb7b7e2c624ac4c672b35f03fafea45af349c6eb17e76c2776d638c",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2013-01-16_15_55_12.json": "ac3194a7a56a82d5eddd419f06fde3e9b9725d61636db60f47c1b155c7bef3e6",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-17_20_25_18.json": "6f5ebb2fae83b21add3861a3357664630185dd44f8f6fc706ba2232c5f98ca0b",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2013-01-22_09_15_04.json": "060450ceb284291dd836b938095ecfacb015f76f76b0113aeaa3f2f963af9d4a",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2012-12-13_17_40_14.json": "6ef4a1bf469f109626d636d074d738764b6ecd93774713cc63f1f514f341fa43",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr04_2013-01-18_09_00_04.json": "ff4135a105f8af3d5f4743ce323761b5e72c5a44e7aa577eac1251d9b69cbb21",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-12_13_10_08.json": "cb11a191ef46ca0a567d4bdded36be2a7c96bb55932495fcf9bcdeb9829a54b1",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-15_18_00_14.json": "97e36ae3959d1aabe2b48ca7eff225fdb35a9da90c5145225bcbf6c0e4468267",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-04-08_18_01_44.json": "326697b41025d1902fd4e73ad5584dcdc94bac080fa335f4f9e275a3e60ade06",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-05_17_10_12.json": "dde21244d68926c438029d3e579cecf8c4010eb1268ebecafc68f94db1caeb0d",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-05_16_40_12.json": "64d27370188624bf5e0aa22c9dfd733f1705fa8ac4d18f9817a78cc9bdb1194d",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-04-12_17_05_12.json": "c5003321bc5cbba7b5b23742476480463f319bbb78b51a392f1741cbaa1355a3",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-19_06_55_01.json": "5fe963e475091a30de0e4f090ad8c1af59b085cb7d6a7d07f83a48bc34d9a52a",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-02-26_13_04_33.json": "93c07df0e339c74a45da153e29aa3ef6bdc7d5ca42a617e5570ecdb24dc00ffc",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-03-18_11_30_06.json": "e4805d2980fb519f90ff823882a4da6df61ad33662a4ac84d43457646ab64f7f",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-02-26_15_19_36.json": "01f884056baaddf71c1017e96437584924b641449b5aa490dc17e93b3f38ec0c",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-04-10_10_15_04.json": "b4c72685656d86730d6327401b9a924aa0bb46eab71d38bc58e9110846906359",
+    "reports/real_photos/test/pklot_yolov8n_1280/predictions/ufpr05_2013-04-16_10_45_05.json": "140cab3587608811d8cca341a3aa905a486b4d8529ffdf12dd81316feb41ac30",
+    "models/real_photo_config.json": "3caa16df0eb97dc03a293e1331b37c1da610f2e9758d774240f42cc06ef4e119",
+    "models/parking_real_yolov8n.pt": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+    "data/real/manifest.json": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+    "data/real/annotations.json": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+    "data/real/training_manifest.json": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
+    "reports/real_photos/test_summary.json": "c868d08e958c502f421ef76dd9d83224a056be653b3dd0bac052d43b43ebb97d",
+    "reports/real_photos/RESULTS.md": "5ad606644228663f737df82caf2855bbab8aba040627f7dfa5a2be69dda8f248",
+    "reports/real_photos/trained_development_selection.json": "2a5d36e038d5d99b05195da4be8125b07c98531ec4acae85c3a9676a30479867",
+    "reports/real_photos/training/provenance.json": "ef936cb0ab78bc2ea2e1c4305b72f40819aa6873a6f3ee87518b882db28b025a",
+    "reports/real_photos/training/results.csv": "e929d90e38f47f51933bfe389cc76563c9b58fb126d4c1b5c37e2d6c5551c2c8"
+  },
+  "limitations": [
+    "Date isolation applies to known camera scenes in two physical parking lots; this is not unseen-site generalization.",
+    "Zero false-free observations in this subset do not guarantee zero errors on arbitrary real photographs.",
+    "The study preserves initial pretrained evaluation and subsequent development-driven fine-tuning; no claim that initial holdout metrics were never viewed."
+  ],
+  "blocking_findings": []
+}

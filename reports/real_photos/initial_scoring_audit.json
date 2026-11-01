@@ -1,0 +1,259 @@
+{
+  "scope": "Independent read-only review of metadata selection, annotation conversion and metric definitions; no model inference executed.",
+  "passed": true,
+  "checks": [
+    {
+      "name": "stratified_18_development_36_test",
+      "passed": true,
+      "details": {
+        "('dev', 'PUCPR', 'Cloudy')": 2,
+        "('test', 'PUCPR', 'Cloudy')": 4,
+        "('dev', 'PUCPR', 'Rainy')": 2,
+        "('test', 'PUCPR', 'Rainy')": 4,
+        "('dev', 'PUCPR', 'Sunny')": 2,
+        "('test', 'PUCPR', 'Sunny')": 4,
+        "('dev', 'UFPR04', 'Cloudy')": 2,
+        "('test', 'UFPR04', 'Cloudy')": 4,
+        "('dev', 'UFPR04', 'Rainy')": 2,
+        "('test', 'UFPR04', 'Rainy')": 4,
+        "('dev', 'UFPR04', 'Sunny')": 2,
+        "('test', 'UFPR04', 'Sunny')": 4,
+        "('dev', 'UFPR05', 'Cloudy')": 2,
+        "('test', 'UFPR05', 'Cloudy')": 4,
+        "('dev', 'UFPR05', 'Rainy')": 2,
+        "('test', 'UFPR05', 'Rainy')": 4,
+        "('dev', 'UFPR05', 'Sunny')": 2,
+        "('test', 'UFPR05', 'Sunny')": 4
+      }
+    },
+    {
+      "name": "calendar_dates_disjoint",
+      "passed": true,
+      "details": {
+        "dev": 16,
+        "test": 32
+      }
+    },
+    {
+      "name": "unique_original_image_bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "audit_hashes_match_files",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_annotations_converted_without_box_or_label_changes",
+      "passed": true,
+      "details": {
+        "car_errors": [],
+        "label_errors": [],
+        "upstream": [
+          {
+            "view": "ufpr04",
+            "cars_categories": {
+              "1": "car"
+            },
+            "spots_categories": {
+              "0": "empty",
+              "1": "occupied"
+            },
+            "car_image_count": 2754,
+            "spot_image_count": 3791,
+            "joint_images": 2754,
+            "joint_images_with_zero_cars": 0
+          },
+          {
+            "view": "ufpr05",
+            "cars_categories": {
+              "1": "car"
+            },
+            "spots_categories": {
+              "0": "empty",
+              "1": "occupied"
+            },
+            "car_image_count": 3399,
+            "spot_image_count": 4135,
+            "joint_images": 3399,
+            "joint_images_with_zero_cars": 0
+          },
+          {
+            "view": "pucpr",
+            "cars_categories": {
+              "1": "car"
+            },
+            "spots_categories": {
+              "0": "empty",
+              "1": "occupied"
+            },
+            "car_image_count": 4156,
+            "spot_image_count": 4474,
+            "joint_images": 4156,
+            "joint_images_with_zero_cars": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "geometry_polygons_match_and_are_valid",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "date_metadata_matches_filenames",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "selection_reconstructed_from_only_image_metadata",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "assignment_seed_reconstructed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "one_to_one_match_duplicates_and_outside_roi",
+      "passed": true,
+      "details": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0
+      }
+    },
+    {
+      "name": "occupancy_denominators_include_unknown_correctly",
+      "passed": true,
+      "details": {
+        "confusion": {
+          "free->free": 3,
+          "free->occupied": 1,
+          "free->unknown": 1,
+          "occupied->free": 2,
+          "occupied->occupied": 4,
+          "occupied->unknown": 1
+        },
+        "total": 12,
+        "unknown": 2,
+        "coverage": 0.8333333333333334,
+        "correct_over_all": 0.5833333333333334,
+        "accuracy_when_decided": 0.7,
+        "false_free": 2,
+        "false_free_among_observed_free": 0.4,
+        "false_free_among_true_occupied": 0.2857142857142857
+      }
+    },
+    {
+      "name": "independent_cached_test_recount_selected",
+      "passed": true,
+      "details": {
+        "counts_conf020": {
+          "tp": 1277,
+          "fp": 113,
+          "fn": 883
+        },
+        "counts_conf050": {
+          "tp": 750,
+          "fp": 8,
+          "fn": 1410
+        },
+        "occupancy": {
+          "occupied->free": 607,
+          "occupied->unknown": 561,
+          "occupied->occupied": 528,
+          "free->unknown": 88,
+          "free->free": 1542
+        },
+        "mismatches": []
+      }
+    },
+    {
+      "name": "independent_cached_test_recount_synthetic_baseline",
+      "passed": true,
+      "details": {
+        "counts_conf020": {
+          "tp": 504,
+          "fp": 952,
+          "fn": 1656
+        },
+        "counts_conf050": {
+          "tp": 344,
+          "fp": 492,
+          "fn": 1816
+        },
+        "occupancy": {
+          "occupied->unknown": 775,
+          "occupied->occupied": 537,
+          "occupied->free": 384,
+          "free->free": 1500,
+          "free->unknown": 118,
+          "free->occupied": 12
+        },
+        "mismatches": []
+      }
+    },
+    {
+      "name": "selected_config_is_frozen_development_f1_winner",
+      "passed": true,
+      "details": "coco_yolov8n_1280"
+    }
+  ],
+  "denominators": {
+    "dev": {
+      "frames": 18,
+      "dates": 16,
+      "vehicles": 952,
+      "spots": 1664,
+      "occupied_spots": 775
+    },
+    "test": {
+      "frames": 36,
+      "dates": 32,
+      "vehicles": 2160,
+      "spots": 3326,
+      "occupied_spots": 1696
+    }
+  },
+  "roi_values": [
+    [
+      0,
+      0,
+      1280,
+      720
+    ],
+    [
+      0,
+      140,
+      1280,
+      580
+    ]
+  ],
+  "caveats": [
+    "36 test frames cover 32 dates, not 36 independent scenes. Three camera views cover two physical lots.",
+    "Selection population is the author-provided joint car/spot annotation image list; no claim of uniform sampling over all original PKLot frames.",
+    "ROI uses center inclusion and clips both GT and predictions; this is an explicitly stated fixed-IoU metric, not official COCO mAP.",
+    "Model configuration is selected on development images; frozen-test results may not drive subsequent candidate or threshold selection."
+  ],
+  "blocking_findings": [],
+  "measured_tradeoffs": {
+    "selected_vehicle_f1": 0.7194366197183099,
+    "baseline_vehicle_f1": 0.27876106194690264,
+    "selected_false_free": 607,
+    "baseline_false_free": 384,
+    "interpretation": "Detection improves; occupancy false-free counts worsen under unchanged geometric thresholds. Report both and do not retune this opened holdout as though it remained independent."
+  },
+  "reviewed_sha256": {
+    "scripts/prepare_real_photos.py": "ff6ccfcbe5edffd8989ef52f98e62b31e8376504220ab1c066446bc492cf139b",
+    "scripts/evaluate_real_photos.py": "c85d24535725db2a48c4791698ad6037b091222219af4c85354193fa65458e7a",
+    "data/real/protocol.json": "0d1c7fba2f88d339a4b771b7d4dec39da189d6f8759a5f1111bde8d8b45b4539",
+    "data/real/audit.json": "ecfb67ee5e15d3de192c0fc0ef6e69d6cac7d4e540f8d3cc8f8f6c7c8c53f6a3",
+    "data/real/manifest.json": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+    "data/real/annotations.json": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+    "models/real_photo_config.json": "fe7b9ab47289b2b0f98c387bc6adca8cbe096c30f05788dd4f72f1a1fc525650",
+    "reports/real_photos/test_summary.json": "5462354b608faa0dcff2e6d018ac73d01f91b9ac0190e0d08671bf5a7bf7d8b6"
+  }
+}

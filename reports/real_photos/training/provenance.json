@@ -1,0 +1,8 @@
+{
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "starting_weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "training_manifest_sha256": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
+  "checkpoint_selection": "Ultralytics best fitness on the 18 development/validation images only; 36 test photos are never loaded for training",
+  "epochs_requested": 40,
+  "finished_at_utc": "2026-11-01T09:05:55.096358+00:00"
+}

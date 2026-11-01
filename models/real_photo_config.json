@@ -1,0 +1,16 @@
+{
+  "id": "pklot_yolov8n_1280",
+  "weights": "models/parking_real_yolov8n.pt",
+  "imgsz": 1280,
+  "classes": [
+    0
+  ],
+  "conf": 0.2,
+  "high": 0.5,
+  "overlap_fraction": 0.05,
+  "max_det": 500,
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "selected_from": "reports/real_photos/trained_development_selection.json",
+  "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+  "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+}

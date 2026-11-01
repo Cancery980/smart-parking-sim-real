@@ -1,0 +1,9 @@
+{
+  "final_holdout_device": "cpu",
+  "complete_final_images": 36,
+  "infrastructure_retry": "An initial GPU holdout process ended after six images without a Python traceback. Its partial output was not used as a complete result. The frozen model and unchanged parameters were then run on all 36 photos using CPU; each cached photo result was overwritten by that complete run.",
+  "training_device": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "development_selection_device": "GPU",
+  "model_or_threshold_changes_after_test": false,
+  "timing_comparison": "Baseline GPU timings and final CPU timings are not an architecture speed comparison."
+}

@@ -6,6 +6,8 @@
 | --- | --- | --- |
 | Ultralytics 8.3.235 | YOLOv8n 预训练、微调与实际推理 | https://github.com/ultralytics/ultralytics/tree/v8.3.235 · AGPL-3.0 |
 | YOLOv8n 官方权重 | 预训练探索及微调起点 | https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt |
+| YOLOv8s 官方权重 | 真实照片开发集候选对照 | https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt · AGPL-3.0 |
+| PKLot / MetaPKLot 的 PKLot 部分 | 真实停车场照片、车辆框、车位标定和离线占用真值 | 作者仓库 https://github.com/DSBD-Research/MetaPKLot-Dataset · CC BY 4.0 分项说明见 data/real/ATTRIBUTION.md |
 | NetworkX 3.4.2 | nx.astar_path 有向车行与无向人行图 | https://github.com/networkx/networkx/tree/networkx-3.4.2 · BSD-3-Clause |
 | Shapely 2.1.1 | 完整线段、障碍及区域包含判断 | https://github.com/shapely/shapely/tree/2.1.1 · BSD-3-Clause |
 | FastAPI 0.115.14 | 本地界面 HTTP 服务 | https://github.com/fastapi/fastapi/tree/0.115.14 · MIT |
@@ -19,6 +21,6 @@
 - https://docs.ultralytics.com/modes/predict/ （原图边界框、置信度、推理接口）
 - https://docs.ultralytics.com/modes/train/ （训练与验证接口）
 
-车辆图形与地图渲染由本项目程序生成，没有下载照片、商业车辆贴图或第三方车辆素材。程序字体使用运行系统自带字体，字体文件未复制分发。检测权重与模型软件遵循其上游许可证；第三方许可证原文放在 third_party/，哈希与下载来源记录在 sources.json。requirements-lock.txt 记录实测环境。
+二维仿真的车辆图形与地图由本项目程序绘制。新增真实照片页使用有署名的 PKLot 实拍图像及 MetaPKLot 标注；原 JPEG 字节不变，抽样与标注格式转换见 data/real/protocol.json，逐图来源与哈希见 data/real/manifest.json。真实照片数据保留 CC BY 4.0，不能将项目代码 AGPL 许可覆盖到照片。程序字体使用运行系统自带字体，字体文件未复制分发。检测权重与模型软件遵循其上游许可证；第三方许可证原文放在 third_party/，软件来源记录在 sources.json。requirements-lock.txt 记录实测环境。
 
 本项目源码以 AGPL-3.0 发布，完整条款见根目录 LICENSE；第三方软件保留各自许可证及归属。可运行演示包同时附本项目源码与依赖许可证，源码仓库为 https://github.com/Cancery980/smart-parking-sim-real 。

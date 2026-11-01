@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "scope": "Read-only audit of source selection, date/hash isolation and exact ROI crop/YOLO label conversion. No model run or holdout metric exploration.",
+  "checks": [
+    {
+      "name": "training_strata_30_per_view_weather",
+      "passed": true,
+      "details": {
+        "('ufpr04', 'Cloudy')": 30,
+        "('ufpr04', 'Rainy')": 30,
+        "('ufpr04', 'Sunny')": 30,
+        "('ufpr05', 'Cloudy')": 30,
+        "('ufpr05', 'Rainy')": 30,
+        "('ufpr05', 'Sunny')": 30,
+        "('pucpr', 'Cloudy')": 30,
+        "('pucpr', 'Rainy')": 30,
+        "('pucpr', 'Sunny')": 30
+      }
+    },
+    {
+      "name": "all_training_dates_absent_from_development_and_test",
+      "passed": true,
+      "details": {
+        "training_dates": 48,
+        "excluded_dates": 48,
+        "intersection": []
+      }
+    },
+    {
+      "name": "training_has_no_same_original_image_bytes_as_development_test",
+      "passed": true,
+      "details": {
+        "unique_train_images": 270,
+        "intersections": []
+      }
+    },
+    {
+      "name": "validation_is_exactly_the_18_development_images",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "training_selection_reconstructed_using_only_dates_weather_timestamp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_288_crops_labels_and_hashes_match_original_vehicle_annotations",
+      "passed": true,
+      "details": {
+        "errors": [],
+        "source_categories": {
+          "ufpr04": [
+            1
+          ],
+          "ufpr05": [
+            1
+          ],
+          "pucpr": [
+            1
+          ]
+        },
+        "total_train_val_vehicle_boxes": 15543,
+        "roi_counts": {
+          "(0, 0, 1280, 720)": 192,
+          "(0, 140, 1280, 580)": 96
+        }
+      }
+    },
+    {
+      "name": "reviewed_training_path_uses_no_test_images_or_test_labels",
+      "passed": true,
+      "details": {
+        "method": "Static path review. Full manifest dates and image hashes are read solely to exclude test/development data; only the development branch calls prepare for validation. YOLO receives train/val paths only."
+      }
+    }
+  ],
+  "requested_training": {
+    "epochs": 40,
+    "early_stopping_patience": 12,
+    "validation_images": 18,
+    "checkpoint": "best fitness on development set"
+  },
+  "reviewed_sha256": {
+    "scripts/train_real_photos.py": "a9ac4ffb7da485e6cc3f41f7871865dcc45cdf46bf47879f6da139329d94f892",
+    "data/real/training_manifest.json": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
+    "data/real/manifest.json": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+  },
+  "limitations": [
+    "Actual epochs may be below 40 due to early stopping; report actual log count.",
+    "Same fixed camera views are present in training and evaluation on different dates; do not claim unseen-site generalization.",
+    "The initial pretrained-model holdout was already evaluated; preserve that stage and disclose subsequent development-driven fine-tuning instead of describing the entire study as a single untouched test."
+  ],
+  "blocking_findings": []
+}

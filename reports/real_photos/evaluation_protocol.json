@@ -1,0 +1,14 @@
+{
+  "confidence": 0.2,
+  "high_confidence": 0.5,
+  "iou_nms": 0.7,
+  "max_det": 500,
+  "iou_match": 0.5,
+  "overlap_fraction": 0.05,
+  "roi_policy": "Only detection/GT centers within author annotationsRectangle; boxes clipped to that region; confidence-ordered one-to-one IoU matches. Outside ROI ignored.",
+  "selection_metric": "Highest aggregate vehicle F1 at conf .20 on 18 development images; ties prefer smaller candidate order. Thresholds unchanged from simulation.",
+  "detection_metric": "Fixed IoU=.50 precision/recall/F1, not mAP. No ground-truth boxes/labels supplied to inference.",
+  "manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+  "annotations_sha256": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+  "scope": "PKLot subset: two physical lots and three existing camera views, date-disjoint dev/test. Pretrained COCO model; not trained on these 54 photos. Not an official MetaPKLot cross-dataset benchmark."
+}

@@ -1,0 +1,108 @@
+{
+  "config": {
+    "id": "coco_yolov8n_1280",
+    "weights": "models/yolov8n.pt",
+    "imgsz": 1280,
+    "classes": [
+      2
+    ],
+    "conf": 0.2,
+    "high": 0.5,
+    "overlap_fraction": 0.05,
+    "max_det": 500,
+    "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "selected_from": "reports/real_photos/development_selection.json",
+    "training": "Official COCO pretrained weights; no training on this PKLot subset",
+    "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+  },
+  "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "images": 36,
+  "date_count": 32,
+  "detection_conf_020": {
+    "tp": 1277,
+    "fp": 113,
+    "fn": 883,
+    "precision": 0.918705035971223,
+    "recall": 0.5912037037037037,
+    "f1": 0.7194366197183099
+  },
+  "detection_conf_050": {
+    "tp": 750,
+    "fp": 8,
+    "fn": 1410,
+    "precision": 0.9894459102902374,
+    "recall": 0.3472222222222222,
+    "f1": 0.5140507196710076
+  },
+  "groups": {
+    "PUCPR": {
+      "tp": 355,
+      "fp": 27,
+      "fn": 658,
+      "precision": 0.9293193717277487,
+      "recall": 0.3504442250740375,
+      "f1": 0.5089605734767025
+    },
+    "Cloudy": {
+      "tp": 302,
+      "fp": 26,
+      "fn": 155,
+      "precision": 0.9207317073170732,
+      "recall": 0.6608315098468271,
+      "f1": 0.7694267515923567
+    },
+    "Rainy": {
+      "tp": 471,
+      "fp": 38,
+      "fn": 400,
+      "precision": 0.925343811394892,
+      "recall": 0.5407577497129736,
+      "f1": 0.6826086956521739
+    },
+    "Sunny": {
+      "tp": 504,
+      "fp": 49,
+      "fn": 328,
+      "precision": 0.9113924050632911,
+      "recall": 0.6057692307692307,
+      "f1": 0.7277978339350181
+    },
+    "UFPR04": {
+      "tp": 350,
+      "fp": 34,
+      "fn": 137,
+      "precision": 0.9114583333333334,
+      "recall": 0.7186858316221766,
+      "f1": 0.8036739380022963
+    },
+    "UFPR05": {
+      "tp": 572,
+      "fp": 52,
+      "fn": 88,
+      "precision": 0.9166666666666666,
+      "recall": 0.8666666666666667,
+      "f1": 0.8909657320872274
+    }
+  },
+  "occupancy": {
+    "confusion": {
+      "occupied->free": 607,
+      "occupied->unknown": 561,
+      "occupied->occupied": 528,
+      "free->unknown": 88,
+      "free->free": 1542
+    },
+    "total": 3326,
+    "unknown": 649,
+    "coverage": 0.8048707155742634,
+    "correct_over_all": 0.6223692122669874,
+    "accuracy_when_decided": 0.7732536421367202,
+    "false_free": 607,
+    "false_free_among_observed_free": 0.2824569567240577,
+    "false_free_among_true_occupied": 0.3579009433962264
+  },
+  "mean_inference_ms": 156.27405555555555,
+  "device": "0",
+  "timing_scope": "model.predict including preprocess/postprocess; first call includes warm-up; occupancy time excluded",
+  "measured_at_utc": "2026-11-01T08:35:23.882628+00:00"
+}

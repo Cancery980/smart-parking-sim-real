@@ -1,0 +1,130 @@
+{
+  "started_at_utc": "2026-11-01T08:36:23.015Z",
+  "base_url": "http://127.0.0.1:8767",
+  "scope": "Real photograph UI, two actual inference requests plus one explicitly simulated HTTP failure for recovery.",
+  "passed": true,
+  "checks": [
+    {
+      "name": "清单与默认独立测试照片正确，未运行前不显示检测结果",
+      "passed": true,
+      "photo_id": "pucpr_2012-10-05_08_22_49"
+    },
+    {
+      "name": "原图像素比例与固定来源链接正确",
+      "passed": true,
+      "geometry": {
+        "native": [
+          1280,
+          720
+        ],
+        "rect": [
+          1100,
+          618.75
+        ]
+      }
+    },
+    {
+      "name": "按钮执行真实YOLO，画面统计与本次结果一致",
+      "passed": true,
+      "frame_id": "real_000003",
+      "model": {
+        "weights": "models/yolov8n.pt",
+        "imgsz": 1280,
+        "conf": 0.2,
+        "high": 0.5,
+        "overlap_fraction": 0.05,
+        "classes": [
+          2
+        ],
+        "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "device": "0"
+      },
+      "detections": 66,
+      "spots": 195,
+      "elapsed_ms": 1128.34
+    },
+    {
+      "name": "点击多边形固定依据，置信度与相交比例匹配当前帧",
+      "passed": true,
+      "spot_id": "S010",
+      "state": "unknown",
+      "evidence_rows": 1
+    },
+    {
+      "name": "Esc取消固定依据",
+      "passed": true
+    },
+    {
+      "name": "原图车位检测框图层可独立切换",
+      "passed": true
+    },
+    {
+      "name": "切换照片清除旧检测统计与固定证据",
+      "passed": true,
+      "next_photo": "pucpr_2012-10-14_18_10_08"
+    },
+    {
+      "name": "视角天气划分筛选准确",
+      "passed": true,
+      "count": 4,
+      "view": "PUCPR",
+      "weather": "Cloudy"
+    },
+    {
+      "name": "模拟503显示中文原因并清除统计，允许重试",
+      "passed": true,
+      "simulated": true
+    },
+    {
+      "name": "错误后重试实际模型成功并获得新帧",
+      "passed": true,
+      "simulated": false,
+      "frame_id": "real_000004",
+      "detections": 0
+    },
+    {
+      "name": "390像素窄屏无横向溢出且可点击查看判定依据",
+      "passed": true,
+      "viewport": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": {
+          "x": 15,
+          "y": 867.890625,
+          "width": 360,
+          "height": 202.5,
+          "top": 867.890625,
+          "right": 375,
+          "bottom": 1070.390625,
+          "left": 15
+        }
+      },
+      "evidence_rows": 0
+    },
+    {
+      "name": "真实照片浏览与推理不改变仿真停车会话",
+      "passed": true
+    },
+    {
+      "name": "原仿真首页窄屏入口可见",
+      "passed": true
+    },
+    {
+      "name": "浏览器无脚本异常",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "catalog_photos": 54,
+  "tested_static_sha256": {
+    "static/real.html": "94e118d4b3c6585210c26bf2c828d1481b1beefafd1de319a376605dab3138f7",
+    "static/real.css": "f9deb5564f521b523408e492bb7afbf9203da7327ccd63fe7d4f6765d456eb9e",
+    "static/real.js": "d2fb3eb7f79331fa2833fcf21df2a040ba0c7ef44ede4238ad36a18ee871d74e",
+    "static/index.html": "0f0e74400f268fd993cd6459301096082d7a03753234495b7547827ca4e131af"
+  },
+  "screenshots": [
+    "reports/real_photo_ui.png",
+    "reports/real_photo_ui_mobile.png"
+  ],
+  "completed_at_utc": "2026-11-01T08:36:26.170Z"
+}

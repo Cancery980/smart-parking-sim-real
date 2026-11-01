@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2",
+  "selection": "2 development and 4 test frames per view/weather; one timestamp per selected date within stratum; hash ordering, no model or label filtering",
+  "date_assignment_seed": 0,
+  "date_assignment": {
+    "2012-09-11": "dev",
+    "2012-09-12": "dev",
+    "2012-09-13": "test",
+    "2012-09-14": "test",
+    "2012-09-15": "test",
+    "2012-09-16": "dev",
+    "2012-09-17": "dev",
+    "2012-09-18": "dev",
+    "2012-09-19": "dev",
+    "2012-09-20": "test",
+    "2012-09-21": "dev",
+    "2012-09-28": "dev",
+    "2012-09-29": "dev",
+    "2012-10-05": "test",
+    "2012-10-09": "dev",
+    "2012-10-11": "test",
+    "2012-10-12": "test",
+    "2012-10-13": "test",
+    "2012-10-14": "test",
+    "2012-10-15": "test",
+    "2012-10-16": "test",
+    "2012-10-17": "test",
+    "2012-10-23": "test",
+    "2012-10-25": "test",
+    "2012-10-26": "test",
+    "2012-10-27": "test",
+    "2012-10-28": "dev",
+    "2012-10-29": "test",
+    "2012-10-30": "test",
+    "2012-10-31": "dev",
+    "2012-11-06": "dev",
+    "2012-11-07": "dev",
+    "2012-11-08": "dev",
+    "2012-11-09": "test",
+    "2012-11-10": "test",
+    "2012-11-11": "test",
+    "2012-11-20": "dev",
+    "2012-12-07": "dev",
+    "2012-12-08": "test",
+    "2012-12-11": "test",
+    "2012-12-12": "dev",
+    "2012-12-13": "test",
+    "2012-12-14": "test",
+    "2012-12-15": "dev",
+    "2012-12-16": "test",
+    "2012-12-17": "test",
+    "2012-12-18": "dev",
+    "2012-12-19": "test",
+    "2012-12-20": "dev",
+    "2012-12-21": "dev",
+    "2012-12-22": "test",
+    "2012-12-23": "dev",
+    "2012-12-24": "test",
+    "2012-12-26": "dev",
+    "2012-12-27": "test",
+    "2012-12-28": "dev",
+    "2012-12-29": "test",
+    "2013-01-15": "dev",
+    "2013-01-16": "test",
+    "2013-01-17": "dev",
+    "2013-01-18": "test",
+    "2013-01-19": "test",
+    "2013-01-20": "dev",
+    "2013-01-21": "test",
+    "2013-01-22": "test",
+    "2013-01-29": "dev",
+    "2013-02-22": "dev",
+    "2013-02-23": "test",
+    "2013-02-26": "test",
+    "2013-02-28": "dev",
+    "2013-03-01": "test",
+    "2013-03-02": "test",
+    "2013-03-05": "test",
+    "2013-03-06": "dev",
+    "2013-03-09": "dev",
+    "2013-03-11": "test",
+    "2013-03-12": "test",
+    "2013-03-13": "dev",
+    "2013-03-14": "dev",
+    "2013-03-15": "test",
+    "2013-03-16": "dev",
+    "2013-03-17": "test",
+    "2013-03-18": "test",
+    "2013-03-19": "test",
+    "2013-03-20": "dev",
+    "2013-03-21": "dev",
+    "2013-03-22": "test",
+    "2013-04-08": "test",
+    "2013-04-09": "dev",
+    "2013-04-10": "test",
+    "2013-04-11": "dev",
+    "2013-04-12": "test",
+    "2013-04-13": "dev",
+    "2013-04-14": "dev",
+    "2013-04-15": "test",
+    "2013-04-16": "test"
+  },
+  "selection_names": [
+    [
+      "dev",
+      "PKLot/PUCPR/Cloudy/2012-09-12/2012-09-12_07_49_42.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/PUCPR/Cloudy/2012-09-28/2012-09-28_07_16_00.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Cloudy/2012-10-05/2012-10-05_08_22_49.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Cloudy/2012-10-14/2012-10-14_18_10_08.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Cloudy/2012-10-12/2012-10-12_13_47_50.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Cloudy/2012-10-16/2012-10-16_06_11_43.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/PUCPR/Rainy/2012-09-16/2012-09-16_07_52_58.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/PUCPR/Rainy/2012-09-21/2012-09-21_11_20_24.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Rainy/2012-10-26/2012-10-26_08_49_32.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Rainy/2012-11-10/2012-11-10_07_52_42.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Rainy/2012-10-11/2012-10-11_09_56_37.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Rainy/2012-10-23/2012-10-23_08_20_50.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/PUCPR/Sunny/2012-11-07/2012-11-07_13_04_37.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/PUCPR/Sunny/2012-09-21/2012-09-21_16_15_36.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Sunny/2012-10-15/2012-10-15_07_45_45.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Sunny/2012-11-10/2012-11-10_18_18_12.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Sunny/2012-09-14/2012-09-14_09_01_10.jpg"
+    ],
+    [
+      "test",
+      "PKLot/PUCPR/Sunny/2012-09-15/2012-09-15_10_17_09.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Cloudy/2013-01-29/2013-01-29_14_16_16.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Cloudy/2012-12-15/2012-12-15_12_50_09.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Cloudy/2012-12-27/2012-12-27_15_10_11.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Cloudy/2012-12-16/2012-12-16_11_40_07.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Cloudy/2013-01-19/2013-01-19_12_40_08.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Cloudy/2012-12-14/2012-12-14_11_05_07.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Rainy/2013-01-17/2013-01-17_08_55_04.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Rainy/2012-12-26/2012-12-26_16_50_13.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Rainy/2013-01-18/2013-01-18_17_15_13.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Rainy/2012-12-11/2012-12-11_16_26_08.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Rainy/2012-12-19/2012-12-19_20_05_16.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Rainy/2013-01-16/2013-01-16_15_55_12.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Sunny/2012-12-20/2012-12-20_17_30_12.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR04/Sunny/2012-12-18/2012-12-18_12_20_08.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Sunny/2012-12-17/2012-12-17_20_25_18.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Sunny/2013-01-22/2013-01-22_09_15_04.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Sunny/2012-12-13/2012-12-13_17_40_14.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR04/Sunny/2013-01-18/2013-01-18_09_00_04.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Cloudy/2013-02-22/2013-02-22_17_15_12.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Cloudy/2013-04-13/2013-04-13_11_00_05.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Cloudy/2013-03-12/2013-03-12_13_10_08.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Cloudy/2013-03-15/2013-03-15_18_00_14.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Cloudy/2013-04-08/2013-04-08_18_01_44.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Cloudy/2013-03-05/2013-03-05_17_10_12.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Rainy/2013-03-20/2013-03-20_16_35_12.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Rainy/2013-04-13/2013-04-13_09_15_03.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Rainy/2013-03-05/2013-03-05_16_40_12.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Rainy/2013-04-12/2013-04-12_17_05_12.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Rainy/2013-03-19/2013-03-19_06_55_01.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Rainy/2013-02-26/2013-02-26_13_04_33.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Sunny/2013-02-28/2013-02-28_18_10_44.jpg"
+    ],
+    [
+      "dev",
+      "PKLot/UFPR05/Sunny/2013-04-14/2013-04-14_14_40_09.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Sunny/2013-03-18/2013-03-18_11_30_06.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Sunny/2013-02-26/2013-02-26_15_19_36.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Sunny/2013-04-10/2013-04-10_10_15_04.jpg"
+    ],
+    [
+      "test",
+      "PKLot/UFPR05/Sunny/2013-04-16/2013-04-16_10_45_05.jpg"
+    ]
+  ],
+  "dev_frames": 18,
+  "test_frames": 36,
+  "views": [
+    "ufpr04",
+    "ufpr05",
+    "pucpr"
+  ],
+  "weather": [
+    "Cloudy",
+    "Sunny",
+    "Rainy"
+  ],
+  "physical_parking_lots": 2,
+  "training_on_this_subset": false,
+  "split_boundary": "Entire calendar date. No date appears in both dev and test. Frames from one fixed camera/day are correlated; this is not the official cross-dataset MetaPKLot benchmark.",
+  "upstream_annotation_bundles": [
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/cars/PKLot/ufpr04_cars.tar.xz",
+      "sha256": "6a3831bb5af85685942cd4a018e3dcef1ccca2043f870f8f7d6f2b571308e977",
+      "bytes": 1426408
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/spots/PKLot/ufpr04_spots.tar.xz",
+      "sha256": "e7fc2c3151e86baa25de034e41a27bf6637a3990f314ff8db1079cf2ac850227",
+      "bytes": 662164
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/cars/PKLot/ufpr05_cars.tar.xz",
+      "sha256": "7cc6a531574713226c71f4ed73a92b740ce051d78268e66c8a40b14e20478dee",
+      "bytes": 1593204
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/spots/PKLot/ufpr05_spots.tar.xz",
+      "sha256": "c5326d5ba89bde68f73b922c557e1c9255380d3c7e26502b6c7543e5c234a0c5",
+      "bytes": 929244
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/cars/PKLot/pucpr_cars.tar.xz",
+      "sha256": "1a08a39c53e2c8eed19a54edd4e2d91135e8632e859786b5c26b829774127f4c",
+      "bytes": 3194472
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/annotations/original/spots/PKLot/pucpr_spots.tar.xz",
+      "sha256": "679e16908c21b4c46df7f01c885cee9c08499c652fcd223e1393dbe3b194c322",
+      "bytes": 4709984
+    }
+  ]
+}

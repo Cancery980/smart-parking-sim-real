@@ -1,0 +1,334 @@
+{
+  "protocol": {
+    "confidence": 0.2,
+    "high_confidence": 0.5,
+    "iou_nms": 0.7,
+    "max_det": 500,
+    "iou_match": 0.5,
+    "overlap_fraction": 0.05,
+    "roi_policy": "Only detection/GT centers within author annotationsRectangle; boxes clipped to that region; confidence-ordered one-to-one IoU matches. Outside ROI ignored.",
+    "selection_metric": "Pretrained candidates and one real-data finetune compared using dev-only vehicle F1. Fixed confidence/occupancy thresholds retained.",
+    "detection_metric": "Fixed IoU=.50 precision/recall/F1, not mAP. No ground-truth boxes/labels supplied to inference.",
+    "manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+    "annotations_sha256": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+    "scope": "PKLot subset: 270 training photos from other dates, 18 dev photos for checkpoint/model selection, 36 test photos on 32 dates. Two physical lots/three known views; not unseen-site generalization. No thresholds tuned on test."
+  },
+  "selected": {
+    "config": {
+      "id": "pklot_yolov8n_1280",
+      "weights": "models/parking_real_yolov8n.pt",
+      "imgsz": 1280,
+      "classes": [
+        0
+      ],
+      "conf": 0.2,
+      "high": 0.5,
+      "overlap_fraction": 0.05,
+      "max_det": 500,
+      "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+      "selected_from": "reports/real_photos/trained_development_selection.json",
+      "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+      "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+    },
+    "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+    "images": 36,
+    "date_count": 32,
+    "detection_conf_020": {
+      "tp": 2134,
+      "fp": 76,
+      "fn": 26,
+      "precision": 0.9656108597285068,
+      "recall": 0.9879629629629629,
+      "f1": 0.9766590389016019
+    },
+    "detection_conf_050": {
+      "tp": 2122,
+      "fp": 33,
+      "fn": 38,
+      "precision": 0.9846867749419954,
+      "recall": 0.9824074074074074,
+      "f1": 0.9835457705677868
+    },
+    "groups": {
+      "PUCPR": {
+        "tp": 1009,
+        "fp": 22,
+        "fn": 4,
+        "precision": 0.9786614936954413,
+        "recall": 0.9960513326752222,
+        "f1": 0.987279843444227
+      },
+      "Cloudy": {
+        "tp": 452,
+        "fp": 19,
+        "fn": 5,
+        "precision": 0.9596602972399151,
+        "recall": 0.9890590809628009,
+        "f1": 0.9741379310344828
+      },
+      "Rainy": {
+        "tp": 861,
+        "fp": 31,
+        "fn": 10,
+        "precision": 0.9652466367713004,
+        "recall": 0.9885189437428243,
+        "f1": 0.9767441860465116
+      },
+      "Sunny": {
+        "tp": 821,
+        "fp": 26,
+        "fn": 11,
+        "precision": 0.9693034238488784,
+        "recall": 0.9867788461538461,
+        "f1": 0.9779630732578916
+      },
+      "UFPR04": {
+        "tp": 470,
+        "fp": 26,
+        "fn": 17,
+        "precision": 0.9475806451612904,
+        "recall": 0.9650924024640657,
+        "f1": 0.9562563580874873
+      },
+      "UFPR05": {
+        "tp": 655,
+        "fp": 28,
+        "fn": 5,
+        "precision": 0.95900439238653,
+        "recall": 0.9924242424242424,
+        "f1": 0.9754281459419211
+      }
+    },
+    "occupancy": {
+      "confusion": {
+        "occupied->occupied": 1686,
+        "occupied->unknown": 10,
+        "free->unknown": 95,
+        "free->free": 1530,
+        "free->occupied": 5
+      },
+      "total": 3326,
+      "unknown": 105,
+      "coverage": 0.9684305472038485,
+      "correct_over_all": 0.9669272399278412,
+      "accuracy_when_decided": 0.99844768705371,
+      "false_free": 0,
+      "false_free_among_observed_free": 0.0,
+      "false_free_among_true_occupied": 0.0
+    },
+    "mean_inference_ms": 93.13927777777778,
+    "device": "cpu",
+    "timing_scope": "model.predict including preprocess/postprocess; first call includes warm-up; occupancy time excluded",
+    "measured_at_utc": "2026-11-01T09:08:07.130427+00:00"
+  },
+  "synthetic_baseline": {
+    "config": {
+      "id": "synthetic_yolov8n_832",
+      "weights": "models/parking_yolov8n.pt",
+      "imgsz": 832,
+      "classes": [
+        0
+      ]
+    },
+    "weights_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+    "images": 36,
+    "date_count": 32,
+    "detection_conf_020": {
+      "tp": 504,
+      "fp": 952,
+      "fn": 1656,
+      "precision": 0.34615384615384615,
+      "recall": 0.23333333333333334,
+      "f1": 0.27876106194690264
+    },
+    "detection_conf_050": {
+      "tp": 344,
+      "fp": 492,
+      "fn": 1816,
+      "precision": 0.41148325358851673,
+      "recall": 0.15925925925925927,
+      "f1": 0.22963951935914553
+    },
+    "groups": {
+      "PUCPR": {
+        "tp": 243,
+        "fp": 495,
+        "fn": 770,
+        "precision": 0.32926829268292684,
+        "recall": 0.23988153998025666,
+        "f1": 0.2775556824671616
+      },
+      "Cloudy": {
+        "tp": 135,
+        "fp": 234,
+        "fn": 322,
+        "precision": 0.36585365853658536,
+        "recall": 0.29540481400437635,
+        "f1": 0.3268765133171913
+      },
+      "Rainy": {
+        "tp": 201,
+        "fp": 373,
+        "fn": 670,
+        "precision": 0.3501742160278746,
+        "recall": 0.23076923076923078,
+        "f1": 0.2782006920415225
+      },
+      "Sunny": {
+        "tp": 168,
+        "fp": 345,
+        "fn": 664,
+        "precision": 0.32748538011695905,
+        "recall": 0.20192307692307693,
+        "f1": 0.24981412639405204
+      },
+      "UFPR04": {
+        "tp": 65,
+        "fp": 145,
+        "fn": 422,
+        "precision": 0.30952380952380953,
+        "recall": 0.13347022587268995,
+        "f1": 0.18651362984218078
+      },
+      "UFPR05": {
+        "tp": 196,
+        "fp": 312,
+        "fn": 464,
+        "precision": 0.3858267716535433,
+        "recall": 0.296969696969697,
+        "f1": 0.3356164383561644
+      }
+    },
+    "occupancy": {
+      "confusion": {
+        "occupied->unknown": 775,
+        "occupied->occupied": 537,
+        "occupied->free": 384,
+        "free->free": 1500,
+        "free->unknown": 118,
+        "free->occupied": 12
+      },
+      "total": 3326,
+      "unknown": 893,
+      "coverage": 0.7315093205051112,
+      "correct_over_all": 0.6124473842453397,
+      "accuracy_when_decided": 0.8372379778051788,
+      "false_free": 384,
+      "false_free_among_observed_free": 0.20382165605095542,
+      "false_free_among_true_occupied": 0.22641509433962265
+    },
+    "mean_inference_ms": 163.3605,
+    "device": "0",
+    "timing_scope": "model.predict including preprocess/postprocess; first call includes warm-up; occupancy time excluded",
+    "measured_at_utc": "2026-11-01T08:35:05.705025+00:00"
+  },
+  "pretrained_baseline": {
+    "config": {
+      "id": "coco_yolov8n_1280",
+      "weights": "models/yolov8n.pt",
+      "imgsz": 1280,
+      "classes": [
+        2
+      ],
+      "conf": 0.2,
+      "high": 0.5,
+      "overlap_fraction": 0.05,
+      "max_det": 500,
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "selected_from": "reports/real_photos/development_selection.json",
+      "training": "Official COCO pretrained weights; no training on this PKLot subset",
+      "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+    },
+    "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "images": 36,
+    "date_count": 32,
+    "detection_conf_020": {
+      "tp": 1277,
+      "fp": 113,
+      "fn": 883,
+      "precision": 0.918705035971223,
+      "recall": 0.5912037037037037,
+      "f1": 0.7194366197183099
+    },
+    "detection_conf_050": {
+      "tp": 750,
+      "fp": 8,
+      "fn": 1410,
+      "precision": 0.9894459102902374,
+      "recall": 0.3472222222222222,
+      "f1": 0.5140507196710076
+    },
+    "groups": {
+      "PUCPR": {
+        "tp": 355,
+        "fp": 27,
+        "fn": 658,
+        "precision": 0.9293193717277487,
+        "recall": 0.3504442250740375,
+        "f1": 0.5089605734767025
+      },
+      "Cloudy": {
+        "tp": 302,
+        "fp": 26,
+        "fn": 155,
+        "precision": 0.9207317073170732,
+        "recall": 0.6608315098468271,
+        "f1": 0.7694267515923567
+      },
+      "Rainy": {
+        "tp": 471,
+        "fp": 38,
+        "fn": 400,
+        "precision": 0.925343811394892,
+        "recall": 0.5407577497129736,
+        "f1": 0.6826086956521739
+      },
+      "Sunny": {
+        "tp": 504,
+        "fp": 49,
+        "fn": 328,
+        "precision": 0.9113924050632911,
+        "recall": 0.6057692307692307,
+        "f1": 0.7277978339350181
+      },
+      "UFPR04": {
+        "tp": 350,
+        "fp": 34,
+        "fn": 137,
+        "precision": 0.9114583333333334,
+        "recall": 0.7186858316221766,
+        "f1": 0.8036739380022963
+      },
+      "UFPR05": {
+        "tp": 572,
+        "fp": 52,
+        "fn": 88,
+        "precision": 0.9166666666666666,
+        "recall": 0.8666666666666667,
+        "f1": 0.8909657320872274
+      }
+    },
+    "occupancy": {
+      "confusion": {
+        "occupied->free": 607,
+        "occupied->unknown": 561,
+        "occupied->occupied": 528,
+        "free->unknown": 88,
+        "free->free": 1542
+      },
+      "total": 3326,
+      "unknown": 649,
+      "coverage": 0.8048707155742634,
+      "correct_over_all": 0.6223692122669874,
+      "accuracy_when_decided": 0.7732536421367202,
+      "false_free": 607,
+      "false_free_among_observed_free": 0.2824569567240577,
+      "false_free_among_true_occupied": 0.3579009433962264
+    },
+    "mean_inference_ms": 156.27405555555555,
+    "device": "0",
+    "timing_scope": "model.predict including preprocess/postprocess; first call includes warm-up; occupancy time excluded",
+    "measured_at_utc": "2026-11-01T08:35:23.882628+00:00"
+  },
+  "config_sha256": "3caa16df0eb97dc03a293e1331b37c1da610f2e9758d774240f42cc06ef4e119"
+}
