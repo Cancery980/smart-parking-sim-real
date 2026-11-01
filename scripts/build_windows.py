@@ -17,41 +17,51 @@ EXCLUDED = {'.git', '.venv', 'venv', 'cpu-venv', 'runtime', '__pycache__', '.pyt
 def runtime_resources() -> list[tuple[Path, str]]:
     """Resolve the frozen model and offline photographs before invoking the build."""
     config_path = ROOT / 'models/real_photo_config.json'
-    manifest_path = ROOT / 'data/real/manifest.json'
     try:
         config = json.loads(config_path.read_text(encoding='utf-8'))
-        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        manifest_paths = ['data/real/manifest.json', *config.get('extra_manifests',[])]
+        manifests = []
+        for relative_manifest in manifest_paths:
+            manifest_path = (ROOT / relative_manifest).resolve()
+            if Path(relative_manifest).is_absolute() or not manifest_path.is_relative_to(ROOT.resolve()):
+                raise ValueError('照片清单必须位于项目内')
+            manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+            photos = manifest['photos']
+            if not isinstance(photos,list) or not photos:
+                raise ValueError('真实照片清单为空或格式不正确')
+            manifests.append((manifest_path,photos))
         relative_weights = config['weights']
         if not isinstance(relative_weights, str) or not relative_weights or Path(relative_weights).is_absolute():
             raise ValueError('真实照片模型 weights 必须为项目内的相对路径')
         real_weights = (ROOT / relative_weights).resolve()
         if not real_weights.is_relative_to(ROOT.resolve()):
             raise ValueError('真实照片模型路径不能超出项目目录')
-        photos = manifest['photos']
-        if not isinstance(photos,list) or not photos:
-            raise ValueError('真实照片清单为空或格式不正确')
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise RuntimeError(f'无法读取真实照片打包配置；请先准备 manifest.json 和 real_photo_config.json：{exc}') from exc
     resources = [(ROOT/'static','static'), (ROOT/'models/parking_yolov8n.pt','models'),
                  (config_path,'models'), (real_weights,real_weights.relative_to(ROOT).parent.as_posix()),
-                 (manifest_path,'data/real'), (ROOT/'data/real/images','data/real/images'),
-                 (ROOT/'data/real/ATTRIBUTION.md','data/real'),
                  (ROOT/'reports/report.html','reports'), (ROOT/'reports/real_photo_report.html','reports')]
+    for manifest_path, photos in manifests:
+        relative_dir = manifest_path.parent.relative_to(ROOT).as_posix()
+        resources.extend([(manifest_path,relative_dir),(manifest_path.parent/'images',relative_dir+'/images'),
+                          (manifest_path.parent/'ATTRIBUTION.md',relative_dir)])
+        notice = manifest_path.parent/'ODbL-NOTICE.txt'
+        if notice.is_file(): resources.append((notice,relative_dir))
+        image_dir = (manifest_path.parent/'images').resolve()
+        for photo in photos:
+            relative = photo.get('image') if isinstance(photo,dict) else None
+            if not isinstance(relative,str):
+                raise ValueError('真实照片清单中的 image 路径缺失。')
+            image_path = (ROOT/relative).resolve()
+            if Path(relative).is_absolute() or not image_path.is_relative_to(image_dir):
+                raise ValueError(f'真实照片必须位于所属清单的 images 目录内：{relative}')
+            if not image_path.is_file() or hashlib.sha256(image_path.read_bytes()).hexdigest() != photo['sha256']:
+                raise ValueError(f'缺少离线真实照片或 SHA-256 不一致：{relative}')
     for source,_ in resources:
         if not source.exists():
             raise FileNotFoundError(f'缺少打包必需资源：{source.relative_to(ROOT)}；请先生成报告并完成模型选择。')
     if config.get('weights_sha256') and hashlib.sha256(real_weights.read_bytes()).hexdigest() != config['weights_sha256']:
         raise ValueError('真实照片模型 SHA-256 与冻结配置不一致，请重新核对模型选择结果。')
-    image_dir = (ROOT/'data/real/images').resolve()
-    for photo in photos:
-        relative = photo.get('image') if isinstance(photo,dict) else None
-        if not isinstance(relative,str):
-            raise ValueError('真实照片清单中的 image 路径缺失。')
-        image_path = (ROOT/relative).resolve()
-        if Path(relative).is_absolute() or not image_path.is_relative_to(image_dir):
-            raise ValueError(f'真实照片必须位于 data/real/images 内：{relative}')
-        if not image_path.is_file():
-            raise FileNotFoundError(f'缺少离线真实照片：{relative}')
     # A selected model may also be one of the fixed resources.
     return list(dict.fromkeys(resources))
 
@@ -64,7 +74,7 @@ def copy_source_and_licenses(bundle: Path) -> None:
         dirs[:] = [d for d in dirs if d not in EXCLUDED and (Path(directory) / d).resolve() != bundle
                    and not (relative == Path('data') and d == 'training_runs')]
         for name in files:
-            if name == '.local-python.txt' or name.endswith('.pyc'):
+            if name in {'.git', '.local-python.txt'} or name.endswith('.pyc'):
                 continue
             target = bundle / 'source' / relative / name
             target.parent.mkdir(parents=True, exist_ok=True)

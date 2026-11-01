@@ -1,0 +1,126 @@
+{
+  "photo_id": "cnr_camera8_2016-01-09_16_13_00",
+  "image_sha256": "a0eb8a8a69f263f38437fef2344fdaf64f4e74adf2522f0ddad1d0a7a2b07d9c",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        658.3443603515625,
+        104.51212310791016,
+        712.5662841796875,
+        172.34483337402344
+      ],
+      "confidence": 0.9299777746200562,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        590.045166015625,
+        114.62700653076172,
+        644.765869140625,
+        174.830078125
+      ],
+      "confidence": 0.8833602666854858,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        701.79638671875,
+        251.14718627929688,
+        739.2019653320312,
+        279.3986511230469
+      ],
+      "confidence": 0.5612069368362427,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        538.8252563476562,
+        449.0104675292969,
+        633.7276611328125,
+        528.8431396484375
+      ],
+      "confidence": 0.45715391635894775,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        109.14185333251953,
+        449.3185729980469,
+        219.6603546142578,
+        533.6821899414062
+      ],
+      "confidence": 0.4235227406024933,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d005",
+      "bbox_xyxy_px": [
+        117.9454345703125,
+        378.9999694824219,
+        245.68789672851562,
+        485.6919250488281
+      ],
+      "confidence": 0.3496803641319275,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d006",
+      "bbox_xyxy_px": [
+        539.61279296875,
+        377.10833740234375,
+        620.6829223632812,
+        463.0484313964844
+      ],
+      "confidence": 0.2604408264160156,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 3,
+    "fp": 4,
+    "fn": 1
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001",
+      "d005"
+    ],
+    "false_positive_ids": [
+      "d002",
+      "d003",
+      "d004",
+      "d006"
+    ],
+    "missed_boxes": [
+      [
+        535,
+        377,
+        637,
+        527
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 51,
+    "occupied->occupied": 2,
+    "occupied->unknown": 2
+  },
+  "inference_roi_xywh": null,
+  "detection_threshold": 0.2,
+  "inference_ms": 219.92220000174711,
+  "inference_reused": false
+}

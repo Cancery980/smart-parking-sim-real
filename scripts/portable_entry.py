@@ -51,7 +51,7 @@ def main() -> int:
             input("按 Enter 关闭此窗口……")
         return 2
     try:
-        print("智慧停车演示版 v1.1  |  真实照片与二维停车流程", flush=True)
+        print("智慧停车演示版 v1.2  |  真实照片与二维停车流程", flush=True)
         print("正在加载本地 CPU 模型，首次启动请稍候……", flush=True)
         import torch
         torch.set_num_threads(min(4, os.cpu_count() or 1))

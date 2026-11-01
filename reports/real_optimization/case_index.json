@@ -1,0 +1,105 @@
+{
+  "selected_id": "yolov8s_747_roi_cpu",
+  "cases": [
+    {
+      "dataset": "legacy_test",
+      "photo_id": "pucpr_2012-10-05_08_22_49",
+      "view": "PUCPR",
+      "selection": [
+        "PUCPR 视角内最低召回，平局按照片ID"
+      ],
+      "score": {
+        "tp": 161,
+        "fp": 2,
+        "fn": 1
+      },
+      "detection_threshold": 0.35,
+      "image": "reports/real_optimization/cases/legacy_test_pucpr_2012-10-05_08_22_49.png",
+      "source_url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/PKLot/PUCPR/Cloudy/2012-10-05/2012-10-05_08_22_49.jpg",
+      "source_sha256": "86b9a826327105f19e098b6b284692111c9ba9019723a7a5f0ff851c26a4173c",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "prediction_path": "reports/real_optimization/final/legacy_test/yolov8s_747_roi_cpu/predictions/pucpr_2012-10-05_08_22_49.json"
+    },
+    {
+      "dataset": "legacy_test",
+      "photo_id": "ufpr04_2013-01-18_09_00_04",
+      "view": "UFPR04",
+      "selection": [
+        "UFPR04 视角内最低召回，平局按照片ID"
+      ],
+      "score": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 2
+      },
+      "detection_threshold": 0.35,
+      "image": "reports/real_optimization/cases/legacy_test_ufpr04_2013-01-18_09_00_04.png",
+      "source_url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/PKLot/UFPR04/Sunny/2013-01-18/2013-01-18_09_00_04.jpg",
+      "source_sha256": "a1e50dd80d2e04d00b4fe868d80576413613515b32de6b30d3bbe61982005c9e",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "prediction_path": "reports/real_optimization/final/legacy_test/yolov8s_747_roi_cpu/predictions/ufpr04_2013-01-18_09_00_04.json"
+    },
+    {
+      "dataset": "legacy_test",
+      "photo_id": "ufpr05_2013-03-15_18_00_14",
+      "view": "UFPR05",
+      "selection": [
+        "UFPR05 视角内最低召回，平局按照片ID"
+      ],
+      "score": {
+        "tp": 37,
+        "fp": 0,
+        "fn": 1
+      },
+      "detection_threshold": 0.35,
+      "image": "reports/real_optimization/cases/legacy_test_ufpr05_2013-03-15_18_00_14.png",
+      "source_url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/PKLot/UFPR05/Cloudy/2013-03-15/2013-03-15_18_00_14.jpg",
+      "source_sha256": "3fad56b1d817b8008f142e329dade16441ded0b44407e82cca81839c1913452e",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "prediction_path": "reports/real_optimization/final/legacy_test/yolov8s_747_roi_cpu/predictions/ufpr05_2013-03-15_18_00_14.json"
+    },
+    {
+      "dataset": "external_test",
+      "photo_id": "cnr_camera2_2015-12-10_09_15_00",
+      "view": "CAMERA2",
+      "selection": [
+        "外部全集最低召回，平局按照片ID"
+      ],
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 8
+      },
+      "detection_threshold": 0.35,
+      "image": "reports/real_optimization/cases/external_test_cnr_camera2_2015-12-10_09_15_00.png",
+      "source_url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/CNRPark-EXT/camera2/SUNNY/2015-12-10/2015-12-10_09_15_00.jpg",
+      "source_sha256": "22d41ad27c1b9d38fb3e18ae268f613267b32e6c5d294e386d501e5cdf5ca508",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "prediction_path": "reports/real_optimization/final/external_test/yolov8s_747_roi_cpu/predictions/cnr_camera2_2015-12-10_09_15_00.json"
+    },
+    {
+      "dataset": "external_test",
+      "photo_id": "cnr_camera6_2015-11-25_16_18_00",
+      "view": "CAMERA6",
+      "selection": [
+        "外部全集最多误检，平局按照片ID"
+      ],
+      "score": {
+        "tp": 39,
+        "fp": 7,
+        "fn": 11
+      },
+      "detection_threshold": 0.35,
+      "image": "reports/real_optimization/cases/external_test_cnr_camera6_2015-11-25_16_18_00.png",
+      "source_url": "https://raw.githubusercontent.com/DSBD-Research/MetaPKLot-Dataset/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/CNRPark-EXT/camera6/OVERCAST/2015-11-25/2015-11-25_16_18_00.jpg",
+      "source_sha256": "c09631ad7d6b028d63b9dfca677de6bc4c70afab1b2ad7f4934ca79c59768384",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "prediction_path": "reports/real_optimization/final/external_test/yolov8s_747_roi_cpu/predictions/cnr_camera6_2015-11-25_16_18_00.json"
+    }
+  ]
+}

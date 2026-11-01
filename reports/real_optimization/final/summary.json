@@ -1,0 +1,983 @@
+{
+  "evaluated_at_utc": "2026-11-01T12:52:53.628109+00:00",
+  "frozen_selection_sha256": "7ecd9e238ec8c0316c27332091ae16782f03a1add87de40d79705a66e4d2ca3f",
+  "selected_id": "yolov8s_747_roi_cpu",
+  "datasets": {
+    "legacy_test": {
+      "dataset": {
+        "manifest": "data/real/manifest.json",
+        "manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+        "annotations": "data/real/annotations.json",
+        "annotations_sha256": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+        "split": "test",
+        "images": 36
+      },
+      "comparisons": {
+        "v11_default": {
+          "config": {
+            "id": "v11_default",
+            "weights": "models/parking_real_yolov8n.pt",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "max_det": 500,
+            "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+            "selected_from": "reports/real_photos/trained_development_selection.json",
+            "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+            "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+            "detection_threshold": 0.2,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "full"
+          },
+          "images": 36,
+          "dates": 32,
+          "detection": {
+            "tp": 2134,
+            "fp": 76,
+            "fn": 26,
+            "precision": 0.9656108597285068,
+            "recall": 0.9879629629629629,
+            "f1": 0.9766590389016019
+          },
+          "detection_conf_020": {
+            "tp": 2134,
+            "fp": 76,
+            "fn": 26,
+            "precision": 0.9656108597285068,
+            "recall": 0.9879629629629629,
+            "f1": 0.9766590389016019
+          },
+          "occupancy": {
+            "confusion": {
+              "occupied->occupied": 1686,
+              "occupied->unknown": 10,
+              "free->unknown": 95,
+              "free->free": 1530,
+              "free->occupied": 5
+            },
+            "total": 3326,
+            "unknown": 105,
+            "coverage": 0.9684305472038485,
+            "correct_over_all": 0.9669272399278412,
+            "accuracy_when_decided": 0.99844768705371,
+            "false_free": 0,
+            "false_free_among_observed_free": 0.0,
+            "false_free_among_true_occupied": 0.0
+          },
+          "groups": {
+            "PUCPR": {
+              "tp": 1009,
+              "fp": 22,
+              "fn": 4,
+              "precision": 0.9786614936954413,
+              "recall": 0.9960513326752222,
+              "f1": 0.987279843444227
+            },
+            "Cloudy": {
+              "tp": 452,
+              "fp": 19,
+              "fn": 5,
+              "precision": 0.9596602972399151,
+              "recall": 0.9890590809628009,
+              "f1": 0.9741379310344828
+            },
+            "Rainy": {
+              "tp": 861,
+              "fp": 31,
+              "fn": 10,
+              "precision": 0.9652466367713004,
+              "recall": 0.9885189437428243,
+              "f1": 0.9767441860465116
+            },
+            "Sunny": {
+              "tp": 821,
+              "fp": 26,
+              "fn": 11,
+              "precision": 0.9693034238488784,
+              "recall": 0.9867788461538461,
+              "f1": 0.9779630732578916
+            },
+            "UFPR04": {
+              "tp": 470,
+              "fp": 26,
+              "fn": 17,
+              "precision": 0.9475806451612904,
+              "recall": 0.9650924024640657,
+              "f1": 0.9562563580874873
+            },
+            "UFPR05": {
+              "tp": 655,
+              "fp": 28,
+              "fn": 5,
+              "precision": 0.95900439238653,
+              "recall": 0.9924242424242424,
+              "f1": 0.9754281459419211
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 186.33831388898318
+        },
+        "v11_dev_calibrated": {
+          "config": {
+            "id": "v11_dev_calibrated",
+            "weights": "models/parking_real_yolov8n.pt",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "max_det": 500,
+            "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+            "selected_from": "reports/real_photos/trained_development_selection.json",
+            "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+            "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+            "detection_threshold": 0.35,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "full"
+          },
+          "images": 36,
+          "dates": 32,
+          "detection": {
+            "tp": 2131,
+            "fp": 52,
+            "fn": 29,
+            "precision": 0.9761795693999084,
+            "recall": 0.986574074074074,
+            "f1": 0.9813492977204697
+          },
+          "detection_conf_020": {
+            "tp": 2134,
+            "fp": 76,
+            "fn": 26,
+            "precision": 0.9656108597285068,
+            "recall": 0.9879629629629629,
+            "f1": 0.9766590389016019
+          },
+          "occupancy": {
+            "confusion": {
+              "occupied->occupied": 1686,
+              "occupied->unknown": 10,
+              "free->unknown": 95,
+              "free->free": 1530,
+              "free->occupied": 5
+            },
+            "total": 3326,
+            "unknown": 105,
+            "coverage": 0.9684305472038485,
+            "correct_over_all": 0.9669272399278412,
+            "accuracy_when_decided": 0.99844768705371,
+            "false_free": 0,
+            "false_free_among_observed_free": 0.0,
+            "false_free_among_true_occupied": 0.0
+          },
+          "groups": {
+            "PUCPR": {
+              "tp": 1008,
+              "fp": 17,
+              "fn": 5,
+              "precision": 0.9834146341463414,
+              "recall": 0.9950641658440277,
+              "f1": 0.9892051030421982
+            },
+            "Cloudy": {
+              "tp": 452,
+              "fp": 13,
+              "fn": 5,
+              "precision": 0.9720430107526882,
+              "recall": 0.9890590809628009,
+              "f1": 0.9804772234273319
+            },
+            "Rainy": {
+              "tp": 860,
+              "fp": 19,
+              "fn": 11,
+              "precision": 0.9783845278725825,
+              "recall": 0.9873708381171068,
+              "f1": 0.9828571428571429
+            },
+            "Sunny": {
+              "tp": 819,
+              "fp": 20,
+              "fn": 13,
+              "precision": 0.9761620977353993,
+              "recall": 0.984375,
+              "f1": 0.9802513464991023
+            },
+            "UFPR04": {
+              "tp": 468,
+              "fp": 17,
+              "fn": 19,
+              "precision": 0.9649484536082474,
+              "recall": 0.9609856262833676,
+              "f1": 0.9629629629629629
+            },
+            "UFPR05": {
+              "tp": 655,
+              "fp": 18,
+              "fn": 5,
+              "precision": 0.9732540861812778,
+              "recall": 0.9924242424242424,
+              "f1": 0.9827456864216054
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 186.33831388898318
+        },
+        "yolov8s_747_roi_cpu": {
+          "config": {
+            "id": "yolov8s_747_roi_cpu",
+            "weights": "models/parking_real_optimized.pt",
+            "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "detection_threshold": 0.35,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "calibrated",
+            "extra_manifests": [
+              "data/real_optimization/external/manifest.json"
+            ],
+            "selected_from": "reports/real_optimization/frozen_selection.json",
+            "roi_by_view": {
+              "PUCPR": [
+                0,
+                140,
+                1280,
+                580
+              ],
+              "UFPR04": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "UFPR05": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "CAMERA1": [
+                78,
+                158,
+                922,
+                592
+              ],
+              "CAMERA2": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA3": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA4": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA5": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA6": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA7": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA8": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA9": [
+                175,
+                0,
+                825,
+                750
+              ]
+            }
+          },
+          "images": 36,
+          "dates": 32,
+          "detection": {
+            "tp": 2136,
+            "fp": 33,
+            "fn": 24,
+            "precision": 0.9847856154910097,
+            "recall": 0.9888888888888889,
+            "f1": 0.9868329868329868
+          },
+          "detection_conf_020": {
+            "tp": 2141,
+            "fp": 48,
+            "fn": 19,
+            "precision": 0.9780721790772042,
+            "recall": 0.9912037037037037,
+            "f1": 0.9845941595769142
+          },
+          "occupancy": {
+            "confusion": {
+              "occupied->occupied": 1686,
+              "occupied->unknown": 9,
+              "free->unknown": 100,
+              "free->free": 1528,
+              "free->occupied": 2,
+              "occupied->free": 1
+            },
+            "total": 3326,
+            "unknown": 109,
+            "coverage": 0.9672279013830427,
+            "correct_over_all": 0.9663259170174384,
+            "accuracy_when_decided": 0.999067454149829,
+            "false_free": 1,
+            "false_free_among_observed_free": 0.0006540222367560497,
+            "false_free_among_true_occupied": 0.0005896226415094339
+          },
+          "groups": {
+            "PUCPR": {
+              "tp": 1011,
+              "fp": 14,
+              "fn": 2,
+              "precision": 0.9863414634146341,
+              "recall": 0.998025666337611,
+              "f1": 0.9921491658488715
+            },
+            "Cloudy": {
+              "tp": 453,
+              "fp": 8,
+              "fn": 4,
+              "precision": 0.982646420824295,
+              "recall": 0.9912472647702407,
+              "f1": 0.9869281045751634
+            },
+            "Rainy": {
+              "tp": 861,
+              "fp": 10,
+              "fn": 10,
+              "precision": 0.9885189437428243,
+              "recall": 0.9885189437428243,
+              "f1": 0.9885189437428243
+            },
+            "Sunny": {
+              "tp": 822,
+              "fp": 15,
+              "fn": 10,
+              "precision": 0.982078853046595,
+              "recall": 0.9879807692307693,
+              "f1": 0.9850209706411025
+            },
+            "UFPR04": {
+              "tp": 469,
+              "fp": 14,
+              "fn": 18,
+              "precision": 0.9710144927536232,
+              "recall": 0.9630390143737166,
+              "f1": 0.9670103092783505
+            },
+            "UFPR05": {
+              "tp": 656,
+              "fp": 5,
+              "fn": 4,
+              "precision": 0.9924357034795764,
+              "recall": 0.9939393939393939,
+              "f1": 0.9931869795609387
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 339.76799444452706
+        }
+      }
+    },
+    "external_test": {
+      "dataset": {
+        "manifest": "data/real_optimization/external/manifest.json",
+        "manifest_sha256": "e5b5445dbfbd365933d950beb843909abff25fc28eec7e3db65b267086f38f57",
+        "annotations": "data/real_optimization/external/annotations.json",
+        "annotations_sha256": "0b0043390b884d5abbcf8bc1f470d8787d43cfc158a026abff616804525ad0e6",
+        "split": "external_test",
+        "images": 54
+      },
+      "comparisons": {
+        "v11_default": {
+          "config": {
+            "id": "v11_default",
+            "weights": "models/parking_real_yolov8n.pt",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "max_det": 500,
+            "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+            "selected_from": "reports/real_photos/trained_development_selection.json",
+            "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+            "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+            "detection_threshold": 0.2,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "full"
+          },
+          "images": 54,
+          "dates": 20,
+          "detection": {
+            "tp": 824,
+            "fp": 250,
+            "fn": 324,
+            "precision": 0.7672253258845437,
+            "recall": 0.7177700348432056,
+            "f1": 0.7416741674167416
+          },
+          "detection_conf_020": {
+            "tp": 824,
+            "fp": 250,
+            "fn": 324,
+            "precision": 0.7672253258845437,
+            "recall": 0.7177700348432056,
+            "f1": 0.7416741674167416
+          },
+          "occupancy": {
+            "confusion": {
+              "free->free": 1053,
+              "free->unknown": 85,
+              "occupied->occupied": 771,
+              "free->occupied": 13,
+              "occupied->unknown": 120,
+              "occupied->free": 154
+            },
+            "total": 2196,
+            "unknown": 205,
+            "coverage": 0.906648451730419,
+            "correct_over_all": 0.8306010928961749,
+            "accuracy_when_decided": 0.9161225514816675,
+            "false_free": 154,
+            "false_free_among_observed_free": 0.1275890637945319,
+            "false_free_among_true_occupied": 0.14736842105263157
+          },
+          "groups": {
+            "CAMERA1": {
+              "tp": 70,
+              "fp": 29,
+              "fn": 37,
+              "precision": 0.7070707070707071,
+              "recall": 0.6542056074766355,
+              "f1": 0.6796116504854369
+            },
+            "OVERCAST": {
+              "tp": 269,
+              "fp": 90,
+              "fn": 73,
+              "precision": 0.7493036211699164,
+              "recall": 0.7865497076023392,
+              "f1": 0.7674750356633381
+            },
+            "RAINY": {
+              "tp": 408,
+              "fp": 96,
+              "fn": 115,
+              "precision": 0.8095238095238095,
+              "recall": 0.780114722753346,
+              "f1": 0.7945472249269717
+            },
+            "SUNNY": {
+              "tp": 147,
+              "fp": 64,
+              "fn": 136,
+              "precision": 0.6966824644549763,
+              "recall": 0.519434628975265,
+              "f1": 0.5951417004048583
+            },
+            "CAMERA2": {
+              "tp": 11,
+              "fp": 20,
+              "fn": 23,
+              "precision": 0.3548387096774194,
+              "recall": 0.3235294117647059,
+              "f1": 0.3384615384615385
+            },
+            "CAMERA3": {
+              "tp": 54,
+              "fp": 22,
+              "fn": 21,
+              "precision": 0.7105263157894737,
+              "recall": 0.72,
+              "f1": 0.7152317880794702
+            },
+            "CAMERA4": {
+              "tp": 72,
+              "fp": 25,
+              "fn": 26,
+              "precision": 0.7422680412371134,
+              "recall": 0.7346938775510204,
+              "f1": 0.7384615384615385
+            },
+            "CAMERA5": {
+              "tp": 132,
+              "fp": 27,
+              "fn": 86,
+              "precision": 0.8301886792452831,
+              "recall": 0.6055045871559633,
+              "f1": 0.7002652519893899
+            },
+            "CAMERA6": {
+              "tp": 123,
+              "fp": 35,
+              "fn": 28,
+              "precision": 0.7784810126582279,
+              "recall": 0.8145695364238411,
+              "f1": 0.7961165048543689
+            },
+            "CAMERA7": {
+              "tp": 130,
+              "fp": 30,
+              "fn": 40,
+              "precision": 0.8125,
+              "recall": 0.7647058823529411,
+              "f1": 0.7878787878787878
+            },
+            "CAMERA8": {
+              "tp": 102,
+              "fp": 22,
+              "fn": 14,
+              "precision": 0.8225806451612904,
+              "recall": 0.8793103448275862,
+              "f1": 0.85
+            },
+            "CAMERA9": {
+              "tp": 130,
+              "fp": 40,
+              "fn": 49,
+              "precision": 0.7647058823529411,
+              "recall": 0.7262569832402235,
+              "f1": 0.7449856733524355
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 177.2906000001563
+        },
+        "v11_dev_calibrated": {
+          "config": {
+            "id": "v11_dev_calibrated",
+            "weights": "models/parking_real_yolov8n.pt",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "max_det": 500,
+            "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+            "selected_from": "reports/real_photos/trained_development_selection.json",
+            "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+            "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+            "detection_threshold": 0.35,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "full"
+          },
+          "images": 54,
+          "dates": 20,
+          "detection": {
+            "tp": 795,
+            "fp": 177,
+            "fn": 353,
+            "precision": 0.8179012345679012,
+            "recall": 0.6925087108013938,
+            "f1": 0.75
+          },
+          "detection_conf_020": {
+            "tp": 824,
+            "fp": 250,
+            "fn": 324,
+            "precision": 0.7672253258845437,
+            "recall": 0.7177700348432056,
+            "f1": 0.7416741674167416
+          },
+          "occupancy": {
+            "confusion": {
+              "free->free": 1053,
+              "free->unknown": 85,
+              "occupied->occupied": 771,
+              "free->occupied": 13,
+              "occupied->unknown": 120,
+              "occupied->free": 154
+            },
+            "total": 2196,
+            "unknown": 205,
+            "coverage": 0.906648451730419,
+            "correct_over_all": 0.8306010928961749,
+            "accuracy_when_decided": 0.9161225514816675,
+            "false_free": 154,
+            "false_free_among_observed_free": 0.1275890637945319,
+            "false_free_among_true_occupied": 0.14736842105263157
+          },
+          "groups": {
+            "CAMERA1": {
+              "tp": 66,
+              "fp": 24,
+              "fn": 41,
+              "precision": 0.7333333333333333,
+              "recall": 0.616822429906542,
+              "f1": 0.6700507614213198
+            },
+            "OVERCAST": {
+              "tp": 263,
+              "fp": 60,
+              "fn": 79,
+              "precision": 0.8142414860681114,
+              "recall": 0.7690058479532164,
+              "f1": 0.7909774436090226
+            },
+            "RAINY": {
+              "tp": 392,
+              "fp": 68,
+              "fn": 131,
+              "precision": 0.8521739130434782,
+              "recall": 0.7495219885277247,
+              "f1": 0.797558494404883
+            },
+            "SUNNY": {
+              "tp": 140,
+              "fp": 49,
+              "fn": 143,
+              "precision": 0.7407407407407407,
+              "recall": 0.49469964664310956,
+              "f1": 0.5932203389830508
+            },
+            "CAMERA2": {
+              "tp": 10,
+              "fp": 16,
+              "fn": 24,
+              "precision": 0.38461538461538464,
+              "recall": 0.29411764705882354,
+              "f1": 0.3333333333333333
+            },
+            "CAMERA3": {
+              "tp": 53,
+              "fp": 17,
+              "fn": 22,
+              "precision": 0.7571428571428571,
+              "recall": 0.7066666666666667,
+              "f1": 0.7310344827586207
+            },
+            "CAMERA4": {
+              "tp": 69,
+              "fp": 17,
+              "fn": 29,
+              "precision": 0.8023255813953488,
+              "recall": 0.7040816326530612,
+              "f1": 0.75
+            },
+            "CAMERA5": {
+              "tp": 127,
+              "fp": 19,
+              "fn": 91,
+              "precision": 0.8698630136986302,
+              "recall": 0.5825688073394495,
+              "f1": 0.6978021978021978
+            },
+            "CAMERA6": {
+              "tp": 119,
+              "fp": 24,
+              "fn": 32,
+              "precision": 0.8321678321678322,
+              "recall": 0.7880794701986755,
+              "f1": 0.8095238095238095
+            },
+            "CAMERA7": {
+              "tp": 126,
+              "fp": 19,
+              "fn": 44,
+              "precision": 0.8689655172413793,
+              "recall": 0.7411764705882353,
+              "f1": 0.8
+            },
+            "CAMERA8": {
+              "tp": 98,
+              "fp": 14,
+              "fn": 18,
+              "precision": 0.875,
+              "recall": 0.8448275862068966,
+              "f1": 0.8596491228070176
+            },
+            "CAMERA9": {
+              "tp": 127,
+              "fp": 27,
+              "fn": 52,
+              "precision": 0.8246753246753247,
+              "recall": 0.7094972067039106,
+              "f1": 0.7627627627627628
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 177.2906000001563
+        },
+        "yolov8s_747_roi_cpu": {
+          "config": {
+            "id": "yolov8s_747_roi_cpu",
+            "weights": "models/parking_real_optimized.pt",
+            "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+            "imgsz": 1280,
+            "classes": [
+              0
+            ],
+            "conf": 0.2,
+            "high": 0.5,
+            "overlap_fraction": 0.05,
+            "detection_threshold": 0.35,
+            "nms_iou": 0.7,
+            "augment": false,
+            "roi_policy": "calibrated",
+            "extra_manifests": [
+              "data/real_optimization/external/manifest.json"
+            ],
+            "selected_from": "reports/real_optimization/frozen_selection.json",
+            "roi_by_view": {
+              "PUCPR": [
+                0,
+                140,
+                1280,
+                580
+              ],
+              "UFPR04": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "UFPR05": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "CAMERA1": [
+                78,
+                158,
+                922,
+                592
+              ],
+              "CAMERA2": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA3": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA4": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA5": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA6": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA7": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA8": [
+                0,
+                0,
+                1000,
+                750
+              ],
+              "CAMERA9": [
+                175,
+                0,
+                825,
+                750
+              ]
+            }
+          },
+          "images": 54,
+          "dates": 20,
+          "detection": {
+            "tp": 708,
+            "fp": 96,
+            "fn": 440,
+            "precision": 0.8805970149253731,
+            "recall": 0.6167247386759582,
+            "f1": 0.7254098360655737
+          },
+          "detection_conf_020": {
+            "tp": 740,
+            "fp": 140,
+            "fn": 408,
+            "precision": 0.8409090909090909,
+            "recall": 0.6445993031358885,
+            "f1": 0.7297830374753451
+          },
+          "occupancy": {
+            "confusion": {
+              "free->unknown": 91,
+              "free->free": 1049,
+              "occupied->occupied": 673,
+              "occupied->free": 243,
+              "free->occupied": 11,
+              "occupied->unknown": 129
+            },
+            "total": 2196,
+            "unknown": 220,
+            "coverage": 0.8998178506375227,
+            "correct_over_all": 0.7841530054644809,
+            "accuracy_when_decided": 0.8714574898785425,
+            "false_free": 243,
+            "false_free_among_observed_free": 0.18808049535603716,
+            "false_free_among_true_occupied": 0.23253588516746412
+          },
+          "groups": {
+            "CAMERA1": {
+              "tp": 58,
+              "fp": 9,
+              "fn": 49,
+              "precision": 0.8656716417910447,
+              "recall": 0.5420560747663551,
+              "f1": 0.6666666666666666
+            },
+            "OVERCAST": {
+              "tp": 238,
+              "fp": 38,
+              "fn": 104,
+              "precision": 0.8623188405797102,
+              "recall": 0.695906432748538,
+              "f1": 0.7702265372168284
+            },
+            "RAINY": {
+              "tp": 352,
+              "fp": 37,
+              "fn": 171,
+              "precision": 0.9048843187660668,
+              "recall": 0.6730401529636711,
+              "f1": 0.7719298245614035
+            },
+            "SUNNY": {
+              "tp": 118,
+              "fp": 21,
+              "fn": 165,
+              "precision": 0.8489208633093526,
+              "recall": 0.4169611307420495,
+              "f1": 0.5592417061611374
+            },
+            "CAMERA2": {
+              "tp": 8,
+              "fp": 14,
+              "fn": 26,
+              "precision": 0.36363636363636365,
+              "recall": 0.23529411764705882,
+              "f1": 0.2857142857142857
+            },
+            "CAMERA3": {
+              "tp": 45,
+              "fp": 7,
+              "fn": 30,
+              "precision": 0.8653846153846154,
+              "recall": 0.6,
+              "f1": 0.7086614173228346
+            },
+            "CAMERA4": {
+              "tp": 65,
+              "fp": 6,
+              "fn": 33,
+              "precision": 0.9154929577464789,
+              "recall": 0.6632653061224489,
+              "f1": 0.7692307692307693
+            },
+            "CAMERA5": {
+              "tp": 120,
+              "fp": 4,
+              "fn": 98,
+              "precision": 0.967741935483871,
+              "recall": 0.5504587155963303,
+              "f1": 0.7017543859649122
+            },
+            "CAMERA6": {
+              "tp": 109,
+              "fp": 15,
+              "fn": 42,
+              "precision": 0.8790322580645161,
+              "recall": 0.7218543046357616,
+              "f1": 0.7927272727272727
+            },
+            "CAMERA7": {
+              "tp": 118,
+              "fp": 12,
+              "fn": 52,
+              "precision": 0.9076923076923077,
+              "recall": 0.6941176470588235,
+              "f1": 0.7866666666666666
+            },
+            "CAMERA8": {
+              "tp": 92,
+              "fp": 9,
+              "fn": 24,
+              "precision": 0.9108910891089109,
+              "recall": 0.7931034482758621,
+              "f1": 0.847926267281106
+            },
+            "CAMERA9": {
+              "tp": 93,
+              "fp": 20,
+              "fn": 86,
+              "precision": 0.8230088495575221,
+              "recall": 0.5195530726256983,
+              "f1": 0.636986301369863
+            }
+          },
+          "device": "cpu",
+          "mean_inference_ms": 447.9533000001673
+        }
+      }
+    }
+  },
+  "metric": "Confidence threshold selected on dev only; fixed IoU .50, author ROI, confidence-ordered one-to-one matches. Not mAP.",
+  "occupancy_policy": "All retained conf>=.20 boxes; high .50, overlap .05. Display threshold never removes evidence. If an inference ROI does not cover a whole spot, lack of vehicle evidence means unknown, not free; all spots remain in the denominator."
+}

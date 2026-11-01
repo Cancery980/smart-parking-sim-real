@@ -4,13 +4,24 @@
 
 **第一次来看：** [梁可从这里开始](docs/梁可从这里开始.md) · [Windows 演示包下载入口](https://github.com/Cancery980/smart-parking-sim-real/releases/latest/download/ParkingDemo-Windows.zip) · [接口约定](docs/CONTRACT_V1.md)
 
-**课堂展示：** [七分钟演示与答辩](docs/课堂演示与答辩.md) · [真实照片结果](reports/real_photos/RESULTS.md) · [评分点与证据](docs/评分点与证据.md)
+**课堂展示：** [七分钟演示与答辩](docs/课堂演示与答辩.md) · [实拍优化与外部验证报告](reports/real_optimization/RESULTS.md) · [评分点与证据](docs/评分点与证据.md)
 
-> Windows x64 演示包已通过实际启动与停车流程检查。下载后完整解压，双击 ParkingDemo.exe；不需要先安装 Python。
+> **v1.2 交付内容：** 本地 Windows EXE 的 13 项实拍界面检查与 6 项停车流程检查已通过，包含实际 CPU 推理；这说明程序流程可运行，不代表模型对外部场景准确。下载入口沿用 latest，具体已上传版本以 [Releases](https://github.com/Cancery980/smart-parking-sim-real/releases) 为准。完整解压后双击 ParkingDemo.exe，不需要先安装 Python。
 
-下面是最终实拍模型在免安装程序中的运行画面。随包提供 **54 张实拍照片：18 张开发集、36 张固定测试集，测试集覆盖 32 个拍摄日期**；来自 PKLot 的两个停车场、三个固定视角及晴天、多云、雨天。点击来源可查看上游原图，点击检测按钮会在本机重新执行模型推理。[数据来源与划分](docs/REAL_DATA_SOURCES.md) · [真实照片实验报告](reports/real_photo_report.html)。
+当前源码的实拍清单有 **108 张：18 张 PKLot 开发照片、36 张 PKLot 历史测试照片、54 张 CNRPark-EXT 外部验证照片**。PKLot 来自两个场地、三个视角及三种天气，历史测试覆盖 32 个日期；CNR 来自另一场地，覆盖 9 台相机、20 个日期及三种天气。旧 36 张已经公开分析，本轮用作历史回归；外部 54 张未参与训练、模型选型或阈值选择。点击来源可查看上游原图，点击检测按钮会在本机重新推理。[数据来源与划分](docs/REAL_DATA_SOURCES.md) · [浏览器版实拍报告](reports/real_photo_report.html)。
 
-![真实停车场照片检测界面](reports/real_photo_final_ui.png)
+本轮在 PKLot 历史场景上改善了车辆检测，但 **CNR 外部召回率和 F1 下降，假空闲增加**，不能称为全面提升：
+
+| 实拍数据 | v1.1 默认精确率 / 召回率（门槛0.20） | v1.2 精确率 / 召回率（门槛0.35） | 假空闲次数 |
+| --- | --- | --- | --- |
+| PKLot 历史36张 | 96.56% / 98.80% | 98.48% / 98.89% | 0 → 1 |
+| CNR 外部54张 | 76.72% / 71.78% | 88.06% / 61.67% | 154 → 243 |
+
+共同0.20门槛下，新模型在CNR仍为84.09%精确率、64.46%召回率，召回低于原模型；外部退步不能全部归因于抬高检测门槛。完整分母、三项对照与失败案例见[实测报告](reports/real_optimization/RESULTS.md)。[v1.1.0 基线发布](https://github.com/Cancery980/smart-parking-sim-real/releases/tag/v1.1.0)和[v1.1 PKLot运行画面](reports/real_photo_final_ui.png)保留用于比较。
+
+下面是本次 EXE 中实际运行的外部照片页面：
+
+![v1.2 外部实拍照片与证据界面](reports/real_photo_external_ui.png)
 
 二维仿真页保留完整停车流程，包含模型检测框、实际停车位和人行寻车路线。[查看完整界面](reports/ui_full.png)。
 
@@ -23,7 +34,11 @@
 3. 等待本地模型加载，浏览器会自动打开真实照片页 `http://127.0.0.1:8766/real`。
 4. 使用期间保留启动窗口；关闭窗口即停止程序。会话保存在内存中，退出后不保留。
 
-**先看真实照片：** 按视角、天气和数据划分选图，点击“运行真实 YOLO 检测”；切换原图、车辆框与三态图层，点击车位查看本次框的置信度、中心位置和相交比例。换照片后旧结果会清空，需要重新检测。源码版可从首页的“真实停车场照片”进入。
+**先看真实照片：** v1.2 页面可按数据集、视角、天气和数据划分选图；选择 CNRPark-EXT 的“外部验证”，点击“运行真实 YOLO 检测”。切换原图、车辆框与三态图层，点击车位查看本次框的置信度、中心位置和相交比例。换照片后旧结果会清空，需要重新检测。源码版可从首页的“真实停车场照片”进入。若下载的是 v1.1 基线包，其照片清单和控件保持旧版。
+
+**车辆检测与占用证据分开：** 车辆数字只计达到开发集选定检测门槛的“已接受框”，门槛显示在侧栏，误检仍以离线评测核对。低于该门槛但置信度不低于 **0.20** 的框列为“低置信待确认”，可勾选对应图层查看虚线框；它们仍参与车位三态判断。占用规则保留全部 ≥0.20 的证据，高置信占用门槛为 0.50、相交比例为 5%；隐藏图层不会删除证据或把这些车位改为空闲。
+
+浅蓝细虚线标出模型实际推理区域。车位未被完整覆盖且缺少明确车辆证据时，保留为 `unknown`；已有高置信框中心证据仍可判为占用。详情中的覆盖比例表示车位面积进入推理区域的比例，不是识别正确率，照片尺寸也没有变成裁剪区域尺寸。
 
 免安装演示包包含 Python 运行环境和模型，使用 CPU 推理，不要求先安装 Python 或配置显卡。**GitHub 网页负责展示代码和提供下载；它本身不运行这套 Python 程序。** 浏览器里的 `127.0.0.1` 指向你自己的电脑，检测也在本机执行。
 
@@ -96,7 +111,11 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1 -Planner examples.liang_ada
 
 实际记录见 [UI 验收](reports/ui_validation.json)、[端到端验收](reports/e2e/results.json)、[视觉评测](reports/vision_report.md)、[二态与三态对照](reports/i01_pairing/RESULTS.md)、[双模式与入口基线](reports/mode_comparison/RESULTS.md) 和 [实验报告](reports/胡轩铭模块实现与验证报告.docx)。入口基线脚本比较随包参考适配器的共享候选排序；梁可接入后须按同一协议核对其实现。重跑评测会写入相应结果文件，需要保留原记录时先复制备份。
 
-真实照片另有 [独立评测与失败案例](reports/real_photos/RESULTS.md)、[浏览器版报告](reports/real_photo_report.html)、[照片页交互验收](reports/real_photo_ui_validation.json) 和 [最终 EXE 真实推理检查](reports/real_photo_portable_validation.json)。车辆检测按车辆标注评估，车位三态按占用标签评估；照片中的完整标注区域用于确定离线计分范围，不能拿车位框代替车辆真值。照片页交互检查记录对应模型版本，最终模型与精度以真实照片评测报告为准。[完整课程报告 PDF](reports/胡轩铭模块实现与验证报告.pdf) 可直接预览。
+实拍优化的固定入口是 [新结果与失败案例](reports/real_optimization/RESULTS.md)、[冻结选择](reports/real_optimization/frozen_selection.json)、[最终实测 JSON](reports/real_optimization/final/summary.json) 和 [浏览器版报告](reports/real_photo_report.html)。结果分别列出历史回归与 CNR 外部验证，并同时比较各配置的检测门槛和共同 0.20 门槛，区分门槛调整与模型变化。三态混淆、不确定数、覆盖率与假空闲单独报告，车辆框和车位标签各用各的真值。
+
+本次 [EXE 实拍界面13项验收](reports/real_photo_portable_validation.json)与[EXE 停车流程6项验收](reports/windows_optimized_flow_validation.json)均已通过；前者有6个视角的实际CPU推理、照片切换/重复推理、天气筛选、证据图层及390px布局检查，0个浏览器脚本错误。CAMERA5样例出现零检测属于保留的模型失败表现，不能因程序正常执行就算识别正确。[功能测试 XML](reports/real_optimization/functional_tests.xml)属于另一类规则检查。
+
+[v1.1 实拍报告](reports/real_photos/RESULTS.md)与[v1.1 照片页交互验收](reports/real_photo_ui_validation.json)继续作为历史记录。[完整课程报告 PDF](reports/胡轩铭模块实现与验证报告.pdf)和[Word报告](reports/胡轩铭模块实现与验证报告.docx)汇总合成与实拍实验，并分别说明范围。
 
 | 目录 | 内容 |
 | --- | --- |
@@ -112,12 +131,12 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1 -Planner examples.liang_ada
 ## 实验范围
 
 - **二维仿真实验：** 使用固定 52 车位地图和程序生成的车辆图形。留出场景用于检测、停车流程、二态/三态配对与路线比较；这些成绩属于合成域。
-- **真实照片实验：** 使用有来源的 PKLot 实拍照片，开发与测试按拍摄日期隔离。它检验已知场地视角下的车辆检测与车位占用；不等于陌生停车场泛化，也没有验证真实场地 A*、相机标定、定位或车辆控制。实际模型、训练记录、测试分母和误差分别写入真实照片报告。
+- **真实照片实验：** PKLot 的 18 张开发照片用于选型，已公开的 36 张历史测试用于回归；CNRPark-EXT 的 54 张照片用于另一场地的外部验证。PKLot 训练、开发和历史测试按日期隔离，CNR 外部照片不参与模型或阈值选择。外部结果只覆盖这一场地和采样条件，不能保证任意停车场均有效，也没有验证真实场地 A*、米制标定、定位或车辆控制。
 
-完全漏检仍可能产生假空位，`unknown` 不保证发现所有漏检。场景真值只用于渲染、标注、确认冲突检查和离线评测，不进入推荐上下文；真实照片运行时只读取原图和车位几何，离线占用标签不参与上色。
+本项目未承诺或证明 **99.99%** 的检测、召回或车位正确率。完全漏检仍可能产生假空位，`unknown` 不保证发现所有漏检。场景真值只用于渲染、标注、确认冲突检查和离线评测，不进入推荐上下文；真实照片运行时只读取原图和车位几何，离线占用标签不参与上色。
 
 自然语言解析、自动定位、视觉身份关联、真实资格认证和车辆控制不属于当前交付。源码、权重及许可证见 [第三方说明](THIRD_PARTY_NOTICES.md)，方法来源见 [论文核对](docs/PAPERS.md)。
 
-需要重新构建 Windows 演示程序时，参见 [Windows 打包说明](docs/WINDOWS_BUILD.md)。最终验证记录集中在 [交付核验](reports/交付核验.json)。
+需要重新构建 Windows 演示程序时，参见 [Windows 打包说明](docs/WINDOWS_BUILD.md)。[交付核验](reports/交付核验.json)记录具体版本及交付文件，公开下载状态以 Releases 为准。
 
 公开仓库可以浏览和下载。需要在 GitHub 提交改动时，可先 Fork 到自己的账号，再提交 Pull Request 供整合；公开访问不代表可以直接修改本仓库主分支。

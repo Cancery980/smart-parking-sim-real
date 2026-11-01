@@ -1,0 +1,190 @@
+{
+  "generated_utc": "2026-11-01T09:15:37.952214+00:00",
+  "version": "1.1.0",
+  "repository": "https://github.com/Cancery980/smart-parking-sim-real",
+  "scope": "胡轩铭模块；包含可替换的参考规划适配器与固定接口，未把尚未提供的梁可代码计为已集成",
+  "deterministic_tests": {
+    "passed": 115,
+    "failed": 0,
+    "evidence": [
+      "reports/deterministic_tests.xml",
+      "reports/session_tests.xml"
+    ],
+    "composition": {
+      "initial_full_run": 109,
+      "unchanged_non_session_tests": 96,
+      "latest_session_run": 19
+    }
+  },
+  "plugin_contract": {
+    "passed": 9,
+    "planner": "examples.liang_adapter:Planner",
+    "evidence": "reports/plugin_contract_check.json"
+  },
+  "real_yolo_e2e": {
+    "passed": 8,
+    "total": 8,
+    "evidence": "reports/e2e/results.json"
+  },
+  "external_planner_e2e": {
+    "passed": 8,
+    "total": 8,
+    "planner": "examples.liang_adapter:Planner",
+    "evidence": "reports/e2e_external/results.json"
+  },
+  "browser_interaction": {
+    "passed": 28,
+    "real_model": true,
+    "evidence": "reports/ui_validation.json"
+  },
+  "i01_pairing": {
+    "independent_scenes": 30,
+    "paired_requests": 60,
+    "strategy_rows": 120,
+    "evidence": "reports/i01_pairing/summary.json",
+    "overall": {
+      "B": {
+        "N": 60,
+        "R": 60,
+        "F": 9,
+        "V": 51,
+        "false_recommendation_rate": 0.15,
+        "effective_recommendation_rate": 0.85,
+        "unrecommended_rate": 0.0,
+        "failure_reasons": {},
+        "requests_with_unknown": 0,
+        "requests_with_unknown_eligible": 0
+      },
+      "S": {
+        "N": 60,
+        "R": 58,
+        "F": 0,
+        "V": 58,
+        "false_recommendation_rate": 0.0,
+        "effective_recommendation_rate": 0.9666666666666667,
+        "unrecommended_rate": 0.03333333333333333,
+        "failure_reasons": {
+          "no_observed_free_spot": 2
+        },
+        "requests_with_unknown": 20,
+        "requests_with_unknown_eligible": 14
+      }
+    }
+  },
+  "model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+  "limitations": [
+    "合成实验与真实照片实验分别记录；实拍验证限于PKLot已知视角的日期隔离样本，不代表任意新场地部署能力。",
+    "梁可替换规划实现后须重新运行插件检查、E01—E08及I01。",
+    "单会话只保存在当前进程内，退出或显式重置后不保留。"
+  ],
+  "mode_baseline": {
+    "independent_scenes": 30,
+    "strategy_rows": 180,
+    "common_recommended_independent_scenes": 29,
+    "evidence": "reports/mode_comparison/summary.json"
+  },
+  "windows_portable": {
+    "passed": true,
+    "checks": 6,
+    "inference_device": "cpu",
+    "evidence": "reports/portable_validation.json",
+    "scope": "Executed the packaged EXE on this Windows 11 x64 host; other PCs are not individually tested."
+  },
+  "report_qa": {
+    "file": "reports/胡轩铭模块实现与验证报告.docx",
+    "pages": 9,
+    "method": "Microsoft Word PDF export and bundled document renderer; all pages visually reviewed"
+  },
+  "source_hashes": {
+    "parking_hu/__init__.py": "84114265666070d51f1949d2dd9e49d2f461007d8bc29fc06fa810e78f9dce7b",
+    "parking_hu/__main__.py": "87304d61f16880ec397e70c7b74692ee0d653e651cd4bb11b66a578d8b1a078d",
+    "parking_hu/api.py": "59bfad1dbf9bc748d43d93b4d8b31d2a2e882b51d8b9c6ade9e8a9c4cabe1186",
+    "parking_hu/contracts.py": "1140bcf881e010b0db431fdcca20fa3f2b4aebbccf249506e3e5cb13c102f47b",
+    "parking_hu/detector.py": "12720e246d24a7c2d6373aff58a2d87bc81f7a7cef65fe287f3d39f3d6563770",
+    "parking_hu/geometry.py": "6c9f43d48b89e825806bcb4e8bd572f3fa0912b6612a319cb4fe793f0ada3c8b",
+    "parking_hu/map_data.py": "2f3f6bd2fe9b0c022f8422c846632819b6fb1a0f7c8b514d14e7564a17dfc09c",
+    "parking_hu/occupancy.py": "9b261effc9aca125eaab5419793cd5757e4c6db4d5eea42b64829c7b9f0ea1ed",
+    "parking_hu/real_photos.py": "d637fba4cba5f9ae61498d298cbf98f83a8b50f53474a3e48a80aa398f097534",
+    "parking_hu/reference_planner.py": "9791d679e12c8b13c7fe415c7900d5e1827564f34e2ad14ed65369cb35e3f7bc",
+    "parking_hu/scenes.py": "ebe50d72b2ff989bb449cf02b260021fb60bf8d5e854e83ef0de1360f6d17183",
+    "parking_hu/service.py": "6e11fe6b9241006f3c942f62ad64af259952148e7373181e0692b5e795d5c05d",
+    "parking_hu/vision_metrics.py": "d9c0e0a81043951e56c043512c8b0b2a82be99e1884c58f63ec191065ad5505d",
+    "scripts/build_windows.py": "1f1ce973d016b2b9608c4f7415a989833ae2833426c02124c44e03fc0a1a4c77",
+    "scripts/check_plugin.py": "926c91ebe83696251eeb8e9fcb2d6a8b5b00c0d14af5797c1556763126fa3e71",
+    "scripts/compare_modes.py": "7108a627649b6f63288261b3c372a729ef95e57f21aadead2ce013eb7feaa163",
+    "scripts/evaluate_real_photos.py": "ffe78ce7e070b3c76be73bb289931926bcff2fd078b4cdc42862cd8656fbd9ef",
+    "scripts/portable_entry.py": "ed3b775891d53d2d41389b1e60a72a749ae95010a0dd9274051048a03e9b968d",
+    "scripts/prepare_real_photos.py": "1d3e894258165da2793e9e106557ef7179b312f59981ea8aa96763dbe8015c96",
+    "scripts/report_real_photos.py": "b95914f9869d25dbbd08389642342aa8d00c7383288d8f69547daca928253970",
+    "scripts/run_e2e.py": "5163796067b76365a9459af6ddda00d5dfd76bc20e5106886fbdae7100770b03",
+    "scripts/run_pairing.py": "bb618f8cc2e09b79538207098b53c60ca04b19e3ec4a12cebddf10c612f2e40a",
+    "scripts/train_real_photos.py": "a9ac4ffb7da485e6cc3f41f7871865dcc45cdf46bf47879f6da139329d94f892",
+    "scripts/vision_evaluate.py": "cd45c655719f3309fa2f2831f32c1e8a14354793882b9680abf1c4892c76247a",
+    "scripts/vision_prepare.py": "a931bc34ccf2dc42588c11f0ac6dc39116821c00f3731fc474e2932dd679263f",
+    "scripts/vision_report.py": "180ea9063a9b9a71111788afdf2f34c9e067dd984c1019b16ff66c9b8beba81e",
+    "scripts/vision_train.py": "5eb5fcd067d12b19de571e47223cabb0a1398df0aa94a94492b7f551527750ad",
+    "static/app.js": "e179d2730be45218581cdf31f0a59528f49c0247980b5a156a30cf644e73d3e5",
+    "static/index.html": "0f0e74400f268fd993cd6459301096082d7a03753234495b7547827ca4e131af",
+    "static/real.css": "f9deb5564f521b523408e492bb7afbf9203da7327ccd63fe7d4f6765d456eb9e",
+    "static/real.html": "94e118d4b3c6585210c26bf2c828d1481b1beefafd1de319a376605dab3138f7",
+    "static/real.js": "d2fb3eb7f79331fa2833fcf21df2a040ba0c7ef44ede4238ad36a18ee871d74e",
+    "static/style.css": "791e98e86248c1c9523b04274e6161ca33e8c0987a9b7ffead3b70641c56a3a0"
+  },
+  "ui_detection_evidence": {
+    "passed": true,
+    "evidence": "reports/ui_evidence_validation.json"
+  },
+  "real_photos": {
+    "test_images": 36,
+    "test_dates": 32,
+    "development_images": 18,
+    "training_images": 270,
+    "physical_lots": 2,
+    "camera_views": 3,
+    "backend_tests": 19,
+    "browser_tests": 14,
+    "final_exe_passed": true,
+    "selected_model": {
+      "id": "pklot_yolov8n_1280",
+      "weights": "models/parking_real_yolov8n.pt",
+      "imgsz": 1280,
+      "classes": [
+        0
+      ],
+      "conf": 0.2,
+      "high": 0.5,
+      "overlap_fraction": 0.05,
+      "max_det": 500,
+      "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+      "selected_from": "reports/real_photos/trained_development_selection.json",
+      "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+      "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078"
+    },
+    "detection": {
+      "tp": 2134,
+      "fp": 76,
+      "fn": 26,
+      "precision": 0.9656108597285068,
+      "recall": 0.9879629629629629,
+      "f1": 0.9766590389016019
+    },
+    "occupancy": {
+      "confusion": {
+        "occupied->occupied": 1686,
+        "occupied->unknown": 10,
+        "free->unknown": 95,
+        "free->free": 1530,
+        "free->occupied": 5
+      },
+      "total": 3326,
+      "unknown": 105,
+      "coverage": 0.9684305472038485,
+      "correct_over_all": 0.9669272399278412,
+      "accuracy_when_decided": 0.99844768705371,
+      "false_free": 0,
+      "false_free_among_observed_free": 0.0,
+      "false_free_among_true_occupied": 0.0
+    },
+    "evidence": "reports/real_photos/test_summary.json"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "photo_id": "ufpr04_2012-12-27_15_10_11",
+  "image_sha256": "555bde5933f44b7738459e23b7c6d6f773da2b0e8d7f7b7e008b4582cbe43c09",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        471.6168212890625,
+        567.310546875,
+        629.837158203125,
+        663.0135498046875
+      ],
+      "confidence": 0.9727339744567871,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        673.5574951171875,
+        563.52685546875,
+        796.7344970703125,
+        684.854736328125
+      ],
+      "confidence": 0.9712642431259155,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        542.9203491210938,
+        478.30120849609375,
+        625.4629516601562,
+        562.2125854492188
+      ],
+      "confidence": 0.8937819004058838,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        542.1168212890625,
+        478.20770263671875,
+        679.1768798828125,
+        562.5975952148438
+      ],
+      "confidence": 0.7308998703956604,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        543.041259765625,
+        518.951904296875,
+        594.383056640625,
+        562.05810546875
+      ],
+      "confidence": 0.49257954955101013,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 3,
+    "fp": 2,
+    "fn": 0
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001",
+      "d002"
+    ],
+    "false_positive_ids": [
+      "d003",
+      "d004"
+    ],
+    "missed_boxes": [],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1280,
+      720
+    ]
+  },
+  "occupancy": {
+    "free->free": 35,
+    "occupied->occupied": 2
+  },
+  "inference_roi_xywh": null,
+  "detection_threshold": 0.2,
+  "inference_ms": 168.14250000243192,
+  "inference_reused": false
+}

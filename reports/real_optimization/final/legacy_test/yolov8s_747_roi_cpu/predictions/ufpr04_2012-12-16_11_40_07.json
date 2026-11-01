@@ -1,0 +1,99 @@
+{
+  "photo_id": "ufpr04_2012-12-16_11_40_07",
+  "image_sha256": "6ed85beb8704f72776855a7a407e74accaf11645a2ed86388db6de0fe1dfedd1",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        664.175537109375,
+        564.77587890625,
+        784.73291015625,
+        682.8216552734375
+      ],
+      "confidence": 0.9245433211326599,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        1146.2685546875,
+        370.2315979003906,
+        1272.8662109375,
+        443.4054260253906
+      ],
+      "confidence": 0.8891768455505371,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        1145.991455078125,
+        557.59228515625,
+        1280.0,
+        657.500732421875
+      ],
+      "confidence": 0.8863574266433716,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        1124.589111328125,
+        463.616943359375,
+        1250.405517578125,
+        544.1473388671875
+      ],
+      "confidence": 0.787631094455719,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        517.0333251953125,
+        477.5152587890625,
+        644.4722900390625,
+        564.4310302734375
+      ],
+      "confidence": 0.6488854289054871,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 5,
+    "fp": 0,
+    "fn": 0
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001",
+      "d002",
+      "d003",
+      "d004"
+    ],
+    "false_positive_ids": [],
+    "missed_boxes": [],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1280,
+      720
+    ]
+  },
+  "occupancy": {
+    "free->free": 34,
+    "free->unknown": 1,
+    "occupied->occupied": 2
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1280,
+    720
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 370.23950000002515,
+  "inference_reused": false
+}

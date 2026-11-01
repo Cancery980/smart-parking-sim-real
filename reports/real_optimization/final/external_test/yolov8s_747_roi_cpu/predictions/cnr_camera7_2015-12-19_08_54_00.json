@@ -1,0 +1,101 @@
+{
+  "photo_id": "cnr_camera7_2015-12-19_08_54_00",
+  "image_sha256": "0988ece7a21cb90a80617a9a3c18e2ec686424782ecb2c0cb433042061443b17",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        745.005615234375,
+        42.08769989013672,
+        804.4021606445312,
+        81.88804626464844
+      ],
+      "confidence": 0.9002178311347961,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        218.334228515625,
+        31.315357208251953,
+        265.5125427246094,
+        72.2467269897461
+      ],
+      "confidence": 0.8825676441192627,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        940.9428100585938,
+        178.2959747314453,
+        1000.0,
+        244.8853759765625
+      ],
+      "confidence": 0.757266104221344,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        0.0,
+        93.52484130859375,
+        19.847248077392578,
+        166.64920043945312
+      ],
+      "confidence": 0.6914341449737549,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        158.8244171142578,
+        498.4665832519531,
+        199.14524841308594,
+        543.4461669921875
+      ],
+      "confidence": 0.6700162887573242,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001",
+      "d002",
+      "d003"
+    ],
+    "false_positive_ids": [
+      "d004"
+    ],
+    "missed_boxes": [],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 45,
+    "occupied->occupied": 3,
+    "free->unknown": 4,
+    "free->occupied": 1
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1000,
+    750
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 441.75190000169096,
+  "inference_reused": false
+}

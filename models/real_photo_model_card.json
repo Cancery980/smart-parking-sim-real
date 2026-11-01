@@ -1,24 +1,46 @@
 {
-  "model": "models/parking_real_yolov8n.pt",
-  "sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
-  "architecture": "Ultralytics YOLOv8n",
-  "starting_weights": "Official YOLOv8n COCO pretrained weights",
-  "training_images": 270,
-  "validation_images": 18,
-  "test_images": 36,
+  "architecture": "Ultralytics YOLOv8s",
+  "starting_weights": "Official YOLOv8s COCO weights; exact stages listed below",
+  "training_images": 747,
   "training_dates": 48,
+  "validation_images": 18,
   "development_dates": 16,
-  "test_dates": 32,
-  "epochs_completed": 40,
+  "epochs_completed": 80,
+  "epochs_completed_note": "Sum of completed training-run epochs; each stage uses its development-selected best checkpoint.",
+  "batch": 2,
   "imgsz": 1280,
-  "batch": 4,
   "class_names": [
     "car"
   ],
-  "scope": "Known PKLot views, date-disjoint subsets; no test images used in gradients or model selection",
-  "license": "AGPL-3.0 for model/software; source photographs and annotations PKLot component CC BY 4.0",
+  "training_stages": [
+    {
+      "名称": "yolov8s_270_e60",
+      "训练照片": 270,
+      "训练完成轮数": 60,
+      "起点": "官方COCO权重",
+      "记录": "reports/real_optimization/training/yolov8s_270_e60/provenance.json"
+    },
+    {
+      "名称": "yolov8s_747_e20",
+      "训练照片": 747,
+      "训练完成轮数": 20,
+      "起点": "前阶段开发最优检查点",
+      "记录": "reports/real_optimization/training/yolov8s_747_e20/provenance.json"
+    }
+  ],
+  "training_manifest_sha256": "2236bf5869f92a5917ae28acc25188cd3e7af46a10f7d5417ce1410d75056690",
   "source_commit": "9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2",
-  "training_manifest_sha256": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
   "data_origin": "Real camera photographs, not synthetic or generated images",
-  "separate_synthetic_model": "models/parking_yolov8n.pt remains for the 52-space 2D simulator"
+  "model": "models/parking_real_optimized.pt",
+  "sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "selected_from": "reports/real_optimization/frozen_selection.json",
+  "frozen_selection_sha256": "7ecd9e238ec8c0316c27332091ae16782f03a1add87de40d79705a66e4d2ca3f",
+  "legacy_test_images": 36,
+  "legacy_test_dates": 32,
+  "external_test_images": 54,
+  "external_dates": 20,
+  "scope": "Selected only on PKLot development photos. The already published 36 PKLot photos are historical regression; 54 CNR photos from one other parking lot form a separate external evaluation. Neither dataset was used to change the frozen model or thresholds.",
+  "license": "AGPL-3.0 for model/software; PKLot data CC BY 4.0 and CNRPark-EXT data ODbL 1.0 separately.",
+  "separate_synthetic_model": "models/parking_yolov8n.pt remains unchanged for the 52-space simulator",
+  "installed_at_utc": "2026-11-01T12:53:03.493544+00:00"
 }

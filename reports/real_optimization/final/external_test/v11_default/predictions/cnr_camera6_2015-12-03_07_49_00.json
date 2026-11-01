@@ -1,0 +1,128 @@
+{
+  "photo_id": "cnr_camera6_2015-12-03_07_49_00",
+  "image_sha256": "748f192a8684349a7284fcd5b4022b3e0d0b334c0028fe06f8b503d638174d4c",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        340.3953552246094,
+        205.6287384033203,
+        508.01336669921875,
+        280.8205261230469
+      ],
+      "confidence": 0.9515628814697266,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        769.2922973632812,
+        532.57177734375,
+        806.9340209960938,
+        565.7352294921875
+      ],
+      "confidence": 0.8609387874603271,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        533.1137084960938,
+        360.7991638183594,
+        601.197265625,
+        416.4893798828125
+      ],
+      "confidence": 0.8410472869873047,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        1.3922959566116333,
+        240.2578887939453,
+        40.527427673339844,
+        271.41900634765625
+      ],
+      "confidence": 0.7458800077438354,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d004",
+      "bbox_xyxy_px": [
+        519.0335693359375,
+        451.28631591796875,
+        620.8539428710938,
+        522.3505249023438
+      ],
+      "confidence": 0.615182638168335,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d005",
+      "bbox_xyxy_px": [
+        96.87989807128906,
+        446.27294921875,
+        206.37228393554688,
+        514.8161010742188
+      ],
+      "confidence": 0.2625811994075775,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 1,
+    "fp": 5,
+    "fn": 3
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000"
+    ],
+    "false_positive_ids": [
+      "d001",
+      "d002",
+      "d003",
+      "d004",
+      "d005"
+    ],
+    "missed_boxes": [
+      [
+        621,
+        635,
+        912,
+        750
+      ],
+      [
+        515,
+        361,
+        623,
+        525
+      ],
+      [
+        98,
+        344,
+        249,
+        515
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 50,
+    "free->unknown": 2,
+    "occupied->unknown": 1,
+    "occupied->occupied": 1,
+    "occupied->free": 1
+  },
+  "inference_roi_xywh": null,
+  "detection_threshold": 0.2,
+  "inference_ms": 159.6849999987171,
+  "inference_reused": false
+}

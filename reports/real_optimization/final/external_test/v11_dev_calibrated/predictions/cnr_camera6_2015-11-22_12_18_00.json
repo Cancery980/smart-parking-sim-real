@@ -1,0 +1,59 @@
+{
+  "photo_id": "cnr_camera6_2015-11-22_12_18_00",
+  "image_sha256": "4d6217c7b57a5e9555608c95efad1151597545f956a75981b505bc41bf52ee6e",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        0.1031041145324707,
+        410.9227294921875,
+        60.761131286621094,
+        454.30328369140625
+      ],
+      "confidence": 0.7243005633354187,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 0,
+    "fp": 1,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [],
+    "false_positive_ids": [
+      "d000"
+    ],
+    "missed_boxes": [
+      [
+        0,
+        351,
+        131,
+        524
+      ],
+      [
+        945,
+        172,
+        1000,
+        239
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 53,
+    "occupied->free": 1,
+    "occupied->occupied": 1
+  },
+  "inference_roi_xywh": null,
+  "detection_threshold": 0.35,
+  "inference_ms": 167.9971999983536,
+  "inference_reused": true
+}

@@ -1,0 +1,21 @@
+{
+  "passed": 15,
+  "checks": [
+    "dataset normalization, external default, historical/external split labels",
+    "accepted count separated from two pending evidence boxes",
+    "default draws accepted box only",
+    "evidence layer adds two dashed pending boxes",
+    "independent layers preserve occupancy count",
+    "spot details include pending evidence and its accepted status",
+    "hiding evidence layer retains spot evidence details",
+    "dataset filtering clears prior inference and labels historical test",
+    "legacy response without accepted/threshold fields retains original behavior",
+    "threshold-only response derives accepted counts",
+    "partial ROI coverage stays unknown without boxes, shows native ROI and 50% area coverage",
+    "positive occupied evidence remains visible despite partial coverage",
+    "legacy response removes old ROI and omits unavailable coverage rather than assuming 100%",
+    "390 px layout has no horizontal page overflow and visible evidence control",
+    "no page JavaScript errors"
+  ],
+  "scope": "Offline DOM fixtures only; no real backend or inference exercised."
+}

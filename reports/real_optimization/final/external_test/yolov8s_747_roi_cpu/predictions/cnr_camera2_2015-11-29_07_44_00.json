@@ -1,0 +1,101 @@
+{
+  "photo_id": "cnr_camera2_2015-11-29_07_44_00",
+  "image_sha256": "cabaa855780c044647fa7d1e6785e009bc4a079e5f036a730e123c90a10a3454",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        78.91646575927734,
+        47.471954345703125,
+        173.78746032714844,
+        112.32048797607422
+      ],
+      "confidence": 0.9122546911239624,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        529.3529663085938,
+        371.0435485839844,
+        625.2959594726562,
+        442.66754150390625
+      ],
+      "confidence": 0.9041799306869507,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        257.43408203125,
+        332.460205078125,
+        364.6746826171875,
+        406.6668701171875
+      ],
+      "confidence": 0.883813202381134,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        698.2393188476562,
+        426.9305725097656,
+        742.877685546875,
+        480.1890869140625
+      ],
+      "confidence": 0.35755839943885803,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 1,
+    "fp": 3,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000"
+    ],
+    "false_positive_ids": [
+      "d001",
+      "d002",
+      "d003"
+    ],
+    "missed_boxes": [
+      [
+        256,
+        231,
+        390,
+        408
+      ],
+      [
+        529,
+        258,
+        639,
+        439
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->unknown": 1,
+    "occupied->occupied": 3,
+    "free->free": 6
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1000,
+    750
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 404.99479999925825,
+  "inference_reused": false
+}

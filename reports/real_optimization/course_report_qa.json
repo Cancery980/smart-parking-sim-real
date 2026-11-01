@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "report_version": "v1.2",
+  "checked_at_utc": "2026-11-01T13:11:32.158156+00:00",
+  "pages": 13,
+  "docx_path": "reports/胡轩铭模块实现与验证报告.docx",
+  "pdf_path": "reports/胡轩铭模块实现与验证报告.pdf",
+  "docx_sha256": "960fe53c3e3cd69f425fc9538c10545df320203b83639f7b3fcd2e13b96fdcc0",
+  "pdf_sha256": "92f562fa2cd65729bb095b8fdb9923fad108d7d44384ab45d0954aadd3811cce",
+  "html_sha256": "3e229ad94ccb7e2aaa0548f80ba3551555a6d16a027b63503df6c624da74efb6",
+  "generator_sha256": "a9cf21222ce97ac60e17745b9bf2adce8299d1a175f41f05a2881c8ec544dca5",
+  "render_method": "Native Microsoft Word COM ExportAsFixedFormat to PDF, followed by the bundled documents render_docx.py Poppler rasterizer via work/render_docx_word.py --emit_pdf.",
+  "render_directory": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\report_final_qa_v3",
+  "rendered_pages": [
+    "page-1.png",
+    "page-2.png",
+    "page-3.png",
+    "page-4.png",
+    "page-5.png",
+    "page-6.png",
+    "page-7.png",
+    "page-8.png",
+    "page-9.png",
+    "page-10.png",
+    "page-11.png",
+    "page-12.png",
+    "page-13.png"
+  ],
+  "all_pages_visually_reviewed": true,
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "visual_review": {
+    "no_orphan_tail_pages": true,
+    "no_text_or_table_clipping": true,
+    "no_footer_overlap": true,
+    "figures_and_captions_readable": true,
+    "conclusion": "最终13页逐页检查完成；原17页中仅剩一小段的孤尾页已消除。正文、表格、图注和页脚未见重叠或裁切；第5页及第13页页脚由主代理额外放大复核。真实照片与合成实验分章保留，外部召回/F1退步和假空闲增加未删除。"
+  },
+  "relative_links_checked_documents": [
+    "README.md",
+    "docs/梁可从这里开始.md",
+    "docs/课堂演示与答辩.md",
+    "docs/评分点与证据.md"
+  ],
+  "missing_relative_links": [],
+  "scope": "Document layout and file consistency only. This review is not new inference, model-accuracy validation, runtime acceptance, or release publication."
+}

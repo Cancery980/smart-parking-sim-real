@@ -1,0 +1,24 @@
+{
+  "model": "models/parking_real_yolov8n.pt",
+  "sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "architecture": "Ultralytics YOLOv8n",
+  "starting_weights": "Official YOLOv8n COCO pretrained weights",
+  "training_images": 270,
+  "validation_images": 18,
+  "test_images": 36,
+  "training_dates": 48,
+  "development_dates": 16,
+  "test_dates": 32,
+  "epochs_completed": 40,
+  "imgsz": 1280,
+  "batch": 4,
+  "class_names": [
+    "car"
+  ],
+  "scope": "Known PKLot views, date-disjoint subsets; no test images used in gradients or model selection",
+  "license": "AGPL-3.0 for model/software; source photographs and annotations PKLot component CC BY 4.0",
+  "source_commit": "9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2",
+  "training_manifest_sha256": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
+  "data_origin": "Real camera photographs, not synthetic or generated images",
+  "separate_synthetic_model": "models/parking_yolov8n.pt remains for the 52-space 2D simulator"
+}

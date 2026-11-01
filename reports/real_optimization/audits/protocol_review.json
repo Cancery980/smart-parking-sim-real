@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T11:21:26.687Z",
+  "reviewer": "independent real_data_research agent",
+  "status": "pass_with_scope_limits",
+  "base_commit": "d40f28aa1b804416e0d112f42ed68112ef157da9",
+  "repo": "C:/Users/ROG/.codex/worktrees/parking-real-optimization/smart_parking_hu",
+  "scope": [
+    "docs/REAL_OPTIMIZATION_PLAN.md",
+    "scripts/compare_real_candidates.py",
+    "scripts/train_real_candidate.py",
+    "parking_hu/real_photos.py"
+  ],
+  "reviewed_file_sha256": {
+    "docs/REAL_OPTIMIZATION_PLAN.md": "e92b439d11aa0477a5691115b1e910e9632f9c680ddd8c98ff7a7773a2f27e53",
+    "scripts/compare_real_candidates.py": "05bb0b3dcc2dbabdcc43f0e0e75a8624ff1365696c8e43a9a6e88b44a25139d2",
+    "scripts/train_real_candidate.py": "bc55687ece4176f590343bd21a8a02f0b828f902245c457bf8e2ee1c75a742ab",
+    "parking_hu/real_photos.py": "5d321bc843accb8a0dea5f9dff4e782abcbd322ad36b513dc21e816ba097f93e"
+  },
+  "restrictions_observed": {
+    "no_gpu_or_model_inference": true,
+    "no_old_test_prediction_or_external_prediction_inspection": true,
+    "no_runtime_code_or_repo_file_modification": true,
+    "no_repeat_of_existing_19_or_21_test_runs": true,
+    "only_output_written": "C:/Users/ROG/Documents/Codex/2026-10-31/zu/work/real_optimization/protocol_review.json"
+  },
+  "summary": "三项具体发现均已修复并完成针对性只读复核。双指标约束、开发选择范围、0.20 全部证据进入三态、ROI 坐标恢复与部署配置贯通符合本轮约定。此结论仅涵盖协议与代码，不代表在训模型、外部留出集或发布包已验收。",
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "P1",
+      "title": "非默认候选配置未贯通页面运行时",
+      "status": "resolved",
+      "locations": [
+        {
+          "file": "parking_hu/real_photos.py",
+          "line": 193
+        },
+        {
+          "file": "parking_hu/real_photos.py",
+          "line": 265
+        },
+        {
+          "file": "parking_hu/real_photos.py",
+          "line": 270
+        }
+      ],
+      "trigger": "compare_real_candidates.py 选出的方案使用 calibrated ROI、非 0.70 NMS IoU 或 augment=True，随后将该配置作为最终方案用于页面。",
+      "evidence": "RealPhotoService._load 的 config 白名单不保存 nms_iou/augment/ROI 策略；analyze 初始化 PhotoDetector 时不传它们，调用 detect 时不传 roi_xywh。PhotoDetector 默认仍为 full、0.70、False。",
+      "reproduction": "在 real_photo_config.json 增加 nms_iou=0.60、augment=true 或 ROI 策略，调用 RealPhotoService.analyze；这些字段既不进入 self.config/model_info，也不会传给 detector。此结论由数据流静态核对得到，未运行模型。",
+      "impact": "若非默认候选胜出，开发报告、发布配置和真实页面预测不是同一方案；其性能结论不能直接用于页面。最终若选择 full/0.70/False，则当前发布路径不受该问题影响。",
+      "requested_resolution": "最终采用非默认候选时，校验并贯通对应配置和纯几何 ROI；运行时只从配置或 manifest 获取标定，不打开 annotations.json。若本轮明确只允许默认推理进入产品，应在冻结记录中明确限制并排除其他候选作为部署方案。",
+      "resolution": "RealPhotoService 现校验并保存 nms_iou/augment/roi_policy；calibrated 从 config.roi_by_view 读取固定几何，analyze 将 NMS/TTA/ROI 传给 PhotoDetector。运行时不读取 annotations.json。已静态复核数据流并阅读针对性测试。"
+    },
+    {
+      "id": "R2",
+      "priority": "P2",
+      "title": "任一阈值无预测会阻断完整开发报告和回退",
+      "status": "resolved",
+      "locations": [
+        {
+          "file": "scripts/compare_real_candidates.py",
+          "line": 76
+        },
+        {
+          "file": "scripts/compare_real_candidates.py",
+          "line": 78
+        },
+        {
+          "file": "scripts/evaluate_real_photos.py",
+          "line": 33
+        }
+      ],
+      "trigger": "阈值网格中某行没有任何预测，例如所有车辆 confidence<0.80，导致该行 TP=0、FP=0、FN=952。",
+      "evidence": "现有 summarize_detection 对 TP+FP=0 返回 precision=None。min(precision,recall) 和 precision+1e-12 都不接受 None。",
+      "reproduction": {
+        "input": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 952,
+          "confidence": 0.8
+        },
+        "summarize_detection": {
+          "precision": null,
+          "recall": 0,
+          "f1": 0
+        },
+        "ranking_error": "TypeError: '<' not supported between instances of 'float' and 'NoneType'",
+        "eligible_error": "TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'",
+        "execution": "仅 AST 提取现有 summarize_detection 函数，使用构造计数调用选择表达式；无 Ultralytics、无 Torch、无 GPU。"
+      },
+      "impact": "即使较低阈值存在合格方案，也会在写 summary.json 前崩溃；所有阈值均不合格时不能按协议正常记录 best=null 并回退基线。",
+      "requested_resolution": "在报告中保留未定义指标为 null，但把 P/R 未定义的行判为不可选；对有效行求 max，空集返回 None。不要通过把未定义 Precision 置为 1 来让无预测方案参与优选。",
+      "resolution": "新增 select_threshold，保留原始 null 指标但排除不可定义行，空有效集合返回 None；有约束和无约束排名均调用该函数。独立 AST 提取后再次执行纯函数，空预测返回 None，混合表可选出有效且双指标合格行，无模型调用。"
+    },
+    {
+      "id": "R3",
+      "priority": "P2",
+      "title": "full 模式曾被 manifest 的 inference_roi_xywh 字段覆盖",
+      "status": "resolved",
+      "locations": [
+        {
+          "file": "parking_hu/real_photos.py",
+          "line": 205
+        }
+      ],
+      "trigger": "manifest 输入行携带 inference_roi_xywh，但模型配置 roi_policy=full。",
+      "evidence": "修复前 _metadata 会复制该字段，analyze 仅按字段是否存在决定是否裁剪。曾通过 AST 提取 _metadata、传入构造行确认该字段被复制。",
+      "resolution": "构建内部 photos 行后先 pop inference_roi_xywh；仅在 calibrated 分支从 config.roi_by_view 写入。已核对当前代码顺序，并阅读新增 test_full_image_policy_does_not_take_roi_from_manifest 测试；没有重复运行模型或测试套件。"
+    }
+  ],
+  "checks": [
+    {
+      "id": "C1",
+      "status": "pass",
+      "subject": "开发指标筛选规则",
+      "evidence": "固定 13 个阈值 0.20 到 0.80；select_threshold 排除未定义指标，要求 P/R 均不低于基线，再最大化 min(P,R)、F1、负 threshold；空有效集合返回 None。",
+      "qualification": "门槛为两项不下降，并不保证两项严格上升。最终文字必须区分提高、持平和下降。"
+    },
+    {
+      "id": "C2",
+      "status": "pass",
+      "subject": "开发集与运行时真值边界",
+      "evidence": "compare_real_candidates 仅选择 split=dev 的 18 张照片。离线 annotations.json 整体解析后，仅索引 dev ID；RealPhotoService 不打开该标注文件，固定 ROI 只来自 config.roi_by_view。",
+      "qualification": "calibrated 消融使用作者标注完整区的几何 ROI，不使用车辆框或 occupied 标签控制推理；报告须明确该已知 ROI 条件。"
+    },
+    {
+      "id": "C3",
+      "status": "pass",
+      "subject": "ROI 输出恢复原图坐标",
+      "evidence": "PhotoDetector.detect 100-110 行检查整数矩形及原图边界，115 行核验裁剪后的 orig_shape，119 行对 xyxy 偶数坐标加 offset_x、奇数坐标加 offset_y。示例 ROI(5,6,20,16) 与局部框(2,3,12,14) 得到(7,9,17,20)，与现有针对性测试断言一致。",
+      "qualification": "仅静态复核并阅读已有测试，未重复执行测试。"
+    },
+    {
+      "id": "C4",
+      "status": "pass",
+      "subject": "检测门槛与三态保留证据分离",
+      "evidence": "analyze 只删除 confidence<conf 的框；设置 accepted 标记但不删除框；整个保留列表交给 estimate_photo_occupancy。比较脚本同样使用完整 conf>=0.20 检测列表。",
+      "qualification": "最终模型配置必须继续 conf=0.20、high=0.50、overlap_fraction=0.05。accepted 数量是检测门槛下数量，retained 数量是占用证据数量，报告和界面不可互换。"
+    },
+    {
+      "id": "C5",
+      "status": "pass",
+      "subject": "训练输入路径及开发隔离",
+      "evidence": "当前 yolov8s_270_e60_request.json 的 dataset YAML 和 manifest SHA-256 均与磁盘文件相同；YAML 仅含 path/train/val/names，实际 train PNG 名称集合等于 manifest 的 270 个训练 ID，val PNG 等于 18 个验证 ID；无 ID 交集；训练日期与 manifest.excluded_dates 的交集为 0。",
+      "qualification": "复用此前已有训练数据审计，不重读测试图片/车辆标签，不重新执行 288 张图像标签审计；训练进程仍运行，未核验最终权重。"
+    },
+    {
+      "id": "C6",
+      "status": "pass",
+      "subject": "训练来源与候选保全",
+      "evidence": "train_real_candidate.py 在训练前记录初始权重、YAML、manifest 哈希及依赖版本；已存在候选目录时拒绝覆写；训练写入独立 output/name，完成后保存 best 权重哈希和输入 manifest，不自动替换产品权重。",
+      "qualification": "候选 best 检查点由 Ultralytics 开发验证 fitness 选择，之后再在开发集阈值网格评估。这是两阶段开发选择，不是测试集选型。"
+    },
+    {
+      "id": "C7",
+      "status": "pass_with_reporting_boundary",
+      "subject": "旧测试与新外部验证的报告边界",
+      "evidence": "计划明确旧测试已查看，新增验证在配置冻结后打开，保留失败；只有开发集用于候选和阈值选择。",
+      "qualification": "冻结后若使用验证结果决定是否发布，应完整保留预先选中的候选结果及回退决定；不能反复调参后仍将该外部集合称为未见数据。"
+    },
+    {
+      "id": "C8",
+      "status": "pass_with_reporting_boundary",
+      "subject": "耗时口径",
+      "evidence": "比较脚本记录 device、单图 elapsed，并说明包含首次预热和图片载入、不含占用；没有将它标成纯模型延迟。",
+      "qualification": "该均值含首次预热，不是稳定 p50/p95。最终 CPU 包验收仍应独立给出同设备、同线程、预热后的端到端耗时；当前 GPU 开发运行不能代替 CPU 证据。"
+    },
+    {
+      "id": "C9",
+      "status": "pass",
+      "subject": "最终运行配置及 ROI 策略",
+      "evidence": "当前服务校验并贯通 NMS IoU、TTA 和固定视角 ROI。完整图模式丢弃 manifest 带入的 inference_roi_xywh；calibrated 模式缺少有效配置 ROI 时明确失败。外部 manifest 合并仍执行原有图片路径、尺寸、哈希与重复 ID 校验。",
+      "qualification": "未读取实际外部预测；外部来源许可与最终页面文字仍由交付验收核对。"
+    }
+  ],
+  "observations": [
+    "s270/60 相对旧 n270/40 还改变了 seed、batch、patience 和 max_det，适合称候选升级，不适合声称纯模型容量消融。",
+    "当前 train_real_candidate.py 信任传入 YAML/manifest，并没有自行执行两者的一致性审计；本轮实际输入已通过上述元数据核对，不作为已发生的泄漏问题。",
+    "研究文档中的优先方案不是最终选择协议；本轮以已冻结的双指标门槛与 min(P,R) 规则为准。"
+  ],
+  "remaining_work": "本次协议/代码审阅无未解决发现。训练仍进行中；最终权重及配置冻结、旧测试回归、新外部盲评、CPU 包和发布验收仍属主任务后续工作，不由本报告替代。",
+  "initial_reviewed_file_sha256": {
+    "docs/REAL_OPTIMIZATION_PLAN.md": "e92b439d11aa0477a5691115b1e910e9632f9c680ddd8c98ff7a7773a2f27e53",
+    "scripts/compare_real_candidates.py": "f5288adebc1a80b0b320609737fd70e485d9c7eed229f4405ff12a70edf365c6",
+    "scripts/train_real_candidate.py": "bc55687ece4176f590343bd21a8a02f0b828f902245c457bf8e2ee1c75a742ab",
+    "parking_hu/real_photos.py": "c25fce4477685e4955041b973f3276b19bfaea093d722d94720faab516fcfc33"
+  },
+  "rereviewed_at_utc": "2026-11-01T11:23:31.877393+00:00",
+  "fix_validation": {
+    "reviewer_execution": "纯 Python AST 函数检查、源码数据流复核、实际训练输入元数据核对；无 GPU/模型推理。",
+    "implementer_reported_tests": "tests/test_real_photos.py + tests/test_real_selection.py: 26 passed",
+    "test_execution_attribution": "26 项通过为主代理提供的本轮执行结果；本审阅者阅读相关测试并复用结果，未重复执行。",
+    "full_policy_pop_line": 205,
+    "open_findings": 0
+  }
+}

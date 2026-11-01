@@ -1,0 +1,101 @@
+{
+  "photo_id": "cnr_camera7_2015-12-10_07_51_00",
+  "image_sha256": "07fcd0a09da5574603f71e543c2c1cc5f011e1fb500c321066c0a972a070b22c",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        95.62643432617188,
+        97.2736587524414,
+        166.8893585205078,
+        163.9048309326172
+      ],
+      "confidence": 0.9167694449424744,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        336.9076843261719,
+        100.83748626708984,
+        384.3226623535156,
+        163.9747314453125
+      ],
+      "confidence": 0.8962544202804565,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        158.9215850830078,
+        499.082763671875,
+        198.91224670410156,
+        544.1030883789062
+      ],
+      "confidence": 0.8441568613052368,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        684.492919921875,
+        0.006544589996337891,
+        749.0615844726562,
+        21.553207397460938
+      ],
+      "confidence": 0.22771823406219482,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001"
+    ],
+    "false_positive_ids": [
+      "d002"
+    ],
+    "missed_boxes": [
+      [
+        686,
+        0,
+        749,
+        22
+      ],
+      [
+        428,
+        347,
+        540,
+        524
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 49,
+    "occupied->occupied": 2,
+    "occupied->free": 1,
+    "free->occupied": 1
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1000,
+    750
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 445.24249999813037,
+  "inference_reused": false
+}

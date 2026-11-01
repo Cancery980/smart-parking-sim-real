@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T12:07:11.627537+00:00",
+  "scope": "Only the same 18 PKLot development images and their cached n/s predictions; no test or CNR prediction inspection.",
+  "models_run": false,
+  "gpu_used": false,
+  "method": "Independently reconstructed confidence-ordered IoU>=0.50 matching against vehicle boxes clipped to author ROI. Error flags are descriptive geometry, not new scoring filters. Visual inspection limited to three original development JPEGs.",
+  "definitions": {
+    "localization_overlap": "Best IoU in [0.30,0.50); this does not mean every case is close to threshold.",
+    "near_iou_threshold": "Best IoU in [0.45,0.50).",
+    "duplicate_fp": "Unmatched accepted prediction with IoU>=0.50 to some GT already matched; an actual duplicate criterion.",
+    "small_bbox": "Clipped bounding-box area <=1024 native px^2, used only as a descriptive bin; not COCO mask-area small-object evaluation.",
+    "near_roi_edge": "At least one clipped box side is within16 native pixels of the scoring ROI edge; flags overlap with small/localization categories."
+  },
+  "models": {
+    "yolov8s_270_full_cpu": {
+      "threshold": 0.3,
+      "score": {
+        "tp": 943,
+        "fp": 27,
+        "fn": 9
+      },
+      "classification": {
+        "fp": {
+          "primary": {
+            "low_overlap_unmatched": 19,
+            "localization_iou_0.30_to_0.50": 8
+          },
+          "by_view": {
+            "PUCPR": 14,
+            "UFPR04": 9,
+            "UFPR05": 4
+          },
+          "small_bbox_32sq": 20,
+          "min_side_le20": 19,
+          "near_roi_edge_16": 18
+        },
+        "fn": {
+          "primary": {
+            "localization_iou_0.30_to_0.50": 7,
+            "no_retained_box_with_iou_0.30": 2
+          },
+          "by_view": {
+            "UFPR04": 7,
+            "UFPR05": 2
+          },
+          "small_bbox_32sq": 3,
+          "min_side_le20": 2,
+          "near_roi_edge_16": 3
+        }
+      },
+      "precision": 0.9721649484536082,
+      "recall": 0.990546218487395,
+      "mean_inference_ms": 390.0774555554057,
+      "weights_sha256": "aab4627a07ce9ec43ed234f36ec57969fa76ed7e2398b249f663b80275b939c7"
+    },
+    "v11_n_full_cpu": {
+      "threshold": 0.35,
+      "score": {
+        "tp": 943,
+        "fp": 28,
+        "fn": 9
+      },
+      "classification": {
+        "fp": {
+          "primary": {
+            "low_overlap_unmatched": 17,
+            "localization_iou_0.30_to_0.50": 9,
+            "duplicate_gt_overlap": 2
+          },
+          "by_view": {
+            "PUCPR": 8,
+            "UFPR04": 17,
+            "UFPR05": 3
+          },
+          "small_bbox_32sq": 18,
+          "min_side_le20": 13,
+          "near_roi_edge_16": 15
+        },
+        "fn": {
+          "primary": {
+            "localization_iou_0.30_to_0.50": 8,
+            "no_retained_box_with_iou_0.30": 1
+          },
+          "by_view": {
+            "UFPR04": 7,
+            "UFPR05": 2
+          },
+          "small_bbox_32sq": 3,
+          "min_side_le20": 3,
+          "near_roi_edge_16": 3
+        }
+      },
+      "precision": 0.9711637487126673,
+      "recall": 0.990546218487395,
+      "mean_inference_ms": 204.60726666654713,
+      "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2"
+    }
+  },
+  "comparison": {
+    "same_threshold_020": {
+      "yolov8s_270_full_cpu": {
+        "tp": 943,
+        "fp": 30,
+        "fn": 9,
+        "precision": 0.9691675231243576,
+        "recall": 0.990546218487395,
+        "f1": 0.9797402597402597
+      },
+      "v11_n_full_cpu": {
+        "tp": 943,
+        "fp": 51,
+        "fn": 9,
+        "precision": 0.9486921529175051,
+        "recall": 0.990546218487395,
+        "f1": 0.9691675231243576
+      }
+    },
+    "same_threshold_030": {
+      "yolov8s_270_full_cpu": {
+        "tp": 943,
+        "fp": 27,
+        "fn": 9,
+        "precision": 0.9721649484536082,
+        "recall": 0.990546218487395,
+        "f1": 0.9812695109261186
+      },
+      "v11_n_full_cpu": {
+        "tp": 943,
+        "fp": 36,
+        "fn": 9,
+        "precision": 0.9632277834525026,
+        "recall": 0.990546218487395,
+        "f1": 0.9766960124287933
+      }
+    },
+    "common_missed_gt": 6,
+    "s_only_missed_gt": [
+      [
+        "ufpr04_2012-12-20_17_30_12",
+        12000099814
+      ],
+      [
+        "ufpr04_2012-12-20_17_30_12",
+        12000099793
+      ],
+      [
+        "ufpr05_2013-02-28_18_10_44",
+        13000014362
+      ]
+    ],
+    "n_only_missed_gt": [
+      [
+        "ufpr04_2012-12-18_12_20_08",
+        12000112704
+      ],
+      [
+        "ufpr05_2013-02-28_18_10_44",
+        13000014365
+      ],
+      [
+        "ufpr04_2012-12-20_17_30_12",
+        12000099844
+      ]
+    ],
+    "s_near_iou_threshold_fn": 3,
+    "s_pucpr_fp": 14,
+    "s_pucpr_fp_touch_left_edge_le1px": 13,
+    "s_pucpr_fp_near_top_roi_edge_le16px": 5,
+    "cpu_mean_ratio_s_over_n": 1.9064692173964835,
+    "cpu_timing_limit": "Same existing comparison script uses four CPU threads and includes first-call warmup; these means are descriptive, not steady-state p50/p95."
+  },
+  "findings": [
+    "s在自身开发门槛0.30下为TP943/FP27/FN9；n在自身开发门槛0.35下为TP943/FP28/FN9。实际新增优势只有1个FP，且漏检GT只有6个重合，另外各3个不同，不能说s已完全保留所有n成功案例。",
+    "s的9个FN中7个已有conf>=0.20框但IoU为0.30至0.50，其中仅3个在0.45至0.50；另2个没有IoU>=0.30保留框。只有3个FN属于小框，整体不是普遍的输入分辨率不足。",
+    "s的27个FP中20个属于小框、18个接近评分ROI边界，未发现满足重复GT定义的FP。PUCPR贡献14个FP，其中13个在左图像边，5个同时靠近上方ROI边；这些标志不能相加当互斥类别。",
+    "查看两张UFPR04原始开发图可见，多处大框漏检位于树冠遮挡区；查看一张PUCPR原图可见边缘截断车辆部分。可见部分/遮挡是外观观察，不是对全部FP的语义定论，仍按冻结作者标注保留原FP/FN，不修标签或删除边缘。"
+  ],
+  "recommendations": [
+    {
+      "priority": 1,
+      "candidate": "One calibrated-ROI inference ablation only",
+      "worth_trying": "有限证据，成本低，可完成已有计划中的一次比较。",
+      "settings": "使用固定作者相机ROI、imgsz1280、NMS0.70、augment=False；保持conf0.20证据及已冻结的开发选择规则，比较完整18dev。",
+      "evidence": "PUCPR是唯一训练时裁去上方140px的视角，s在该视角FP由n校准后的8增加到14，其中5个接近上方ROI边；可检验输入背景/填充一致性。",
+      "limits": "13/14 PUCPR FP靠左边，而ROI裁剪不改变左边界；不能预期它消除所有边缘FP。UFPR04/05的ROI为整图，故该消融不会直接解决9个FN。"
+    },
+    {
+      "priority": 2,
+      "candidate": "One native TTA ablation on the eventual development winner, conditional",
+      "worth_trying": "仅在747训练后的开发误差仍以定位不匹配为主时考虑，最多一组，不做组合网格。",
+      "settings": "保持最终开发候选权重、1280、conf0.20及NMS0.70，只将augment=False改为True；只跑18dev。",
+      "evidence": "当前7/9 FN有0.30至0.50的重叠框，3个接近IoU0.50边界，翻转/多尺度分支可能改变定位；不是已证明会改善。",
+      "limits": "当前版本是三个尺度前向，按尺度面积约2.14倍算量，不保证CPU耗时比例；可能增加边缘FP和unknown，应按P/R双门槛及占用代价决定保留。先等747开发结果，避免给即将淘汰的s270增加额外组合。"
+    }
+  ],
+  "not_recommended_now": [
+    "不加NMS阈值网格：s当前没有IoU>=0.50的重复GT型FP，更强抑制有误删相邻真车风险。",
+    "不优先做1600输入或SAHI：只有3/9 FN是小框，多处严重遮挡或标注框与可见部分不一致；放大也可能增加当前大量小边缘FP。",
+    "不做按位置删框或缩窄计分ROI：已存在真实边缘车辆GT，会改变既定评分范围并隐藏错误。"
+  ],
+  "s_false_negatives": [
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "annotation_id": 12000025088,
+      "box": [
+        0,
+        239,
+        7,
+        257
+      ],
+      "best_retained_iou": 0.30227,
+      "best_retained_confidence": 0.30581897497177124,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "annotation_id": 12000025098,
+      "box": [
+        452,
+        516,
+        606,
+        605
+      ],
+      "best_retained_iou": 0.40789,
+      "best_retained_confidence": 0.8357571959495544,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "annotation_id": 12000025149,
+      "box": [
+        1070,
+        224,
+        1108,
+        257
+      ],
+      "best_retained_iou": 0.48449,
+      "best_retained_confidence": 0.7233479619026184,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "annotation_id": 12000025150,
+      "box": [
+        1063,
+        502,
+        1120,
+        553
+      ],
+      "best_retained_iou": 0.31807,
+      "best_retained_confidence": 0.38644489645957947,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "annotation_id": 12000099793,
+      "box": [
+        311,
+        489,
+        410,
+        552
+      ],
+      "best_retained_iou": 0.0,
+      "best_retained_confidence": 0.9425342679023743,
+      "primary_kind": "no_retained_box_with_iou_0.30",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "annotation_id": 12000099812,
+      "box": [
+        523,
+        483,
+        685,
+        564
+      ],
+      "best_retained_iou": 0.47636,
+      "best_retained_confidence": 0.3795680105686188,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "annotation_id": 12000099814,
+      "box": [
+        1142,
+        466,
+        1253,
+        546
+      ],
+      "best_retained_iou": 0.00344,
+      "best_retained_confidence": 0.538896381855011,
+      "primary_kind": "no_retained_box_with_iou_0.30",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr05_2013-03-20_16_35_12",
+      "annotation_id": 13000129316,
+      "box": [
+        0,
+        395,
+        8,
+        438
+      ],
+      "best_retained_iou": 0.40829,
+      "best_retained_confidence": 0.5863255858421326,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr05_2013-02-28_18_10_44",
+      "annotation_id": 13000014362,
+      "box": [
+        1259,
+        252,
+        1280,
+        286
+      ],
+      "best_retained_iou": 0.45247,
+      "best_retained_confidence": 0.7334021329879761,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    }
+  ],
+  "s_false_positives": [
+    {
+      "photo_id": "pucpr_2012-09-12_07_49_42",
+      "detection_id": "d263",
+      "confidence": 0.78992,
+      "best_gt_iou": 0.251,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-12_07_49_42",
+      "detection_id": "d273",
+      "confidence": 0.56756,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-12_07_49_42",
+      "detection_id": "d280",
+      "confidence": 0.32415,
+      "best_gt_iou": 0.21825,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-28_07_16_00",
+      "detection_id": "d065",
+      "confidence": 0.62881,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-28_07_16_00",
+      "detection_id": "d067",
+      "confidence": 0.53294,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_11_20_24",
+      "detection_id": "d215",
+      "confidence": 0.80264,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_11_20_24",
+      "detection_id": "d224",
+      "confidence": 0.49801,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-07_13_04_37",
+      "detection_id": "d105",
+      "confidence": 0.75925,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-07_13_04_37",
+      "detection_id": "d107",
+      "confidence": 0.71827,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "detection_id": "d134",
+      "confidence": 0.66621,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "detection_id": "d135",
+      "confidence": 0.63532,
+      "best_gt_iou": 0.02702,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "detection_id": "d137",
+      "confidence": 0.57439,
+      "best_gt_iou": 0.20015,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "detection_id": "d138",
+      "confidence": 0.48335,
+      "best_gt_iou": 0.10351,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "detection_id": "d141",
+      "confidence": 0.35657,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "detection_id": "d059",
+      "confidence": 0.83576,
+      "best_gt_iou": 0.40789,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "detection_id": "d063",
+      "confidence": 0.72335,
+      "best_gt_iou": 0.48449,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "detection_id": "d065",
+      "confidence": 0.44044,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "detection_id": "d066",
+      "confidence": 0.38644,
+      "best_gt_iou": 0.31807,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "detection_id": "d067",
+      "confidence": 0.30582,
+      "best_gt_iou": 0.30227,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "detection_id": "d059",
+      "confidence": 0.66403,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "detection_id": "d061",
+      "confidence": 0.37957,
+      "best_gt_iou": 0.47636,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr04_2012-12-18_12_20_08",
+      "detection_id": "d077",
+      "confidence": 0.64205,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-18_12_20_08",
+      "detection_id": "d078",
+      "confidence": 0.34253,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr05_2013-03-20_16_35_12",
+      "detection_id": "d072",
+      "confidence": 0.58633,
+      "best_gt_iou": 0.40829,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": true,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-20_16_35_12",
+      "detection_id": "d075",
+      "confidence": 0.30616,
+      "best_gt_iou": 0.38178,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": false
+    },
+    {
+      "photo_id": "ufpr05_2013-02-28_18_10_44",
+      "detection_id": "d060",
+      "confidence": 0.7334,
+      "best_gt_iou": 0.45247,
+      "primary_kind": "localization_iou_0.30_to_0.50",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-14_14_40_09",
+      "detection_id": "d026",
+      "confidence": 0.392,
+      "best_gt_iou": 0.0,
+      "primary_kind": "low_overlap_unmatched",
+      "bbox_small_32sq": false,
+      "near_roi_edge_16": true
+    }
+  ],
+  "visual_inspection_originals": [
+    "ufpr04_2013-01-29_14_16_16",
+    "ufpr04_2012-12-20_17_30_12",
+    "pucpr_2012-09-21_16_15_36"
+  ],
+  "dev_photo_ids": [
+    "pucpr_2012-09-12_07_49_42",
+    "pucpr_2012-09-28_07_16_00",
+    "pucpr_2012-09-16_07_52_58",
+    "pucpr_2012-09-21_11_20_24",
+    "pucpr_2012-11-07_13_04_37",
+    "pucpr_2012-09-21_16_15_36",
+    "ufpr04_2013-01-29_14_16_16",
+    "ufpr04_2012-12-15_12_50_09",
+    "ufpr04_2013-01-17_08_55_04",
+    "ufpr04_2012-12-26_16_50_13",
+    "ufpr04_2012-12-20_17_30_12",
+    "ufpr04_2012-12-18_12_20_08",
+    "ufpr05_2013-02-22_17_15_12",
+    "ufpr05_2013-04-13_11_00_05",
+    "ufpr05_2013-03-20_16_35_12",
+    "ufpr05_2013-04-13_09_15_03",
+    "ufpr05_2013-02-28_18_10_44",
+    "ufpr05_2013-04-14_14_40_09"
+  ],
+  "inputs_sha256": {
+    "yolov8s_270_full_cpu": "c6068af045f653656d4edc04797d2bf1f50a266da66604951d2eea826d80ad7c",
+    "v11_n_full_cpu": "a8275df56ba9660bcac54b3d88c4d50dfb5f77bccd821895054863204b8a291c"
+  }
+}

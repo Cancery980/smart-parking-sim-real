@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T12:16:28.023961+00:00",
+  "status": "pass_scoped_read_only_review",
+  "repo": "C:\\Users\\ROG\\.codex\\worktrees\\parking-real-optimization\\smart_parking_hu",
+  "scope": [
+    "parking_hu/real_photos.py",
+    "scripts/compare_real_candidates.py",
+    "scripts/evaluate_real_optimization.py"
+  ],
+  "reviewed_file_sha256": {
+    "parking_hu/real_photos.py": "19dbb2ee9339b0c66e1c153a35b9e4baa9f58c11a2527508ff4d560be9193b6a",
+    "scripts/compare_real_candidates.py": "d7fa1d031bcf86b1527574ea412509ee0587235aa4c791ab7406d0ef11ff718f",
+    "scripts/evaluate_real_optimization.py": "67e6ffdcf98b672a66714b9425d94cb0940f51ca5036bd6aafdce007c68c94a5"
+  },
+  "occupancy_truth_read": false,
+  "prediction_files_read": false,
+  "models_run": false,
+  "tests_rerun": false,
+  "root_code_modified": false,
+  "geometry_audit": "work/real_optimization/roi_coverage_audit.json",
+  "geometry_audit_sha256": "19ebd3c1530107adff9b81d91efe049234f7b7f27f7d5ce34da235f4582004d6",
+  "open_findings": [],
+  "checks": [
+    {
+      "id": "R01",
+      "status": "pass",
+      "subject": "优先级",
+      "location": "parking_hu/real_photos.py:65",
+      "evidence": "occupied_ids优先返回occupied；其后ambiguous_ids返回unknown/ambiguous_overlap；只有两者皆无且未完全观测时返回unknown/incomplete_observation；最后才返回free。覆盖不完整不会抹掉已有可靠占用证据。"
+    },
+    {
+      "id": "R02",
+      "status": "pass",
+      "subject": "观测比例与完全覆盖",
+      "location": "parking_hu/real_photos.py:43",
+      "evidence": "observed_roi_xywh构建矩形；covers包含边界判断完全覆盖，intersection.area/polygon.area给出实际覆盖比例；None时fully_observed=True且比例1.0。与独立几何审计的定义一致。"
+    },
+    {
+      "id": "R03",
+      "status": "pass",
+      "subject": "API实际ROI传递",
+      "location": "parking_hu/real_photos.py:306",
+      "evidence": "传给PhotoDetector的row.inference_roi_xywh也传给占用估计；full策略没有该内部字段，row.get返回None。没有拿评分ROI无条件限制full推理。"
+    },
+    {
+      "id": "R04",
+      "status": "pass",
+      "subject": "开发比较ROI传递",
+      "location": "scripts/compare_real_candidates.py:65",
+      "evidence": "calibrated使用固定作者ROI，full使用None；同一个roi变量传给detect和estimate_photo_occupancy。"
+    },
+    {
+      "id": "R05",
+      "status": "pass",
+      "subject": "最终评分ROI传递",
+      "location": "scripts/evaluate_real_optimization.py:55",
+      "evidence": "仅calibrated读取冻结config.roi_by_view，缺失时失败；full为None。推理、预测缓存键和占用估计使用同一个实际roi。"
+    },
+    {
+      "id": "R06",
+      "status": "pass",
+      "subject": "无占用真值反馈",
+      "location": "parking_hu/real_photos.py:33",
+      "evidence": "占用函数只接受车位几何、检测证据和观测ROI。API不读取annotations.json；离线真值仅在函数返回后用于混淆矩阵累加。审阅者本轮未读取任何占用真值或预测。"
+    },
+    {
+      "id": "R07",
+      "status": "pass",
+      "subject": "完整分母",
+      "location": "scripts/evaluate_real_optimization.py:67",
+      "evidence": "占用函数对输入每个spot都append结果；比较和评估遍历返回的全部spots形成矩阵。summarize_occupancy总数包含unknown，unknown不计正确，不从总观察分母删除。"
+    },
+    {
+      "id": "R08",
+      "status": "pass",
+      "subject": "已有PK开发矩阵仍有效",
+      "evidence": "已验证manifest SHA未变；几何审计PK开发1664、历史3326观察全部被对应ROI完整覆盖。因此对既有相同检测，新分支不会触发，state/reason及混淆矩阵不变；仅新增覆盖元数据。无需重跑模型或测试集确认这一逻辑不变量。"
+    },
+    {
+      "id": "R09",
+      "status": "pass",
+      "subject": "CNR覆盖缺口按规则保留",
+      "evidence": "CAMERA1每张6个部分覆盖，共36；CAMERA9每张2个，共12。其他2148车位观察全覆盖。新规则处理这些48个潜在缺口而不更改作者标签、车辆评分ROI、检测P/R匹配或候选排序规则。"
+    }
+  ],
+  "validation_evidence": {
+    "implementation_agent_report": "两个针对性回归先失败，修复后相关28项通过；本审阅者阅读测试断言并复用该证据，未重复执行。",
+    "review_method": "只读源码数据流与优先级检查，结合已经完成的纯几何审计及当前manifest哈希。",
+    "tests_read": [
+      "test_partial_inference_region_cannot_establish_free_space",
+      "test_service_keeps_partly_unobserved_space_unknown",
+      "test_full_image_policy_does_not_take_roi_from_manifest"
+    ]
+  },
+  "limitations": [
+    "这是规则一致性和覆盖语义审阅，不是实际外部准确率验收。",
+    "遮挡与检测漏检仍可能存在；fully_observed只说明车位几何位于输入图像范围。",
+    "API已返回每个spot的observation_fraction/fully_observed/reason；最终报告/UI需展示实际观测范围与unknown含义，由相应负责人完成。"
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "config": {
+    "id": "yolov8s_747_roi_cpu",
+    "weights": "models/parking_real_optimized.pt",
+    "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+    "imgsz": 1280,
+    "classes": [
+      0
+    ],
+    "conf": 0.2,
+    "high": 0.5,
+    "overlap_fraction": 0.05,
+    "detection_threshold": 0.35,
+    "nms_iou": 0.7,
+    "augment": false,
+    "roi_policy": "calibrated",
+    "extra_manifests": [
+      "data/real_optimization/external/manifest.json"
+    ],
+    "selected_from": "reports/real_optimization/frozen_selection.json",
+    "roi_by_view": {
+      "PUCPR": [
+        0,
+        140,
+        1280,
+        580
+      ],
+      "UFPR04": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "UFPR05": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "CAMERA1": [
+        78,
+        158,
+        922,
+        592
+      ],
+      "CAMERA2": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA3": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA4": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA5": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA6": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA7": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA8": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA9": [
+        175,
+        0,
+        825,
+        750
+      ]
+    }
+  },
+  "images": 54,
+  "dates": 20,
+  "detection": {
+    "tp": 708,
+    "fp": 96,
+    "fn": 440,
+    "precision": 0.8805970149253731,
+    "recall": 0.6167247386759582,
+    "f1": 0.7254098360655737
+  },
+  "detection_conf_020": {
+    "tp": 740,
+    "fp": 140,
+    "fn": 408,
+    "precision": 0.8409090909090909,
+    "recall": 0.6445993031358885,
+    "f1": 0.7297830374753451
+  },
+  "occupancy": {
+    "confusion": {
+      "free->unknown": 91,
+      "free->free": 1049,
+      "occupied->occupied": 673,
+      "occupied->free": 243,
+      "free->occupied": 11,
+      "occupied->unknown": 129
+    },
+    "total": 2196,
+    "unknown": 220,
+    "coverage": 0.8998178506375227,
+    "correct_over_all": 0.7841530054644809,
+    "accuracy_when_decided": 0.8714574898785425,
+    "false_free": 243,
+    "false_free_among_observed_free": 0.18808049535603716,
+    "false_free_among_true_occupied": 0.23253588516746412
+  },
+  "groups": {
+    "CAMERA1": {
+      "tp": 58,
+      "fp": 9,
+      "fn": 49,
+      "precision": 0.8656716417910447,
+      "recall": 0.5420560747663551,
+      "f1": 0.6666666666666666
+    },
+    "OVERCAST": {
+      "tp": 238,
+      "fp": 38,
+      "fn": 104,
+      "precision": 0.8623188405797102,
+      "recall": 0.695906432748538,
+      "f1": 0.7702265372168284
+    },
+    "RAINY": {
+      "tp": 352,
+      "fp": 37,
+      "fn": 171,
+      "precision": 0.9048843187660668,
+      "recall": 0.6730401529636711,
+      "f1": 0.7719298245614035
+    },
+    "SUNNY": {
+      "tp": 118,
+      "fp": 21,
+      "fn": 165,
+      "precision": 0.8489208633093526,
+      "recall": 0.4169611307420495,
+      "f1": 0.5592417061611374
+    },
+    "CAMERA2": {
+      "tp": 8,
+      "fp": 14,
+      "fn": 26,
+      "precision": 0.36363636363636365,
+      "recall": 0.23529411764705882,
+      "f1": 0.2857142857142857
+    },
+    "CAMERA3": {
+      "tp": 45,
+      "fp": 7,
+      "fn": 30,
+      "precision": 0.8653846153846154,
+      "recall": 0.6,
+      "f1": 0.7086614173228346
+    },
+    "CAMERA4": {
+      "tp": 65,
+      "fp": 6,
+      "fn": 33,
+      "precision": 0.9154929577464789,
+      "recall": 0.6632653061224489,
+      "f1": 0.7692307692307693
+    },
+    "CAMERA5": {
+      "tp": 120,
+      "fp": 4,
+      "fn": 98,
+      "precision": 0.967741935483871,
+      "recall": 0.5504587155963303,
+      "f1": 0.7017543859649122
+    },
+    "CAMERA6": {
+      "tp": 109,
+      "fp": 15,
+      "fn": 42,
+      "precision": 0.8790322580645161,
+      "recall": 0.7218543046357616,
+      "f1": 0.7927272727272727
+    },
+    "CAMERA7": {
+      "tp": 118,
+      "fp": 12,
+      "fn": 52,
+      "precision": 0.9076923076923077,
+      "recall": 0.6941176470588235,
+      "f1": 0.7866666666666666
+    },
+    "CAMERA8": {
+      "tp": 92,
+      "fp": 9,
+      "fn": 24,
+      "precision": 0.9108910891089109,
+      "recall": 0.7931034482758621,
+      "f1": 0.847926267281106
+    },
+    "CAMERA9": {
+      "tp": 93,
+      "fp": 20,
+      "fn": 86,
+      "precision": 0.8230088495575221,
+      "recall": 0.5195530726256983,
+      "f1": 0.636986301369863
+    }
+  },
+  "device": "cpu",
+  "mean_inference_ms": 447.9533000001673
+}

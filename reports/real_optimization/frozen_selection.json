@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-11-01T12:50:28.259217+00:00",
+  "selection_rule": "Both dev P/R >= v1.1 conf .20; maximize min(P,R), then F1, lower threshold, smaller weight",
+  "baseline_development_metrics": {
+    "tp": 943,
+    "fp": 51,
+    "fn": 9,
+    "precision": 0.9486921529175051,
+    "recall": 0.990546218487395,
+    "f1": 0.9691675231243576
+  },
+  "selected_development_metrics": {
+    "confidence": 0.35,
+    "tp": 943,
+    "fp": 20,
+    "fn": 9,
+    "precision": 0.9792315680166147,
+    "recall": 0.990546218487395,
+    "f1": 0.9848563968668407,
+    "views": {
+      "PUCPR": {
+        "tp": 525,
+        "fp": 9,
+        "fn": 0,
+        "precision": 0.9831460674157303,
+        "recall": 1.0,
+        "f1": 0.9915014164305949
+      },
+      "UFPR04": {
+        "tp": 214,
+        "fp": 9,
+        "fn": 7,
+        "precision": 0.9596412556053812,
+        "recall": 0.9683257918552036,
+        "f1": 0.963963963963964
+      },
+      "UFPR05": {
+        "tp": 204,
+        "fp": 2,
+        "fn": 2,
+        "precision": 0.9902912621359223,
+        "recall": 0.9902912621359223,
+        "f1": 0.9902912621359223
+      }
+    }
+  },
+  "occupancy_rule": "All conf>=.20 evidence; high .50 and overlap .05. High-confidence center wins; otherwise sufficient overlap is unknown. A spot not fully covered by the actual inference ROI cannot become free without observation; it remains unknown and in the denominator.",
+  "selected_config": {
+    "id": "yolov8s_747_roi_cpu",
+    "weights": "models/parking_real_optimized.pt",
+    "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+    "imgsz": 1280,
+    "classes": [
+      0
+    ],
+    "conf": 0.2,
+    "high": 0.5,
+    "overlap_fraction": 0.05,
+    "detection_threshold": 0.35,
+    "nms_iou": 0.7,
+    "augment": false,
+    "roi_policy": "calibrated",
+    "extra_manifests": [
+      "data/real_optimization/external/manifest.json"
+    ],
+    "selected_from": "reports/real_optimization/frozen_selection.json",
+    "roi_by_view": {
+      "PUCPR": [
+        0,
+        140,
+        1280,
+        580
+      ],
+      "UFPR04": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "UFPR05": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "CAMERA1": [
+        78,
+        158,
+        922,
+        592
+      ],
+      "CAMERA2": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA3": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA4": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA5": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA6": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA7": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA8": [
+        0,
+        0,
+        1000,
+        750
+      ],
+      "CAMERA9": [
+        175,
+        0,
+        825,
+        750
+      ]
+    }
+  },
+  "baselines": [
+    {
+      "id": "v11_default",
+      "weights": "models/parking_real_yolov8n.pt",
+      "imgsz": 1280,
+      "classes": [
+        0
+      ],
+      "conf": 0.2,
+      "high": 0.5,
+      "overlap_fraction": 0.05,
+      "max_det": 500,
+      "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+      "selected_from": "reports/real_photos/trained_development_selection.json",
+      "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+      "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+      "detection_threshold": 0.2,
+      "nms_iou": 0.7,
+      "augment": false,
+      "roi_policy": "full"
+    },
+    {
+      "id": "v11_dev_calibrated",
+      "weights": "models/parking_real_yolov8n.pt",
+      "imgsz": 1280,
+      "classes": [
+        0
+      ],
+      "conf": 0.2,
+      "high": 0.5,
+      "overlap_fraction": 0.05,
+      "max_det": 500,
+      "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+      "selected_from": "reports/real_photos/trained_development_selection.json",
+      "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+      "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+      "detection_threshold": 0.35,
+      "nms_iou": 0.7,
+      "augment": false,
+      "roi_policy": "full"
+    }
+  ],
+  "datasets": {
+    "legacy_test": {
+      "manifest": "data/real/manifest.json",
+      "manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+      "annotations": "data/real/annotations.json",
+      "annotations_sha256": "965a56a454b0b86f7630d8b2314aa873de4f6f6d0aa9de8ec91b378cd3b7b714",
+      "split": "test",
+      "images": 36
+    },
+    "external_test": {
+      "manifest": "data/real_optimization/external/manifest.json",
+      "manifest_sha256": "e5b5445dbfbd365933d950beb843909abff25fc28eec7e3db65b267086f38f57",
+      "annotations": "data/real_optimization/external/annotations.json",
+      "annotations_sha256": "0b0043390b884d5abbcf8bc1f470d8787d43cfc158a026abff616804525ad0e6",
+      "split": "external_test",
+      "images": 54
+    }
+  },
+  "candidate_reports": [
+    {
+      "id": "v11_n_full_cpu",
+      "report": "reports/real_optimization/dev/v11_n_full_cpu/summary.json",
+      "sha256": "a8275df56ba9660bcac54b3d88c4d50dfb5f77bccd821895054863204b8a291c",
+      "selected_development_threshold": {
+        "confidence": 0.35,
+        "tp": 943,
+        "fp": 28,
+        "fn": 9,
+        "precision": 0.9711637487126673,
+        "recall": 0.990546218487395,
+        "f1": 0.9807592303692148,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 8,
+            "fn": 0,
+            "precision": 0.9849906191369606,
+            "recall": 1.0,
+            "f1": 0.9924385633270322
+          },
+          "UFPR04": {
+            "tp": 214,
+            "fp": 17,
+            "fn": 7,
+            "precision": 0.9264069264069265,
+            "recall": 0.9683257918552036,
+            "f1": 0.9469026548672567
+          },
+          "UFPR05": {
+            "tp": 204,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.9855072463768116,
+            "recall": 0.9902912621359223,
+            "f1": 0.9878934624697336
+          }
+        }
+      }
+    },
+    {
+      "id": "v11_n_roi_cpu",
+      "report": "reports/real_optimization/dev/v11_n_roi_cpu/summary.json",
+      "sha256": "b8049c4cb75401d3dbba1f5565aec8d25e588092fcfe27bc66f5aa5f1c578a1f",
+      "selected_development_threshold": {
+        "confidence": 0.35,
+        "tp": 943,
+        "fp": 29,
+        "fn": 9,
+        "precision": 0.970164609053498,
+        "recall": 0.990546218487395,
+        "f1": 0.9802494802494802,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 9,
+            "fn": 0,
+            "precision": 0.9831460674157303,
+            "recall": 1.0,
+            "f1": 0.9915014164305949
+          },
+          "UFPR04": {
+            "tp": 214,
+            "fp": 17,
+            "fn": 7,
+            "precision": 0.9264069264069265,
+            "recall": 0.9683257918552036,
+            "f1": 0.9469026548672567
+          },
+          "UFPR05": {
+            "tp": 204,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.9855072463768116,
+            "recall": 0.9902912621359223,
+            "f1": 0.9878934624697336
+          }
+        }
+      }
+    },
+    {
+      "id": "v11_n_tta_cpu",
+      "report": "reports/real_optimization/dev/v11_n_tta_cpu/summary.json",
+      "sha256": "b234a336696b3e0c0e2394e35b762a61eed741e8ff555f4742967febaabb1fbd",
+      "selected_development_threshold": null
+    },
+    {
+      "id": "yolov8s_270_full_cpu",
+      "report": "reports/real_optimization/dev/yolov8s_270_full_cpu/summary.json",
+      "sha256": "c6068af045f653656d4edc04797d2bf1f50a266da66604951d2eea826d80ad7c",
+      "selected_development_threshold": {
+        "confidence": 0.3,
+        "tp": 943,
+        "fp": 27,
+        "fn": 9,
+        "precision": 0.9721649484536082,
+        "recall": 0.990546218487395,
+        "f1": 0.9812695109261186,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 14,
+            "fn": 0,
+            "precision": 0.974025974025974,
+            "recall": 1.0,
+            "f1": 0.9868421052631579
+          },
+          "UFPR04": {
+            "tp": 214,
+            "fp": 9,
+            "fn": 7,
+            "precision": 0.9596412556053812,
+            "recall": 0.9683257918552036,
+            "f1": 0.963963963963964
+          },
+          "UFPR05": {
+            "tp": 204,
+            "fp": 4,
+            "fn": 2,
+            "precision": 0.9807692307692307,
+            "recall": 0.9902912621359223,
+            "f1": 0.9855072463768116
+          }
+        }
+      }
+    },
+    {
+      "id": "yolov8s_270_roi_cpu",
+      "report": "reports/real_optimization/dev/yolov8s_270_roi_cpu/summary.json",
+      "sha256": "854765a1676458bbd2ec2622249118098cfc64467d8fd51d850e742e5c01c74b",
+      "selected_development_threshold": {
+        "confidence": 0.3,
+        "tp": 943,
+        "fp": 26,
+        "fn": 9,
+        "precision": 0.9731682146542827,
+        "recall": 0.990546218487395,
+        "f1": 0.9817803227485684,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 13,
+            "fn": 0,
+            "precision": 0.9758364312267658,
+            "recall": 1.0,
+            "f1": 0.9877704609595485
+          },
+          "UFPR04": {
+            "tp": 214,
+            "fp": 9,
+            "fn": 7,
+            "precision": 0.9596412556053812,
+            "recall": 0.9683257918552036,
+            "f1": 0.963963963963964
+          },
+          "UFPR05": {
+            "tp": 204,
+            "fp": 4,
+            "fn": 2,
+            "precision": 0.9807692307692307,
+            "recall": 0.9902912621359223,
+            "f1": 0.9855072463768116
+          }
+        }
+      }
+    },
+    {
+      "id": "yolov8s_270_roi_tta_cpu",
+      "report": "reports/real_optimization/dev/yolov8s_270_roi_tta_cpu/summary.json",
+      "sha256": "e6ee6c51e30f5835d1b69fb1d45312040d03a97e8e86d88cd495a6d0754520d0",
+      "selected_development_threshold": {
+        "confidence": 0.5,
+        "tp": 943,
+        "fp": 31,
+        "fn": 9,
+        "precision": 0.9681724845995893,
+        "recall": 0.990546218487395,
+        "f1": 0.9792315680166147,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 12,
+            "fn": 0,
+            "precision": 0.9776536312849162,
+            "recall": 1.0,
+            "f1": 0.9887005649717514
+          },
+          "UFPR04": {
+            "tp": 213,
+            "fp": 11,
+            "fn": 8,
+            "precision": 0.9508928571428571,
+            "recall": 0.9638009049773756,
+            "f1": 0.9573033707865168
+          },
+          "UFPR05": {
+            "tp": 205,
+            "fp": 8,
+            "fn": 1,
+            "precision": 0.9624413145539906,
+            "recall": 0.9951456310679612,
+            "f1": 0.9785202863961814
+          }
+        }
+      }
+    },
+    {
+      "id": "yolov8s_747_full_cpu",
+      "report": "reports/real_optimization/dev/yolov8s_747_full_cpu/summary.json",
+      "sha256": "4ef9b5f076e7dadb02ddef8d9b5951767ea375c8f248991cba9dc7d397168115",
+      "selected_development_threshold": {
+        "confidence": 0.3,
+        "tp": 945,
+        "fp": 25,
+        "fn": 7,
+        "precision": 0.9742268041237113,
+        "recall": 0.9926470588235294,
+        "f1": 0.9833506763787722,
+        "views": {
+          "PUCPR": {
+            "tp": 524,
+            "fp": 13,
+            "fn": 1,
+            "precision": 0.9757914338919925,
+            "recall": 0.9980952380952381,
+            "f1": 0.9868173258003766
+          },
+          "UFPR04": {
+            "tp": 216,
+            "fp": 10,
+            "fn": 5,
+            "precision": 0.9557522123893806,
+            "recall": 0.9773755656108597,
+            "f1": 0.9664429530201343
+          },
+          "UFPR05": {
+            "tp": 205,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.9903381642512077,
+            "recall": 0.9951456310679612,
+            "f1": 0.9927360774818402
+          }
+        }
+      }
+    },
+    {
+      "id": "yolov8s_747_roi_cpu",
+      "report": "reports/real_optimization/dev/yolov8s_747_roi_cpu/summary.json",
+      "sha256": "86a93c9cdd9fcf9d046c33f921d87b56bc3c832644a5a5155335d3639f1747c8",
+      "selected_development_threshold": {
+        "confidence": 0.35,
+        "tp": 943,
+        "fp": 20,
+        "fn": 9,
+        "precision": 0.9792315680166147,
+        "recall": 0.990546218487395,
+        "f1": 0.9848563968668407,
+        "views": {
+          "PUCPR": {
+            "tp": 525,
+            "fp": 9,
+            "fn": 0,
+            "precision": 0.9831460674157303,
+            "recall": 1.0,
+            "f1": 0.9915014164305949
+          },
+          "UFPR04": {
+            "tp": 214,
+            "fp": 9,
+            "fn": 7,
+            "precision": 0.9596412556053812,
+            "recall": 0.9683257918552036,
+            "f1": 0.963963963963964
+          },
+          "UFPR05": {
+            "tp": 204,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.9902912621359223,
+            "recall": 0.9902912621359223,
+            "f1": 0.9902912621359223
+          }
+        }
+      }
+    }
+  ],
+  "evaluation_rule": "No changes after viewing legacy/external results. Legacy36 is an already published regression set; external54 is unseen CNR and never used for training or selection."
+}

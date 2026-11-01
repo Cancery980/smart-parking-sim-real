@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T11:41:14.963Z",
+  "status": "pass_code_review_pending_execution",
+  "repo": "C:/Users/ROG/.codex/worktrees/parking-real-optimization/smart_parking_hu",
+  "scope": [
+    "scripts/select_real_candidate.py",
+    "scripts/evaluate_real_optimization.py",
+    "scripts/report_real_optimization.py"
+  ],
+  "reviewed_file_sha256": {
+    "scripts/select_real_candidate.py": "cdc062937210e78647ca424c5eceb049e8d46d040b441e9062ae55222d1a687b",
+    "scripts/evaluate_real_optimization.py": "4fe9a9a330555df1dd7d10ef0059e3e1d4613a69b8e9da7c2819927409dff696",
+    "scripts/report_real_optimization.py": "2522db0cfe3cb6fa2f4e9f3e47b0fc1f76720484bef858361f87a45f44db69d2"
+  },
+  "read_only_review": {
+    "models_run": false,
+    "holdout_prediction_files_read": false,
+    "root_owned_code_modified": false,
+    "review_execution": "Read current source; independently execute only AST-extracted candidate ranking with synthetic in-memory values. No GPU, Ultralytics prediction, training, or real holdout result inspection.",
+    "output_written": "work/real_optimization/final_pipeline_review.json"
+  },
+  "summary": "冻结、真实评分与报告的数据流一致；发现的全局平局排序与既定协议不一致问题已修复，并以独立纯函数构造样例复核。当前无未解决的具体代码问题。本报告不代表在训权重、真实分数、运行界面或发布包已经验收。",
+  "findings": [
+    {
+      "id": "PIPE1",
+      "priority": "P2",
+      "status": "resolved",
+      "title": "全局候选排序曾优先权重大小而非既定的低门槛",
+      "location": {
+        "file": "scripts/select_real_candidate.py",
+        "line": 39
+      },
+      "trigger": "两个合格候选的 min(P,R) 与 F1 完全相同，但较小权重要求更高检测门槛。",
+      "original_behavior": "原 rank 为 min(P,R)、F1、较小权重、较低门槛；这与本轮既定 F1 后优先较低门槛的规则不同。",
+      "resolution": "现 rank 为 min(P,R)、F1、较低门槛、较小权重，冻结记录 selection_rule 同步。最后的权重大小仅打破前述条件全部相同的平局。",
+      "independent_reproduction": {
+        "method": "AST-extract current nested rank; replace Path.stat with in-memory deterministic sizes; no project or data mutation.",
+        "case_1": "相同 P/R/F1，large size=100/conf=.20 与 small size=10/conf=.50；现在选择 large/.20。",
+        "case_2": "相同 P/R/F1 且 conf 均为 .20，large size=100 与 small size=10；现在选择 small。",
+        "passed": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "P01",
+      "status": "pass_static",
+      "subject": "选择只使用开发汇总",
+      "evidence": "select_real_candidate 只读取 dev/*/summary.json，要求 split=dev/images=18、相同 manifest SHA；合格候选 P/R 都不得低于已固定 v1.1 开发 conf=.20 基线。模型选择完成后才读取两个留出集的清单与评分文件以冻结哈希和相机 ROI；没有读取预测分数选择模型。",
+      "qualification": "固定几何 ROI 属于已知相机/完整标注范围，不能解释为无需任何标定的盲摄像机部署。"
+    },
+    {
+      "id": "P02",
+      "status": "pass_static",
+      "subject": "权重与配置冻结",
+      "evidence": "冻结前核对候选权重 SHA，复制为 models/parking_real_optimized.pt 并再核对 SHA；已有冻结记录或目标权重时拒绝覆盖。运行配置保留 imgsz、NMS IoU、TTA、ROI、检测门槛，内部证据固定 .20/.50/.05。",
+      "qualification": "本脚本只生成 frozen_selection.selected_config，不自动覆盖 models/real_photo_config.json；最终推广仍需将已验收配置接入运行时并核对哈希。"
+    },
+    {
+      "id": "P03",
+      "status": "pass_static",
+      "subject": "两条 v1.1 基线的含义",
+      "evidence": "v11_default 固定原权重、full/.70/False、检测门槛 .20；v11_dev_calibrated 复制同一推理配置，仅使用原模型开发结果选择检测门槛。报告明确两条基线的差值属于操作点变化。",
+      "qualification": "冻结依赖名为 v11_n_full_cpu 的开发记录存在且已生成合格阈值；当前流程应先完成该基线记录，不把缺失基线改成读取留出结果。"
+    },
+    {
+      "id": "P04",
+      "status": "pass_static",
+      "subject": "留出清单与完整性",
+      "evidence": "冻结记录要求历史集36、外部集54，保存 manifest/annotations SHA。评估再次核对两个 SHA、图片个数、每张 JPEG SHA 以及每个配置的权重 SHA；只有完整循环完成后才写顶层汇总。",
+      "qualification": "中断时存在局部预测目录不代表完成；需要完整顶层 summary.json 和对应逐图记录，重跑须使用新目录。"
+    },
+    {
+      "id": "P05",
+      "status": "pass_static",
+      "subject": "车辆评分口径",
+      "evidence": "评估复用原 score_detections：只从 vehicles.bbox_xywh 构建车辆真值，按作者 ROI 内中心点筛选并裁框，置信度降序 IoU>=.50 一对一匹配。TP/FP/FN 汇总后计算 P/R/F1；并行保留统一 conf=.20 结果。没有把车位矩形当车辆真值。"
+    },
+    {
+      "id": "P06",
+      "status": "pass_static",
+      "subject": "三态分母与证据保留",
+      "evidence": "每个配置都用全部 conf>=.20 框计算三态，high=.50、overlap=.05；检测门槛只传给车辆评分。unknown 计入总观察数但不计正确；已判定正确率与全部观察正确率、覆盖率、假空闲两种分母在报告中分列。"
+    },
+    {
+      "id": "P07",
+      "status": "pass_static",
+      "subject": "预测缓存不串配置",
+      "evidence": "检测器键含权重 SHA、imgsz、NMS IoU、TTA；预测缓存另含 JPEG SHA 和实际 ROI 元组。门槛校准复用同一份 .20 全框是正确的，因为两条基线仅改变评分门槛。不同 ROI/权重/NMS/TTA 不共享预测。",
+      "qualification": "缓存实现针对本轮所有模型固定 car 类别[0]、内部保留 conf=.20 的约束；未来若改变这些约束也要纳入缓存键。"
+    },
+    {
+      "id": "P08",
+      "status": "pass_static",
+      "subject": "ROI 与真实页面配置一致",
+      "evidence": "冻结将作者每视角固定 ROI 记录在 roi_by_view 并断言同视角一致；评分调用 PhotoDetector.detect 时使用该映射。已复核过的 RealPhotoService 接收相同 ROI 策略、NMS、TTA、检测门槛，坐标恢复到完整原图。"
+    },
+    {
+      "id": "P09",
+      "status": "pass_static",
+      "subject": "报告与评分记录对应",
+      "evidence": "报告要求冻结文件 SHA 与最终汇总对应，选定 ID 一致且同时有两个数据集。load_records 核对 manifest SHA、图片个数、逐图 ID/JPEG SHA/权重 SHA/检测门槛，并核对选定方案逐图 TP/FP/FN 之和等于汇总。",
+      "qualification": "代码审阅与这些检查不能代替最终真实分数的独立重算；本次没有读取实际留出预测。基线与三态派生指标的独立总和核对应在评分完成后进行。"
+    },
+    {
+      "id": "P10",
+      "status": "pass_static",
+      "subject": "报告不混淆阈值收益与模型收益",
+      "evidence": "分别输出默认门槛、开发校准门槛、选定配置的操作点结果和共同 .20 结果；逐项显示 Precision/Recall/F1 的下降；外部与历史表现差距明确不是控制全部因素的因果实验。"
+    },
+    {
+      "id": "P11",
+      "status": "pass_static",
+      "subject": "误差案例与图像坐标",
+      "evidence": "历史各视角按最低召回选图，外部按最低召回和最多误检选图，按 ID 打破平局并去重。绘图只使用计分匹配/误检 ID，漏检框来自评分记录；所有框正确增加横幅 y 偏移，原 JPEG 不改写。",
+      "qualification": "该规则只用于呈现已经完成的冻结评估，不可反过来根据这些案例调候选再重复宣称外部未见。"
+    },
+    {
+      "id": "P12",
+      "status": "pass_static",
+      "subject": "计时、来源与原始报告保留",
+      "evidence": "设备标识明确，报告解释平均耗时包含预处理、推理、后处理和首轮预热，不含占用，标明预测复用。PKLot 与 CNR 的 CC BY/ODbL 分开列出，案例附原图链接；输出禁止写入 reports/real_photos。",
+      "qualification": "此平均时间不含模型对象初始化，不是预热后 p50/p95；最终 CPU 免安装包仍需实际运行验收。"
+    }
+  ],
+  "reporting_boundaries": [
+    "两项开发指标不下降不等于两项都严格提升；若选定原 n 的新门槛，须明确属于操作点改进。",
+    "旧36张是已公开历史回归；CNR54在最终配置冻结后才评估，结果不得反馈到本轮阈值或模型选择。",
+    "外部54照片覆盖20日期、9相机、1停车场；不能称54个独立停车场。",
+    "若发布决定最终回退到 v1.1，须区分冻结候选成绩和实际发布模型，不让页面配置或说明继续声称运行被否决的候选。"
+  ],
+  "pending": [
+    "PK747 尚待数据准备代理确认完整落盘；未读取半成品给出训练数据通过结论。",
+    "冻结后的真实留出评分与最终结果独立重算。",
+    "最终运行时配置、权重与冻结记录一致性，以及 CPU 发布包验收。"
+  ],
+  "open_findings": 0
+}

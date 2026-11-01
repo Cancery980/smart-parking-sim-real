@@ -1,0 +1,49 @@
+{
+  "photo_id": "cnr_camera6_2015-11-22_12_18_00",
+  "image_sha256": "4d6217c7b57a5e9555608c95efad1151597545f956a75981b505bc41bf52ee6e",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [],
+  "score": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [],
+    "false_positive_ids": [],
+    "missed_boxes": [
+      [
+        0,
+        351,
+        131,
+        524
+      ],
+      [
+        945,
+        172,
+        1000,
+        239
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 53,
+    "occupied->free": 2
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1000,
+    750
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 434.27130000054603,
+  "inference_reused": false
+}

@@ -1,0 +1,109 @@
+{
+  "config": {
+    "id": "v11_dev_calibrated",
+    "weights": "models/parking_real_yolov8n.pt",
+    "imgsz": 1280,
+    "classes": [
+      0
+    ],
+    "conf": 0.2,
+    "high": 0.5,
+    "overlap_fraction": 0.05,
+    "max_det": 500,
+    "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+    "selected_from": "reports/real_photos/trained_development_selection.json",
+    "training": "270 other-date PKLot photos for training; the 18 dev photos select checkpoints and model; 36 test photos held out from this selection",
+    "dataset_manifest_sha256": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+    "detection_threshold": 0.35,
+    "nms_iou": 0.7,
+    "augment": false,
+    "roi_policy": "full"
+  },
+  "images": 36,
+  "dates": 32,
+  "detection": {
+    "tp": 2131,
+    "fp": 52,
+    "fn": 29,
+    "precision": 0.9761795693999084,
+    "recall": 0.986574074074074,
+    "f1": 0.9813492977204697
+  },
+  "detection_conf_020": {
+    "tp": 2134,
+    "fp": 76,
+    "fn": 26,
+    "precision": 0.9656108597285068,
+    "recall": 0.9879629629629629,
+    "f1": 0.9766590389016019
+  },
+  "occupancy": {
+    "confusion": {
+      "occupied->occupied": 1686,
+      "occupied->unknown": 10,
+      "free->unknown": 95,
+      "free->free": 1530,
+      "free->occupied": 5
+    },
+    "total": 3326,
+    "unknown": 105,
+    "coverage": 0.9684305472038485,
+    "correct_over_all": 0.9669272399278412,
+    "accuracy_when_decided": 0.99844768705371,
+    "false_free": 0,
+    "false_free_among_observed_free": 0.0,
+    "false_free_among_true_occupied": 0.0
+  },
+  "groups": {
+    "PUCPR": {
+      "tp": 1008,
+      "fp": 17,
+      "fn": 5,
+      "precision": 0.9834146341463414,
+      "recall": 0.9950641658440277,
+      "f1": 0.9892051030421982
+    },
+    "Cloudy": {
+      "tp": 452,
+      "fp": 13,
+      "fn": 5,
+      "precision": 0.9720430107526882,
+      "recall": 0.9890590809628009,
+      "f1": 0.9804772234273319
+    },
+    "Rainy": {
+      "tp": 860,
+      "fp": 19,
+      "fn": 11,
+      "precision": 0.9783845278725825,
+      "recall": 0.9873708381171068,
+      "f1": 0.9828571428571429
+    },
+    "Sunny": {
+      "tp": 819,
+      "fp": 20,
+      "fn": 13,
+      "precision": 0.9761620977353993,
+      "recall": 0.984375,
+      "f1": 0.9802513464991023
+    },
+    "UFPR04": {
+      "tp": 468,
+      "fp": 17,
+      "fn": 19,
+      "precision": 0.9649484536082474,
+      "recall": 0.9609856262833676,
+      "f1": 0.9629629629629629
+    },
+    "UFPR05": {
+      "tp": 655,
+      "fp": 18,
+      "fn": 5,
+      "precision": 0.9732540861812778,
+      "recall": 0.9924242424242424,
+      "f1": 0.9827456864216054
+    }
+  },
+  "device": "cpu",
+  "mean_inference_ms": 186.33831388898318
+}

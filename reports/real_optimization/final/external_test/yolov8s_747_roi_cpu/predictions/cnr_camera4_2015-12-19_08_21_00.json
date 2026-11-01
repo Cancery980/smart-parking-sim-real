@@ -1,0 +1,74 @@
+{
+  "photo_id": "cnr_camera4_2015-12-19_08_21_00",
+  "image_sha256": "568f8f38ca99de6ce59424b80e82d7d359a2a30f8b47ccdfba86522266c1e087",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        540.1891479492188,
+        170.58322143554688,
+        608.0992431640625,
+        246.6717071533203
+      ],
+      "confidence": 0.9221194386482239,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        903.1826171875,
+        171.5637664794922,
+        988.5538330078125,
+        238.10305786132812
+      ],
+      "confidence": 0.9111692905426025,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        273.2002868652344,
+        33.88853073120117,
+        325.31103515625,
+        72.07514190673828
+      ],
+      "confidence": 0.9050629138946533,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000",
+      "d001",
+      "d002"
+    ],
+    "false_positive_ids": [],
+    "missed_boxes": [],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->free": 40,
+    "occupied->occupied": 3
+  },
+  "inference_roi_xywh": [
+    0,
+    0,
+    1000,
+    750
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 368.6956999990798,
+  "inference_reused": false
+}

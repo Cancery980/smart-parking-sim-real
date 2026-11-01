@@ -1,0 +1,17 @@
+{
+  "created_at_utc": "2026-11-01T11:59:04.753868+00:00",
+  "starting_weights": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\runs\\yolov8s_270_e60\\weights\\best.pt",
+  "starting_weights_sha256": "aab4627a07ce9ec43ed234f36ec57969fa76ed7e2398b249f663b80275b939c7",
+  "dataset_yaml": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\training\\dataset.yaml",
+  "dataset_yaml_sha256": "9b21afee2cd2a4bb75509180ce57dd49ea93ff4c8a7c9478b5c11c6dddb2c065",
+  "dataset_manifest": "C:\\Users\\ROG\\.codex\\worktrees\\parking-real-optimization\\smart_parking_hu\\data\\real_optimization\\pk_training_manifest.json",
+  "dataset_manifest_sha256": "2236bf5869f92a5917ae28acc25188cd3e7af46a10f7d5417ce1410d75056690",
+  "name": "yolov8s_747_e20",
+  "epochs": 20,
+  "batch": 2,
+  "imgsz": 1280,
+  "seed": 20261102,
+  "torch": "2.5.1+cu124",
+  "ultralytics": "8.3.235",
+  "selection": "Ultralytics best validation fitness on development images only; test data not loaded"
+}

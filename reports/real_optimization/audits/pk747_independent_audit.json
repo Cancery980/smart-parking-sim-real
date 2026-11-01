@@ -1,0 +1,2322 @@
+{
+  "passed": true,
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T11:50:49.286525+00:00",
+  "status": "pass",
+  "repo": "C:\\Users\\ROG\\.codex\\worktrees\\parking-real-optimization\\smart_parking_hu",
+  "training_cache": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\training",
+  "original_cache": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_training",
+  "models_run": false,
+  "prediction_files_read": false,
+  "training_data_modified": false,
+  "method": "Independent parser with original author car COCO JSON and fixed Git tree. Reconstructed metadata-only sampling, verified JPEG Git blobs and all stored hashes, compared every PNG pixel to its exact author-ROI crop, reconstructed normalized car labels, compared original 270 and dev18 files byte for byte, and resolved both YAML datasets against actual files.",
+  "counts": {
+    "training_images": 747,
+    "additional_training_images": 477,
+    "training_unique_source_sha256": 747,
+    "training_unique_png_sha256": 747,
+    "original_train_preserved": 270,
+    "validation_preserved": 18,
+    "training_dates": 48,
+    "old_dev_test_dates": 48,
+    "train_labels": 43227,
+    "val_labels": 952,
+    "pk_train_plus_old_eval_unique_images": 801,
+    "cnr_external_images": 54,
+    "cnr_external_dates": 20
+  },
+  "checks": [
+    {
+      "name": "frozen_inputs",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "old_training_and_development_counts",
+      "checks": 2,
+      "passed": 2,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_vehicle_archives",
+      "checks": 6,
+      "passed": 6,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "metadata_only_selection",
+      "checks": 13,
+      "passed": 13,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "stratum_quotas",
+      "checks": 10,
+      "passed": 10,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "dataset_file_sets",
+      "checks": 6,
+      "passed": 6,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "recorded_file_hashes",
+      "checks": 765,
+      "passed": 765,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "original_jpeg_git_blob",
+      "checks": 765,
+      "passed": 765,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_metadata_and_roi",
+      "checks": 765,
+      "passed": 765,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "crop_pixels_and_dimensions",
+      "checks": 765,
+      "passed": 765,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_car_labels_normalized",
+      "checks": 765,
+      "passed": 765,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "original_retention_flags",
+      "checks": 747,
+      "passed": 747,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "old270_and_dev18_exact_bytes",
+      "checks": 289,
+      "passed": 289,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "training_uniqueness",
+      "checks": 1,
+      "passed": 1,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "training_dates_and_isolation",
+      "checks": 3,
+      "passed": 3,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "legacy_eval_image_hashes",
+      "checks": 54,
+      "passed": 54,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "cnr_image_hashes",
+      "checks": 54,
+      "passed": 54,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "cnr_isolation",
+      "checks": 2,
+      "passed": 2,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "dataset_yaml_paths",
+      "checks": 5,
+      "passed": 5,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "baseline270_exact_list",
+      "checks": 1,
+      "passed": 1,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "external_cross_audit",
+      "checks": 1,
+      "passed": 1,
+      "failed": 0,
+      "status": "pass"
+    }
+  ],
+  "failures": [],
+  "strata_recomputed": [
+    {
+      "view": "ufpr04",
+      "weather": "Cloudy",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 294,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "ufpr04",
+      "weather": "Rainy",
+      "retained_original": 30,
+      "added": 15,
+      "selected": 45,
+      "available": 45,
+      "quota_shortfall": 45
+    },
+    {
+      "view": "ufpr04",
+      "weather": "Sunny",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 464,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "ufpr05",
+      "weather": "Cloudy",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 399,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "ufpr05",
+      "weather": "Rainy",
+      "retained_original": 30,
+      "added": 42,
+      "selected": 72,
+      "available": 72,
+      "quota_shortfall": 18
+    },
+    {
+      "view": "ufpr05",
+      "weather": "Sunny",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 1298,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "pucpr",
+      "weather": "Cloudy",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 510,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "pucpr",
+      "weather": "Rainy",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 297,
+      "quota_shortfall": 0
+    },
+    {
+      "view": "pucpr",
+      "weather": "Sunny",
+      "retained_original": 30,
+      "added": 60,
+      "selected": 90,
+      "available": 1406,
+      "quota_shortfall": 0
+    }
+  ],
+  "source_annotation_archives": [
+    {
+      "view": "ufpr04",
+      "sha256": "6a3831bb5af85685942cd4a018e3dcef1ccca2043f870f8f7d6f2b571308e977",
+      "git_blob_sha1": "a208873ead0b4907ec56f601e815ecbe55d1ee05",
+      "category_ids_named_car": [
+        1
+      ]
+    },
+    {
+      "view": "ufpr05",
+      "sha256": "7cc6a531574713226c71f4ed73a92b740ce051d78268e66c8a40b14e20478dee",
+      "git_blob_sha1": "72f66fe8b319f5843ff9734e6f2da855656a9700",
+      "category_ids_named_car": [
+        1
+      ]
+    },
+    {
+      "view": "pucpr",
+      "sha256": "1a08a39c53e2c8eed19a54edd4e2d91135e8632e859786b5c26b829774127f4c",
+      "git_blob_sha1": "b2b135f59d832bae84538b0d686e2587e06bd7e4",
+      "category_ids_named_car": [
+        1
+      ]
+    }
+  ],
+  "file_sha256": {
+    "pk_training_manifest.json": "2236bf5869f92a5917ae28acc25188cd3e7af46a10f7d5417ce1410d75056690",
+    "pk_training_selection.json": "5664513cb0b5badfdb5e3227b83bbe28b245f7f162ec5ab86ee69f239bb63e78",
+    "original_training_manifest.json": "1f3cfd6ea9168aa7ce0ca5ebe1478a5281cdcaa439cf2a2ee96b0bad56587765",
+    "original_photo_manifest.json": "01307dcca42d3b7baee8cd2fed74b4a6d3ffe7105aeca025e1df6045fc4ee078",
+    "dataset.yaml": "9b21afee2cd2a4bb75509180ce57dd49ea93ff4c8a7c9478b5c11c6dddb2c065",
+    "baseline270.yaml": "1934e2e648d69ccac10741760c1b3e5c1c16dff388c0f1e426f1eb0c1bf3ebbc",
+    "baseline270.txt": "4f1eaa4e3a5bf535fb8066bbc2a56da9e847bcc4d5a5cf5091702619f60ab9bb",
+    "external_audit.json": "88f2a3d69bd55dc582e545da2287e6938a0e27664936af1e923ae2c7e1104f35"
+  },
+  "preserved_original_files": [
+    {
+      "photo_id": "ufpr04_2013-01-20_10_20_05",
+      "split": "train",
+      "png_sha256": "b3fbdffc06a3eb897b0f521cdb6bb1edaad771807d91f20249c8176d1cf7ea5f",
+      "label_sha256": "b0625b7f2b3eebb0f3030677770ed71970b1bc8b286363ab3b5cafa3f978163b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_12_45_08",
+      "split": "train",
+      "png_sha256": "22fc2a44e3dcea33ff82083dd7f3b4561cf9d1a9b655694988197f812cdd9dd0",
+      "label_sha256": "be8bb05db2b6f4ac093c70bc73901f03771e9fe8b9951d868224dbc9060d9202",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_15_20_11",
+      "split": "train",
+      "png_sha256": "56043b274dff1a2ee60e091f0e8f9c29c9e27a2e3628049984a6df151225eba2",
+      "label_sha256": "adb7ba2b9635a1923f2668396a392ff0b9879883548870a675645dcc13c12c0d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_18_26_56",
+      "split": "train",
+      "png_sha256": "45feb91f724f564e70fd80b041bfc2ba49119427960d4127909af627ffeb7cbd",
+      "label_sha256": "e1092a93c5ce2dc58808c7efebf57dc04fd5a0e08f065a2d59ecb088ff294494",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_11_45_07",
+      "split": "train",
+      "png_sha256": "ce30e47fdc1d4925ce3ce6f701110cb187b73b52fcd5085fd8baf1669fe84425",
+      "label_sha256": "96329df679d2cbf588d1399131153e68a8372c486427bb4676090ab31454ff39",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-29_17_15_41",
+      "split": "train",
+      "png_sha256": "f42b77a5e70eb6d63305afaff4072e25ccd9b6a4dc097eea7972d16eb037de38",
+      "label_sha256": "cc409494651dfb5b8569ac1eb7d766f57817b43a3859e874529308c2f765320c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-20_10_40_06",
+      "split": "train",
+      "png_sha256": "a7c6ac1d98d557ae399b3c0cbb05723876046584eeff7d3cef47b81588c361be",
+      "label_sha256": "4bc6c33d2672bb07b4a44c1e5b1a27f0717ef06e1fd74d9b6a8977a88de08037",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_11_10_06",
+      "split": "train",
+      "png_sha256": "9852b7a4140c0509cc078f2b1e62c34fcd12468bf9eb2bf9a95c4ed23c288202",
+      "label_sha256": "364db3383e3cb4432fa6bc9f124c444eca75e9cec7a1530f7e849dee1cbf9e99",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_10_20_06",
+      "split": "train",
+      "png_sha256": "43ded1a79606e4a4cbbbf06909753aa7eae2e9929f6706cf1e4ba5e428548d03",
+      "label_sha256": "208b2701faf427118970daf670741626865e11ee639825d641f056673a2c3aa6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_18_21_56",
+      "split": "train",
+      "png_sha256": "45917f370eb4a3051c41f6f38a3ad3e8dc68d6fa27e76d9f357dcafec77e2ed2",
+      "label_sha256": "a642487054c444e83620c3ae0f63e1ab1c0f3360dfe7686866a3756e61b3d6f8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_11_05_06",
+      "split": "train",
+      "png_sha256": "89738ea8bfd162893a2f2e6bac6a3af45030886737b612be9e3650109b4f7fd7",
+      "label_sha256": "e76aa26a2d651053c7470170f1bde024be8d6b3072135f45e8926fa606ecf5ba",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-29_10_35_06",
+      "split": "train",
+      "png_sha256": "b297f252b635fb0789cd97aa3e5063de02cedd34cb4dcd2683f110bf67e1fc52",
+      "label_sha256": "8c84e6cfc0777d78ead956a969a8b2b7e28a057adc26c6938a60a49c1b463716",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_13_10_09",
+      "split": "train",
+      "png_sha256": "503b3e83fe607bbbb57a3ed2187ab48a62935452ffa1637a5ef1966b131464ca",
+      "label_sha256": "be8bb05db2b6f4ac093c70bc73901f03771e9fe8b9951d868224dbc9060d9202",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_13_15_09",
+      "split": "train",
+      "png_sha256": "e36ba32e1def0f1e1ccf35e9ed6ab5370fd9a3ad11640a095de5f3fa598389b4",
+      "label_sha256": "208b2701faf427118970daf670741626865e11ee639825d641f056673a2c3aa6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_16_31_54",
+      "split": "train",
+      "png_sha256": "320f076d0f8dd994ad96a9d4122a65e6c6c4633999f6fcebb324d5ff8ac24cba",
+      "label_sha256": "dda4f4c010072cf7fabd5f3852b2e02cde9c372841519788d7f6287179ffcc87",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_10_00_05",
+      "split": "train",
+      "png_sha256": "c79eb1f4b9575caa3694f8b3966356a44af4296d4cb822500f102fafac126de0",
+      "label_sha256": "1983f5bee485eb0da29d1fbb00986cb1de1549b650c1970a4f89e44f2df9462f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_11_00_06",
+      "split": "train",
+      "png_sha256": "b340aca4be7504e8b0474eecc4220896d8c127123f66daed7e5681722110a9ab",
+      "label_sha256": "b6850074d7cafd3b60961045980f20f8611d1239e54b7b8e06105990771d27a7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_16_45_13",
+      "split": "train",
+      "png_sha256": "211d0bb6a02b185862fa86b29a2960a37e36438776dd89c2d65d7f6ee1375c7d",
+      "label_sha256": "638125fcc70fe42bdd5ddbcec793d3a5306a77b971adfd508e2742b1dbf8a33d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_18_51_57",
+      "split": "train",
+      "png_sha256": "1723a07dc5c0b78fd2dc17ad35bc4c6f0fbe4d236e324039a312b4a69dc59eca",
+      "label_sha256": "f547839ecd820b98abd0afc80d9ba490d2bfda850b89bd18574fb16a06ce9845",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_11_40_07",
+      "split": "train",
+      "png_sha256": "02d5bf6a5e91173ee208c9a9e0b6dfa6ae274c64389bea404594715150ef16f3",
+      "label_sha256": "306dffce528847d0c8dc1ef38f92baa798aa9e5973cd3739b572c9a274ef8a57",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_19_05_15",
+      "split": "train",
+      "png_sha256": "a822becd0abfe4a9543881a6c1ba910411ca1d3eb11f3125957ef3a2520389bf",
+      "label_sha256": "8a1007c95278ba4050bc06eff18f6bd0bc6627607ce8ce0037d603fa51384767",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_10_50_06",
+      "split": "train",
+      "png_sha256": "210fbbf1f6c63d9503c7f1a576c95f67ec5c80be79a08163cfd2d343367515bc",
+      "label_sha256": "208b2701faf427118970daf670741626865e11ee639825d641f056673a2c3aa6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_19_56_58",
+      "split": "train",
+      "png_sha256": "fb54f0e181b905fc9305e8f5ab6a89e4601b5a82e35760e45054106a6edc0b5e",
+      "label_sha256": "bb5d44060110ca27f184cbb97ea07f7f2afa3516d8cae18127fd701ba0500684",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_10_25_05",
+      "split": "train",
+      "png_sha256": "f1a3b0727740405731ffb7cee636de4363ffaefbfbef7cf1f08cbc89ea02c1b0",
+      "label_sha256": "e3379107249c3ff0a981099104defdc53df4730369305a1caaf1d2fa3b60deb6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_10_45_06",
+      "split": "train",
+      "png_sha256": "b2df9d205a8aac60e9af9bb3a54645ecb7d80a2038a402a9e9606be35fb987f6",
+      "label_sha256": "b6850074d7cafd3b60961045980f20f8611d1239e54b7b8e06105990771d27a7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_19_05_16",
+      "split": "train",
+      "png_sha256": "8ed21ad7757091d131bc9510ebe4fcafb0c5ffd39d1474ef686a0fda4c092017",
+      "label_sha256": "638125fcc70fe42bdd5ddbcec793d3a5306a77b971adfd508e2742b1dbf8a33d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-15_17_46_56",
+      "split": "train",
+      "png_sha256": "3a3f08162f5e7ef1a0b013cbb2ce33ab18285daaa1737917b6a3b53dccef36a0",
+      "label_sha256": "134bcdf68bd73b5382441e0153a65d968c9c47a150162ac7b0b6e226bc1f454c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_11_30_07",
+      "split": "train",
+      "png_sha256": "1de901af09f762b700d06212af8eb4ab0df4c5e06449e2baa878e6cdb11dafd1",
+      "label_sha256": "7110d2a435aec9deee0ce0474d0131ad77d9731d8d8336cc81eead54374bfb8c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-28_11_35_07",
+      "split": "train",
+      "png_sha256": "a21459319b1292b294322793328085bdaf948852a61d886ed22efcc6f8b19039",
+      "label_sha256": "364db3383e3cb4432fa6bc9f124c444eca75e9cec7a1530f7e849dee1cbf9e99",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-22_15_50_12",
+      "split": "train",
+      "png_sha256": "2eafeecb8eea8c1b0423ce7ea9d128b3ee9d0963320318380100c96fd40dbbdc",
+      "label_sha256": "638125fcc70fe42bdd5ddbcec793d3a5306a77b971adfd508e2742b1dbf8a33d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_18_30_15",
+      "split": "train",
+      "png_sha256": "f689f872f4878b12e8f94ef75703624fd8af79ef730d94d7beca88cf2cf229fd",
+      "label_sha256": "5ff2b4eabebd00fb7022355949904cc17ce5c98f8dc4a32eee256ccb68a97ecd",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_35_04",
+      "split": "train",
+      "png_sha256": "7edd07f02c5e7546c0d7357651fbaadff66d007094eacaccd9b8361c2f1b9148",
+      "label_sha256": "ec785deb486622a18f7007e639cfedd152c045c59f2b88e81b40c57f114b79b5",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_16_57_25",
+      "split": "train",
+      "png_sha256": "2b584ffd9d2ce97f046d8357bc93e44558f6c86d7f7b2619b19b3cbac6be3ddf",
+      "label_sha256": "7a3d459371e22b7d13c2400c299f564f3417b7631cb36291b7a4506f0241dc6e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_21_00_18",
+      "split": "train",
+      "png_sha256": "b0beff67bd6b5d238980354283e8d090d356244bcff98eb316d327d5c4d2a787",
+      "label_sha256": "41b99db7807345b2ea9d00e6d80f993ab65de7d558ba538e17ba09d4f5a14096",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_30_03",
+      "split": "train",
+      "png_sha256": "f7c0279246ffbf7b1fc97f859daa5119f61ec45e25e955b67f4e90d37f8e9cb0",
+      "label_sha256": "c4902c9894414e839d3aa187cae319ebeb757e0ca5ca997832d98daff79af103",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_16_42_25",
+      "split": "train",
+      "png_sha256": "9059c02333a0f5faed10b0ce03b149849e4cbc6fda193c2324a486ffd4e41e88",
+      "label_sha256": "08202b5bfd616c368e8bbe0fa60e098666001eb82e0dc7c22cc8edab0616c21e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_18_20_14",
+      "split": "train",
+      "png_sha256": "03f0efca5f5425a364af318243d64be32e30cf9ecfa116fe308d4809e2b15175",
+      "label_sha256": "ef13216574393e52515f72a0e287470cdfc6384fd568a09225fb9522a08aa3b3",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_40_04",
+      "split": "train",
+      "png_sha256": "43415f945bd747d13227fcf46f762455432edcc818ab39b75e9e47ef10d67f21",
+      "label_sha256": "2e464879ed182f6e012ef6d47da983da4cd54772adfca8122551e108cce3cdaf",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_16_52_25",
+      "split": "train",
+      "png_sha256": "607a4ea93593009a9cf28e5571c772e4d3915e732aa0acf8d343f70ccdb75ed7",
+      "label_sha256": "7c84ff740d202e68272fa703fc000f1fcf48a32d6c29bd75d75b123bd329682e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_18_25_14",
+      "split": "train",
+      "png_sha256": "382e80744a381d957c68420fb88868cd0dd02160308ed81bf40defcc035e500f",
+      "label_sha256": "9cd29a9099bda2fa8fe2afbb6bdbaac65af027a18045712394b7f285dab306a4",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_20_04",
+      "split": "train",
+      "png_sha256": "72c0ee37b41b38823285cabe655654b9a9fac79453ed074d5ad25b29d5852a51",
+      "label_sha256": "591a13c41444761408aaff10d53a9ba1786a7ba7d4d07e8b5d32c37fb7375bab",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_16_47_25",
+      "split": "train",
+      "png_sha256": "12773124b3cb28299a65a832bbbf08f0eafbee4cf38102acaea5901a51b6223f",
+      "label_sha256": "be49f9333a7905b2e7eb54aeda2c9d97d2932ea48016975128c9fc4f46a6d170",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_10_03",
+      "split": "train",
+      "png_sha256": "84907b8b08908740952a6a1755b9d7ed21101f09f5ab4d6d8bbc7c8a55a78046",
+      "label_sha256": "3ad12a465519636e3933016ba8df1d6c9db29408faf37f235617dd306afc709f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_17_02_25",
+      "split": "train",
+      "png_sha256": "55617d0f9d7c73e163ff2ba3e320593a4a9babf88a4756f7bad7d31d78716710",
+      "label_sha256": "b693a4db287bd7a842bf280a766582ed829a8b8b34317b500c4c19ffd57e001f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_45_04",
+      "split": "train",
+      "png_sha256": "1da87dcbc8eddb2948edba2085be701cee5405de6bb609085b43ccc54ea19449",
+      "label_sha256": "9bddf070113d8fe7309978feff8eb3d9c5f33789079ecadc377465d011c23dba",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_17_07_25",
+      "split": "train",
+      "png_sha256": "f3089dffb61afae0c345be8e8b635ee815ee51d768196d389d767c68034a849e",
+      "label_sha256": "1ab0101821df7cb304282dc81e57b3e0926bf8286517dc00ba8f3c825af38eac",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_15_03",
+      "split": "train",
+      "png_sha256": "ed46b12de18e8254bb64c6dcf23107810ef2129e3b7f75abbfc915a9da656fba",
+      "label_sha256": "450156ae365e1740f54f00b6930843a871812ffa8379b5415ae2c917de6bfedd",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_55_05",
+      "split": "train",
+      "png_sha256": "7e6555105002e5647153a755021ea05a84734bfc7d83a49f67c41a67c90058df",
+      "label_sha256": "047595f99e5bf13c683c230843a8969dfc85ed9f16e7eedbffbef146cd754218",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_15_04",
+      "split": "train",
+      "png_sha256": "87068bbcf3d7068c8312eeee1887eaf0fed2e4072a752cfede9563b4862b1c32",
+      "label_sha256": "3be916037390023acab4ac9c0f3a168468389312396d210f47ddfd05c0f4b77d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_08_50_04",
+      "split": "train",
+      "png_sha256": "21b638be8cff0c0ff9655c3d203e202a69fdc14fbe1e28a38ff1789f63649a09",
+      "label_sha256": "704afb6711cdbde2aeee3575dcfcec937cff9f572cb5757ec030ec50786bc18e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_10_25_05",
+      "split": "train",
+      "png_sha256": "49bd4defc084a22f64b8961c9904cb352f2c744b1adbfbaef5a74dee41069ec3",
+      "label_sha256": "5d0a9f0df77e25cce64fe545b4e359548eef85f3a499e4f2d1e642ccfd85ef7c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_10_10_05",
+      "split": "train",
+      "png_sha256": "b39c41fcb830da8d84a95501f4c49cd633184108823dac558c6d21cbaa0bdd36",
+      "label_sha256": "2f3d7a42cd39558847633f1252d52bba79560229c2abcd200c918c94d5a41a7f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_50_05",
+      "split": "train",
+      "png_sha256": "00eceafae4327a3e664c3dd3dae3f7d75cd500219808a1d2f59c2dd46e2798cc",
+      "label_sha256": "5645be4acbdc43ba2ca27028967fbf5a290957fb8f14872f5f52897ad29941e3",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_05_04",
+      "split": "train",
+      "png_sha256": "ce1a807a6d4182168854175e074cc3c9d070ab679231a303e4608245bb83e6ee",
+      "label_sha256": "9815850516eaecdf0183b513a2f414f9cfaf7368089bab44d293de6f4297f29c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_25_04",
+      "split": "train",
+      "png_sha256": "77411ff698b895dbda68a2b8d41c9a036422e4554d5b6f76514437c0e0c85dcb",
+      "label_sha256": "3233444e5c8274f1351845ab312191135592416e653ec03836e67dd15240adb2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_07_50_03",
+      "split": "train",
+      "png_sha256": "b86150216737a915fe495f289cce78c1b40d455a6ef2d60ea34dc62473861ca1",
+      "label_sha256": "b09964666a423076fc1c5b11f4999de42cfb363fbfbce686e9cb005bca432c40",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_10_15_05",
+      "split": "train",
+      "png_sha256": "041d2dbb68a8ca198af97a7917767a3ff97f25d1bac4bbb9cc69d4c87ff5192c",
+      "label_sha256": "372e814e30734a99fd901e743a77bd4ec61bf89096af5f3b810a959acdf6ee25",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_09_00_04",
+      "split": "train",
+      "png_sha256": "066294944d4200de5ee1e5934644bb91f479cfc02c5076dd827b229006760d2c",
+      "label_sha256": "b8f34f0d4ea28580fcd2f5d5c3ef813a145513671835787dd24656ff63a1d55f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_10_20_05",
+      "split": "train",
+      "png_sha256": "6643c8f7aaf55510241df59fe4d491e64cca3a014ac38aa9c1b7f63dc7ed3e5d",
+      "label_sha256": "0923ac4acb658fdf5d33d604a3c846af850b1405183cfcc15b2d71ca0ff5ea26",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_10_30_05",
+      "split": "train",
+      "png_sha256": "78ced3ee4ae5628f0dd6d5f78bebdca408644672eb12d3b0efdd9592abb1fda7",
+      "label_sha256": "1fdaf83ebff2912363baf29b0fcde734db9868489d20ccd1fdb6e2a06373d9f0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-23_11_50_07",
+      "split": "train",
+      "png_sha256": "507f120d0a6d15c1c39ac8abd922363ef295f864e8b786e79038e4c312fc757f",
+      "label_sha256": "9e0883ba8dbff9529bcb6d0488a13aec0930c405af28515e36511140759cdac3",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-08_10_30_05",
+      "split": "train",
+      "png_sha256": "debf8718529e12a2b6a62342ce53851f4c4187d3ef16b5ed88bb60409ca3e847",
+      "label_sha256": "bf1dd938edbb4d1d07c0d64ddb743bada6948b2ac6c94af8035cca65a7607ede",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_17_35_13",
+      "split": "train",
+      "png_sha256": "45a9822a38329296407e1be1efcc024afecf7cfa672c7cbb0e05139092ca9d2a",
+      "label_sha256": "cc069eddde9147612699a71db4bad38c3ad8f59e55713b85b3586e0290819ada",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_21_05_17",
+      "split": "train",
+      "png_sha256": "9085f0314fb016d96064f1c16aa026b8d8d65e05184a43fb0b45d69aebc07986",
+      "label_sha256": "2df5925ade7b571da175f4add8b4b2fe11c0d69f9dec1681f13d546ae4f4a903",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_17_52_26",
+      "split": "train",
+      "png_sha256": "bf5a98f81aac9a2d52be565ebe6895ac0d33943047e25cb5031a274a1fdf89d2",
+      "label_sha256": "d89d2c50795ea8b97917a6a7f1c90011922a6c5390907e7e0ce796558d6d5a7d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-24_11_00_06",
+      "split": "train",
+      "png_sha256": "3f8f5ddc7ef31185aacbe3a37e455670e07e1e02f82af1810781b4a65d001a5c",
+      "label_sha256": "b6fdc40b9fb3c88a58fa8d53cf26d96c43719761f3c3c87e971a19d0c43a91bc",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_19_30_16",
+      "split": "train",
+      "png_sha256": "0d7fe66221c23ad23bbca0d34c7a5424b70e82fb880f6e440d59cd223215031e",
+      "label_sha256": "4dd4685e2c5b4980dfbe36a378a91743c6e47c17a9f31dd12c74b645d55f3702",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-08_11_50_07",
+      "split": "train",
+      "png_sha256": "2f86587b5588cc3183edee91211a262b1a1b6a8234491d84bb9f575fa9634005",
+      "label_sha256": "95f1f0d200856da9f13feccbc089638139b4e684fe9af4966ebf902e7fc33b4f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_17_30_13",
+      "split": "train",
+      "png_sha256": "96954d8cf30f333be63595e417206b8903a3cbfda58f5b0ee71590e3af4dbcb4",
+      "label_sha256": "5e044d294ffba32e547cad8746cd28db03d8acda826420e2f876a3da39e27af8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_11_10_06",
+      "split": "train",
+      "png_sha256": "92d8a950fdcd00076828d997adba937574a34611bbb49afe81d16e31e5a96658",
+      "label_sha256": "d87e304c1e5a9bd4045c23b258fbc2cd7ca2cb8cd76b6fee556aa575352458d6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_19_42_28",
+      "split": "train",
+      "png_sha256": "76e02fef343e0f3fc3f8910b1ac72ac435f4a8143f95535ac985dd58ce8965f9",
+      "label_sha256": "07a803b575c112d5a5175835a3a95a9a5943246ac99e37213a78fb8a67dcf908",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-24_13_15_08",
+      "split": "train",
+      "png_sha256": "0d5c3e320992527eab3f52c98c484d3f64c7399923112f1d89389ec59c42a75e",
+      "label_sha256": "8967e11184301e97793174063ee20ba162b9b02765130d0115247f882fa8082f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_18_15_14",
+      "split": "train",
+      "png_sha256": "6db461c92c1d2476fd7f2d764a08bf3468a26d5e5c99a28d7b25640f45f4c08d",
+      "label_sha256": "65b509c5eb096a3d1f5912a038edf3bf0b732759db7ca98e6d3607a35b291995",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-08_09_45_05",
+      "split": "train",
+      "png_sha256": "0643d3a6e60ca7fdcbad5a033db3288415ef8af5d44112f245364edd7c17be51",
+      "label_sha256": "2edc41da429b0a4051dd5087b772ac0590fcfcde9c8a88444010a12a0b4ef844",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_15_50_11",
+      "split": "train",
+      "png_sha256": "3b8e3c76b7d1464036f4335f34f5a74e8e62315409d9fa7ffeedb32200b56496",
+      "label_sha256": "9823ace6dc3d354efbedae724a7fb2889c6b23d9e6bd093521eab938c260c66f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_21_15_17",
+      "split": "train",
+      "png_sha256": "a2d994c4a3ba1017f3ddb2605e442cbaa88fdee73d7fea2a9dca091c8034baea",
+      "label_sha256": "6c28288fcf904d94949f17ac6dd216dce56501acdc06fb1a58dfba074d9cb160",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_19_12_27",
+      "split": "train",
+      "png_sha256": "199343c4b40d12e63cad18db2e32efbcd262268023470e9273afecb443bf1808",
+      "label_sha256": "c2ff1ac78ef01d2459584e9b612782fe62d1330ca7040128289240d58f130f57",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-24_13_05_08",
+      "split": "train",
+      "png_sha256": "dad02fd9152e93c24d932f72677a21002f6a59a22fd859c9fe888f9c8f849b69",
+      "label_sha256": "8967e11184301e97793174063ee20ba162b9b02765130d0115247f882fa8082f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_19_35_16",
+      "split": "train",
+      "png_sha256": "52903a414b59a1625e7403a78bddbadd0514c2f11d0900b64fa15e3a5ebb25d0",
+      "label_sha256": "30be99e5f54d5418e3fb32046ce61ee2c6a5a6e3f5bc35f94394423270fa0215",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-08_12_10_07",
+      "split": "train",
+      "png_sha256": "5bdecdceffb0cba532c4df554765fbcc9803b61a083b50f43742ead3e01641ff",
+      "label_sha256": "95f1f0d200856da9f13feccbc089638139b4e684fe9af4966ebf902e7fc33b4f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_12_45_08",
+      "split": "train",
+      "png_sha256": "0b1ffa98507df04b3f9f2df144e5c5f5efe7eba60f063068ff63f72b9eee45d0",
+      "label_sha256": "4b2f94dce2528fd7e4009b6570fb09bfedd088a2fea96a2b820ed3ba04e0ff67",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_11_40_07",
+      "split": "train",
+      "png_sha256": "73e1671519f6499bcaa40360282afbc00148794ca983da11dcd0c5220147a6d7",
+      "label_sha256": "45fc4bb32d9a6bf74b1172f22db2c88f191a988760ca219955c86a3d7aa96739",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_20_37_29",
+      "split": "train",
+      "png_sha256": "a3e0f1b2a357724171b1dc95865c5856518069dd00f4d4789b8d0d4d5d4497a7",
+      "label_sha256": "239430ef1eb01b57e27bb1bfde175977fb130f21d18b2530de7485a8b6830021",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-24_11_20_06",
+      "split": "train",
+      "png_sha256": "cad6d97f6919c1b81529c751576bbe8cb6df023a6128b465601a1cf4733d32aa",
+      "label_sha256": "b6fdc40b9fb3c88a58fa8d53cf26d96c43719761f3c3c87e971a19d0c43a91bc",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-12_13_50_09",
+      "split": "train",
+      "png_sha256": "caa43c0bc01b63d43fc4e3bb539a7425c1f4ba4bade4b3f3c08788b56866057f",
+      "label_sha256": "d00bc05f4ad82de4fc956e025ee4b06ffd1e82f94d50f1963d1aff3a9f02f838",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-08_12_40_08",
+      "split": "train",
+      "png_sha256": "aff32e0789f84daa665728f7eceec1370329606eeec6907e6e3ed15d48a1e0b5",
+      "label_sha256": "5ec39fb60f830ff9d7ac6938fc65d545118e7e54b76b1887bc0df4c970120472",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-21_13_25_09",
+      "split": "train",
+      "png_sha256": "d262b97302b91f1d8120eddd60c2c32871e21e223477d5b0532edd1f676cb625",
+      "label_sha256": "f95051db399428dcd851e60f152f83811d4398089fd082d79c008ad37ebcad52",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-21_19_00_15",
+      "split": "train",
+      "png_sha256": "21a91217929a73214233fed16342b5ddf32c04e17d90d49d915782d74a0e4a1d",
+      "label_sha256": "bcc764ff33a57a77940eb3cc1b594973c64b1ba0e77c7ae2182b1d9b6c4f8a5e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-07_19_22_27",
+      "split": "train",
+      "png_sha256": "930d08eb653220225330ab244ec65d4f8c0f43edfa952cf26b9536b61a395c74",
+      "label_sha256": "de9b3a8eda85adaacc152b0dbe6df03627fb617ced3a793cd1f643fb1acd8bb0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-24_11_10_06",
+      "split": "train",
+      "png_sha256": "8016b9fa4ab0b081b172717755dec7bea7092de92601728934cf6d695c6434a0",
+      "label_sha256": "b6fdc40b9fb3c88a58fa8d53cf26d96c43719761f3c3c87e971a19d0c43a91bc",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_08_00_02",
+      "split": "train",
+      "png_sha256": "70fae1023b869c270a5d291edc1cd9d9c014ad5f7890f4d7d74549f15b1c98ab",
+      "label_sha256": "160fc0a3872a1fa2ec53026ff93e1f6425914763478baceb8389f8b283bc6738",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-17_06_55_01",
+      "split": "train",
+      "png_sha256": "3f18bfb290f5bbd9b295271a5c18fb8bb96836c38938ca133ea25dcc10336452",
+      "label_sha256": "e20e58ddb317062753373f0077cb9b5452fcb77aea36552ca3ddc23ab49eff8d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_13_16_00",
+      "split": "train",
+      "png_sha256": "2546f5bb1ff4051c1bc81205050e73c0c3f65b74b72275be9f38713694aea6c1",
+      "label_sha256": "f94cab18c84feff9b119750cabe9daad3ee0e748f0c2e02f80143bf3513c5e06",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_09_30_04",
+      "split": "train",
+      "png_sha256": "09b8c358eeece04e8b60feff9f5c75fb3cbd774dc848a47feea83f4d22b3f319",
+      "label_sha256": "8d2432b758e598ab0df51d6f3da9be4a6ac0955e829fbfffffd75110124cc44d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_17_35_13",
+      "split": "train",
+      "png_sha256": "7bb3af8de6a87efa5a73da2a58d2492444b606c705e52da6239034cd5f430a7d",
+      "label_sha256": "5cc152535e32236fc1dbf48a24bbe6a419fe4013e08e47081dbccafe39af1560",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_08_50_03",
+      "split": "train",
+      "png_sha256": "ed106a0629c73e3a9a3c3f34e11b89cfaa9ffaabaf0fd3c958fbb2b651c29d01",
+      "label_sha256": "38192803b52d34ef9c1856020b5ea12897c76be9aeeec622ec0849de310a9b25",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-17_13_30_08",
+      "split": "train",
+      "png_sha256": "a34427a86767704e77b2779684233660a61f4cf6c3b8d3bdae481248cc096b3c",
+      "label_sha256": "d852f2d73c959ee656c59be0e7c3431cdeb91e8ea37667da2b6bd5df44577e38",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_16_51_04",
+      "split": "train",
+      "png_sha256": "948bf6930549c7187db1d6c72220e30e4cd5994adb556af08e42ec8aac9969dd",
+      "label_sha256": "992d8257716e7117a5dfdabd3eac2f59c2753e17ef62b9db242fee9d59c0e099",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_07_00_01",
+      "split": "train",
+      "png_sha256": "766b3b50f557ccec2cd088ad20e5b03d4c8a22ac7e281db6adb32a8e9bed6efc",
+      "label_sha256": "600b827bb435429584ccb29810dc10839d2dacff9e1f1ce09da6e928f274cb28",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_08_35_03",
+      "split": "train",
+      "png_sha256": "003d7845bb1b15e01e8736b8307205f4c758d0ac67d2b1f54e50b94ab567655b",
+      "label_sha256": "85a2d54495c720b8a286f166aaf4015c104a5008878828286ca0794949710446",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_10_15_05",
+      "split": "train",
+      "png_sha256": "2f91f720217d8b1ae8736a3d67d6f4e6af4369688d6f6aed4cd3b0e443398fb8",
+      "label_sha256": "baf1634c29d6b01bcd5c180994a7bc384f14d28dc46f4019067af5edbb289240",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-17_17_15_13",
+      "split": "train",
+      "png_sha256": "492c209d92d053e5fcd2f1398d1060e2d2e76bdd917f61772ced982c841a355f",
+      "label_sha256": "db9169e2542194bf51be76477795822f8262ac4dbe329c710bd0e23ef68fedb6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_12_05_59",
+      "split": "train",
+      "png_sha256": "e13f91d00c73ae4b616df7410279d7aa16f586fba5d8b455d31054fb4b802781",
+      "label_sha256": "afcf72ba222a5cd5870c608bcadcb9ac33f378e5903ce877fc852af04a20567a",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_14_25_09",
+      "split": "train",
+      "png_sha256": "4bc545e27cc4261bbfc814581b185103305bec4a419a03fb520cefc2068e8af3",
+      "label_sha256": "260811566e824cad971aa19ddc45cfbe6b6bf15903692feffcb6e3c9ac491af2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_12_55_08",
+      "split": "train",
+      "png_sha256": "d85a7d9eff0c3914a4a800a9e5f23e08463f84b2fbec282810b55602ca2d7eb1",
+      "label_sha256": "a86d5f2005cb51354a4c2a54b0b1a32148fa1847d8f812d4a1bef31e3d49a74e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_07_55_02",
+      "split": "train",
+      "png_sha256": "88ec4b879c3b1811778aeac447fda7605f6a45fd7c234f171398edda3b643319",
+      "label_sha256": "160fc0a3872a1fa2ec53026ff93e1f6425914763478baceb8389f8b283bc6738",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-17_13_25_08",
+      "split": "train",
+      "png_sha256": "2acee48b6591e560fcc2ac0cf237f0743077313d5f4e105d9984bb57874dcebe",
+      "label_sha256": "3ff12aa9689bb0ce27341e45e9ba47db88f1550536f78fd2c3da74ddf2ddc6f0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_08_45_55",
+      "split": "train",
+      "png_sha256": "566cd92412115268b2b19def5ee81b4ce7ff7fefbf994711f6d42e13e395b64d",
+      "label_sha256": "d1ad92af258b0fd9f405cc394e26db5f24f1cdebafd9d06950c3da7e4296dfa8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_09_45_04",
+      "split": "train",
+      "png_sha256": "80e0389b8c7208dfac6c94b0a2d88575d8e346fbbe5af884e494f75955b09f9a",
+      "label_sha256": "cd017aeeb0949170206768813b164c5a789599ffec9912dc8851edcf8067609d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_18_25_14",
+      "split": "train",
+      "png_sha256": "0d0773dd4da029c32870e9eb672726bd4ce1aa90ce9209516d1bb2e6f08a5ba2",
+      "label_sha256": "5cc152535e32236fc1dbf48a24bbe6a419fe4013e08e47081dbccafe39af1560",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_12_00_07",
+      "split": "train",
+      "png_sha256": "e0bb7f2dd0a71a831454ddc45619ca75a989cf5ee25edd6240a439700a24e508",
+      "label_sha256": "5c2c6b5e65005200d45d7ff863bace760c2161e4ea89bde768b341f20d31b2f9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_09_15_55",
+      "split": "train",
+      "png_sha256": "77f5a79e99e4b498fa3b4db6aa6acd810fc3cb98eba547c58e0178e28c9ab5ce",
+      "label_sha256": "09e1d09351699e930913e6e0ea94f0ce2577053b5022dea1c725bb6fd6e1d3ae",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_11_40_06",
+      "split": "train",
+      "png_sha256": "6c688d96d051c1587866211daf588a0e2d94f0cda7bfa60204332c5f0bfb6edb",
+      "label_sha256": "e1cab49f81a0de43579a716f1d436d5bd5529fefd4fac11a601c2feb7b067f70",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_14_30_09",
+      "split": "train",
+      "png_sha256": "f65d172174c34d81fd34a794b975539532d8c8db2702abdc1ebc056e4368b948",
+      "label_sha256": "42e2778ffa8accfafca29ad179442138772c15df89dc53b0cd88a1a7b00abbfd",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_12_10_07",
+      "split": "train",
+      "png_sha256": "3c761ee3f786ffae58728769e376d373e838057b3903f02625b270518f555663",
+      "label_sha256": "5c2c6b5e65005200d45d7ff863bace760c2161e4ea89bde768b341f20d31b2f9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_12_45_59",
+      "split": "train",
+      "png_sha256": "ba4efddb5af8b5d1d69303acf3d3bf04074f7f0ef3df99aa1eec394c0acfefe2",
+      "label_sha256": "badfcd940c2c9b2dd740a81e7f6c3134f1215c9b2ebcb169ebb3e5e4d36fbe01",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_08_15_02",
+      "split": "train",
+      "png_sha256": "f74a453ed8b06aaf8ccf0a6c10806fff93673dac9e24e347c167bd5495eff70e",
+      "label_sha256": "884b04302679c82bf05b75715612c8b3c1e283f8a7c4f104f54c11d1ddc82634",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-09_15_35_11",
+      "split": "train",
+      "png_sha256": "83c3011e958ce55abebe5b036c6e180924f813f2436853088711a550c66c9eac",
+      "label_sha256": "5bc36759a4f3be57f2dab044d614045beb4ca633d5a522a5539bd4010926b522",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_08_55_03",
+      "split": "train",
+      "png_sha256": "c9ea92e46307e627c2cad4d579023b84386abff79a5b57165bc62cf20494e8ea",
+      "label_sha256": "38192803b52d34ef9c1856020b5ea12897c76be9aeeec622ec0849de310a9b25",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-14_15_36_03",
+      "split": "train",
+      "png_sha256": "4d33e3609087c61e98e2c40da6c4edd5a1c53cbcb37430df34f8f8d25a588f72",
+      "label_sha256": "4b18abcf17e28bee2da47a2a075054138ecd23273b512c4a3a55fbc97a6aa9f5",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_40_13",
+      "split": "train",
+      "png_sha256": "dce513b68e39114f092b036a20a7e97671b86a02d39d66c2e453b64e90d0a1a6",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_15_35_11",
+      "split": "train",
+      "png_sha256": "ffd58de66736abe2c49f10b2681d247e7bfe4e2d6147d258fae465c74fc4e9e4",
+      "label_sha256": "32df7f58376c716f8b22ef657e9c6dafcd40bb057b5ea7bbe429d8cc38d46b78",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_05_13",
+      "split": "train",
+      "png_sha256": "799b2715bc871868cdd087f63d76225d666268fbed22f966f82a3ee4ba6d34d2",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_17_00_12",
+      "split": "train",
+      "png_sha256": "c3fc3f2ccc73b0e9478c2508bdcbfc747184c5376d7bcd27175d2a906085eac0",
+      "label_sha256": "9681c4cd6d48fb0c06827a47fe77e2848607793230812f739a6b93296ca3de6f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_18_25_14",
+      "split": "train",
+      "png_sha256": "127f51945e6e261fd5eb1bdff1c0bc57a72b6677817e074333a935c41aaf777a",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_18_20_14",
+      "split": "train",
+      "png_sha256": "2c9e8187fbeb7a9c738ab357cdc39aec02bb186a58a613e0721c539573295d4e",
+      "label_sha256": "d26ec5c179c7c5c8dcb6c12d1ab2149c5e4dfa01fe38fd8934e2c752a7302f10",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_16_50_12",
+      "split": "train",
+      "png_sha256": "ae13687e530506a95557867878241e1837cf305ee15f6366b9135b064b5530fe",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_15_40_11",
+      "split": "train",
+      "png_sha256": "193bce07a6a4e5d527f5cb4f6d4875e0a2903763de3d75785d7fe871c04625c6",
+      "label_sha256": "6b4393e6df7b8e9ff14da553fbca219f89ee63f62b9a588cd583dc185a58ea55",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_20_13",
+      "split": "train",
+      "png_sha256": "a17cdcc223843069d8b02d8f3e5cddf017470b3670d2b7ab32ee033b0f807115",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_18_15_14",
+      "split": "train",
+      "png_sha256": "39766e93e40814995b46ac6107f3313f95ef651d80b8a67186f4f3b220befb72",
+      "label_sha256": "d79f5a5b0c84974719311394a252c0583556e96b0291059b4d0d9da0254b614d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_30_13",
+      "split": "train",
+      "png_sha256": "f24ebe0a9008a61c83d577877e9e9444cdb15d9133d64a41af0132a18eb9d687",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_18_10_14",
+      "split": "train",
+      "png_sha256": "136fe68a369fbb7411f716c583a38af7a0923feb5c7a5f40ad72afaf5ccc3f61",
+      "label_sha256": "c0c03d351edef018755eb6cbbddabdb538574672741bd8fccf075eda029b06f5",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_25_13",
+      "split": "train",
+      "png_sha256": "3e7160f721f7d8293e320fc3df98ecf1b4fcdce708da231da13182e98f690a8a",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_15_30_11",
+      "split": "train",
+      "png_sha256": "ea9a1d05b69bd9c88d00c3f89ca2a2d3ad24e663864eec694d98eb3ad6b44a54",
+      "label_sha256": "872a4b93bb85754633990aa66341ac8672ea038ef318e5ca2c830afea35606fe",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_18_15_14",
+      "split": "train",
+      "png_sha256": "c855079448183702d8b8d7a8aa75f00026aafb921610c54ceb8d5e80fb5afcce",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_17_55_13",
+      "split": "train",
+      "png_sha256": "84aa3037cb4a8281edfe3fceb7cae1df78c0d62e128e36bea40394ff75936aad",
+      "label_sha256": "423dfb3c3d431e695ad7bd09ecd5f7fde1bac9f1dabb96ffa31e2731ed80c857",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_18_00_14",
+      "split": "train",
+      "png_sha256": "5231dc26c5a0a2c7d707b26b397f4b9f2d5291ef2906f67ea8d11766dca51c7f",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_16_30_12",
+      "split": "train",
+      "png_sha256": "04b9c24845d8001b469b77f8973e74ee6d63c532229b394bb3007b97bb3996c3",
+      "label_sha256": "76901657ddfe33c50fd14b21474919aa6d5eaaf0587c79fd7e6b4aaec5af02ca",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_45_13",
+      "split": "train",
+      "png_sha256": "92bff133feca33449185707644efe4c65f1a1432c26a2e9d5e242f3eebcef8ea",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_18_05_14",
+      "split": "train",
+      "png_sha256": "b62341659a1dfcbe5dcf93ef771d0eaa758ad573aa1e66be2a24d4ab5f6121d2",
+      "label_sha256": "e4eeb009eb9be726e4b6775706fc927a326c45d7c5cd40665ec383f53237bfee",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_10_13",
+      "split": "train",
+      "png_sha256": "e2091ed0ca0186e2d0e0170bfb98bdc713774ff4fe50260dbba0ff9986796734",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_15_45_11",
+      "split": "train",
+      "png_sha256": "03a82dc30d5b379445636d5ef45066e25ee74308cd5ba5bc8021fb3bf58da9de",
+      "label_sha256": "2aed849923b94f51d5b04798fcfcbb1f98d8dbdad196c5c0498c57ed19148b70",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_16_40_12",
+      "split": "train",
+      "png_sha256": "8ca56c76f0249a14461c265949f4b71e1ed50618dcc02b51238009a48d65f3fa",
+      "label_sha256": "be42a2878d524cf6b02d722f2f437c37591e4e35056f86c99d50ce42e9efd57e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_17_50_13",
+      "split": "train",
+      "png_sha256": "8acc066f3264f63aea99a4469b907eb9f82637b0cb3feb9e90a2b10c86dcac54",
+      "label_sha256": "6e05afcdd3764efc9fc2c04c9a154b64285ea4a580ec7f3bf76407f537122f9a",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_55_14",
+      "split": "train",
+      "png_sha256": "66a245f7d40a4073be42146cdc0e36596252e2b0ba04c0936c3b11b97aa9e5ec",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_14_10_09",
+      "split": "train",
+      "png_sha256": "a484ce0bca5cf4ef2c9cb7fb984a1b81672e983433c5d70f4f1c70c4a51d7ddd",
+      "label_sha256": "fd56b7639a71e78f75b6cabcdb9a715ba314f947d2267f1b44aeaeb499aca540",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_35_13",
+      "split": "train",
+      "png_sha256": "8dd34a5ab29b31bd81079b22faafcae8f467cd9573af340bc4d2af69e22094b2",
+      "label_sha256": "8e2c3bcd7e3b74c88af9f52621f4532a12dedf81dacc511a613207a1d42852c7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_16_40_12",
+      "split": "train",
+      "png_sha256": "dcb291680ecb45e484cd2405e4b9ab44bfe187abd8236a4208a92f8cf0a6b37b",
+      "label_sha256": "e8ae1edde25c1da548f6354f0c514abbfec7e4ac64e1f69c31f14a41a900e8b0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_17_50_13",
+      "split": "train",
+      "png_sha256": "238d1f607daba05efd31c4e8bce9a5d7764d9a90369787b001a47d68f4b798cd",
+      "label_sha256": "8396fc0f0ec9f999fdc5db1905cc21d71fcbada681b28a9ca87ea7b4c15cb9f2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_16_50_12",
+      "split": "train",
+      "png_sha256": "1ed236a70bfdd9f1ebdb4757acebd3047bcee9066f3aacb5a86078cf70dcaf81",
+      "label_sha256": "91249ef241fae9950f5dce57eee94c720b4b7c8f7b751183ff5bffc2679496b7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-11_10_10_04",
+      "split": "train",
+      "png_sha256": "338e2a0d1f594e6627d235b1879a816ef10660b1a842c9800ce5a152c978da8c",
+      "label_sha256": "c606d469a4e5c72d74b25e93c26dd92367bb946d8eac322e3a24a03c5283346b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_13_15_08",
+      "split": "train",
+      "png_sha256": "ceb3754e7be19b571035a791355b6514f07f1ceb10f564c15c9105e842eb5ff3",
+      "label_sha256": "c11b696a031b066d08a15c6657ae92330376936d659de313ab0a0440047d128b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-21_10_35_05",
+      "split": "train",
+      "png_sha256": "08db8fdc0cc1e92ee7972e68701195dc45d2ef3e8492a05f366d055e0b1c7e64",
+      "label_sha256": "7768c7bf06a0eb2f760cf1b697c68e02f8840dfbb3be820db744fcd16e45eb0d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-01_18_03_01",
+      "split": "train",
+      "png_sha256": "78acbe38c8ce5d73e7e6b91dd14246367ecb5cb00be624c80a9cce861d0668f7",
+      "label_sha256": "c5f4de6e942cf0b14b8967daa3cbfdebc35adfbceb6b83cd65c5d1cd79e98886",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-09_16_35_11",
+      "split": "train",
+      "png_sha256": "16ed0079ffe946f6f8841936e5d8405791a33694d5d2b1e763039621e449f225",
+      "label_sha256": "16a4469bae45637e3d6cc6358b53a9ca933368d66a7c1015547050d1387fbe2e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-02_15_45_11",
+      "split": "train",
+      "png_sha256": "96a4dbaa6501378304274c12783ff7590253ebcfeb3c9438a851a0b78c1703ed",
+      "label_sha256": "582c5c11fed988fc0882cdc501ef2615ab26274ec16383c48aaa294d9a4016fd",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-15_12_35_07",
+      "split": "train",
+      "png_sha256": "5f610e4e575cfb48d3627d5fdacabd526dda380188fcb91f27850e4d157e7dbb",
+      "label_sha256": "3c7e35fb2ca0f6c4bb5502e186fa766989c5d8005f7cb74090b8c149aa41b366",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-11_15_05_10",
+      "split": "train",
+      "png_sha256": "292bc8b1a04c6d11d80699de29be9c47a92722ee780197d70aa0f4ec91200fa0",
+      "label_sha256": "c3448b9e974251e2ca240f1ee35a816e86f7c0eb37253456b219153d5d6e4940",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_09_50_04",
+      "split": "train",
+      "png_sha256": "a4760cde225d326ddc23e4c9152398f5ed13af88728caad39758ac69e729f184",
+      "label_sha256": "0d98d23344c0b4e454416d68669430e8ce9cae7a79267b7250c73097da023fac",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-22_12_15_07",
+      "split": "train",
+      "png_sha256": "52b72256e3e873abc01cba048424caee8e674092fc2b62175cbf4348660010a9",
+      "label_sha256": "db1894efab6accf4bde46675468c1e6c895eba0a3c01d376238532c99f860247",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-02-23_11_20_05",
+      "split": "train",
+      "png_sha256": "c7be5ecccff3cd8a1f898004104ba10fe65cbfca8c4d07443e961004fa9f91e7",
+      "label_sha256": "ad92e72571d1a6b9186161ce130154278a4a76a9a47730fc80440bd4eea0e649",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-06_18_10_14",
+      "split": "train",
+      "png_sha256": "887083770d52a0776b677ce42d8a448d30250385d5d6622dee9868ff0fa29cbb",
+      "label_sha256": "2870d47e8acf44e6cd415eb8ea9d530c15a1eec2d9f7fd2a22fe0230171801da",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-11_15_40_11",
+      "split": "train",
+      "png_sha256": "80febba0714985c731a6f97c001b8267d30b21a545a7fa00842a1c7ba18415eb",
+      "label_sha256": "61da457e81af7bf26dd99f242fbc963929bffaf6a87679c87dd917eb98e54b67",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_14_10_09",
+      "split": "train",
+      "png_sha256": "50840dbc0d6cb240a23c3004a012f307ae52a3e1121529230b49ce3592acbcf2",
+      "label_sha256": "c11b696a031b066d08a15c6657ae92330376936d659de313ab0a0440047d128b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-21_13_00_08",
+      "split": "train",
+      "png_sha256": "78ef665bdd9378bcfcf0037752a0980ff8518045705cb077ea371058765c8ef4",
+      "label_sha256": "207c2d98bf709532d11dbca860eadeab60efae71b2d043f7c99a7e54565c61ab",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-01_17_48_00",
+      "split": "train",
+      "png_sha256": "78a420d779c4871e4ff15cd4cfea543a6e572604f97806a8d7f232d93b4471d8",
+      "label_sha256": "08b618ee645f57a2ccacfe220c93691fc781398a54bb2e1a5430ac7d2a03750e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-09_15_15_10",
+      "split": "train",
+      "png_sha256": "b2b33a2cd47009e70321c0ced9203ff0a215a589a4b17079ba52cf74524e38b1",
+      "label_sha256": "698dbee2874033a525599bf448cca1849696c0c2f502dc94400b700dfff060ad",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-02_09_40_04",
+      "split": "train",
+      "png_sha256": "9d9a21c7d341ebc67fda851cf9bd7dfa86755e830528b779557b61fc754cdfd5",
+      "label_sha256": "796f2d4b9ea6494ac1a25ceaaeea3e4a534b7de5fb7fa5887adb932cc093f400",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-15_08_20_02",
+      "split": "train",
+      "png_sha256": "0bd768a3e7c4ba7fba9e88fba1b1abb95264ab2f8d6bbb172dd20acba34797a7",
+      "label_sha256": "fc70954b8f49519083c8fbea5666ca618937c22727c9123115804fac76618b1f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-11_17_15_12",
+      "split": "train",
+      "png_sha256": "b40f5ce8d09dbf6074affe52079d6f8fae5ba360ada8a857e1589a9fb234bc02",
+      "label_sha256": "701878ed80bd9f63c7e37f62e94edc4df5bfc21470d5157511d3d98fea135af8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-13_10_30_05",
+      "split": "train",
+      "png_sha256": "2e1051d759bcb65022907040977671d63f3182418011da4ea730618533a12ad7",
+      "label_sha256": "59a96c10a9580a1c10cfc718b363a9bf99463754b6863c5c80a3b00c38d267eb",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-22_08_50_03",
+      "split": "train",
+      "png_sha256": "7a0f89220ee5191498a7b3311598402ddcebc92f1d23ba2cf7e4571eaecab46f",
+      "label_sha256": "92c4ebbd7efa33aaaf2ba19cc5713c7712128075d340a32171cf60b4b13b86e5",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-02-23_10_35_04",
+      "split": "train",
+      "png_sha256": "37c3c9c14e6627ee089affd783a3e1d743f65c9ba4302cfc57781a270a45b086",
+      "label_sha256": "3e8532af3b86bd832c491bce1510d3a10b645e269c94c9be77ea8c96cbb331f3",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-06_07_45_02",
+      "split": "train",
+      "png_sha256": "a5587f86c009247723a5a010914613cdedb156e0d9ce31b220ff0f51ecd5a214",
+      "label_sha256": "a9e809599fc3c8cf3487fc30b25d03314c82d6bdc5e03dc077daa0a474cd150e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-11_11_30_06",
+      "split": "train",
+      "png_sha256": "c5ac62c7ef154684ae12840868820eb58f3282adad65691fb4b4380646441365",
+      "label_sha256": "d673f9c603ae42e20613fc21f2c4f43b97465ffbe69621bdedbbdbed59c4feb0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-16_14_05_09",
+      "split": "train",
+      "png_sha256": "baa1374d04e1d664331a6629c7f15ac935407a9b31af9b985873895121565c76",
+      "label_sha256": "c11b696a031b066d08a15c6657ae92330376936d659de313ab0a0440047d128b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-21_07_55_02",
+      "split": "train",
+      "png_sha256": "295b7709d2550b3defa3c8d235aebce7f2029d2d4a235a2eb6925c8bd600c30e",
+      "label_sha256": "58044658be0bcd8fef72363808ab02e02b3d1e49094e939d698f2250abee2539",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-01_17_58_00",
+      "split": "train",
+      "png_sha256": "8e029b41ef8137cc947db95dd294a27c002a568a3d44b1be4e0da42d54afdf6c",
+      "label_sha256": "d1400e0c2d14e7414f970a1fb176b4acba2d285ebdfe82841eb9dae2ca788ade",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-09_11_30_06",
+      "split": "train",
+      "png_sha256": "641d9928031a7559fdcb333c3128570dd2bb732c1caee96d1fc96af7fa23afbd",
+      "label_sha256": "c3ce9a538524cd73b6f115b15adc7165f2948c4487003731bd0071a3113a02fc",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-02_13_10_08",
+      "split": "train",
+      "png_sha256": "a2f2011f8cd67b566706ee169a1e8c358e6fd86087a51f57845c97c57129def4",
+      "label_sha256": "3d68db8a639a7e8d2eeb4bba5391b89b535f401ebdcc62d4ebbe6b5aa9b3c88c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_07_21_47",
+      "split": "train",
+      "png_sha256": "502e94c025ba372533bc97ceec3bb75f1425db2370b454f05683400e9b72931f",
+      "label_sha256": "387a3c30adc6388361865c98d8a26e9dab7b8130b6a8a6fc518ecdcc7d98c5c9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_17_44_03",
+      "split": "train",
+      "png_sha256": "082b176b8ad4c1598d93a5123affd7536a0400edb977bd9359b0b0b42565bf85",
+      "label_sha256": "2c3b752480203386c28bee2364d65cf3f1d9fa8f5383ad8ef11fbd973920cd1d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_09_18_07",
+      "split": "train",
+      "png_sha256": "59bedb910c222bb9f4d3f7b70c5c7de834b1383afc60e62d0e4ec29c3e37c24e",
+      "label_sha256": "34101fb261a484be64d283d2ecbd27d989acf013db2c2a36616377a40d4bbcda",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_06_40_25",
+      "split": "train",
+      "png_sha256": "dd3f4539a90ea1d38200567eb516662c49e3131abbf3994fb0a0710130325f4c",
+      "label_sha256": "22dc19b22e19943e9e39fdd4b93ae00751c1a5e4d1cd624516cb78b59e77f0e9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_12_14_01",
+      "split": "train",
+      "png_sha256": "b40174388cf9353b523b9df53f5eb622c4846f56577aff7b3e35ebdb8c026581",
+      "label_sha256": "fa0d7246a5596f7365b8dfa2365a03a3338a46e040f951087c76f6e38030b467",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_07_46_48",
+      "split": "train",
+      "png_sha256": "c01a7e08ef849c3bb5792f64286d4a8a50b3d7affc42f44123a1acc0b8578873",
+      "label_sha256": "4e8870b01dd1a404a495c463d28483d72fc6ef4dccb12022080071ae868a1f0d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_14_58_56",
+      "split": "train",
+      "png_sha256": "36116fb099e60e57a58634a4c0cd20af85273d5ddf7f1465fc936d8f95795ce2",
+      "label_sha256": "5ecc1df092bff894e9eb8817edba98195282ef56518b9f9e793317ddedb33075",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_17_28_28",
+      "split": "train",
+      "png_sha256": "6e3f66e843a663eb4ec0b1cfa9309351b20668fab8c7a3b673887ac74a14d54a",
+      "label_sha256": "0c26e480a6c3c2d303bee8523cb5b83412c92e5bdd844bda3728c6ec77a96d23",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_12_10_41",
+      "split": "train",
+      "png_sha256": "2b6c854e9461e39dbb87e90d9b5d41d868f501f058362175ec2d00ff925b7f8b",
+      "label_sha256": "3def007cda54d78f7362a0e68d8dd9bf610ebb019be4d833087eae0951972317",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_12_34_02",
+      "split": "train",
+      "png_sha256": "57f738cc56b6ef01aeecae7512c0b8a97bc4626625011982cd0c851f4bb119a0",
+      "label_sha256": "aeb597bf39183ca4d07bd68a85317531f0346f42041d7461dc2d76c77e0b1aaa",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_09_51_54",
+      "split": "train",
+      "png_sha256": "5b9781211cf3ccc1ed7e3a053ab5751fa9cb8338736fd722e9912af0460ddf51",
+      "label_sha256": "14c7caf16367fee462ac185b1b68b2137c55c9b7f685cd3c85cedbff11514700",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_07_13_37",
+      "split": "train",
+      "png_sha256": "0c0c71b3327de389c4d9a512700648ee6fb36caa94a19ce113fc0b96f313aa12",
+      "label_sha256": "b39da0510801f4f7d7bf176ac9029ef640a989183c52587f71124de07a167035",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_15_08_22",
+      "split": "train",
+      "png_sha256": "7219475d869eb851bb28b0b4021f5c46e11fa6db421062e14e950aa240eb30d5",
+      "label_sha256": "7c25f8bc261485fb502b683c40fc165b4d86ea4ad4afc816a0e0e0271377b2a0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_08_40_30",
+      "split": "train",
+      "png_sha256": "aaf863b209a997b4d8ec5231233be5124ba1da340e77875d7d6fd5187336d823",
+      "label_sha256": "54d30da0e20ede3f3aa747e7f1a2cbe9da3279e90766cede608f3bd5441512b2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_10_48_58",
+      "split": "train",
+      "png_sha256": "e0f4c7eee6e298b74bcd94b7547ab003e520f57aa7e0311b303d8a72f457d1c6",
+      "label_sha256": "e28883183f13cf57cee6f5a6c1ec9c8383c3bdf92804075a46b6390e9f4ea166",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_08_26_51",
+      "split": "train",
+      "png_sha256": "4fe709ef2ec8626e9bfb2b2edbb02e37835525f3d39ffb8b5ac043d62157980a",
+      "label_sha256": "72306767ced49e3028be51f0fa75a6560f36f2706793fcef258d6335d459f621",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_13_23_52",
+      "split": "train",
+      "png_sha256": "0a0fb0fa5020f702378c0ac78881a08c4c928c46d14f7f6823c3ccfd0224ab27",
+      "label_sha256": "ae8b19c7c957e8cbea3bb05661b00b0be094ba913ff8640a66fbe7e3533f4239",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_11_13_12",
+      "split": "train",
+      "png_sha256": "b00c1d7b941794ec0fc8beafd4aa8c7fa523afa5d0c0d2f916eca434bb4a1ff4",
+      "label_sha256": "5a707ae8fc889eb5400114d722e4d1018f824bd2a5e8fad92fbd10cf11613fc9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_07_55_29",
+      "split": "train",
+      "png_sha256": "0202c30cea72f4e7bef9a54f8bee2d6fdf06e7bd747d26bb11ad7467dd18e637",
+      "label_sha256": "685674f2ad16db09b7805441c5cd4ce2c533f32adf6a5ad097471df578d0b976",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_12_04_01",
+      "split": "train",
+      "png_sha256": "c2781e395c5a6794f7e386c6b943e3b9ad2b1561ba88aba65c30589c52e114f6",
+      "label_sha256": "e07682677a7098aa791032081b3912cd85f0394e313ce39d2c0809e5d543a6cf",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_08_36_51",
+      "split": "train",
+      "png_sha256": "a5e0541d1e4340c86b61e8d13e9596df97e1bf5c7b9c5cfbf7a37f6d0181ec9b",
+      "label_sha256": "4e8870b01dd1a404a495c463d28483d72fc6ef4dccb12022080071ae868a1f0d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_10_28_45",
+      "split": "train",
+      "png_sha256": "6777fd8b10709e36f00db1e9b12d880e4f0bf02860097c164517e91b872b34df",
+      "label_sha256": "82e9180d9183ba11862e246c47914c8a077c456978142714e092ca09e2b5c87d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_14_48_21",
+      "split": "train",
+      "png_sha256": "289cc2ef2804c30f6004c3cab5b694826a39a6315e3cedc3d8604bde49270d15",
+      "label_sha256": "0cba0a719e65a8ef52f5acb62c5731d7f135371553b47f356841b8a56ce6b83c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_13_25_44",
+      "split": "train",
+      "png_sha256": "3023be353dd96906529b0d3d1f1f718a8768989d4b2e3a28654da478afe4d200",
+      "label_sha256": "019035f8c9048729005511e65f1c92860c6d75ea715743fc1040f6b702a9f396",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_10_43_57",
+      "split": "train",
+      "png_sha256": "8461cc096553d48ac82208b2d085dcf5c80bfc9dbc23921320575569a0f90f83",
+      "label_sha256": "e28883183f13cf57cee6f5a6c1ec9c8383c3bdf92804075a46b6390e9f4ea166",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-28_10_16_56",
+      "split": "train",
+      "png_sha256": "78180f3f91be55105624f7d64129d5a35700d41e125e72381465269e69467ed0",
+      "label_sha256": "3174e46304ce0336a22cce60aa58a754b416a512cf37c06a516368e2564738ca",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-13_08_53_41",
+      "split": "train",
+      "png_sha256": "de31ded46c803bd223888872dd432926e8e879e1426212498b86ba87e568e30c",
+      "label_sha256": "70d7e488d477e8cbfe4b16c55a3e64ca6b662a448c9cdc6eacd0047307925868",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-31_09_28_07",
+      "split": "train",
+      "png_sha256": "ec201d5ff24d275ce06a31f7296e731d92102fbab4f965a9ae0fd8eab529c388",
+      "label_sha256": "8c5dd60bccd2dc7aa9fec9fee4480000fdea17e5f65c659857aee57cb8b9d49d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-08_07_40_28",
+      "split": "train",
+      "png_sha256": "522e7faa191672c458654fc807ef0e617f2c5c1aaeac120015daf3ff24e5e849",
+      "label_sha256": "4ccf6c376cc3f59fbf36ac7ccc8359152b744880281a5cdbf4332bc0d0315741",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_11_08_59",
+      "split": "train",
+      "png_sha256": "498bd2a89d7e06da5da3f73542e266f21def24b93981eba39a40795c760996e8",
+      "label_sha256": "e28883183f13cf57cee6f5a6c1ec9c8383c3bdf92804075a46b6390e9f4ea166",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_12_46_49",
+      "split": "train",
+      "png_sha256": "e62599176c779ec2cd1ca318655e59134a9b81541a032c5b80943a28670973e5",
+      "label_sha256": "0143eecbdd1245d8e6651b4278b46f471bac3f11cbd340f95b167b4a8cabb2b0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_14_58_39",
+      "split": "train",
+      "png_sha256": "1b9522c8921330a2340ab27a0e93f614a67b398da01358ce92ef28c8816d1eea",
+      "label_sha256": "c4b32c0404a3b5f860c8b63245515602fedcd4a4ccb22ecc07bf1e0e08e49d88",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_11_56_47",
+      "split": "train",
+      "png_sha256": "d2b7020ca203d588be8f1acb2ac089e419594a283c450b40ea5a16b598801a7d",
+      "label_sha256": "88f0de6fc64ae3a11c307f614d17b0c10f7355b1a231678d76edf0bf089e653c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_11_28_29",
+      "split": "train",
+      "png_sha256": "4e43abfcef1d30d312fad798b2949b819e4a47385fd522dc7506c5453ffebc8c",
+      "label_sha256": "6e7dfda20a99d7616a544f9897bb57bbb570c8ae76bbe8cb5ff2b05f1e4db9e0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_18_17_05",
+      "split": "train",
+      "png_sha256": "d1d44ba7624df2a205fe959ad6f9d6a573fe15007ba9c6246b4d94fa56090f54",
+      "label_sha256": "5043c7f1ce923f32d73d2cfed322421e6bed4348253aec3e82609c01e161f1ee",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_17_03_46",
+      "split": "train",
+      "png_sha256": "3eda930534d1d95b094619bb8dfcf0649eee474399ebc7109a8f59d6c9cbcd04",
+      "label_sha256": "1fbed87a3a5ee4d82b36d25cbdb3d66847cf0d70c753fdd27b9cc1cecd6e1075",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_09_11_39",
+      "split": "train",
+      "png_sha256": "cbe27fd6bcb406e126a47199da701a28d99c3453ce761d59b2f1024d881b4d2e",
+      "label_sha256": "cb988cae456f7601ee9de91e7425416e9514415b4fe77480d7ddbf4e6722a95d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_08_48_20",
+      "split": "train",
+      "png_sha256": "3c958baf8bc0a3bf3626ec4ad7956e1d7b72addc2ebcda2a703ecdf515eba961",
+      "label_sha256": "b98d7268a58fe94d19356da6741cd83654449a322a5a3fc4041c2aac3e0d7b7c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_06_56_32",
+      "split": "train",
+      "png_sha256": "c571254683c2cf009615b59e43d0f0f031c83064700ec06284d165a034fa20b9",
+      "label_sha256": "812fbfb59ee8ee7a43081ae3ee72f1decec7fad44cadca6196e8b53d7a8b6081",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_12_48_33",
+      "split": "train",
+      "png_sha256": "f781313f4267bc6b725d0fe044bd77374d42d73698162d74457f4b35d7471353",
+      "label_sha256": "4957667319a402135e293356e6b49cac64230ed860c03d1ecf99de8c432e5247",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_17_17_02",
+      "split": "train",
+      "png_sha256": "e2658a6280179c66629d4fcd15a46d7ff382200793c339d3052a4e8cfa8c7e50",
+      "label_sha256": "1aae2e23237929904af7dc6a6d34ce516a31cf65e9e5ba4517b435c939a82b48",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_15_13_40",
+      "split": "train",
+      "png_sha256": "fa907930ace2e18c0fd2be6243a77069e0dc1ce2256d6a509d017682dc3119e5",
+      "label_sha256": "83052b27ba9f045820a5c6ac9dee31f648a7ec09382d32b52002c41b2fe3d3e8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_14_11_54",
+      "split": "train",
+      "png_sha256": "bff5c2fb803d27acd620e29b40a44b492a1738d9b2b0f7a26846b205d4f57f10",
+      "label_sha256": "4816822fd6c5faea3ca5e6071834213be3614fceb92319e800bdc86b6379b654",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_12_23_32",
+      "split": "train",
+      "png_sha256": "e950e6b2ffb16cead43ab0e4887d85873973be49fb223d561dcf2c76f6206464",
+      "label_sha256": "4916da3ba3d50662ac0f915bb912dd49b6b31184747f3e59600017cfd3b4708c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_12_21_48",
+      "split": "train",
+      "png_sha256": "b8f727ad18abe71d9dfce3ca01894815c63ab942cd0117f419c883315a175662",
+      "label_sha256": "4ae0fa62d4fd294f3ae45b9410e6f00219902a98b6f712a452b725c6e78c5243",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_12_13_31",
+      "split": "train",
+      "png_sha256": "df1c48f3e6b40ae1a49efc065c2fae3e6d39d4284ce6bdbb45017449af83f934",
+      "label_sha256": "68217acb40a9927da8d2586504c4092f03263fd23b3fc6e5d8076fb536de096f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_17_37_03",
+      "split": "train",
+      "png_sha256": "06c1ffee9da9dca83f10d92cc160ac338b2a2d2fa3a50a621aa4184193fd4d3f",
+      "label_sha256": "9081e811dbcffb55862b9f160e220c58fe2671a32f613d66bba3acdd6011f218",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_08_23_19",
+      "split": "train",
+      "png_sha256": "c7498196b67d7263f25109990a1df5112efd93e1886cbaa2430aaf4f12b4e60d",
+      "label_sha256": "2fddb45acbad87855e3c443a5f6f13bcc9eca0962ee4bdce53e1939889c91053",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_10_51_44",
+      "split": "train",
+      "png_sha256": "90f0118481ad41957a732bb1c6f9fa5d04719c7352fcefc9cbbc4ceb2257c4e5",
+      "label_sha256": "184972fb2c5bf89fe5c003602fce80b089e49453b212c3b523675c0ecf9658c9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_11_38_29",
+      "split": "train",
+      "png_sha256": "d97fb24aef292ddadf392963cf62e81f63910d380c6002f20f2c88ed568545a8",
+      "label_sha256": "cefab6b751fe693e01172968ade53f87e45d543d7961bbaf03ea9c2f529554d7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_18_57_07",
+      "split": "train",
+      "png_sha256": "e3451cabdb713035452d6ed0fe49ff410a21e9adccbbb239113051f1482f8cef",
+      "label_sha256": "ed85cfe3e4ba285f8f778e71495988054b122c6462ab211ab0e27d4713097e1d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_11_33_29",
+      "split": "train",
+      "png_sha256": "18c4493a12730c9aa55a354f3e1b9dd6e395d146744e28e9210e99fbdd64c35a",
+      "label_sha256": "6df14d6bda58a64f8c68a93942019c11cab7ae2aacc23e182ea15fe2d60c7a73",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_18_07_05",
+      "split": "train",
+      "png_sha256": "f4dd1e266c23e9b1a4a25f2ed94524938f3aafcf1cb750e58732e77174d4addb",
+      "label_sha256": "36ada1799ecb6297081435d3b8ffb3b5459b12b630c6655b79243dccf7adddd0",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_17_48_49",
+      "split": "train",
+      "png_sha256": "90d06661dfb6b0658c7dc2c4819694360c0d5d18284b2fcfe878df35a83c75eb",
+      "label_sha256": "60a2efefb11524fe9296f4072ed1b88796f2910cb836c2af1d4745680e9d6030",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_18_02_04",
+      "split": "train",
+      "png_sha256": "721919d2e132e872ca98d85e9dd441b91d6719056ad38b1616fd5a0ce1964f96",
+      "label_sha256": "be6ab86e714c98c89386c3c71bae86d01227023a675f601d04710a83038bcf4c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_08_43_19",
+      "split": "train",
+      "png_sha256": "be5a5599702dc8bad182cea9d00650312f5b7a408064f13d96bf5fd7ec79ff6d",
+      "label_sha256": "53f8f7ff9b6d9e4336ca05cf59bdd780d070df6bb34aa18e4a34cb45dffe8db8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_13_51_52",
+      "split": "train",
+      "png_sha256": "764194099e58ae28cceba88599e0cf676e7a77a3da57cb374cfdd24813f01d72",
+      "label_sha256": "a43052b59cd78019549a4be61893a0195e392602cf48715e5c634532db7eda5a",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_16_43_45",
+      "split": "train",
+      "png_sha256": "df9ae1cae23484065b1b54876a7a20cc9d83bcf7dc89f422090bc70807b6a2fa",
+      "label_sha256": "09ea68b9d38354a2b3c3e7ade29b13da311d76a40b8f2b2e4746b8ce3ce0a31a",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-09_07_31_34",
+      "split": "train",
+      "png_sha256": "ae5f56c58e92db9d628a2af673f456108cbfe65ce750ba53ddf35fb4da49ad3c",
+      "label_sha256": "199916a0446c0c4ae7e901e901ec5aeeabb4776e92f07c2e54f3a73f594f80e3",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-25_13_23_35",
+      "split": "train",
+      "png_sha256": "3a2728f6daa2e851e2972fd5fb7cc6f6c760239d9ced04eb51d18d6090c7d8a3",
+      "label_sha256": "91eb440cbba8e23a2fae31e23f4fe1896c8903cd574bccea921ef20392e31c88",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-30_16_22_22",
+      "split": "train",
+      "png_sha256": "1e41004d55942c4da0b5ce58dbbbf10c965c2484644307a9cf720375e9c8c142",
+      "label_sha256": "f9c8c4a4091415ffa1df460512e0cbf93455f708aaaa02f694197025200bb3ec",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-11_15_16_58",
+      "split": "train",
+      "png_sha256": "1e9d1f5b0601930130c4436827e2597770fe561838faaca37a1ecf1c06fef440",
+      "label_sha256": "4ab544ba9f27e44f1c28c7bbb957d75e04086e892fe45224ab6c103a60bd98f7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-29_10_53_05",
+      "split": "train",
+      "png_sha256": "480585aff356a79c04104be36df29d5c6b673cf9eac700090c8ca542842f3e8b",
+      "label_sha256": "7d5b074207f43b059a6aacd1a6f658aafbd63992318bbd8a21a5b35624219f67",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-20_06_14_14",
+      "split": "train",
+      "png_sha256": "dfa57cdb9cafd2040580545afc8b370a66a533c45a3c3a1082aa7a468cc9fc73",
+      "label_sha256": "1e4d81113fb166e71879a7b526f8c8ab42a710736b570bdbd155c44ef8ff511d",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-20_13_39_41",
+      "split": "train",
+      "png_sha256": "eb0e4e3de7cf18d55e2800b4580a849d421254115866df5221473062ad2d97af",
+      "label_sha256": "c937f075eba165008ed2fb21ea4ea8102dc9ddde541500b89eadbf870f15c6f4",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-17_13_04_07",
+      "split": "train",
+      "png_sha256": "082167bd5fedd53a039fea597b27957e1561bf0a49c363c587bb86f5510cbfdb",
+      "label_sha256": "3e6e8774aae8e212663580251f4169db83d2f9213953139257ed70292e0f0002",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-06_12_48_28",
+      "split": "train",
+      "png_sha256": "ce4bcf3b3fb811fa08b396b580c873b4754781ad7f3cfad5f17072fd07b4ed11",
+      "label_sha256": "e2c96fe16a4036a06ae5c4ce5d883fb03b3a4da78297371201cab126eab893e1",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-17_08_49_39",
+      "split": "train",
+      "png_sha256": "f2455eac940a91558bda4527a99b65d1045b42fd708a1ca5534e2bcff8c460b6",
+      "label_sha256": "b058f7867a2f08c00af6fc0278e6407dee529f820ea6b1c5110acc2044f7fe63",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-19_11_58_32",
+      "split": "train",
+      "png_sha256": "8465bba92e6a1c0dfbaa1c3b17990c2f3021fb38c7d9aa3081fe1f3ffccfb497",
+      "label_sha256": "0a319080bd0810e9903a63495930fac286275ede26d89e5edd4929be11507592",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_14_09_07",
+      "split": "train",
+      "png_sha256": "06f883e10a5bc2fdf11593237e4fab0099a929de415b9d66d6b23d7fb86ff23c",
+      "label_sha256": "bcf75e68075732dbe1347d43934887e7a6c320460c936d8adb5ddefd51a9f6bc",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-18_12_30_04",
+      "split": "train",
+      "png_sha256": "b3b083839c230f4ac99f45dc976c8fc0fb5854d1c780ad4c17a167cd4c31be3f",
+      "label_sha256": "7155c1007d2628ceddacb90f805302aacdbadf4f9ca13f4c9a5d25004fefb1ed",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-09_09_03_45",
+      "split": "train",
+      "png_sha256": "e50717b4335ba0282a8abf8a519503185568e7e40578f834543cee70d617d0be",
+      "label_sha256": "435da94868563f2c52eb95e54e994e318ed4f21aea741ed04175be95f33e8503",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-13_07_49_37",
+      "split": "train",
+      "png_sha256": "880a529cc295c66bbbbd578075fe9971a7b8cee59a8a358a0df61b4d6f4c2447",
+      "label_sha256": "6aca135cb408975581f2ffc0cce23aeb2b35c8e8a91b90a09b5c5630e0b08937",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-29_07_22_06",
+      "split": "train",
+      "png_sha256": "9f8799c8a1261d2eaf06d760dc6972f16d8b07afbc6e5a1ad07d97b97a7c70c5",
+      "label_sha256": "341c75950d8afad81f9d0f24105a691101535428d4cb1a32dc3bd83e632bcab1",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-27_09_10_43",
+      "split": "train",
+      "png_sha256": "cd423c075a316afaf8ac570fcee17da82897988c7340420f437a51ffd3aea285",
+      "label_sha256": "cf301e8319d9a8e3a12eca79bc4b24f80a41e1cf2e181e3b249bb2ba732ef7b5",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-30_14_42_17",
+      "split": "train",
+      "png_sha256": "73434b722b7e39d492e1ae2fb3b4753f164a615b4177a27d46aa586bb92e6fdd",
+      "label_sha256": "e340060a0d5812fbf8899f6f84dd8dc3f1a50dda21bd1f2fd3979fd4deb4627b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-11_16_15_24",
+      "split": "train",
+      "png_sha256": "7c04ae814cb2feab8c07224df4404726d4a89de470cfc997cc51d485959c5428",
+      "label_sha256": "0dc88db71f36bbc9d00a3256f195252fb1a8337b8463b3aef909f96f5fd864a9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-29_15_18_20",
+      "split": "train",
+      "png_sha256": "1aac6abe16fe8c71c8229cdaa7b391f8082c032c965774b0987ebc0eecfd7c0f",
+      "label_sha256": "f7ee1f9f55695350dbcdd8409c0b060e181679cd777d9955bcde228ba7b47c47",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-20_06_54_15",
+      "split": "train",
+      "png_sha256": "3aa1a99d3130d0718b3eeccf2e04f8bb4b46b2386ea07ef0b2b7859b78a8ed5c",
+      "label_sha256": "217da57b82e7ad0201a60689c0c1481c68414bc82e7e640eeb32649f3844913f",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-20_17_09_42",
+      "split": "train",
+      "png_sha256": "1c1fd8e21d01bccf66e0170c2dcea2895488ed4e040c303cc7c1d7c9a685816e",
+      "label_sha256": "2ba9246d91281b8f15028ac601cdf9fc36091581513f8066de67d7e2c9aa1264",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-17_09_53_59",
+      "split": "train",
+      "png_sha256": "10470b933f62efa15f7673294aec99b6fd20e5d3d2c12b1983285d99fb7d7d52",
+      "label_sha256": "417b86fcdec2368a062e29aa6c121217ee1c791741cb5f49ad4797fd1e05c5e8",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-06_19_03_47",
+      "split": "train",
+      "png_sha256": "e58e1087a95f3dbef91244b31b082e13f202d6f8ba3d9468bf7e6b31206f37dd",
+      "label_sha256": "67fc89a8ae34ad25839642c3577aaaf22e8659d29910d059f33a7176769aa3b7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-17_10_59_45",
+      "split": "train",
+      "png_sha256": "ad59cf716f5e25332b2841ed0aea6c46b885fb6b0588f2ebb3e05d78b1627306",
+      "label_sha256": "1271af9fb1aa7f199437674637589e53a7bf1a4d1ab54499c4d85fcb0071d1b9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-19_14_38_39",
+      "split": "train",
+      "png_sha256": "a105aa0046605a3240daae9a72f6ae9a62835a1f2f7ca4de5b039a3704646fcc",
+      "label_sha256": "3ed8da739d6e3dd05c4de34e63336aa52d294b58936e63c53159524c4b586f8b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-11_16_59_15",
+      "split": "train",
+      "png_sha256": "5670be9e185b1f942d7454e923f885f4cda30f7dcc147f5a6f7cf0e8cb2c850d",
+      "label_sha256": "a7e1c6960386784bf1dc38334c5dc6c8a0dc89eac2aaca33b31f8ace7b58a02b",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-18_16_25_15",
+      "split": "train",
+      "png_sha256": "14ccc14144c8301acb69991800778b4afe7719e6c946e6def041182440824aec",
+      "label_sha256": "e6b77e588fce46d00882e46f7d3e81eef631c8f2b09837f45d6a0e4e0f7e66f6",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-09_08_53_45",
+      "split": "train",
+      "png_sha256": "e8776a82ba63b8f0c740203de66aeaaf451ab3e3f0fdf5f1a16442e672da9768",
+      "label_sha256": "76d617dd7ed1f845fb0d994664ee073bebcf176d5e6e24895e514d2a2b8056da",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-13_16_05_31",
+      "split": "train",
+      "png_sha256": "05baa9ccb26abbefad3a5b1e84f440a62fcd35c085537e48f6d907adb19ec3f5",
+      "label_sha256": "9b448cc83ff6e73998fcd9e8f5d0afb63064b41281afaae6c1632deb091dee1e",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-29_07_17_06",
+      "split": "train",
+      "png_sha256": "bb9e1298abaac0d2b058589c3871db2cc0570308cc31619a626202e89173b636",
+      "label_sha256": "80f2dc939cb2e328ca9d60a8ae130aaba178f517f9f167939acc9465b35e4105",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-10-27_08_55_43",
+      "split": "train",
+      "png_sha256": "1433e663a95efc86daa7284b74bccde1ddbdc05ae920994fd71e583a5579fa6f",
+      "label_sha256": "48e092f17d283be380f6a3b9d4b0312384b3bf659e5fdc92f94d887cee4e5d77",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-12_07_49_42",
+      "split": "val",
+      "png_sha256": "3de04ca747a451f39a2955509f3864eba3021d39b5029126a6dd5e2d46b1e73a",
+      "label_sha256": "a2e8e3568e3254c61e86e3a9edc39455737f9263cc7efcad59b3d994283f1ad2",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-28_07_16_00",
+      "split": "val",
+      "png_sha256": "d3efb97e02d60e64410aa8db3a452035f8190632a2acc117f609cfc290b27418",
+      "label_sha256": "cfc5cf2b0522e45cefee448f708e0c484b39c72a1f95a9500be16bca90699bab",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-16_07_52_58",
+      "split": "val",
+      "png_sha256": "4ab466e85155fd38845e1f6d120c21f9fd078f2a48284b7db23dfafd8fbb13ae",
+      "label_sha256": "bcc3a12c12ad034a7f00599e81600a84d4a76a847b356519a9880b77adf42be9",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_11_20_24",
+      "split": "val",
+      "png_sha256": "a27dd867c812ce1ab1ae3d58f21f58ec8964551aaa8461d1960502fd414b3132",
+      "label_sha256": "47c1515f1bb32b91495061a94501d8d67cae35cc9f613d6734b5cdde8a5a7bf7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-11-07_13_04_37",
+      "split": "val",
+      "png_sha256": "2c4bd4390c3cd4b4b6fb992df019ed256c579b5b63d1a794a6b39053cfd2747c",
+      "label_sha256": "ec71e23445d817693b6f32b1e801a13c0336332eece6c2409b5d866c15deb507",
+      "unchanged": true
+    },
+    {
+      "photo_id": "pucpr_2012-09-21_16_15_36",
+      "split": "val",
+      "png_sha256": "85d0870a512c9506c5fc68a4fc9b35bd714c0a7854b9fee68e9384ae18523d39",
+      "label_sha256": "def28e7cddb1042d5a36f0a3bdf05b9ab35694b536a45cf5a281f569afccce41",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-29_14_16_16",
+      "split": "val",
+      "png_sha256": "de288140242e09252db8c38ce3217d9664a6349111f0a0c76dcd5055f6f2124e",
+      "label_sha256": "c32f4059bf0f755f6a422e5304c377f44752ead23ac466df93d29835f2644046",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-15_12_50_09",
+      "split": "val",
+      "png_sha256": "302e0ed0493efb192d3235dda6139dad43aa72b5056e973d210eecbbdfae0e11",
+      "label_sha256": "25537fdc17beff813f5cdf97e8f118aab98960d73ebf7dad2031f4248bca44bf",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2013-01-17_08_55_04",
+      "split": "val",
+      "png_sha256": "aa66e60dc11accbd66cd2e155869ac5ee61e42de07b7cbf27db677ef840a1335",
+      "label_sha256": "8cf0dcc8ed7d325106aea2673b70551ce695eebab54b96aa3a3ac57eaa5d6970",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-26_16_50_13",
+      "split": "val",
+      "png_sha256": "e1fbfbde5fb7fa69fbf886d2eaf868cae5239e93cb7d0dc87df9d9a86e4f0e5f",
+      "label_sha256": "bc8c417fa6745a93fc786c0649a98e17fc3fe8b1a2de15043fc8b62f199ab88c",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-20_17_30_12",
+      "split": "val",
+      "png_sha256": "fc437987a5878bca1cb47e15640a79b57908ea1886e78ae00fa1c3699615a0ec",
+      "label_sha256": "50c1eeb441f0f012e332046172faf37265fcba3a3c27b27d6a55f050e028e7df",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr04_2012-12-18_12_20_08",
+      "split": "val",
+      "png_sha256": "50b3acd965265848594b968f3c3ee48353bcc59f04d88990008778d1d472dc8b",
+      "label_sha256": "e3fc8aebfd242ff7d8fa608b4bee362da62dba3c854ee154ba8667d52507e7df",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-02-22_17_15_12",
+      "split": "val",
+      "png_sha256": "73390b3ec3728264b42362962bbaa895528b0469bb2084a98f6eb57ad424d306",
+      "label_sha256": "8f2ef13ba440922eb28344983e9b21a176e15aad5ba0c16a5528be75e2d3d027",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-13_11_00_05",
+      "split": "val",
+      "png_sha256": "f972e9617ab622974ed35675c60a7c6da2491dba4b5f6ce77488c3d68071bb63",
+      "label_sha256": "f059295b6a106aca24a1f8fb0624c39bd756016b0deac89e247a095b31649105",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-03-20_16_35_12",
+      "split": "val",
+      "png_sha256": "81460c6af010487c59564b9dcd0e4da54810bcac41f1654347449cf65004f2fe",
+      "label_sha256": "ea7c76edec73a508b843a01fb4de72e59832e0b50f5296fca28fc1725e86efec",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-13_09_15_03",
+      "split": "val",
+      "png_sha256": "186394c9e6997ca314c3049e502cc4374902060746839e3227fd094ba40b6087",
+      "label_sha256": "cd033934216d5f3c8b29a6aec69db823fb8ee9d1df85a42a4891781b856bdeb7",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-02-28_18_10_44",
+      "split": "val",
+      "png_sha256": "65284f7af4a3ba98896c9a9c2aa4a4f73ceacca26e0caee94695bdea4000e0ab",
+      "label_sha256": "b33a087d8fcc093f0696afb4395f96cbdabeff289a330170373fab6e2f6cda02",
+      "unchanged": true
+    },
+    {
+      "photo_id": "ufpr05_2013-04-14_14_40_09",
+      "split": "val",
+      "png_sha256": "0fe1d7a2dc507f5619f6966c42e89e5cb4d32b9a40383b58dd2c9e11d44e29c5",
+      "label_sha256": "396b36ce32cb85175b588552a999976e03b821c836494171ab1093e6dedf59d5",
+      "unchanged": true
+    }
+  ],
+  "label_tolerance": "At most 0.51e-9 in normalized coordinates, matching 9-decimal serialization; original270/dev18 label checks additionally require exact bytes.",
+  "limitations": [
+    "747 images reuse the same 48 training dates; this increases frame diversity, not the number of independent training dates or sites.",
+    "The two rainy strata contain all 45 and 72 eligible images; missing quota was not filled with duplicates or evaluation dates.",
+    "Hash/pixel/label fidelity does not prove author annotations are error-free and does not establish model accuracy.",
+    "No model, training, validation inference or prediction-result inspection was performed by this audit."
+  ]
+}

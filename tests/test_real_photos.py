@@ -8,7 +8,7 @@ from fastapi.testclient import TestClient
 from PIL import Image
 import pytest
 
-from parking_hu.real_photos import RealPhotoError, RealPhotoService, estimate_photo_occupancy
+from parking_hu.real_photos import PhotoDetector, RealPhotoError, RealPhotoService, estimate_photo_occupancy
 
 
 def detection(bounds, confidence=.9, did='d0'):
@@ -17,6 +17,34 @@ def detection(bounds, confidence=.9, did='d0'):
 
 def spot(points=None):
     return {'spot_id':'S1','polygon_px':points or [[0,0],[10,0],[10,10],[0,10]]}
+
+
+def test_roi_detection_returns_original_image_coordinates(tmp_path):
+    """A cropped model input must still align with full-photo parking polygons."""
+    from types import SimpleNamespace
+    import threading
+    import torch
+    path = tmp_path/'photo.png'
+    Image.new('RGB', (32,24)).save(path)
+    calls = []
+    class CropModel:
+        def predict(self, **kwargs):
+            calls.append(kwargs)
+            assert kwargs['source'].size == (20,16)
+            return [SimpleNamespace(orig_shape=(16,20), boxes=SimpleNamespace(
+                xyxy=torch.tensor([[2.,3.,12.,14.]]), conf=torch.tensor([.8])))]
+    detector = PhotoDetector.__new__(PhotoDetector)
+    detector.model, detector._lock = CropModel(), threading.Lock()
+    detector.conf, detector.nms_iou, detector.augment = .2, .65, False
+    detector.imgsz, detector.device, detector.classes = 1280, 'cpu', [0]
+    result = detector.detect(path, roi_xywh=[5,6,20,16])
+    assert result[0]['bbox_xyxy_px'] == [7.,9.,17.,20.]
+    assert calls[0]['iou'] == .65 and calls[0]['max_det'] == 500
+    assert estimate_photo_occupancy([spot([[6,8],[18,8],[18,21],[6,21]])],result)[0]['state'] == 'occupied'
+    for invalid in ([5,6,30,16],[-1,0,20,16],[0,0,0,16],[0,0,20.5,16],[True,0,20,16]):
+        with pytest.raises(ValueError):
+            detector.detect(path, roi_xywh=invalid)
+    assert len(calls) == 1
 
 
 def test_polygon_geometry_excludes_bbox_corner():
@@ -44,6 +72,18 @@ def test_confidence_thresholds_and_used_evidence():
     result = estimate_photo_occupancy([spot()],rows)[0]
     assert result['state'] == 'occupied' and result['detection_ids'] == ['strong']
     assert {d['detection_id']:d['used'] for d in result['evidence']} == {'weak':False,'strong':True}
+
+
+def test_partial_inference_region_cannot_establish_free_space():
+    partial = estimate_photo_occupancy([spot()],[],observed_roi_xywh=[0,0,5,10])[0]
+    assert partial['state'] == 'unknown' and partial['reason'] == 'incomplete_observation'
+    assert partial['observation_fraction'] == pytest.approx(.5)
+    assert partial['fully_observed'] is False
+    occupied = estimate_photo_occupancy([spot()],[detection([1,1,3,3])],observed_roi_xywh=[0,0,5,10])[0]
+    assert occupied['state'] == 'occupied' and occupied['fully_observed'] is False
+    complete = estimate_photo_occupancy([spot()],[],observed_roi_xywh=[0,0,10,10])[0]
+    assert complete['state'] == 'free' and complete['fully_observed'] is True
+    assert complete['observation_fraction'] == 1
 
 
 class FixedPhotoDetector:
@@ -100,6 +140,93 @@ def test_every_call_infers_and_catalog_excludes_truth_and_paths(photo_root, monk
     assert 'must never be served' not in json.dumps(first)
     catalog['photos'][0]['width'] = 100
     assert service.catalog()['photos'][0]['width'] == 32
+
+
+def test_detection_threshold_does_not_remove_uncertain_occupancy_evidence(photo_root):
+    config_path = photo_root/'models/real_photo_config.json'
+    config = json.loads(config_path.read_text(encoding='utf-8'))
+    config['detection_threshold'] = .60
+    config_path.write_text(json.dumps(config),encoding='utf-8')
+    detector = FixedPhotoDetector()
+    detector.rows = [detection([3,3,8,9], confidence=.35)]
+    result = RealPhotoService(photo_root,detector).analyze('real1')
+    assert result['detection_counts'] == {'accepted':0,'evidence_only':1,'retained':1}
+    assert result['detections'][0]['accepted'] is False
+    assert result['spots'][0]['state'] == 'unknown'
+    assert result['spots'][0]['evidence'][0]['used'] is True
+    assert result['thresholds'] == {'low':.20,'high':.50,'detection':.60,'overlap_fraction':.05}
+
+
+def test_service_keeps_partly_unobserved_space_unknown(photo_root):
+    config_path = photo_root/'models/real_photo_config.json'
+    config = json.loads(config_path.read_text(encoding='utf-8'))
+    config.update(roi_policy='calibrated',roi_by_view={'camera1':[0,0,5,24]})
+    config_path.write_text(json.dumps(config),encoding='utf-8')
+    class CroppedEmptyDetector(FixedPhotoDetector):
+        def detect(self,path,*,roi_xywh):
+            assert roi_xywh == [0,0,5,24]
+            return []
+    result = RealPhotoService(photo_root,CroppedEmptyDetector()).analyze('real1')
+    assert result['counts'] == {'free':0,'occupied':0,'unknown':1}
+    assert result['spots'][0]['observation_fraction'] == pytest.approx(.5)
+    assert result['spots'][0]['reason'] == 'incomplete_observation'
+
+
+def test_selected_inference_options_reach_runtime_without_truth(photo_root, monkeypatch):
+    import parking_hu.real_photos as module
+    config_path = photo_root/'models/real_photo_config.json'
+    config = json.loads(config_path.read_text(encoding='utf-8'))
+    config.update(nms_iou=.60,augment=True,roi_policy='calibrated',roi_by_view={'camera1':[1,2,30,20]})
+    config_path.write_text(json.dumps(config),encoding='utf-8')
+    calls = []
+    class SelectedDetector(FixedPhotoDetector):
+        def __init__(self, weights, **kwargs):
+            super().__init__()
+            calls.append(kwargs)
+        def detect(self, path, *, roi_xywh):
+            assert roi_xywh == [1,2,30,20]
+            return super().detect(path)
+    monkeypatch.setattr(module,'PhotoDetector',SelectedDetector)
+    result = RealPhotoService(photo_root).analyze('real1')
+    assert calls[0]['nms_iou'] == .60 and calls[0]['augment'] is True
+    assert result['photo']['inference_roi_xywh'] == [1,2,30,20]
+    assert result['model']['roi_policy'] == 'calibrated'
+
+
+def test_extra_manifest_preserves_image_geometry_and_rejects_duplicate_ids(photo_root):
+    manifest_path = photo_root/'data/real/manifest.json'
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    manifest['source']['license'] = 'CC BY 4.0'
+    manifest_path.write_text(json.dumps(manifest),encoding='utf-8')
+    extra = deepcopy(manifest)
+    extra['source'].update(name='external fixture',license='ODbL-1.0',truth='must not be served')
+    extra['photos'][0].update(photo_id='external1',dataset='external fixture',split='external_test')
+    extra_path = photo_root/'data/external.json'
+    extra_path.write_text(json.dumps(extra),encoding='utf-8')
+    config_path = photo_root/'models/real_photo_config.json'
+    config = json.loads(config_path.read_text(encoding='utf-8'))
+    config['extra_manifests'] = ['data/external.json']
+    config_path.write_text(json.dumps(config),encoding='utf-8')
+    service = RealPhotoService(photo_root,FixedPhotoDetector())
+    assert len(service.catalog()['photos']) == 2
+    sources = service.catalog()['source']['components']
+    assert [source['license'] for source in sources] == ['CC BY 4.0','ODbL-1.0']
+    assert all('truth' not in source for source in sources)
+    assert service.analyze('external1')['photo']['split'] == 'external_test'
+    extra['photos'][0]['photo_id'] = 'real1'
+    extra_path.write_text(json.dumps(extra),encoding='utf-8')
+    with pytest.raises(RealPhotoError):
+        RealPhotoService(photo_root,FixedPhotoDetector()).catalog()
+
+
+def test_full_image_policy_does_not_take_roi_from_manifest(photo_root):
+    path = photo_root/'data/real/manifest.json'
+    manifest = json.loads(path.read_text(encoding='utf-8'))
+    manifest['photos'][0]['inference_roi_xywh'] = [5,5,10,10]
+    path.write_text(json.dumps(manifest),encoding='utf-8')
+    result = RealPhotoService(photo_root,FixedPhotoDetector()).analyze('real1')
+    assert result['model']['roi_policy'] == 'full'
+    assert 'inference_roi_xywh' not in result['photo']
 
 
 @pytest.mark.parametrize('bad_id', [None,[],{},True,'../model','x/y',''])

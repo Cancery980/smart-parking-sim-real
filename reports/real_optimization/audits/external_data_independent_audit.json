@@ -1,0 +1,1319 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T11:34:02.181714+00:00",
+  "status": "pass",
+  "repo": "C:\\Users\\ROG\\.codex\\worktrees\\parking-real-optimization\\smart_parking_hu",
+  "source_commit": "9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2",
+  "method": "Independent Python parser; no project preparation/scoring functions imported. Reconstructed hash-based choices from author image metadata; compared exact vehicle annotation IDs/category names/boxes and polygon-state multisets; decoded and hashed original JPEG bytes against the fixed upstream Git tree.",
+  "models_run": false,
+  "prediction_files_read": false,
+  "data_files_modified": false,
+  "counts": {
+    "photos": 54,
+    "unique_jpeg_sha256": 54,
+    "dates": 20,
+    "cameras": 9,
+    "camera_weather_strata": 27,
+    "physical_parking_lots": 1,
+    "vehicle_annotations": 1148,
+    "spot_observations": 2196,
+    "occupancy": {
+      "free": 1151,
+      "occupied": 1045
+    },
+    "occupied_noncar_source_car_id_minus2": 0,
+    "old_pk_images_hashed": 324,
+    "old_pk_unique_hashes": 324,
+    "old_pk_dates": 96
+  },
+  "checks": [
+    {
+      "name": "fixed_source_commit",
+      "checks": 2,
+      "passed": 2,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "source_annotation_archives",
+      "checks": 37,
+      "passed": 37,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_categories",
+      "checks": 9,
+      "passed": 9,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "metadata_only_selection",
+      "checks": 29,
+      "passed": 29,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "selected_manifest_completeness",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "jpeg_original_bytes",
+      "checks": 108,
+      "passed": 108,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "jpeg_dimensions_and_decode",
+      "checks": 54,
+      "passed": 54,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_image_metadata",
+      "checks": 162,
+      "passed": 162,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "vehicle_bbox_category_and_identity",
+      "checks": 54,
+      "passed": 54,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "spot_polygon_and_occupancy",
+      "checks": 2304,
+      "passed": 2304,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "native_polygon_validity",
+      "checks": 2196,
+      "passed": 2196,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "runtime_has_no_truth",
+      "checks": 2250,
+      "passed": 2250,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "author_roi_preserved",
+      "checks": 54,
+      "passed": 54,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "stratification",
+      "checks": 3,
+      "passed": 3,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "old_pk_hash_integrity",
+      "checks": 324,
+      "passed": 324,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "pk_date_and_hash_isolation",
+      "checks": 2,
+      "passed": 2,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "claimed_audit_recomputed",
+      "checks": 7,
+      "passed": 7,
+      "failed": 0,
+      "status": "pass"
+    },
+    {
+      "name": "separate_odbl_license",
+      "checks": 5,
+      "passed": 5,
+      "failed": 0,
+      "status": "pass"
+    }
+  ],
+  "failures": [],
+  "upstream_vehicle_bbox_warnings": [],
+  "roi_by_camera": {
+    "CAMERA1": [
+      [
+        78,
+        158,
+        922,
+        592
+      ]
+    ],
+    "CAMERA2": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA3": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA4": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA5": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA6": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA7": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA8": [
+      [
+        0,
+        0,
+        1000,
+        750
+      ]
+    ],
+    "CAMERA9": [
+      [
+        175,
+        0,
+        825,
+        750
+      ]
+    ]
+  },
+  "source_annotation_archives": [
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-1_cars.tar.xz",
+      "sha256": "48f329fd052527eae808d8f2054de00f66607f92ce607314ab090147986a8898",
+      "git_blob_sha1": "8a8f383a196f200d531385bfca67eba03549758f",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-1_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-1_spots.tar.xz",
+      "sha256": "cbab2352021747dbce99445ed8a15ffe014090c9a90a8c704771bc52442fb853",
+      "git_blob_sha1": "7b3ae9b73735c524c87cb1854c530327b65249a4",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-1_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-2_cars.tar.xz",
+      "sha256": "17637623a19913a07f1356a9d95b9c762f5438b2139ef10c44c190d8b4fe8975",
+      "git_blob_sha1": "2efe29e39092405bed80c6c3b0327c18588f6f96",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-2_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-2_spots.tar.xz",
+      "sha256": "6e5183d1a5df788658629c8e093811f3f26e2b5ac0181ebc41d113fb88de39cd",
+      "git_blob_sha1": "d091113720b3fd94bee95de3cb4c0fb55d7a3778",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-2_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-3_cars.tar.xz",
+      "sha256": "699f79f0eacd929c669fad64d2f55b4ba0a660863e594dad1e33bd14f7096ee7",
+      "git_blob_sha1": "6c3998c48cfaedd830807e69490bafc380d390ba",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-3_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-3_spots.tar.xz",
+      "sha256": "703b26e85cbccc7fb9f3d82aa65c9d7dd6d9da2aedeffe33d880f439d60f1216",
+      "git_blob_sha1": "c52372b2f3e5571f7fafc9a279270e531469f183",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-3_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-4_cars.tar.xz",
+      "sha256": "4c5793635f16abf98ce6e060e021c40b71ef590da8cbad76be47f84c3fd00de2",
+      "git_blob_sha1": "a2f73ceb3c85361f8b694df85434e34c72ceeb63",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-4_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-4_spots.tar.xz",
+      "sha256": "e8b501acf95f46ea143962150aa9e792b81e633ca3a8f148bfd84ec1c86721eb",
+      "git_blob_sha1": "dbdc98b96472e1a260ebe683277af43d1f672138",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-4_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-5_cars.tar.xz",
+      "sha256": "5c3651afaac755d81ddf470c0e91ada835c1d966d30225412f8c556434c304cc",
+      "git_blob_sha1": "0b7255b27feca4c9d8f7036036ed49deec77a386",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-5_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-5_spots.tar.xz",
+      "sha256": "d91fe0affcb4666bec931bfd3c2f46b1b1e406f24b17758bd1597fe6473b579b",
+      "git_blob_sha1": "1d5f23c70d358e1d70dabbd14acb12d7a66b942b",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-5_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-6_cars.tar.xz",
+      "sha256": "b89f349a2c940f3dac3a52d1593f0087763c71b977fc059e9e49af8fcb33e195",
+      "git_blob_sha1": "6ce117bf2c0d6a90bcd48b1c0fb8791c52238a39",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-6_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-6_spots.tar.xz",
+      "sha256": "b3325045b75f640990c916c2e554aeaba5998ddd3fbb4ecf76feaba0c633799e",
+      "git_blob_sha1": "158a456e66429288bf4b825bff1570bc7881846c",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-6_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-7_cars.tar.xz",
+      "sha256": "8f98a5a0ea4e04d64c61ab3345f257d1668151a7e6c0cfa226af25c7017072bf",
+      "git_blob_sha1": "4165540a71fe4b430df109ff95f1328b4723de01",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-7_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-7_spots.tar.xz",
+      "sha256": "222b16acd3caba87f804f854f4530663047f42b52b4029e25c9fd6c1677d6edd",
+      "git_blob_sha1": "1ac3fce4a2f25e016a07f44a4d43047e2f95e7b4",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-7_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-8_cars.tar.xz",
+      "sha256": "6493debb1f82b3bdd11513395df42b001d10020bc643f043817005b50e05fa79",
+      "git_blob_sha1": "ddc6223794bd5a86fa6094ad3df1f5bd0c21df8f",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-8_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-8_spots.tar.xz",
+      "sha256": "0d0f1d4a631917cd468c9bdf783ae1a7e35dfa699a4646d84f1a723518d324a9",
+      "git_blob_sha1": "959630337a094dce9f13d91a672be7798510cb77",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-8_spots.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-9_cars.tar.xz",
+      "sha256": "fa899c3cfbc404b2f315e97f49b21a67b89d697eb550fdbd171e7add7916809a",
+      "git_blob_sha1": "fa645cb9d1adfca573ceea37326f397d205bc8f5",
+      "upstream_path": "annotations/original/cars/CNRPark-EXT/cnr-camera-9_cars.tar.xz"
+    },
+    {
+      "file": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\cnr_metadata\\cnr-camera-9_spots.tar.xz",
+      "sha256": "446a8cd89255b358ea9ff105bdba97382114672305f8119b4a373476587ef465",
+      "git_blob_sha1": "024b49eaea7f7f3f95d95501df3ab0f8d5a26e52",
+      "upstream_path": "annotations/original/spots/CNRPark-EXT/cnr-camera-9_spots.tar.xz"
+    }
+  ],
+  "source_metadata_counts": {
+    "CAMERA1": {
+      "author_images_with_car_metadata": 452,
+      "author_images_with_spot_metadata": 452
+    },
+    "CAMERA2": {
+      "author_images_with_car_metadata": 457,
+      "author_images_with_spot_metadata": 457
+    },
+    "CAMERA3": {
+      "author_images_with_car_metadata": 450,
+      "author_images_with_spot_metadata": 452
+    },
+    "CAMERA4": {
+      "author_images_with_car_metadata": 449,
+      "author_images_with_spot_metadata": 449
+    },
+    "CAMERA5": {
+      "author_images_with_car_metadata": 454,
+      "author_images_with_spot_metadata": 454
+    },
+    "CAMERA6": {
+      "author_images_with_car_metadata": 389,
+      "author_images_with_spot_metadata": 455
+    },
+    "CAMERA7": {
+      "author_images_with_car_metadata": 393,
+      "author_images_with_spot_metadata": 455
+    },
+    "CAMERA8": {
+      "author_images_with_car_metadata": 447,
+      "author_images_with_spot_metadata": 448
+    },
+    "CAMERA9": {
+      "author_images_with_car_metadata": 450,
+      "author_images_with_spot_metadata": 451
+    }
+  },
+  "file_sha256": {
+    "selection.json": "4a431f6fee6e1c55310307f1b7c340c62199e7b82753a67af5920faa29eb2d8b",
+    "manifest.json": "e5b5445dbfbd365933d950beb843909abff25fc28eec7e3db65b267086f38f57",
+    "annotations.json": "0b0043390b884d5abbcf8bc1f470d8787d43cfc158a026abff616804525ad0e6",
+    "audit.json": "a0566e9b2d426cde678cccb632e9a45ade263696d3308ce734d6595c2201208f",
+    "ATTRIBUTION.md": "297cb774da4a822bb401c37c4680e1b48bff035546e37a40f737fc4d78bfb396",
+    "ODbL-NOTICE.txt": "6514f3d548cce68f62f3ab685c34c4734b2bc2e58c68a9c582267ac60230c5c3"
+  },
+  "upstream_tree_sha256": "9839e29ac9127c9adaeff9fc0c3294eb95c3455ccd20a6f6420ade88caf4ee6f",
+  "author_readme_sha256": "c4bd2d71be5e24a48ec9bccd33163721683e637cd3325d2171c28ac888139e87",
+  "frames": [
+    {
+      "photo_id": "cnr_camera1_2015-11-25_07_10_00",
+      "sha256": "36aaef0cad29405999df64472971a61e0bf07d087ee82de916872f0475359e10",
+      "git_blob_sha1": "1330daa2ad59613a03c042a7445ee2b106dd070c",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera1_2015-12-19_13_18_00",
+      "sha256": "79d6c349fc2d1f10dd34e7c89515f2324db7ed719b3c6d34d19e154d3f184543",
+      "git_blob_sha1": "641dd3bff2cd3356d3019de5d4ede80eded05a92",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera1_2015-11-21_15_10_00",
+      "sha256": "80c895bdde4eb3cb2e238b05053f3e397892f808c31ed59ae7d135c9f22fd4fc",
+      "git_blob_sha1": "65a4be594bf08d945c4dd14b7130765ea6fd67a5",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera1_2016-02-12_16_10_00",
+      "sha256": "a0e78a70bf415c2cf7811815fdf52d050c74f048f67ba615b61228d6b502971b",
+      "git_blob_sha1": "c8826edb4ccfc0f9521c67832e93dd57afb86808",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 34,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera1_2016-01-13_13_48_00",
+      "sha256": "baf743595dac7d9b6f0bf05f10a01f5d90e34be2cd8fb2c71f8e3866e3ac0a00",
+      "git_blob_sha1": "eaca442015398af9c654a3bb5b36b909511c54d8",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 28,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera1_2016-01-12_09_47_00",
+      "sha256": "cec232f9d233b5a63c1024d577f8f5ca8b48f595d3ccebc5c89b90e655a54e57",
+      "git_blob_sha1": "2c243fab12852049463db30bd3579c7ecc38fb7e",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 35,
+      "spots": 35,
+      "roi_xywh": [
+        78,
+        158,
+        922,
+        592
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2015-11-16_08_44_00",
+      "sha256": "465abb4a89cf008e973d563062b1756c859d668be47a12637580366ae5e98d9b",
+      "git_blob_sha1": "fddbcfb60a0b80d0c9d5d56042cd993479a42f53",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 5,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2015-11-29_07_44_00",
+      "sha256": "cabaa855780c044647fa7d1e6785e009bc4a079e5f036a730e123c90a10a3454",
+      "git_blob_sha1": "4f8b8e96cab678814a12181266b8365eafa515c7",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2016-01-14_09_34_00",
+      "sha256": "50f0fd936470dcb6294886e4ac22bb575e1c30f2734b1a1329d9990687823e45",
+      "git_blob_sha1": "0afa5209efc40b72f6354b9a5834f92adaa132a2",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 12,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2016-01-09_10_23_00",
+      "sha256": "43d3116602e6480d04fb493557be0048b7fe5fe8041356505aa85bd538535387",
+      "git_blob_sha1": "2f362ac0673cf2081e345b343a5c223459f2ec77",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2015-12-10_09_15_00",
+      "sha256": "22d41ad27c1b9d38fb3e18ae268f613267b32e6c5d294e386d501e5cdf5ca508",
+      "git_blob_sha1": "053bc7ac1652079fbd93107c9a4385dfb568b7f3",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 8,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera2_2016-01-16_08_04_00",
+      "sha256": "97afde4469c38a1f0cc25800d23d8139c77e9fe8700d732d634407f1e93c0850",
+      "git_blob_sha1": "2eaa5393de0010b188e57ce213f586fd6147325d",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 10,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2015-11-29_13_46_00",
+      "sha256": "3fe24cf5b91e4ea07561f50f9cb3ec09ed00d2bfbc3ee9e04ec20daf4a9f7883",
+      "git_blob_sha1": "b70196dbbefee5bdc63aaa5f33126d310d69c499",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2015-12-19_12_48_00",
+      "sha256": "688a9bac68b9ad1e3a3568d2505008b9781fd6a317e9f965db0c74b20fad7158",
+      "git_blob_sha1": "a25a539682571bb8580520ef6a32e77ca1e15563",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2016-02-12_14_36_00",
+      "sha256": "511b9122632dec47c918499f35a3e0524ecf963b7189474ff95cd33e5c0d6859",
+      "git_blob_sha1": "321f6445a951e1f40bf2f5f5ee53f4b5150ccc8a",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 28,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2015-11-21_16_45_00",
+      "sha256": "9bc5aa1fe201d18bf944a64fb0d68e1b89b43adf483328cfdea20d9ce1f44c0e",
+      "git_blob_sha1": "41f971c246ee9c974d0aa7894e3312cfa8d9e055",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 1,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2016-01-15_12_05_00",
+      "sha256": "1a68982fd76ac214c8b88313340dc09211f5bd57bd347ad63fd77cdb2d45f017",
+      "git_blob_sha1": "945025addf75f702759559b9b26f3ce4dda06a4b",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 36,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera3_2016-01-16_14_35_00",
+      "sha256": "7e37890e2ca213850377a3d401db7ab967297f625255a4e1af1361654af39b05",
+      "git_blob_sha1": "43e1a126e241d40358231c946cbceeb774ddf318",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 23,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2015-12-19_08_21_00",
+      "sha256": "568f8f38ca99de6ce59424b80e82d7d359a2a30f8b47ccdfba86522266c1e087",
+      "git_blob_sha1": "8423f9663f3f8ab5990a9b8827090d6d58623c29",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2015-11-16_14_46_00",
+      "sha256": "56812134005ee0763d4bab2da9ad02dbb9a149d8a63073dc2c38c1da7e25d4e7",
+      "git_blob_sha1": "f82b7373ce3b077a3e20b6b5f747afa1bd9a7fe0",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 43,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2016-02-12_10_11_00",
+      "sha256": "b99836f302b8e9d884b76b38588457c0ec1ec2d5f290bfce3ffc0ed2182a3651",
+      "git_blob_sha1": "7a0d5983dda19db150632c14dd837d396b0bb245",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 42,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2016-01-08_08_22_00",
+      "sha256": "5a3f5f9507e09b9c28ff06f1c1ece17d0eea3aacc583071cc2719e36c12d9916",
+      "git_blob_sha1": "601f5cbf45578eebb816e40ae22d518d53eea0af",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2016-01-16_14_07_00",
+      "sha256": "2edf26959c4fd7ca232104526e608cf9d097aff2ec712e98a7911a497ad69f5d",
+      "git_blob_sha1": "27a773e7dc2e58305b071d0bb4494d2441256142",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 2,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera4_2015-12-17_08_51_00",
+      "sha256": "9b43d175b992260fc7a5fb5a2be3cb5dbc225ee92581a98935f470097714e21d",
+      "git_blob_sha1": "52d4eb682754c3c5668041564329328b62e4b51e",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 5,
+      "spots": 43,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2015-11-29_10_48_00",
+      "sha256": "ebf4913e686a3a4a39fa394c72f64ee73d045670b3be07a4c198a7160da20629",
+      "git_blob_sha1": "84a33a400c2d0395d0634c45e1557ce5246d9914",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 2,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2015-12-18_10_56_00",
+      "sha256": "975546a57bcf6105890921aa3b9bf5b1609440e272b7e0ee03107fc6217068c9",
+      "git_blob_sha1": "b0a8b0075bd58aa4f8416adb6fbf2651a584d53c",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 54,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2015-12-22_12_53_00",
+      "sha256": "ca78e8420dd023c33cff4f7243464088446f49644017b77912386d27189a8b10",
+      "git_blob_sha1": "7a6a3752062bef2499ea222dfd6fa02ed6a0636a",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 48,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2016-01-08_11_03_00",
+      "sha256": "3284608276c31e4d65db3711f39d879980dc7f1e133ca9f0edc7fcab13325133",
+      "git_blob_sha1": "e76d27ee99071e8b514809fd39edaf22570aedcc",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 51,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2016-01-13_15_50_00",
+      "sha256": "9067b91d1265e2de2342cfff80cc60a88fc2e4bf02acd2d370df69f2fecbf2c7",
+      "git_blob_sha1": "6b6359908403b5047d48ffc17f00a020f80a4a65",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 46,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera5_2015-12-17_09_26_00",
+      "sha256": "a9272c73e1eb45c75b11203cb215777cc34d2ad90c1300fe2ba6ba1756aef907",
+      "git_blob_sha1": "d8fe96eb06c324e99a11b51611b9efb8d3a6094b",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 17,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2015-11-25_16_18_00",
+      "sha256": "c09631ad7d6b028d63b9dfca677de6bc4c70afab1b2ad7f4934ca79c59768384",
+      "git_blob_sha1": "fd10e22863613a14f5c954197ceece0c1512cdf0",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 50,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2015-12-03_07_49_00",
+      "sha256": "748f192a8684349a7284fcd5b4022b3e0d0b334c0028fe06f8b503d638174d4c",
+      "git_blob_sha1": "4b238cf99ae2de458cc7ee3b64ed24858dfbefdf",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2015-12-22_13_22_00",
+      "sha256": "b33e53f686458efc944120c1642624251a7ce63e75b81bc40bd4985190cb2fd2",
+      "git_blob_sha1": "a692da67c0f932c7289a8c3e0ae86058b0eb40bf",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 43,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2016-01-14_15_38_00",
+      "sha256": "843659bbdafcf1bb349b6bc7c8354426d6585bddfa2dc4010fb230aea036ff74",
+      "git_blob_sha1": "26f4bdd45819c9cb2f3e349a331c9daeb52d62b0",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 49,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2015-11-22_12_18_00",
+      "sha256": "4d6217c7b57a5e9555608c95efad1151597545f956a75981b505bc41bf52ee6e",
+      "git_blob_sha1": "95c5f18849c201bb48d54bb71f5543f502dac77e",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 2,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera6_2016-01-16_08_09_00",
+      "sha256": "db817615fb833a8c734f675d698b2db2f027dc6c1ee8731e5282f80f5c0ec413",
+      "git_blob_sha1": "ed70e7e8782d40b355041cf4f5226aee67cedba8",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2015-12-18_14_24_00",
+      "sha256": "3c2b41429cab6b6c2161698fcb3192d26d3357fdb3b5d8ae57fa156fe8980cdf",
+      "git_blob_sha1": "9835b44ae4ce704307682c3af0977f92c186f0c4",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 48,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2015-12-19_08_54_00",
+      "sha256": "0988ece7a21cb90a80617a9a3c18e2ec686424782ecb2c0cb433042061443b17",
+      "git_blob_sha1": "55fcacbec0e2b864260a5e56df691881469527ec",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2016-01-08_10_28_00",
+      "sha256": "be250e9bb5d6a054ca4728cf224f99b9868a32100e4f7c36746e0cf1cd84becc",
+      "git_blob_sha1": "0e48aa2ac5492cb962821c898031f6490fa2ba6d",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 51,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2015-12-22_12_54_00",
+      "sha256": "cd482bab594b8f12a0139d98e351dc7978733535b45d6924f79e6cfe7d1b97ce",
+      "git_blob_sha1": "3e0179a7006e34f09c1a948b590839f0dfdb531c",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 48,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2015-12-10_07_51_00",
+      "sha256": "07fcd0a09da5574603f71e543c2c1cc5f011e1fb500c321066c0a972a070b22c",
+      "git_blob_sha1": "355a77017ee3ee91a641ac65d7f6d2c185d6a80e",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera7_2016-01-15_09_11_00",
+      "sha256": "4667c886d8d87fca5b1db3c8c6a8dcd0c3405d3484dbb1fb2a1231c70cc4abff",
+      "git_blob_sha1": "93be38c3f0231fd58ef1c76b77d30941d4b4618f",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 15,
+      "spots": 53,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2015-11-29_10_19_00",
+      "sha256": "8067666b372ab2a2a8f20f91776f8dab653afcf1edcd1c112745baef29cf7b91",
+      "git_blob_sha1": "76203e5fc61e442af3ef8964550e4461344ce6eb",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 3,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2015-11-25_14_07_00",
+      "sha256": "a7b8047ad9f87c9e419be96af9c8f949aec8daad32914c82cfdfcb9e1f8c2e53",
+      "git_blob_sha1": "1b9187303a3cdd6123c25ca914e3180dcc4929e8",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 48,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2016-01-09_16_13_00",
+      "sha256": "a0eb8a8a69f263f38437fef2344fdaf64f4e74adf2522f0ddad1d0a7a2b07d9c",
+      "git_blob_sha1": "8d7151d62660e1624231ad32a760bcbd77d7d7b9",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2016-02-12_14_08_00",
+      "sha256": "b0094e1182a616aa16da45c08a405420e6f213e86efd28762b070861f9c75fb9",
+      "git_blob_sha1": "c19a3ce34aec4ae8613328e545c2c8c2a8b2813d",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 52,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2016-01-16_07_48_00",
+      "sha256": "0e244556e5b7c110d4ed075c9c38c148cab4454456f282e692087d588f81d3f6",
+      "git_blob_sha1": "7671e1fb2c5d4c2248a5c8f6212442a0b7426847",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 5,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera8_2016-01-13_08_01_00",
+      "sha256": "89eacb7deea77b9e744be35e0dfec75b2f305e6703ab8799b591cced6a1d2cb9",
+      "git_blob_sha1": "9d3d3149d9cf279165b7884bcb2a817ce4e9f329",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 4,
+      "spots": 55,
+      "roi_xywh": [
+        0,
+        0,
+        1000,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2015-11-20_16_17_00",
+      "sha256": "860b5d9f3f718ebc1c9236bdf7dad0b3b93c33c8f5eabd737be092bed24e369c",
+      "git_blob_sha1": "a29aecdebbd1d63e89300cce1458e5917a2bbdb6",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 27,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2015-12-03_16_17_00",
+      "sha256": "8f307f3085b5fcd904a46068dc8f16d4ffb6a2614bafbcaafff66ca922696288",
+      "git_blob_sha1": "b44085e1dda5bf362010c0d342913dd233358468",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 34,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2015-12-22_08_24_00",
+      "sha256": "9cb6e8624d706d7a056c5183964da4cae85b9d0916e95db82bc90fadfb933df4",
+      "git_blob_sha1": "a49ad31538cf56666956fbc51d1c199419edff08",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 9,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2016-01-14_12_10_00",
+      "sha256": "fc361a24aaffd879bf714086248f1931aefdcd4dd45e1869914df2c0fc40f492",
+      "git_blob_sha1": "910cfc2bb98ed9c0b336f5622a21daf49c25b021",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 42,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2016-01-15_16_40_00",
+      "sha256": "1abe4e79d15b3bf01dbb60b7a40b4f0c01ebf4568c63e3354ae2110b452ed6e1",
+      "git_blob_sha1": "45984b41e95effa3f5675f1f52872ab194beb9be",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 26,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    },
+    {
+      "photo_id": "cnr_camera9_2016-01-12_10_56_00",
+      "sha256": "2845b2f903464b7969f364e5af47aa9505d930f1ad9822acf4dae77887aaec89",
+      "git_blob_sha1": "3e38885b71407ee68437f137fec446c3f3ba29ff",
+      "dimensions": [
+        1000,
+        750
+      ],
+      "vehicles": 41,
+      "spots": 37,
+      "roi_xywh": [
+        175,
+        0,
+        825,
+        750
+      ]
+    }
+  ],
+  "license_primary_source": "https://github.com/DSBD-Research/MetaPKLot-Dataset/blob/9218800c4eb2b7c1b17b51c8cdb07ad51686f8a2/README.md#licensing-and-usage",
+  "limitations": [
+    "The 54 images comprise 20 dates and 9 cameras at one physical lot; they are not 54 independent sites or dates.",
+    "Byte equality and mapping checks establish provenance and faithful conversion, not perfect author-label correctness or real-world model performance.",
+    "This audit verifies the frozen selection by deterministic reconstruction and stored selection timestamp; it does not independently prove historical wall-clock ordering of every prior operation.",
+    "PK747 is not part of this audit; the complete original PK270+dev18+historical36 set was independently hashed.",
+    "The original CNR website timed out during this review; the separately stated ODbL component license was verified against the author README with an exact Git blob match."
+  ]
+}

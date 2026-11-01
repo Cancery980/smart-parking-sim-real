@@ -30,7 +30,8 @@ def _number(value):
     return not isinstance(value, bool) and isinstance(value, (int, float)) and math.isfinite(value)
 
 
-def estimate_photo_occupancy(spots, detections, *, high=.50, low=.20, overlap_fraction=.05):
+def estimate_photo_occupancy(spots, detections, *, high=.50, low=.20, overlap_fraction=.05,
+                             observed_roi_xywh=None):
     """Apply the same evidence policy to calibrated polygons in native pixels.
 
     A center exactly on a polygon boundary is not strictly inside. Unlike an
@@ -38,9 +39,15 @@ def estimate_photo_occupancy(spots, detections, *, high=.50, low=.20, overlap_fr
     Truth labels are neither accepted nor inferred from input metadata.
     """
     retained = [d for d in detections if d['confidence'] >= low]
+    observation = None
+    if observed_roi_xywh is not None:
+        x,y,width,height = observed_roi_xywh
+        observation = box(x,y,x+width,y+height)
     result = []
     for spot in spots:
         polygon = Polygon(spot['polygon_px'])
+        fully_observed = observation is None or observation.covers(polygon)
+        observed_fraction = 1.0 if observation is None else observation.intersection(polygon).area / polygon.area
         occupied_ids, ambiguous_ids, evidence = [], [], []
         for detection in retained:
             x1, y1, x2, y2 = detection['bbox_xyxy_px']
@@ -59,18 +66,22 @@ def estimate_photo_occupancy(spots, detections, *, high=.50, low=.20, overlap_fr
             state, reason, used = 'occupied', 'high_confidence_center', occupied_ids
         elif ambiguous_ids:
             state, reason, used = 'unknown', 'ambiguous_overlap', ambiguous_ids
+        elif not fully_observed:
+            state, reason, used = 'unknown', 'incomplete_observation', []
         else:
             state, reason, used = 'free', 'no_evidence', []
         for item in evidence:
             item['used'] = item['detection_id'] in used
         result.append({'spot_id':spot['spot_id'], 'polygon_px':deepcopy(spot['polygon_px']),
-                       'state':state, 'reason':reason, 'detection_ids':used, 'evidence':evidence})
+                       'state':state, 'reason':reason, 'detection_ids':used, 'evidence':evidence,
+                       'fully_observed':fully_observed,'observation_fraction':observed_fraction})
     return result
 
 
 class PhotoDetector:
     """Reuse Ultralytics with arbitrary photo dimensions; output original pixels."""
-    def __init__(self, weights_path, *, imgsz=1280, conf=.20, classes=None, device=None):
+    def __init__(self, weights_path, *, imgsz=1280, conf=.20, classes=None, device=None,
+                 nms_iou=.70, augment=False):
         self.weights_path = Path(weights_path).resolve()
         if not self.weights_path.is_file():
             raise FileNotFoundError('真实照片模型权重不存在')
@@ -80,6 +91,9 @@ class PhotoDetector:
         import torch
         self.model = YOLO(str(self.weights_path))
         self.imgsz, self.conf = imgsz, conf
+        if not _number(nms_iou) or not 0 < nms_iou <= 1 or not isinstance(augment, bool):
+            raise ValueError('真实照片推理参数无效')
+        self.nms_iou, self.augment = float(nms_iou), augment
         self.device = device if device is not None else (0 if torch.cuda.is_available() else 'cpu')
         names = self.model.names
         self.classes = list(classes) if classes is not None else [int(k) for k,v in names.items() if v == 'car']
@@ -87,19 +101,32 @@ class PhotoDetector:
             raise ValueError('真实照片模型的类别配置必须指向 car')
         self._lock = threading.Lock()
 
-    def detect(self, image_path):
+    def detect(self, image_path, *, roi_xywh=None):
         with Image.open(image_path) as image:
             width, height = image.size
             image.verify()
+        source, offset_x, offset_y = str(image_path), 0, 0
+        expected_shape = (height, width)
+        if roi_xywh is not None:
+            if (not isinstance(roi_xywh, (list, tuple)) or len(roi_xywh) != 4
+                    or any(isinstance(v, bool) or not isinstance(v, int) for v in roi_xywh)):
+                raise ValueError('真实照片分析区域必须为整数像素矩形')
+            offset_x, offset_y, roi_width, roi_height = roi_xywh
+            if (offset_x < 0 or offset_y < 0 or roi_width <= 0 or roi_height <= 0
+                    or offset_x + roi_width > width or offset_y + roi_height > height):
+                raise ValueError('真实照片分析区域超出原图')
+            with Image.open(image_path) as image:
+                source = image.convert('RGB').crop((offset_x, offset_y, offset_x + roi_width, offset_y + roi_height))
+            expected_shape = (roi_height, roi_width)
         with self._lock:
-            prediction = self.model.predict(source=str(image_path), conf=self.conf, iou=.70,
+            prediction = self.model.predict(source=source, conf=self.conf, iou=self.nms_iou,
                                             imgsz=self.imgsz, device=self.device, classes=self.classes,
-                                            max_det=500, verbose=False, save=False)[0]
-        if tuple(prediction.orig_shape) != (height, width):
+                                            max_det=500, augment=self.augment, verbose=False, save=False)[0]
+        if tuple(prediction.orig_shape) != expected_shape:
             raise ValueError('真实照片推理返回的原图尺寸不一致')
         coordinates = prediction.boxes.xyxy.detach().cpu().tolist()
         scores = prediction.boxes.conf.detach().cpu().tolist()
-        return [{'detection_id':f'd{i:03d}', 'bbox_xyxy_px':[float(v) for v in bounds],
+        return [{'detection_id':f'd{i:03d}', 'bbox_xyxy_px':[float(v) + (offset_x if j % 2 == 0 else offset_y) for j, v in enumerate(bounds)],
                  'confidence':float(score), 'class_name':'car'}
                 for i, (bounds,score) in enumerate(zip(coordinates,scores))]
 
@@ -129,6 +156,17 @@ class RealPhotoService:
             config = json.loads((self.root/'models/real_photo_config.json').read_text(encoding='utf-8'))
             if not isinstance(config,dict) or not isinstance(manifest,dict) or manifest.get('schema_version') != 1 or not isinstance(manifest.get('photos'), list):
                 raise ValueError('真实照片清单格式错误')
+            extra_manifests = config.get('extra_manifests', [])
+            if not isinstance(extra_manifests,list):
+                raise ValueError('外部照片清单配置错误')
+            source_keys = ('name','repository','commit','upstream_commit','attribution','license','url')
+            sources = [{k:manifest.get('source',{}).get(k) for k in source_keys if k in manifest.get('source',{})}]
+            for relative in extra_manifests:
+                extra = json.loads(self._inside(relative).read_text(encoding='utf-8'))
+                if not isinstance(extra,dict) or extra.get('schema_version') != 1 or not isinstance(extra.get('photos'),list):
+                    raise ValueError('外部照片清单格式错误')
+                sources.append({k:extra.get('source',{}).get(k) for k in source_keys if k in extra.get('source',{})})
+                manifest['photos'].extend(extra['photos'])
             weights_path = self._inside(config['weights'])
             weights_sha256 = hashlib.sha256(weights_path.read_bytes()).hexdigest()
             if config.get('weights_sha256', weights_sha256) != weights_sha256:
@@ -136,6 +174,15 @@ class RealPhotoService:
             low, high, overlap = config.get('conf', .20), config.get('high', .50), config.get('overlap_fraction', .05)
             if not all(_number(n) for n in [low, high, overlap]) or not 0 < low <= high <= 1 or not 0 < overlap <= 1:
                 raise ValueError('真实照片阈值配置错误')
+            detection_threshold = config.get('detection_threshold', low)
+            if not _number(detection_threshold) or not low <= detection_threshold <= 1:
+                raise ValueError('车辆检测门槛不得低于占用证据保留门槛')
+            nms_iou, augment = config.get('nms_iou',.70), config.get('augment',False)
+            if not _number(nms_iou) or not 0 < nms_iou <= 1 or not isinstance(augment,bool):
+                raise ValueError('真实照片推理参数无效')
+            roi_policy, roi_by_view = config.get('roi_policy','full'), config.get('roi_by_view',{})
+            if roi_policy not in ('full','calibrated') or not isinstance(roi_by_view,dict):
+                raise ValueError('真实照片分析区域策略无效')
             imgsz, classes = config.get('imgsz',1280), config.get('classes',[2])
             if isinstance(imgsz,bool) or not isinstance(imgsz,int) or imgsz < 32:
                 raise ValueError('真实照片模型输入尺寸错误')
@@ -168,15 +215,24 @@ class RealPhotoService:
                     ids.add(sid)
                     clean_spots.append({'spot_id':sid,'polygon_px':deepcopy(points)})
                 photos[pid] = {**self._metadata(row), 'image':row['image'], 'spots':clean_spots}
+                photos[pid].pop('inference_roi_xywh', None)
+                if roi_policy == 'calibrated':
+                    roi = roi_by_view.get(row.get('view'))
+                    if (not isinstance(roi,list) or len(roi)!=4 or any(isinstance(v,bool) or not isinstance(v,int) for v in roi)
+                            or roi[0]<0 or roi[1]<0 or roi[2]<=0 or roi[3]<=0
+                            or roi[0]+roi[2]>width or roi[1]+roi[3]>height):
+                        raise ValueError('缺少有效的固定视角分析区域')
+                    photos[pid]['inference_roi_xywh'] = list(roi)
             if not photos:
                 raise ValueError('真实照片清单为空')
             self.config = {'weights':config['weights'],'imgsz':imgsz,'conf':low,'high':high,
-                           'overlap_fraction':overlap,'classes':classes}
+                           'overlap_fraction':overlap,'classes':classes,
+                           'detection_threshold':detection_threshold,
+                           'nms_iou':nms_iou,'augment':augment,'roi_policy':roi_policy}
             self.weights_path = weights_path
             self.model_info = {**self.config, 'sha256':weights_sha256,
                                'device':str(getattr(self.detector,'device','按本机可用设备选择'))}
-            self.source = {k:manifest.get('source',{}).get(k) for k in ('name','repository','commit','license','url')
-                           if k in manifest.get('source',{})}
+            self.source = sources[0] if len(sources)==1 else {'name':'多个真实停车场数据集','components':sources}
             self._photos = photos
         except (OSError, ValueError, KeyError, TypeError) as exc:
             raise RealPhotoError('real_photo_data_unavailable', '真实照片数据或模型配置不可用，请检查完整安装包。') from exc
@@ -184,7 +240,7 @@ class RealPhotoService:
     @staticmethod
     def _metadata(row):
         # Allowlist excludes file-system locations, truth fields and extra metadata.
-        keys = ('photo_id','dataset','view','weather','date','split','width','height','sha256','source_url')
+        keys = ('photo_id','dataset','view','weather','date','split','width','height','sha256','source_url','inference_roi_xywh')
         value = {k:deepcopy(row[k]) for k in keys if k in row}
         value['image_url'] = '/api/real/image/' + row['photo_id']
         return value
@@ -243,20 +299,30 @@ class RealPhotoService:
             try:
                 if self.detector is None:
                     self.detector = PhotoDetector(self.weights_path, imgsz=self.config['imgsz'],
-                                                  conf=self.config['conf'], classes=self.config['classes'])
+                                                  conf=self.config['conf'], classes=self.config['classes'],
+                                                  nms_iou=self.config['nms_iou'],augment=self.config['augment'])
                 self._sequence += 1
                 frame_id = f'real_{self._sequence:06d}'
-                detections = self._clean_detections(self.detector.detect(image_path),row['width'],row['height'],frame_id)
+                raw = (self.detector.detect(image_path,roi_xywh=row['inference_roi_xywh'])
+                       if 'inference_roi_xywh' in row else self.detector.detect(image_path))
+                detections = self._clean_detections(raw,row['width'],row['height'],frame_id)
                 detections = [d for d in detections if d['confidence'] >= self.config['conf']]
+                for detection in detections:
+                    detection['accepted'] = detection['confidence'] >= self.config['detection_threshold']
                 spots = estimate_photo_occupancy(row['spots'],detections, high=self.config['high'],
-                                                 low=self.config['conf'],overlap_fraction=self.config['overlap_fraction'])
+                                                 low=self.config['conf'],overlap_fraction=self.config['overlap_fraction'],
+                                                 observed_roi_xywh=row.get('inference_roi_xywh'))
                 self.model_info['device'] = str(getattr(self.detector,'device','unknown'))
             except Exception as exc:
                 logging.getLogger(__name__).exception('真实照片推理失败')
                 raise RealPhotoError('photo_inference_failed','真实照片检测未完成，请检查模型文件和运行日志后重试。') from exc
+            accepted = sum(d['accepted'] for d in detections)
             return {'status':'ok', 'frame_id':frame_id, 'photo':self._metadata(row),
+                    'detection_counts':{'accepted':accepted,'evidence_only':len(detections)-accepted,
+                                        'retained':len(detections)},
                     'detections':detections,'spots':spots,
                     'counts':{state:sum(s['state']==state for s in spots) for state in ('free','occupied','unknown')},
                     'model':deepcopy(self.model_info),'elapsed_ms':round((time.perf_counter()-started)*1000,2),
                     'thresholds':{'low':self.config['conf'],'high':self.config['high'],
+                                  'detection':self.config['detection_threshold'],
                                   'overlap_fraction':self.config['overlap_fraction']}}

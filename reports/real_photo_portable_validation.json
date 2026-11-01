@@ -1,51 +1,114 @@
 {
-  "checked_at_utc": "2026-11-01T09:14:46.190Z",
+  "checked_at_utc": "2026-11-01T12:55:56.090Z",
   "application": "ParkingDemo.exe",
   "url": "http://127.0.0.1:8766",
   "passed": true,
   "checks": [
     {
-      "name": "all_54_local_photos_and_frozen_model",
+      "name": "all_108_offline_photos_and_frozen_config",
       "passed": true
     },
     {
       "name": "cpu_real_inference_PUCPR",
       "passed": true,
-      "photo_id": "pucpr_2012-10-15_07_45_45",
+      "photo_id": "pucpr_2012-10-05_08_22_49",
       "frame_id": "real_000001",
-      "detections": 1,
-      "counts": {
-        "free": 193,
-        "occupied": 1,
-        "unknown": 1
+      "detections": {
+        "accepted": 163,
+        "evidence_only": 1,
+        "retained": 164
       },
-      "elapsed_ms": 478.91
+      "counts": {
+        "free": 32,
+        "occupied": 159,
+        "unknown": 4
+      },
+      "elapsed_ms": 3680.53
     },
     {
       "name": "cpu_real_inference_UFPR04",
       "passed": true,
-      "photo_id": "ufpr04_2012-12-17_20_25_18",
+      "photo_id": "ufpr04_2012-12-27_15_10_11",
       "frame_id": "real_000002",
-      "detections": 58,
-      "counts": {
-        "free": 1,
-        "occupied": 34,
-        "unknown": 2
+      "detections": {
+        "accepted": 3,
+        "evidence_only": 0,
+        "retained": 3
       },
-      "elapsed_ms": 568.11
+      "counts": {
+        "free": 35,
+        "occupied": 2,
+        "unknown": 0
+      },
+      "elapsed_ms": 413.82
     },
     {
       "name": "cpu_real_inference_UFPR05",
       "passed": true,
-      "photo_id": "ufpr05_2013-03-18_11_30_06",
+      "photo_id": "ufpr05_2013-03-12_13_10_08",
       "frame_id": "real_000003",
-      "detections": 72,
+      "detections": {
+        "accepted": 66,
+        "evidence_only": 1,
+        "retained": 67
+      },
       "counts": {
         "free": 0,
-        "occupied": 46,
+        "occupied": 45,
+        "unknown": 1
+      },
+      "elapsed_ms": 739.01
+    },
+    {
+      "name": "cpu_real_inference_CAMERA1",
+      "passed": true,
+      "photo_id": "cnr_camera1_2015-11-25_07_10_00",
+      "frame_id": "real_000004",
+      "detections": {
+        "accepted": 1,
+        "evidence_only": 0,
+        "retained": 1
+      },
+      "counts": {
+        "free": 26,
+        "occupied": 1,
+        "unknown": 8
+      },
+      "elapsed_ms": 422.08
+    },
+    {
+      "name": "cpu_real_inference_CAMERA5",
+      "passed": true,
+      "photo_id": "cnr_camera5_2015-11-29_10_48_00",
+      "frame_id": "real_000005",
+      "detections": {
+        "accepted": 0,
+        "evidence_only": 0,
+        "retained": 0
+      },
+      "counts": {
+        "free": 55,
+        "occupied": 0,
         "unknown": 0
       },
-      "elapsed_ms": 497.35
+      "elapsed_ms": 471.6
+    },
+    {
+      "name": "cpu_real_inference_CAMERA9",
+      "passed": true,
+      "photo_id": "cnr_camera9_2015-11-20_16_17_00",
+      "frame_id": "real_000006",
+      "detections": {
+        "accepted": 26,
+        "evidence_only": 3,
+        "retained": 29
+      },
+      "counts": {
+        "free": 8,
+        "occupied": 25,
+        "unknown": 4
+      },
+      "elapsed_ms": 663.65
     },
     {
       "name": "repeat_runs_model_and_changes_frame",
@@ -56,18 +119,26 @@
       "passed": true
     },
     {
-      "name": "current_report_and_browser_code_in_bundle",
+      "name": "current_reports_and_browser_code_in_bundle",
       "passed": true
     },
     {
-      "name": "final_cpu_model_in_actual_browser",
+      "name": "weather_filter_normalizes_both_real_datasets",
+      "passed": true
+    },
+    {
+      "name": "external_filter_and_actual_evidence_controls",
       "passed": true,
-      "photo_id": "pucpr_2012-10-05_08_22_49",
-      "frame_id": "real_000005",
+      "photo_id": "cnr_camera1_2016-01-13_13_48_00",
+      "frame_id": "real_000008"
+    },
+    {
+      "name": "actual_browser_both_datasets_and_390px_layout",
+      "passed": true,
       "script_errors": []
     }
   ],
   "real_model": true,
   "inference_device": "cpu",
-  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2"
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7"
 }

@@ -1,0 +1,51 @@
+{
+  "photo_id": "pucpr_2012-10-12_13_47_50",
+  "image_sha256": "4b4db5887ab30bf06ed8e0c306d7194d7f5ada69ba79f0bcefe0aba6e8caa76c",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        1114.360595703125,
+        532.9734497070312,
+        1205.064697265625,
+        574.0762939453125
+      ],
+      "confidence": 0.8998997211456299,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000"
+    ],
+    "false_positive_ids": [],
+    "missed_boxes": [],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      140,
+      1280,
+      580
+    ]
+  },
+  "occupancy": {
+    "free->free": 193,
+    "free->unknown": 1,
+    "occupied->occupied": 1
+  },
+  "inference_roi_xywh": [
+    0,
+    140,
+    1280,
+    580
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 313.86420000126236,
+  "inference_reused": false
+}

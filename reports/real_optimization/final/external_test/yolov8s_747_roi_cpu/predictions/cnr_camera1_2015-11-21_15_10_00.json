@@ -1,0 +1,100 @@
+{
+  "photo_id": "cnr_camera1_2015-11-21_15_10_00",
+  "image_sha256": "80c895bdde4eb3cb2e238b05053f3e397892f808c31ed59ae7d135c9f22fd4fc",
+  "weights_sha256": "1b1a0241e7f85d78bb6295dd0e79d39c5d3f0e8a03f8c045ac89d8cf0c55c3a7",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        177.11673736572266,
+        237.4710464477539,
+        264.66966247558594,
+        285.8039093017578
+      ],
+      "confidence": 0.8911372423171997,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        285.4139404296875,
+        158.0,
+        352.04901123046875,
+        174.0622901916504
+      ],
+      "confidence": 0.8453932404518127,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        625.5291137695312,
+        510.4242248535156,
+        661.6373901367188,
+        557.7402038574219
+      ],
+      "confidence": 0.34771639108657837,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        761.5497436523438,
+        641.3627014160156,
+        868.886962890625,
+        742.2323608398438
+      ],
+      "confidence": 0.3237035274505615,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 1,
+    "fp": 1,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000"
+    ],
+    "false_positive_ids": [
+      "d001"
+    ],
+    "missed_boxes": [
+      [
+        762,
+        568,
+        938,
+        734
+      ],
+      [
+        591,
+        474,
+        743,
+        608
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      78,
+      158,
+      922,
+      592
+    ]
+  },
+  "occupancy": {
+    "free->unknown": 6,
+    "free->occupied": 2,
+    "free->free": 24,
+    "occupied->unknown": 3
+  },
+  "inference_roi_xywh": [
+    78,
+    158,
+    922,
+    592
+  ],
+  "detection_threshold": 0.35,
+  "inference_ms": 415.482600001269,
+  "inference_reused": false
+}

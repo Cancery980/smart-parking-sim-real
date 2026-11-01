@@ -1,0 +1,96 @@
+{
+  "photo_id": "cnr_camera2_2015-11-29_07_44_00",
+  "image_sha256": "cabaa855780c044647fa7d1e6785e009bc4a079e5f036a730e123c90a10a3454",
+  "weights_sha256": "bfb966ef59d8ec3e84606949ea6a14b69b842bbee8a878634ff999245f29d2a2",
+  "detections": [
+    {
+      "detection_id": "d000",
+      "bbox_xyxy_px": [
+        78.8844985961914,
+        47.58945846557617,
+        173.7873077392578,
+        112.9559097290039
+      ],
+      "confidence": 0.9448157548904419,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d001",
+      "bbox_xyxy_px": [
+        529.1017456054688,
+        371.1979675292969,
+        622.6550903320312,
+        439.15185546875
+      ],
+      "confidence": 0.9183050990104675,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d002",
+      "bbox_xyxy_px": [
+        703.9221801757812,
+        427.77197265625,
+        742.560302734375,
+        473.34814453125
+      ],
+      "confidence": 0.795596718788147,
+      "class_name": "car"
+    },
+    {
+      "detection_id": "d003",
+      "bbox_xyxy_px": [
+        257.6432800292969,
+        335.9840087890625,
+        363.6865234375,
+        406.9354553222656
+      ],
+      "confidence": 0.759132981300354,
+      "class_name": "car"
+    }
+  ],
+  "score": {
+    "tp": 1,
+    "fp": 3,
+    "fn": 2
+  },
+  "matches": {
+    "matched_detection_ids": [
+      "d000"
+    ],
+    "false_positive_ids": [
+      "d001",
+      "d002",
+      "d003"
+    ],
+    "missed_boxes": [
+      [
+        256,
+        231,
+        390,
+        408
+      ],
+      [
+        529,
+        258,
+        639,
+        439
+      ]
+    ],
+    "ignored_predictions": 0,
+    "evaluated_roi_xywh": [
+      0,
+      0,
+      1000,
+      750
+    ]
+  },
+  "occupancy": {
+    "free->unknown": 1,
+    "occupied->occupied": 3,
+    "free->free": 6
+  },
+  "inference_roi_xywh": null,
+  "detection_threshold": 0.2,
+  "inference_ms": 161.78329999820562,
+  "inference_reused": false
+}
