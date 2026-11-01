@@ -2,6 +2,8 @@
 *.py text eol=lf
 *.js text eol=lf
 *.md text eol=lf
+*.css text eol=lf
+*.html text eol=lf
 # Frozen metadata is hashed byte-for-byte; preserve its original line endings.
 *.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.ps1 text eol=crlf
