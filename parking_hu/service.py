@@ -214,8 +214,10 @@ class ParkingService:
             if not isinstance(request, dict):
                 return self._finish(failure("invalid_request", "invalid_payload", "请求应为 JSON 对象。"), "unknown")
             operation = request.get("operation", "")
-            if not isinstance(operation, str) or operation not in {"allocate", "replan", "find_vehicle", "confirm_park", "cancel", "depart", "reset", "refresh", "change_scene"}:
+            if not isinstance(operation, str) or operation not in {"register_vehicle", "allocate", "replan", "find_vehicle", "confirm_park", "cancel", "depart", "reset", "refresh", "change_scene"}:
                 return self._finish(failure("invalid_request", "unknown_operation", "不支持该操作。"), str(operation))
+            if operation == "register_vehicle":
+                return self._finish(self._register_vehicle(request), operation)
             if operation in ("allocate", "replan", "find_vehicle"):
                 error = self._validate_request(request, operation)
                 if error:
@@ -298,6 +300,31 @@ class ParkingService:
     @staticmethod
     def _event_ok(message):
         return {"status": "ok", "reason_code": "ok", "message": message, "target_spot_id": None, "path_m": [], "distances_m": None}
+
+    def _register_vehicle(self, request):
+        """Add a process-local applicant record without changing parking facts."""
+        if self.session["state"] != "idle":
+            return failure("session_busy", "active_session", "已有活动会话，请先取消推荐或离场后再登记车辆。")
+        label = request.get("label")
+        if (not isinstance(label, str) or not 1 <= len(label) <= 40
+                or not label.strip() or not label.isprintable()):
+            return failure("invalid_request", "invalid_registration_label", "车辆名称须为1至40个可显示字符，不能只含空格或包含控制字符。")
+        power_type = request.get("power_type")
+        if not isinstance(power_type, str) or power_type not in ("fuel", "new_energy"):
+            return failure("invalid_request", "invalid_power_type", "请选择燃油车或新能源车。")
+        permission = request.get("accessible_permission")
+        if not (type(permission) is bool or isinstance(permission, str) and permission == "unknown"):
+            return failure("invalid_request", "invalid_accessible_permission", "请明确模拟登记的无障碍资格：有资格、无资格或待确认。")
+        existing_ids = set(self.registry) | {vehicle["vehicle_id"] for vehicle in self._scene["vehicles"]}
+        vehicle_id = "USER_" + uuid.uuid4().hex[:12]
+        while vehicle_id in existing_ids:
+            vehicle_id = "USER_" + uuid.uuid4().hex[:12]
+        vehicle = {"vehicle_id": vehicle_id, "label": label.strip(), "power_type": power_type,
+                   "accessible_permission": permission, "role": "applicant"}
+        self.registry[vehicle_id] = vehicle
+        result = self._event_ok("已登记模拟车辆；记录在本次程序运行期间保留。")
+        result["registered_vehicle"] = deepcopy(vehicle)
+        return result
 
     def _confirm(self, request):
         error = self._matching_session(request, "planned")

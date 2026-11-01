@@ -34,7 +34,11 @@ Planner result 必含 `status,reason_code,message,target_spot_id,path_m,distance
 
 ## 本地 HTTP 交互
 
-GET `/api/state` 返回 `map,scene_version,frame_id,snapshot,registry,session,last_result,image_url,planner_name`。session.state 是 idle/planned/parked，空闲也返回对象。POST `/api/action` 接受 request，加上 operation 可为 allocate/replan/find_vehicle/confirm_park/cancel/depart/reset/refresh/change_scene。confirm_park 额外 actual_spot_id 和 scene_version。change_scene 额外 seed/scenario（normal/empty/full/occluded/boundary/blocked）。服务器只绑定本机。
+GET `/api/state` 返回 `map,scene_version,frame_id,snapshot,registry,session,last_result,image_url,planner_name`。session.state 是 idle/planned/parked，空闲也返回对象。POST `/api/action` 接受 request，加上 operation 可为 register_vehicle/allocate/replan/find_vehicle/confirm_park/cancel/depart/reset/refresh/change_scene。confirm_park 额外 actual_spot_id 和 scene_version。change_scene 额外 seed/scenario（normal/empty/full/occluded/boundary/blocked）。服务器只绑定本机。
+
+`register_vehicle` 是胡模块的登记操作，仅在 idle 状态接受。请求包含 `label`（1—40个可显示字符，不能全为空格）、`power_type`（fuel/new_energy）和 `accessible_permission`（JSON布尔值或字符串unknown）。服务器生成 `USER_` 前缀的唯一ID，固定 `role=applicant`；客户端不能借此覆盖已有车辆或设置背景角色。成功响应的 `result.registered_vehicle` 返回新记录，`state.registry` 同步包含该记录。登记不会触发检测、规划或改变场景；记录在当前进程中保存，重置会话与场景时保留，退出后清空。
+
+登记后的申请仍使用上述 Planner 契约：`context.vehicle` 传递所选登记记录，`request.vehicle_id` 使用返回的新ID。资格和动力类型由登记表单提供，不从YOLO外观推断；登记操作本身不发送给规划插件，插件无需新增方法。
 
 POST 响应 `{result,state}`；失败同样返回结构化 JSON 和中文说明。业务失败用 HTTP 200，JSON 格式错误用 422。场景/确认/离场自动重跑真实检测。GET `/api/frame` 当前原始渲染 PNG。界面可读取报告链接 `/api/report`。
 

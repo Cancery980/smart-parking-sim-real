@@ -1,0 +1,19 @@
+{
+  "reason": "Earlier Git text normalization changed CRLF to LF. Restore byte-exact historical experiment inputs; no sample, parameter, prediction or score change.",
+  "files": [
+    {
+      "path": "reports/i01_pairing/frozen_requests.json",
+      "previous_checkout_sha256": "53029398ca55c75a8e8fee04d71878beed2fb0229aab27f51944380132249048",
+      "restored_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+      "matches_historical_experiment_sha256": true,
+      "json_content_unchanged": true
+    },
+    {
+      "path": "data/synthetic/test_manifest.json",
+      "previous_checkout_sha256": "a74bfb809b7646598025a7b201d53e57cbd7ca4e6db9369a1bf2567f1345e3a6",
+      "restored_sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+      "matches_historical_experiment_sha256": true,
+      "json_content_unchanged": true
+    }
+  ]
+}

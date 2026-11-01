@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "report_version": "v1.2.1",
+  "checked_at_utc": "2026-11-01T15:38:12.383807+00:00",
+  "pages": 13,
+  "docx_path": "reports/胡轩铭模块实现与验证报告.docx",
+  "pdf_path": "reports/胡轩铭模块实现与验证报告.pdf",
+  "docx_sha256": "dbc94e36bb61bf0c41577ee81543ec7d9408a7d6d6889a6373ff86cf4016c5c2",
+  "pdf_sha256": "d14ac31f8e3225bd4e6be0fb663562a835a0e3b506550d8502fd8ed74f7ce18e",
+  "html_sha256": "b08c651244618e1b9e7e3120fd8fa2aab001ef7c69cf42d8a5658b7313d51332",
+  "generator_sha256": "a51d2673824f53d479db232bcdd29bd61311b808ab87423761ea5b9249bd7b98",
+  "requirement_source_sha256": "b9b1d8b774526a5417dc054c35d071ed9adefa6050c3ce0656586ce07f2646a8",
+  "render_method": "Native Microsoft Word COM ExportAsFixedFormat to PDF, followed by the bundled documents render_docx.py Poppler rasterizer via work/render_docx_word.py --emit_pdf.",
+  "render_artifact_storage": "Page PNGs are internal working files and are not included in the public deliverable.",
+  "rendered_pages": [
+    "page-1.png",
+    "page-2.png",
+    "page-3.png",
+    "page-4.png",
+    "page-5.png",
+    "page-6.png",
+    "page-7.png",
+    "page-8.png",
+    "page-9.png",
+    "page-10.png",
+    "page-11.png",
+    "page-12.png",
+    "page-13.png"
+  ],
+  "all_pages_visually_reviewed": true,
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "visual_review": {
+    "no_orphan_tail_pages": true,
+    "no_text_or_table_clipping": true,
+    "no_footer_overlap": true,
+    "figures_and_captions_readable": true,
+    "conclusion": "逐页检查完成；正文、表格、图注及页脚没有重叠或裁切，没有只剩少量尾文的孤尾页。胡轩铭模块和与参考规划的联调为主体；实拍指标与退步作为附录保留。"
+  },
+  "relative_links_checked_documents": [
+    "README.md",
+    "docs/梁可从这里开始.md",
+    "docs/课堂演示与答辩.md",
+    "docs/评分点与证据.md",
+    "docs/课程范围与验收.md"
+  ],
+  "missing_relative_links": [],
+  "private_numeric_identifier_matches": 0,
+  "scope": "Document layout, source attribution, privacy and file consistency only. Runtime and model results are read from separately recorded evidence; this QA does not rerun inference or publish a release."
+}

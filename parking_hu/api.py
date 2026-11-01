@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def create_app(service: ParkingService) -> FastAPI:
-    app = FastAPI(title="智慧停车仿真 · 胡轩铭模块", version="1.2.0")
+    app = FastAPI(title="智慧停车仿真 · 胡轩铭模块", version="1.2.1")
     app.state.parking = service
     # No data/model reads at startup: the original simulation remains independent.
     app.state.real_photos = RealPhotoService(ROOT)

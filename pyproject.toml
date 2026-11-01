@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "smart-parking-hu"
-version = "1.2.0"
+version = "1.2.1"
 description = "胡轩铭智慧停车仿真感知与交互模块及规划对接契约"
 license = {file = "LICENSE"}
 requires-python = ">=3.12,<3.13"

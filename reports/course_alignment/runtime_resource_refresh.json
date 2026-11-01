@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-11-01T15:39:48.307438+00:00",
+  "version": "1.2.1",
+  "passed": true,
+  "application_sha256": "917e52db529242220eff3ef07bf950c339ae7841fab676af63154880fc1e7480",
+  "checks": [
+    {
+      "endpoint": "/api/report",
+      "source": "reports/report.html",
+      "sha256": "b08c651244618e1b9e7e3120fd8fa2aab001ef7c69cf42d8a5658b7313d51332",
+      "passed": true
+    },
+    {
+      "endpoint": "/api/real/report",
+      "source": "reports/real_photo_report.html",
+      "sha256": "3731e151e7e406d95979276b8123e952a093ac1a519053e8ae2b441c05675ca0",
+      "passed": true
+    }
+  ],
+  "scope": "Actual final EXE serves final HTML reports byte-for-byte; document PDF layout is checked separately."
+}

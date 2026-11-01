@@ -9,7 +9,7 @@
   const typeNames = {normal:"普通位",accessible:"无障碍位",charging:"充电位"};
   const colors = {free:"#72bda6",occupied:"#cb8b82",unknown:"#d9b76c"};
   const reasonNames = {high_confidence_center:"高置信车辆中心位于车位内",ambiguous_overlap:"车辆框与车位相交，证据不确定",no_evidence:"未观测到车辆证据",observed_free:"未观测到车辆证据",invalid_frame:"当前感知帧不可用",frame_invalid:"当前感知帧不可用",perception_unavailable:"当前感知帧不可用"};
-  const actionLabels = {allocate:"正在计算推荐车位",replan:"正在重新规划",confirm_park:"正在记录停车并重新检测",find_vehicle:"正在计算寻车路线",cancel:"正在取消推荐",depart:"正在记录离场并重新检测",reset:"正在重置场景",refresh:"正在运行 YOLO 检测",change_scene:"正在生成场景并运行 YOLO 检测"};
+  const actionLabels = {register_vehicle:"正在登记车辆",allocate:"正在计算推荐车位",replan:"正在重新规划",confirm_park:"正在记录停车并重新检测",find_vehicle:"正在计算寻车路线",cancel:"正在取消推荐",depart:"正在记录离场并重新检测",reset:"正在重置场景",refresh:"正在运行 YOLO 检测",change_scene:"正在生成场景并运行 YOLO 检测"};
   const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const registry = () => Array.isArray(ui.state?.registry) ? ui.state.registry : Object.entries(ui.state?.registry || {}).map(([id,v])=>({vehicle_id:id,...v}));
   const session = () => ui.state?.session || {state:"idle"};
@@ -41,6 +41,8 @@
       button.disabled=ui.busy||!allowed;
     });
     $("vehicle-select").disabled=ui.busy||state!=="idle";
+    $("registration-panel").hidden=state!=="idle";
+    for(const id of ["registration-label","registration-power","registration-permission","register-vehicle-button"]) $(id).disabled=ui.busy||!ui.state||state!=="idle";
     for(const id of ["needs-accessible","needs-charging"]) $(id).disabled=ui.busy||parked;
     document.querySelectorAll('input[name="prefer-mode"]').forEach(el=>el.disabled=ui.busy||parked);
     ["actual-spot-select","scenario-select","seed-input","start-x","start-y","pick-start-button","start-elevator","stop-picking"].forEach(id=>$(id).disabled=ui.busy);
@@ -105,7 +107,7 @@
     const vehicles=registry().filter(v=>v.role==="applicant");
     const previousSelection=$("vehicle-select").value;
     $("vehicle-select").innerHTML=vehicles.map(v=>`<option value="${escapeHTML(v.vehicle_id)}">${escapeHTML(v.label||v.vehicle_id)}</option>`).join("");
-    const chosen=session().vehicle_id||previousSelection;
+    const chosen=session().vehicle_id||result?.registered_vehicle?.vehicle_id||previousSelection;
     if(vehicles.some(v=>v.vehicle_id===chosen)) $("vehicle-select").value=chosen;
     const req=session().request||session().requirements||session().needs;
     if(req && (!old || oldSession!==session().session_id)) {
@@ -152,6 +154,12 @@
   }
 
   function getRequest(operation) {
+    if(operation==="register_vehicle") {
+      const label=$("registration-label").value.trim();
+      if(!label||label.length>40||/[\u0000-\u001f\u007f]/.test(label)) throw new Error("请填写 1 至 40 个字符的车辆名称或代号。");
+      const permission=$("registration-permission").value;
+      return {operation,label,power_type:$("registration-power").value,accessible_permission:permission==="unknown"?"unknown":permission==="true"};
+    }
     const current=session();
     const request={operation,vehicle_id:current.vehicle_id||$("vehicle-select").value,session_id:operation==="allocate"?null:current.session_id||null};
     if(["allocate","replan"].includes(operation)) Object.assign(request,{needs_accessible:$("needs-accessible").checked,needs_charging:$("needs-charging").checked,prefer_mode:document.querySelector('input[name="prefer-mode"]:checked')?.value||"near_destination",destination_id:"elevator_1",pedestrian_start_m:null});
@@ -177,6 +185,9 @@
     try {
       const response=await api("/api/action",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(request)});
       applyState(response.state,response.result);
+      if(operation==="register_vehicle"&&response.result?.status==="ok") {
+        $("registration-form").reset();$("registration-panel").open=false;
+      }
     } catch(err) {
       toast(`操作未完成：${err.message}`);
       renderResult({status:"connection_error",reason_code:"request_failed",message:`操作未完成：${err.message}。可继续重试；已确认的停车记录以服务端状态为准。`});
@@ -323,6 +334,7 @@
   }
 
   document.querySelectorAll("[data-action]").forEach(button=>button.addEventListener("click",()=>perform(button.dataset.action)));
+  $("registration-form").addEventListener("submit",event=>{event.preventDefault();perform("register_vehicle");});
   ["layer-image","layer-occupancy","layer-detections"].forEach(id=>$(id).addEventListener("change",drawMap));
   $("vehicle-select").addEventListener("change",updateVehicleDetails);$("actual-spot-select").addEventListener("change",drawMap);
   $("pick-start-button").addEventListener("click",()=>setPicking(!ui.picking));$("stop-picking").addEventListener("click",()=>setPicking(false));

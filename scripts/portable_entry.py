@@ -51,7 +51,7 @@ def main() -> int:
             input("按 Enter 关闭此窗口……")
         return 2
     try:
-        print("智慧停车演示版 v1.2  |  真实照片与二维停车流程", flush=True)
+        print("智慧停车演示版 v1.2.1  |  课程停车与寻车完整流程", flush=True)
         print("正在加载本地 CPU 模型，首次启动请稍候……", flush=True)
         import torch
         torch.set_num_threads(min(4, os.cpu_count() or 1))
@@ -67,7 +67,7 @@ def main() -> int:
             raise RuntimeError(service.snapshot.get("error") or "首次真实检测失败")
         print(f"真实 YOLO 检测已完成，使用 CPU。地址：{url}", flush=True)
         print("浏览器将自动打开。使用期间保留此窗口；关闭窗口或按 Ctrl+C 停止服务。", flush=True)
-        print(f"真实停车场照片：{url}/real  |  二维停车与寻车流程：{url}", flush=True)
+        print(f"课程停车与寻车流程：{url}  |  实拍扩展对照：{url}/real", flush=True)
         print("真实照片和模型已随包提供；不需要账号、联网下载或显卡驱动。", flush=True)
         stopping = threading.Event()
 
@@ -78,7 +78,7 @@ def main() -> int:
                 try:
                     with urllib.request.urlopen(url + "/api/state", timeout=0.5) as response:
                         if response.status == 200:
-                            webbrowser.open(url + "/real")
+                            webbrowser.open(url)
                             return
                 except OSError:
                     pass

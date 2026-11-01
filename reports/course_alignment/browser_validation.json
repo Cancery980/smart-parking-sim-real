@@ -1,0 +1,54 @@
+{
+  "checked_at_utc": "2026-11-01T15:21:38.531Z",
+  "fresh_final_zip": false,
+  "artifact": "newly_built_windows_exe",
+  "real_model": true,
+  "inference_device": "cpu",
+  "passed": true,
+  "checks": [
+    {
+      "name": "served_current_static/app.js",
+      "passed": true
+    },
+    {
+      "name": "served_current_static/style.css",
+      "passed": true
+    },
+    {
+      "name": "current_executable_api_version",
+      "passed": true
+    },
+    {
+      "name": "final_exe_real_cpu_inference_and_click_evidence",
+      "passed": true,
+      "frame": "v00006_f00006",
+      "detections": 22,
+      "spot": "P044",
+      "confidence": 0.9831870794296265,
+      "overlap_fraction": 0.10582321005273419,
+      "center_spot": "P043"
+    },
+    {
+      "name": "no_browser_script_errors",
+      "passed": true
+    }
+  ],
+  "application_sha256": "917e52db529242220eff3ef07bf950c339ae7841fab676af63154880fc1e7480",
+  "compiled_code_sha256": {
+    "parking_hu/__init__.py": "1b53611d010dcdf9765f28388aa7dea3f72f2be1e9b666d598c0b787c25eb9a2",
+    "parking_hu/__main__.py": "87304d61f16880ec397e70c7b74692ee0d653e651cd4bb11b66a578d8b1a078d",
+    "parking_hu/api.py": "0190786e7b20e0698b5b10a2883721b46a27548f6f18fa913087f009a5cae024",
+    "parking_hu/contracts.py": "1140bcf881e010b0db431fdcca20fa3f2b4aebbccf249506e3e5cb13c102f47b",
+    "parking_hu/detector.py": "12720e246d24a7c2d6373aff58a2d87bc81f7a7cef65fe287f3d39f3d6563770",
+    "parking_hu/geometry.py": "6c9f43d48b89e825806bcb4e8bd572f3fa0912b6612a319cb4fe793f0ada3c8b",
+    "parking_hu/map_data.py": "2f3f6bd2fe9b0c022f8422c846632819b6fb1a0f7c8b514d14e7564a17dfc09c",
+    "parking_hu/occupancy.py": "9b261effc9aca125eaab5419793cd5757e4c6db4d5eea42b64829c7b9f0ea1ed",
+    "parking_hu/real_photos.py": "19dbb2ee9339b0c66e1c153a35b9e4baa9f58c11a2527508ff4d560be9193b6a",
+    "parking_hu/reference_planner.py": "9791d679e12c8b13c7fe415c7900d5e1827564f34e2ad14ed65369cb35e3f7bc",
+    "parking_hu/scenes.py": "ebe50d72b2ff989bb449cf02b260021fb60bf8d5e854e83ef0de1360f6d17183",
+    "parking_hu/service.py": "f2635b087f5b64e47ed789bc9a823306abedcdf0351c13fa7221646a92fb25f7",
+    "parking_hu/vision_metrics.py": "d9c0e0a81043951e56c043512c8b0b2a82be99e1884c58f63ec191065ad5505d",
+    "scripts/portable_entry.py": "e87f132a72960d3ef820a8b5b48a1bb7111c3451c0431dd72f110bad28adefc4"
+  },
+  "version": "1.2.1"
+}

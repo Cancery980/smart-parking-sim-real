@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-01T15:26:41.595208+00:00",
+  "scope": "按原申请表5项主要功能和3项创新审阅；只优先完善胡轩铭模块，已有梁可职责参考实现完整保留；不新增跨场地训练或LOSO。",
+  "git_head": "5d2dd75b69603a70dafcdaa4007aabb4be71aca9",
+  "conclusion": "发现的Hu车辆登记缺口已补齐：登记后端和界面完成，相关125项与完整169项源码测试通过，最终Windows EXE的6项流程、5项边界UI和8项登记UI检查通过。未发现其他需要新增Hu算法的课程必做缺口；梁可正式代码尚未收到，尚未与其正式实现联调。",
+  "ownership": {
+    "Hu正式模块": [
+      "固定52位地图与合成场景/数据",
+      "真实YOLO推理包装",
+      "三态占用及全部保留框障碍快照",
+      "视觉评估",
+      "本地界面与点选交互",
+      "车辆登记数据/表单接口",
+      "唯一会话、实际停车确认和旧路线失效",
+      "plan/find_vehicle契约与返回结果校验",
+      "Hu报告和演示交付"
+    ],
+    "接口联调": [
+      "无真值的深拷贝context",
+      "插件加载/9项契约检查",
+      "内外参考适配器E01–E08",
+      "以参考规划运行I01和双模式基线"
+    ],
+    "Liang职责参考实现_保留不拆": [
+      "资格/车型/需求约束规则",
+      "双模式排序",
+      "有向车行A*与人行A*",
+      "入场/出场/到电梯三路可达检查",
+      "0.6m起点投影与反向寻车路线"
+    ],
+    "formal_liang_code_received": false,
+    "formal_liang_integration_verified": false,
+    "boundary": "examples.liang_adapter.Planner只是委托reference_planner的接线样例，不是梁可正式代码。未来正式替换后才针对该代码重跑契约、E01–E08、I01；这不构成当前Hu补做梁可算法的理由。"
+  },
+  "main_requirements": [
+    {
+      "id": "F1",
+      "requirement": "52×32m，40普通+4无障碍+8充电，1664×1024/32px每米；真实YOLO；框/置信度/三态；坐标<1e-6m，绘制≤0.5px；门槛冻结",
+      "status": "covered_Hu",
+      "implementation": [
+        "parking_hu/map_data.py",
+        "parking_hu/scenes.py",
+        "parking_hu/detector.py",
+        "parking_hu/occupancy.py",
+        "parking_hu/geometry.py"
+      ],
+      "evidence": [
+        "T01地图校验",
+        "T20连续换算与round绘制边界",
+        "reports/vision_metrics.json",
+        "reports/e2e/results.json",
+        "reports/ui_validation.json"
+      ],
+      "notes": "render_scene几何边界round(m×32)；YOLO输入检查1664×1024及orig_shape，内部imgsz=832不改变返回原图坐标。UI真实点击换算误差3.913043471470701e-7m。"
+    },
+    {
+      "id": "F2",
+      "requirement": "车辆登记/需求表单；资格与充电需求区分；双模式；有向车行/人行A*，三条路线及障碍检查",
+      "status": "registration_backend_and_UI_verified_reference_planning_preserved",
+      "implementation": [
+        "parking_hu/service.py",
+        "static/index.html",
+        "static/app.js",
+        "parking_hu/reference_planner.py"
+      ],
+      "evidence": [
+        "tests/test_registration.py",
+        "reports/course_alignment/functional_tests.xml",
+        "T02–T11、T14",
+        "reports/mode_comparison/summary.json",
+        "reports/course_alignment/registration_final_validation.json"
+      ],
+      "notes": "Hu登记接口已补；车型/资格由模拟登记与表单提供，视觉不判断资格。约束与排序仍属保留的参考规划，不声称梁可正式交付。"
+    },
+    {
+      "id": "F3",
+      "requirement": "一个idle/planned/parked会话；申请/重规划/取消/实际确认/离场/重置；手选起点≤0.6m投影与整段避障；实际车位外终点；场景变更旧路失效；中文原因",
+      "status": "covered_Hu_service_and_reference_route",
+      "implementation": [
+        "parking_hu/service.py",
+        "parking_hu/contracts.py",
+        "parking_hu/reference_planner.py",
+        "parking_hu/geometry.py",
+        "static/app.js"
+      ],
+      "evidence": [
+        "T12–T19",
+        "reports/e2e/results.json:E06–E08",
+        "reports/ui_validation.json",
+        "reports/course_alignment/functional_tests.xml",
+        "reports/course_alignment/portable_flow_validation.json"
+      ],
+      "notes": "actual_spot_id独立于推荐；确认冲突检查不修补感知；全部检测障碍保留。会话与停车事实由Hu管理；投影/路径由参考适配器计算并校验。"
+    },
+    {
+      "id": "F4",
+      "requirement": "20确定性检查，≥8独立真实模型E2E，30场景60二态/三态配对；检测P/R、占用矩阵、推荐三率；双模式对最近入口距离/违规数；失败案例",
+      "status": "covered_existing_evidence_reused",
+      "evidence": [
+        "reports/course_alignment/functional_tests.xml",
+        "reports/real_optimization/functional_tests.xml",
+        "reports/e2e/manifest.json",
+        "reports/e2e/results.json",
+        "reports/e2e_external/results.json",
+        "reports/vision_metrics.json",
+        "reports/i01_pairing/summary.json",
+        "reports/i01_pairing/responses.json",
+        "reports/mode_comparison/summary.json",
+        "reports/mode_comparison/requests.csv",
+        "reports/mode_comparison/decisions.json"
+      ],
+      "notes": "当前源码全套169项通过，包括原143项与新增登记26项，T01–T20均覆盖；旧内外参考各8个唯一种子/8通过；I01 30场景60请求120策略行；模式对照30场景180行，三方案规则违反均0。旧模型实验复用冻结证据，不因登记变更无谓重跑。"
+    },
+    {
+      "id": "F5",
+      "requirement": "源码、依赖/素材来源、配置、测试明细、报告、演示；自然语言选做，不含自动定位/真实充电/自动驾驶",
+      "status": "covered_Hu_with_scoped_windows_runtime_evidence",
+      "evidence": [
+        "README.md",
+        "requirements.txt",
+        "requirements-lock.txt",
+        "THIRD_PARTY_NOTICES.md",
+        "docs/CONTRACT_V1.md",
+        "docs/PLANNER_HANDOFF.md",
+        "docs/课堂演示与答辩.md",
+        "reports/胡轩铭模块实现与验证报告.docx",
+        "reports/胡轩铭模块实现与验证报告.pdf",
+        "reports/vision_training_config.json",
+        "reports/real_optimization/course_report_qa.json",
+        "reports/course_alignment/portable_flow_validation.json",
+        "reports/course_alignment/browser_validation.json",
+        "reports/course_alignment/registration_final_validation.json"
+      ],
+      "notes": "已有源码、依赖与素材说明、配置、报告和演示齐全；本版新增登记界面及默认入口由当前EXE流程和浏览器记录验证。正式梁可模块接入后仍需对其实现联调；不扩成LOSO或真实停车控制系统。"
+    }
+  ],
+  "innovations": [
+    {
+      "id": "I1",
+      "requirement": "真值/感知分离，三态与硬约束，只推合法可达观测空闲，所有≥低阈值框为障碍",
+      "status": "covered",
+      "evidence": [
+        "parking_hu/contracts.py:planning_context",
+        "parking_hu/occupancy.py:estimate_occupancy",
+        "T09/T10/T15",
+        "test_binary_comparison_preserves_all_obstacles",
+        "reports/i01_pairing/summary.json"
+      ],
+      "notes": "context白名单深拷贝不含scene_truth；obstacles_m含全部conf≥.20框，包含无车位归属框；二态与三态共用障碍。"
+    },
+    {
+      "id": "I2",
+      "requirement": "少走路/近出口双模式和记录实际位置后的反向寻车闭环",
+      "status": "covered_Hu_actual_record_plus_reference_planning",
+      "evidence": [
+        "parking_hu/service.py",
+        "parking_hu/reference_planner.py",
+        "reports/e2e/results.json",
+        "reports/mode_comparison/summary.json",
+        "reports/ui_validation.json"
+      ]
+    },
+    {
+      "id": "I3",
+      "requirement": "固定检测/规则/路网/障碍公平对照，报告假推荐/有效推荐/未推荐和覆盖权衡",
+      "status": "covered_reference_integration_experiment",
+      "evidence": [
+        "scripts/run_pairing.py",
+        "reports/i01_pairing/frozen_requests.json",
+        "reports/i01_pairing/summary.json",
+        "reports/i01_pairing/responses.json"
+      ],
+      "notes": "B假推荐9/60、有效51/60；S假推荐0/60、有效58/60、未推荐2/60。范围限固定地图程序合成场景；不是梁可正式代码成绩，也不是跨场地泛化证明。"
+    }
+  ],
+  "actual_gap_and_fix": {
+    "id": "G1",
+    "before": "只有default_registry的4个预登记模拟车辆和选择框，无新增登记操作。按原表支持车辆登记的通常可操作含义，属于Hu界面/接口缺口。",
+    "backend_status": "implemented_and_regression_verified",
+    "operation": "register_vehicle",
+    "request": {
+      "operation": "register_vehicle",
+      "label": "1..40个可显示字符，不能全空白，存储前trim",
+      "power_type": "fuel|new_energy",
+      "accessible_permission": "true|false|unknown"
+    },
+    "behavior": "仅idle可新增；服务器生成唯一USER_前缀ID，role固定applicant；不覆盖原记录，不触发检测/规划，不改变frame/scene/空会话；active拒绝。reset保留本进程登记，退出丢弃。",
+    "response": "现有/api/action返回{result,state}；result含registered_vehicle，保留_finish标准装饰。",
+    "implementation_files": [
+      "parking_hu/service.py",
+      "static/index.html",
+      "static/app.js",
+      "static/style.css",
+      "docs/CONTRACT_V1.md",
+      "tests/test_registration.py"
+    ],
+    "red_test": "实现前登记成功用例因unknown_operation/invalid_request失败，确认测试捕获缺口。",
+    "verification": {
+      "passed": 125,
+      "failed": 0,
+      "new_registration_cases": 26,
+      "scope": "tests/test_registration.py + tests/test_sessions.py + tests/test_planner.py，包含TestClient API与真实参考规划；检测使用明确测试替身。",
+      "junit": "registration_regression.xml（内部留存的相关回归记录）",
+      "junit_sha256": "736def202bce37d68e1200ddcec6fca613fdd5cdcd4daf4060a46ae3719beb3e",
+      "warning": "既有Starlette/anyio别名弃用警告，不影响通过。",
+      "public_full_suite_evidence": "reports/course_alignment/functional_tests.xml"
+    },
+    "full_suite_verification": {
+      "command": "python -X utf8 -m pytest -q --junitxml=reports/course_alignment/functional_tests.xml",
+      "exit_code": 0,
+      "passed": 169,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "new_registration_cases": 26,
+      "time_seconds": 32.321,
+      "junit": "reports/course_alignment/functional_tests.xml",
+      "junit_sha256": "0604afff3abb9b082979ceeef3fdf0a7302ffd7b668468339f405f01b7c3591c",
+      "warning": "1条既有Starlette/anyio别名弃用警告；无功能失败。",
+      "scope": "当前源码完整pytest套件；包含登记26项与原143项，不等于新Windows包的实际运行验收。"
+    },
+    "integrated_windows_verification": {
+      "version": "1.2.1",
+      "artifact": "ParkingDemo.exe",
+      "application_sha256": "917e52db529242220eff3ef07bf950c339ae7841fab676af63154880fc1e7480",
+      "reports": [
+        {
+          "path": "reports/course_alignment/portable_flow_validation.json",
+          "passed": true,
+          "checks": 6,
+          "sha256": "7b8c9c697bb5042711b7383801fc64471a1b04af96d4b586629676ef22912dee"
+        },
+        {
+          "path": "reports/course_alignment/browser_validation.json",
+          "passed": true,
+          "checks": 5,
+          "sha256": "c24d67f8b942d804084850d56e04ff22ed538c9082da413c1e408b91d3b352c5"
+        },
+        {
+          "path": "reports/course_alignment/registration_final_validation.json",
+          "passed": true,
+          "checks": 8,
+          "sha256": "a71e2ab0c177a34b902497f7e930b4751e8419470e4b9a14eebbc2a3062594f5"
+        }
+      ],
+      "scope": "主代理在本机Windows 11 x64运行最终EXE，以真实CPU模型验证；本次复核读取归档证据，没有重复运行模型或全套测试。其他电脑未逐台实测。"
+    }
+  },
+  "other_Hu_required_code_gaps": [],
+  "evidence_reuse_notes": {
+    "unchanged_before_G1": "登记变更前地图、场景、YOLO、三态、几何、会话、契约、参考规划与仿真UI对应原v1.2交付。新增登记经125项相关回归及169项完整源码测试覆盖，最终1.2.1 EXE的6项流程、5项边界UI和8项登记UI验证通过；检测与规划实验的原数字保持不变。",
+    "I01_frozen_requests_newline_only": {
+      "status": "resolved_byte_exact_historical_inputs_restored",
+      "path": "reports/i01_pairing/frozen_requests.json",
+      "expected_source": "reports/i01_pairing/summary.json:frozen_requests_sha256",
+      "previous_lf_sha256": "53029398ca55c75a8e8fee04d71878beed2fb0229aab27f51944380132249048",
+      "expected_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+      "current_sha256": "f061f3b2edb38b334039d6cf55ac1c7dcaa5ca1304ec69d11c79303ba8bb8b4f",
+      "matches_historical_sha256": true,
+      "current_crlf_count": 1397,
+      "also_restored": {
+        "path": "data/synthetic/test_manifest.json",
+        "sha256": "d78304c7601c8642353359c26211953c49b4a77e68d5b960ffc0c73ed3ef6e69",
+        "matches_historical_sha256": true
+      },
+      "evidence": "reports/course_alignment/metadata_restore.json",
+      "meaning": "Git换行归一化差异已解决：原实验输入已恢复CRLF，当前原始文件字节SHA与历史记录精确一致；样本、参数、预测和评分均未改变。"
+    },
+    "synthetic_model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
+    "scope_limits": [
+      "真实照片扩展与固定52位米制仿真分开",
+      "梁可正式代码未收到",
+      "源码169项与本机Windows EXE的6/5/8项运行证据分别列明；后者不等于所有电脑均已验证，也不代表正式梁可模块已经接入。"
+    ]
+  },
+  "current_change_sha256": {
+    "parking_hu/service.py": "f2635b087f5b64e47ed789bc9a823306abedcdf0351c13fa7221646a92fb25f7",
+    "tests/test_registration.py": "21bc179b6291e248a7b474bf37d8d7601186272b18fed98749a591e9a675dd15"
+  },
+  "requirement_source": {
+    "document_name": "创新性实验选题申请表（原DOCX）",
+    "sha256": "b9b1d8b774526a5417dc054c35d071ed9adefa6050c3ce0656586ce07f2646a8"
+  },
+  "registration_change_review": {
+    "scope": [
+      "parking_hu/service.py",
+      "static/index.html",
+      "static/app.js",
+      "static/style.css",
+      "docs/CONTRACT_V1.md"
+    ],
+    "mode": "narrow_read_only_review",
+    "reviewer_boundary": "本次独立复核前端和接口说明，并复核其与登记后端的接线；登记后端由本审阅者此前实现，已由主代理另行审阅。",
+    "findings": [],
+    "conclusion": "未发现本次登记改动的实际缺陷或既有接口破坏。",
+    "reviewed_behaviors": [
+      "登记分支在服务端RLock内，idle限制与全部字段校验通过后才写入registry。",
+      "唯一USER_ ID由服务器生成，role固定applicant，客户端不能覆盖已有记录。",
+      "登记不触发推理或规划，不改变感知帧和场景；reset保留当前进程新增记录。",
+      "既有{result,state}响应包络不变；后续申请仍按原context.vehicle和Planner契约运行，不放宽资格规则。",
+      "前端提交使用unknown或JSON布尔值，成功后选中新记录、清空并收起表单，失败保留输入。",
+      "车辆名称进入选项前经escapeHTML转义；登记表单busy/active状态与服务端限制一致。",
+      "新增样式限定于registration-panel，既有[hidden]样式继续生效；登记按钮没有data-action重复监听。",
+      "CONTRACT_V1登记说明与实现、进程内留存及规划插件无需新方法的边界一致。"
+    ],
+    "reused_validation": [
+      "reports/course_alignment/functional_tests.xml",
+      "reports/course_alignment/portable_flow_validation.json",
+      "reports/course_alignment/browser_validation.json",
+      "reports/course_alignment/registration_final_validation.json"
+    ],
+    "reviewed_sha256": {
+      "parking_hu/service.py": "f2635b087f5b64e47ed789bc9a823306abedcdf0351c13fa7221646a92fb25f7",
+      "static/index.html": "000d232f0b967e9520381197760b7d52ce287ad8570b83b9513eab048877b51c",
+      "static/app.js": "a3e1d9c47105e9d0bd778259724301374ece7d16ca55e0ef26b18d4ec3e16103",
+      "static/style.css": "f11aa1eccdf578f896cfd15da974637c686cee4b677d169e2e5c4da0f69aadb4",
+      "docs/CONTRACT_V1.md": "0a2dfb22ee3d6073af14bb9ea2ae5e48c4dc45c8ce372807e39e5044253a94da"
+    }
+  }
+}

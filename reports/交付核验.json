@@ -1,16 +1,17 @@
 {
-  "generated_utc": "2026-11-01T13:11:45.705400+00:00",
-  "version": "1.2.0",
+  "generated_utc": "2026-11-01T15:39:48.411494+00:00",
+  "version": "1.2.1",
   "repository": "https://github.com/Cancery980/smart-parking-sim-real",
-  "scope": "胡轩铭模块；包含可替换的参考规划适配器与固定接口，未把尚未提供的梁可代码计为已集成",
+  "scope": "胡轩铭课程模块优先完善；车辆登记、场景与视觉、界面与会话、停车确认及点选交互；已有规则与A*参考规划保留，梁可正式代码尚未提供和验收。",
   "deterministic_tests": {
-    "passed": 143,
+    "passed": 169,
     "failed": 0,
     "skipped": 0,
+    "registration_cases": 26,
     "evidence": [
-      "reports/real_optimization/functional_tests.xml"
+      "reports/course_alignment/functional_tests.xml"
     ],
-    "scope": "Current full functional suite. Fixed fixtures verify behavior; accuracy comes from separately recorded real inference."
+    "scope": "Current full functional suite; fixed fixtures check behavior and do not measure model accuracy."
   },
   "plugin_contract": {
     "passed": 9,
@@ -69,10 +70,11 @@
   },
   "model_sha256": "0f515f2bb6efce456b72d63d8c4513382165c6bf4533b79a9906b49554aa4c05",
   "limitations": [
-    "实拍与合成结果分开。旧36张PKLot用于历史回归；54张CNR为另一停车场外部验证，召回和占用表现退步，不能声称普遍改善或达到99.99%。",
-    "真实照片模式验证视觉；没有把照片像素直接接入52车位仿真米制路网。",
-    "梁可替换规划实现后须重新运行插件检查、E01—E08及I01。",
-    "单会话仅在当前进程内保存，退出或重置后不保留。"
+    "实拍与合成结果分开。PKLot历史36张和CNR外部54张保留原评测；CNR外部召回及假空闲退步，未宣称跨场地普适或99.99%。",
+    "真实照片模式验证视觉，未把照片像素接入仿真米制路网。",
+    "梁可正式代码尚未提供；替换后需对其实现重跑契约、E01—E08及I01。",
+    "单会话与新增登记在当前进程保存；重置清除停车会话但保留登记，退出程序后均清空。",
+    "新版EXE在此Windows 11 x64主机实际验证，未逐台验证其他电脑。"
   ],
   "mode_baseline": {
     "independent_scenes": 30,
@@ -84,23 +86,24 @@
     "passed": true,
     "checks": 6,
     "inference_device": "cpu",
-    "application_sha256": "f3fef4fbe834eca67d65abafb78fb4ae1016818c3f9f528e6d63dc8053933e37",
-    "evidence": "reports/windows_optimized_flow_validation.json",
+    "application_sha256": "917e52db529242220eff3ef07bf950c339ae7841fab676af63154880fc1e7480",
+    "evidence": "reports/course_alignment/portable_flow_validation.json",
     "scope": "Executed the packaged EXE on this Windows 11 x64 host; other PCs are not individually tested."
   },
   "report_qa": {
     "schema_version": 1,
-    "report_version": "v1.2",
-    "checked_at_utc": "2026-11-01T13:11:32.158156+00:00",
+    "report_version": "v1.2.1",
+    "checked_at_utc": "2026-11-01T15:38:12.383807+00:00",
     "pages": 13,
     "docx_path": "reports/胡轩铭模块实现与验证报告.docx",
     "pdf_path": "reports/胡轩铭模块实现与验证报告.pdf",
-    "docx_sha256": "960fe53c3e3cd69f425fc9538c10545df320203b83639f7b3fcd2e13b96fdcc0",
-    "pdf_sha256": "92f562fa2cd65729bb095b8fdb9923fad108d7d44384ab45d0954aadd3811cce",
-    "html_sha256": "3e229ad94ccb7e2aaa0548f80ba3551555a6d16a027b63503df6c624da74efb6",
-    "generator_sha256": "a9cf21222ce97ac60e17745b9bf2adce8299d1a175f41f05a2881c8ec544dca5",
+    "docx_sha256": "dbc94e36bb61bf0c41577ee81543ec7d9408a7d6d6889a6373ff86cf4016c5c2",
+    "pdf_sha256": "d14ac31f8e3225bd4e6be0fb663562a835a0e3b506550d8502fd8ed74f7ce18e",
+    "html_sha256": "b08c651244618e1b9e7e3120fd8fa2aab001ef7c69cf42d8a5658b7313d51332",
+    "generator_sha256": "a51d2673824f53d479db232bcdd29bd61311b808ab87423761ea5b9249bd7b98",
+    "requirement_source_sha256": "b9b1d8b774526a5417dc054c35d071ed9adefa6050c3ce0656586ce07f2646a8",
     "render_method": "Native Microsoft Word COM ExportAsFixedFormat to PDF, followed by the bundled documents render_docx.py Poppler rasterizer via work/render_docx_word.py --emit_pdf.",
-    "render_directory": "C:\\Users\\ROG\\Documents\\Codex\\2026-10-31\\zu\\work\\real_optimization\\report_final_qa_v3",
+    "render_artifact_storage": "Page PNGs are internal working files and are not included in the public deliverable.",
     "rendered_pages": [
       "page-1.png",
       "page-2.png",
@@ -137,23 +140,24 @@
       "no_text_or_table_clipping": true,
       "no_footer_overlap": true,
       "figures_and_captions_readable": true,
-      "conclusion": "最终13页逐页检查完成；原17页中仅剩一小段的孤尾页已消除。正文、表格、图注和页脚未见重叠或裁切；第5页及第13页页脚由主代理额外放大复核。真实照片与合成实验分章保留，外部召回/F1退步和假空闲增加未删除。"
+      "conclusion": "逐页检查完成；正文、表格、图注及页脚没有重叠或裁切，没有只剩少量尾文的孤尾页。胡轩铭模块和与参考规划的联调为主体；实拍指标与退步作为附录保留。"
     },
     "relative_links_checked_documents": [
       "README.md",
       "docs/梁可从这里开始.md",
       "docs/课堂演示与答辩.md",
-      "docs/评分点与证据.md"
+      "docs/评分点与证据.md",
+      "docs/课程范围与验收.md"
     ],
     "missing_relative_links": [],
-    "scope": "Document layout and file consistency only. This review is not new inference, model-accuracy validation, runtime acceptance, or release publication.",
-    "file": "reports/胡轩铭模块实现与验证报告.docx",
-    "evidence": "reports/real_optimization/course_report_qa.json"
+    "private_numeric_identifier_matches": 0,
+    "scope": "Document layout, source attribution, privacy and file consistency only. Runtime and model results are read from separately recorded evidence; this QA does not rerun inference or publish a release.",
+    "evidence": "reports/course_alignment/course_report_qa.json"
   },
   "source_hashes": {
-    "parking_hu/__init__.py": "696eaa60156d4fbe8f773741edddbc467cadb9e3f24cf4dde16a23ddaaa53082",
+    "parking_hu/__init__.py": "1b53611d010dcdf9765f28388aa7dea3f72f2be1e9b666d598c0b787c25eb9a2",
     "parking_hu/__main__.py": "87304d61f16880ec397e70c7b74692ee0d653e651cd4bb11b66a578d8b1a078d",
-    "parking_hu/api.py": "5f097ab3ab8b2799bd97134d07644377c51ca129154e4cd38e240ba0fa864381",
+    "parking_hu/api.py": "0190786e7b20e0698b5b10a2883721b46a27548f6f18fa913087f009a5cae024",
     "parking_hu/contracts.py": "1140bcf881e010b0db431fdcca20fa3f2b4aebbccf249506e3e5cb13c102f47b",
     "parking_hu/detector.py": "12720e246d24a7c2d6373aff58a2d87bc81f7a7cef65fe287f3d39f3d6563770",
     "parking_hu/geometry.py": "6c9f43d48b89e825806bcb4e8bd572f3fa0912b6612a319cb4fe793f0ada3c8b",
@@ -162,17 +166,17 @@
     "parking_hu/real_photos.py": "19dbb2ee9339b0c66e1c153a35b9e4baa9f58c11a2527508ff4d560be9193b6a",
     "parking_hu/reference_planner.py": "9791d679e12c8b13c7fe415c7900d5e1827564f34e2ad14ed65369cb35e3f7bc",
     "parking_hu/scenes.py": "ebe50d72b2ff989bb449cf02b260021fb60bf8d5e854e83ef0de1360f6d17183",
-    "parking_hu/service.py": "6e11fe6b9241006f3c942f62ad64af259952148e7373181e0692b5e795d5c05d",
+    "parking_hu/service.py": "f2635b087f5b64e47ed789bc9a823306abedcdf0351c13fa7221646a92fb25f7",
     "parking_hu/vision_metrics.py": "d9c0e0a81043951e56c043512c8b0b2a82be99e1884c58f63ec191065ad5505d",
     "scripts/audit_real_optimization.py": "0b4f74d88a97fb6c6022440b7b305aa86de1684f2aecafceefdc8009b140cac5",
-    "scripts/build_course_report.py": "a9cf21222ce97ac60e17745b9bf2adce8299d1a175f41f05a2881c8ec544dca5",
+    "scripts/build_course_report.py": "a51d2673824f53d479db232bcdd29bd61311b808ab87423761ea5b9249bd7b98",
     "scripts/build_windows.py": "dc4f803ffc73c51b434f7f08cad0e64ff31a29501fc189889c60df6db8910a1a",
     "scripts/check_plugin.py": "926c91ebe83696251eeb8e9fcb2d6a8b5b00c0d14af5797c1556763126fa3e71",
     "scripts/compare_modes.py": "7108a627649b6f63288261b3c372a729ef95e57f21aadead2ce013eb7feaa163",
     "scripts/compare_real_candidates.py": "d7fa1d031bcf86b1527574ea412509ee0587235aa4c791ab7406d0ef11ff718f",
     "scripts/evaluate_real_optimization.py": "67e6ffdcf98b672a66714b9425d94cb0940f51ca5036bd6aafdce007c68c94a5",
     "scripts/evaluate_real_photos.py": "ffe78ce7e070b3c76be73bb289931926bcff2fd078b4cdc42862cd8656fbd9ef",
-    "scripts/portable_entry.py": "bb714962a2e4bbe88f788dfa75b737edb26ddaf5f136a6b806e9ea654f3ae059",
+    "scripts/portable_entry.py": "e87f132a72960d3ef820a8b5b48a1bb7111c3451c0431dd72f110bad28adefc4",
     "scripts/prepare_real_optimization_data.py": "ddfcdd217421d46d3b5f6a9f4bd1ed73e6b00d01269b88c0c14cbb04eee8e05b",
     "scripts/prepare_real_photos.py": "1d3e894258165da2793e9e106557ef7179b312f59981ea8aa96763dbe8015c96",
     "scripts/report_real_optimization.py": "130f9361c04c87e0cf10150cb43533e9cf82492b93be468f177e67d6e03615b2",
@@ -186,12 +190,13 @@
     "scripts/vision_prepare.py": "a931bc34ccf2dc42588c11f0ac6dc39116821c00f3731fc474e2932dd679263f",
     "scripts/vision_report.py": "180ea9063a9b9a71111788afdf2f34c9e067dd984c1019b16ff66c9b8beba81e",
     "scripts/vision_train.py": "5eb5fcd067d12b19de571e47223cabb0a1398df0aa94a94492b7f551527750ad",
-    "static/app.js": "e179d2730be45218581cdf31f0a59528f49c0247980b5a156a30cf644e73d3e5",
-    "static/index.html": "0f0e74400f268fd993cd6459301096082d7a03753234495b7547827ca4e131af",
+    "static/app.js": "a3e1d9c47105e9d0bd778259724301374ece7d16ca55e0ef26b18d4ec3e16103",
+    "static/index.html": "000d232f0b967e9520381197760b7d52ce287ad8570b83b9513eab048877b51c",
     "static/real.css": "a56a80283bc21f2187a8b89d792cdb912adb85fe1c6b665b785819b5869ae6ed",
     "static/real.html": "94c8ce0e65d6a42a90811e274fab5884244e90d9c0270596e5d2974dc4aef7cf",
     "static/real.js": "3381f0510c8bc58ca96b6ea43a580a5fd5abc9a40b82316fe89ac0b465fb9050",
-    "static/style.css": "349b9dd6f3762ad3e89226fe896abd757f6545d8b3cbf97ed7824623667cfb0f"
+    "static/style.css": "f11aa1eccdf578f896cfd15da974637c686cee4b677d169e2e5c4da0f69aadb4",
+    "tests/test_registration.py": "21bc179b6291e248a7b474bf37d8d7601186272b18fed98749a591e9a675dd15"
   },
   "ui_detection_evidence": {
     "passed": true,
@@ -992,13 +997,41 @@
     "evidence": "reports/real_optimization/final/summary.json",
     "independent_scoring_audit": "reports/real_optimization/final_scoring_audit.json",
     "actual_exe_ui_evidence": "reports/real_photo_portable_validation.json",
-    "conclusion": "PKLot historical detection P/R improved; CNR external recall/F1 and false-free occupancy worsened. No claim of universal improvement or 99.99%."
+    "conclusion": "PKLot historical detection P/R improved; CNR external recall/F1 and false-free occupancy worsened. No claim of universal improvement or 99.99%.",
+    "evidence_version": "1.2.0",
+    "evidence_scope": "Reused frozen models and evaluation; photo-view functionality is retained as extension, not Hu course completion criterion."
   },
   "reused_unchanged_evidence": [
-    "Synthetic vision, I01, mode baseline, planner contract and simulator UI records retain their original scope; this version repeats the actual executable parking flow."
+    "Synthetic vision, 8+8 real-model E2E scenarios, I01, mode baseline and planner contract retain their original scope and frozen configuration. No model training or new accuracy measurement occurred in v1.2.1.",
+    "v1.2 real-photo 13-check browser evidence and 90-photo evaluation remain historical evidence; this version repeats actual Windows EXE course and registration behavior.",
+    "Original v1.2.0 receipt is preserved in Git history and its release source archive; historical test totals are not added to the current 169-test suite."
   ],
   "final_report_resources": {
     "passed": true,
-    "evidence": "reports/real_optimization/runtime_resource_refresh.json"
+    "evidence": "reports/course_alignment/runtime_resource_refresh.json"
+  },
+  "course_browser": {
+    "passed": true,
+    "checks": 5,
+    "evidence": "reports/course_alignment/browser_validation.json"
+  },
+  "vehicle_registration": {
+    "passed": true,
+    "backend_cases": 26,
+    "actual_exe_browser_checks": 8,
+    "evidence": "reports/course_alignment/registration_final_validation.json",
+    "lifetime": "当前进程；重置保留登记，退出后清空。",
+    "contract": "登记由胡模块处理；原Planner接口保持1.0，context.vehicle传递登记属性。"
+  },
+  "requirements_audit": {
+    "evidence": "reports/course_alignment/requirements_audit.json",
+    "source": "选题申请表-周一下午(1).docx",
+    "source_sha256": "b9b1d8b774526a5417dc054c35d071ed9adefa6050c3ce0656586ce07f2646a8",
+    "personal_details_published": false,
+    "formal_liang_integration_verified": false
+  },
+  "metadata_integrity_restore": {
+    "evidence": "reports/course_alignment/metadata_restore.json",
+    "semantic_data_changed": false
   }
 }
